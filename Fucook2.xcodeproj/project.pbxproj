@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BAFBA0B11A36FAA6002B2C21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B01A36FAA6002B2C21 /* main.m */; };
+		BAFBA0B41A36FAA6002B2C21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B31A36FAA6002B2C21 /* AppDelegate.m */; };
+		BAFBA0B71A36FAA6002B2C21 /* Fucook2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B51A36FAA6002B2C21 /* Fucook2.xcdatamodeld */; };
+		BAFBA0BA1A36FAA6002B2C21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B91A36FAA6002B2C21 /* ViewController.m */; };
+		BAFBA0BD1A36FAA6002B2C21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFBA0BB1A36FAA6002B2C21 /* Main.storyboard */; };
+		BAFBA0BF1A36FAA6002B2C21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFBA0BE1A36FAA6002B2C21 /* Images.xcassets */; };
+		BAFBA0C21A36FAA6002B2C21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFBA0C01A36FAA6002B2C21 /* LaunchScreen.xib */; };
+		BAFBA0CE1A36FAA6002B2C21 /* Fucook2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0CD1A36FAA6002B2C21 /* Fucook2Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BAFBA0C81A36FAA6002B2C21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAFBA0A31A36FAA5002B2C21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAFBA0AA1A36FAA6002B2C21;
+			remoteInfo = Fucook2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BAFBA0AB1A36FAA6002B2C21 /* Fucook2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFBA0AF1A36FAA6002B2C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAFBA0B01A36FAA6002B2C21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAFBA0B21A36FAA6002B2C21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BAFBA0B31A36FAA6002B2C21 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BAFBA0B61A36FAA6002B2C21 /* Fucook2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fucook2.xcdatamodel; sourceTree = "<group>"; };
+		BAFBA0B81A36FAA6002B2C21 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BAFBA0B91A36FAA6002B2C21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BAFBA0BC1A36FAA6002B2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BAFBA0BE1A36FAA6002B2C21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BAFBA0C11A36FAA6002B2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		BAFBA0C71A36FAA6002B2C21 /* Fucook2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Fucook2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFBA0CC1A36FAA6002B2C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAFBA0CD1A36FAA6002B2C21 /* Fucook2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Fucook2Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BAFBA0A81A36FAA6002B2C21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFBA0C41A36FAA6002B2C21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAFBA0A21A36FAA5002B2C21 = {
+			isa = PBXGroup;
+			children = (
+				BAFBA0AD1A36FAA6002B2C21 /* Fucook2 */,
+				BAFBA0CA1A36FAA6002B2C21 /* Fucook2Tests */,
+				BAFBA0AC1A36FAA6002B2C21 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BAFBA0AC1A36FAA6002B2C21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBA0AB1A36FAA6002B2C21 /* Fucook2.app */,
+				BAFBA0C71A36FAA6002B2C21 /* Fucook2Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BAFBA0AD1A36FAA6002B2C21 /* Fucook2 */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBA0B21A36FAA6002B2C21 /* AppDelegate.h */,
+				BAFBA0B31A36FAA6002B2C21 /* AppDelegate.m */,
+				BAFBA0B81A36FAA6002B2C21 /* ViewController.h */,
+				BAFBA0B91A36FAA6002B2C21 /* ViewController.m */,
+				BAFBA0BB1A36FAA6002B2C21 /* Main.storyboard */,
+				BAFBA0BE1A36FAA6002B2C21 /* Images.xcassets */,
+				BAFBA0C01A36FAA6002B2C21 /* LaunchScreen.xib */,
+				BAFBA0B51A36FAA6002B2C21 /* Fucook2.xcdatamodeld */,
+				BAFBA0AE1A36FAA6002B2C21 /* Supporting Files */,
+			);
+			path = Fucook2;
+			sourceTree = "<group>";
+		};
+		BAFBA0AE1A36FAA6002B2C21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBA0AF1A36FAA6002B2C21 /* Info.plist */,
+				BAFBA0B01A36FAA6002B2C21 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAFBA0CA1A36FAA6002B2C21 /* Fucook2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBA0CD1A36FAA6002B2C21 /* Fucook2Tests.m */,
+				BAFBA0CB1A36FAA6002B2C21 /* Supporting Files */,
+			);
+			path = Fucook2Tests;
+			sourceTree = "<group>";
+		};
+		BAFBA0CB1A36FAA6002B2C21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBA0CC1A36FAA6002B2C21 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BAFBA0AA1A36FAA6002B2C21 /* Fucook2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAFBA0D11A36FAA6002B2C21 /* Build configuration list for PBXNativeTarget "Fucook2" */;
+			buildPhases = (
+				BAFBA0A71A36FAA6002B2C21 /* Sources */,
+				BAFBA0A81A36FAA6002B2C21 /* Frameworks */,
+				BAFBA0A91A36FAA6002B2C21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fucook2;
+			productName = Fucook2;
+			productReference = BAFBA0AB1A36FAA6002B2C21 /* Fucook2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BAFBA0C61A36FAA6002B2C21 /* Fucook2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAFBA0D41A36FAA6002B2C21 /* Build configuration list for PBXNativeTarget "Fucook2Tests" */;
+			buildPhases = (
+				BAFBA0C31A36FAA6002B2C21 /* Sources */,
+				BAFBA0C41A36FAA6002B2C21 /* Frameworks */,
+				BAFBA0C51A36FAA6002B2C21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAFBA0C91A36FAA6002B2C21 /* PBXTargetDependency */,
+			);
+			name = Fucook2Tests;
+			productName = Fucook2Tests;
+			productReference = BAFBA0C71A36FAA6002B2C21 /* Fucook2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BAFBA0A31A36FAA5002B2C21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Hugo Costa";
+				TargetAttributes = {
+					BAFBA0AA1A36FAA6002B2C21 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					BAFBA0C61A36FAA6002B2C21 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = BAFBA0AA1A36FAA6002B2C21;
+					};
+				};
+			};
+			buildConfigurationList = BAFBA0A61A36FAA5002B2C21 /* Build configuration list for PBXProject "Fucook2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BAFBA0A21A36FAA5002B2C21;
+			productRefGroup = BAFBA0AC1A36FAA6002B2C21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BAFBA0AA1A36FAA6002B2C21 /* Fucook2 */,
+				BAFBA0C61A36FAA6002B2C21 /* Fucook2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BAFBA0A91A36FAA6002B2C21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFBA0BD1A36FAA6002B2C21 /* Main.storyboard in Resources */,
+				BAFBA0C21A36FAA6002B2C21 /* LaunchScreen.xib in Resources */,
+				BAFBA0BF1A36FAA6002B2C21 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFBA0C51A36FAA6002B2C21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BAFBA0A71A36FAA6002B2C21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFBA0B41A36FAA6002B2C21 /* AppDelegate.m in Sources */,
+				BAFBA0B71A36FAA6002B2C21 /* Fucook2.xcdatamodeld in Sources */,
+				BAFBA0BA1A36FAA6002B2C21 /* ViewController.m in Sources */,
+				BAFBA0B11A36FAA6002B2C21 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAFBA0C31A36FAA6002B2C21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFBA0CE1A36FAA6002B2C21 /* Fucook2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAFBA0C91A36FAA6002B2C21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAFBA0AA1A36FAA6002B2C21 /* Fucook2 */;
+			targetProxy = BAFBA0C81A36FAA6002B2C21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BAFBA0BB1A36FAA6002B2C21 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAFBA0BC1A36FAA6002B2C21 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BAFBA0C01A36FAA6002B2C21 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAFBA0C11A36FAA6002B2C21 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BAFBA0CF1A36FAA6002B2C21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BAFBA0D01A36FAA6002B2C21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BAFBA0D21A36FAA6002B2C21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Fucook2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BAFBA0D31A36FAA6002B2C21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Fucook2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BAFBA0D51A36FAA6002B2C21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Fucook2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fucook2.app/Fucook2";
+			};
+			name = Debug;
+		};
+		BAFBA0D61A36FAA6002B2C21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Fucook2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fucook2.app/Fucook2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BAFBA0A61A36FAA5002B2C21 /* Build configuration list for PBXProject "Fucook2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFBA0CF1A36FAA6002B2C21 /* Debug */,
+				BAFBA0D01A36FAA6002B2C21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BAFBA0D11A36FAA6002B2C21 /* Build configuration list for PBXNativeTarget "Fucook2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFBA0D21A36FAA6002B2C21 /* Debug */,
+				BAFBA0D31A36FAA6002B2C21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BAFBA0D41A36FAA6002B2C21 /* Build configuration list for PBXNativeTarget "Fucook2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFBA0D51A36FAA6002B2C21 /* Debug */,
+				BAFBA0D61A36FAA6002B2C21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BAFBA0B51A36FAA6002B2C21 /* Fucook2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BAFBA0B61A36FAA6002B2C21 /* Fucook2.xcdatamodel */,
+			);
+			currentVersion = BAFBA0B61A36FAA6002B2C21 /* Fucook2.xcdatamodel */;
+			path = Fucook2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BAFBA0A31A36FAA5002B2C21 /* Project object */;
+}
