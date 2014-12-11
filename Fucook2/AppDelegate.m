@@ -1,23 +1,122 @@
 //
 //  AppDelegate.m
-//  Fucook2
+//  Fucook
 //
-//  Created by Hugo Costa on 09/12/14.
+//  Created by Hugo Costa on 03/11/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "Home.h"
+#import "Globals.h"
+#import "FucookIAPHelper.h"
+#import "WebServiceSender.h"
 
 @interface AppDelegate ()
+{
+    WebServiceSender * listaIdsInApps;
+}
 
 @end
 
 @implementation AppDelegate
 
 
+-(void)webserviceInApps
+{
+#warning colocar aqui o url correcto para poder abrir o webservice
+    listaIdsInApps = [[WebServiceSender alloc] initWithUrl:@"defenir url aqui" method:@"" tag:1];
+    listaIdsInApps.delegate = self;
+    
+    NSMutableDictionary * dict = [NSMutableDictionary new];
+    // aqui nao tenho de enviar nada por enquanto
+    
+    [listaIdsInApps sendDict:dict];
+}
+
+-(void)sendCompleteWithResult:(NSDictionary*)result withError:(NSError*)error
+{
+    
+    if (!error)
+    {
+        int tag=[WebServiceSender getTagFromWebServiceSenderDict:result];
+        switch (tag)
+        {
+            case 1:
+            {
+                NSLog(@"resultado da lista de inApps  =>  %@", result.description);
+                
+                
+                
+                break;
+            }
+                
+        }
+    }else
+    {
+        NSLog(@"webservice error %@", error.description);
+    }
+    
+    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [FucookIAPHelper sharedInstance];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
+    // inicializar o globals
+    
+    [Globals setimagensTemp:[NSMutableArray new]];
+    
+    Home * cenas = [Home new];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    //self.window.backgroundColor = [UIColor whiteColor];
+    
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:cenas];
+    [nav.view setFrame:[[UIScreen mainScreen] bounds] ];
+    
+    [self.window makeKeyAndVisible];
+    
+    // para os cantos arredondados
+    /*
+    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width, 20)];
+    view.backgroundColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f];
+    [nav.view addSubview:view];
+    */
+     
+    UIImageView * topo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imgframetop"]];
+    [topo setFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 10)];
+    [nav.view addSubview:topo];
+    
+    UIImageView * fundo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"imgframedown"]];
+    [fundo setFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height-10, [[UIScreen mainScreen] bounds].size.width, 10)];
+    [nav.view addSubview:fundo];
+    
+    /*
+    [nav.navigationBar setBackgroundImage:[UIImage new]
+                           forBarPosition:UIBarPositionAny
+                               barMetrics:UIBarMetricsDefault];
+    [nav.navigationBar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
+    
+    [nav.navigationBar setShadowImage:[UIImage new]];
+    */
+    
+    [self.window setRootViewController:nav];
+    
     return YES;
+}
+
++ (AppDelegate *)sharedAppDelegate
+{
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -51,7 +150,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "Hugo-Freelance.Fucook2" in the application's documents directory.
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "Hugo-Freelance.Fucook" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
@@ -111,7 +210,8 @@
 
 #pragma mark - Core Data Saving support
 
-- (void)saveContext {
+- (void)saveContext
+{
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         NSError *error = nil;
@@ -122,6 +222,21 @@
             abort();
         }
     }
+}
+
+-(void)applicationWillFinishLaunching:(NSNotification *)notification
+{
+    // Locate the receipt
+    NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
+    
+    // Test whether the receipt is present at the above path
+    if(![[NSFileManager defaultManager] fileExistsAtPath:[receiptURL path]])
+    {
+        // Validation fails
+        exit(173);
+    }
+    
+    // Proceed with further receipt validation steps
 }
 
 @end
