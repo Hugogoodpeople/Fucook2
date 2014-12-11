@@ -33,6 +33,8 @@
 #import "PesquisaReceitas.h"
 #import "NewBook.h"
 
+#import "ReceitaVisualizar.h"
+
 
 @interface ListaCompras ()
 {
@@ -166,6 +168,9 @@
     // aqui é o novo sitio para chamar as receitas
     NSIndexPath *indexPath = [self.tabbleView indexPathForCell:cell];
     ObjectLista * objeLista = [arrayOfItems objectAtIndex:indexPath.row];
+
+    
+    
     
     [self OpenReceita:objeLista];
 }
@@ -544,21 +549,19 @@
     
     if (objLista.managedObjectReceita)
     {
-    
-    
         //  indexCell = index;
-       
         ObjectReceita * objR = [ObjectReceita new];
 
         // tenho de ir buscar a receita ao qual este ingrediente pertence
         [objR setTheManagedObject:objLista.managedObjectReceita];
     
-    
-      
+        ReceitaVisualizar * visua = [ReceitaVisualizar new];
+        visua.receita = objR;
         
+        [self.navigationController pushViewController:visua animated:YES];
     }else
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"this ingrediente dont belong to any recipe" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"this ingredient dont belong to any recipe" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
     }
 

@@ -129,7 +129,6 @@
 - (IBAction)partilharFacebook:(id)sender {
     
     // esta parte funciona correctamente mas tem de abrir logo ou twitter ou facebook
-    
     /*
     // este cosigo deixa o utilizador escolher qual o tipo de ferramenta pretende usar para partilhar o desejado
     UIImage *postImage = self.imagemReceita.image;
@@ -150,7 +149,8 @@
         // Device is able to send a Twitter message
     }
     
-    SLComposeViewController *composeController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    SLComposeViewController *composeController = [SLComposeViewController
+                                                  composeViewControllerForServiceType:SLServiceTypeFacebook];
     
     [composeController setInitialText:@"Just found this great website"];
     [composeController addImage:self.imagemReceita.image];

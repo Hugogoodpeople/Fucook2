@@ -46,8 +46,6 @@
             {
                 NSLog(@"resultado da lista de inApps  =>  %@", result.description);
                 
-                
-                
                 break;
             }
                 

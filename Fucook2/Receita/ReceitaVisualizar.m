@@ -560,7 +560,7 @@
     float Y = scrollView.contentOffset.y;
 
     if (Y >= 280 ) {
-        [header.view setFrame:CGRectMake(0,  Y -280 + 64 , self.view.frame.size.width, header.view.frame.size.height)];
+        [header.view setFrame:CGRectMake(0,  Y - 280 + 64 , self.view.frame.size.width, header.view.frame.size.height)];
     }
     else
     {

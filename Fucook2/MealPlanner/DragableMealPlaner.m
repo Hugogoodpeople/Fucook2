@@ -99,7 +99,7 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+#warning tenho de criar uma nova celula especialmente para esta parte... tem de ter 3 opções no total e nao 2 ou 4
     static NSString *simpleTableIdentifier = @"ReceitaCell";
     
     ReceitaCell *cell = (ReceitaCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -120,7 +120,7 @@
     // tenho de calcular com base no que esta no header
     
     //cell.labelQtd.text = [self calcularValor:indexPath];
-    cell.delegate = self;
+    cell.delegate = self.delegate;
     
     // NSString *key = [livro.imagem.description MD5Hash];
     // NSData *data = [FTWCache objectForKey:key];
@@ -146,11 +146,7 @@
         });
     }
     
-    
-    
     return cell;
-    
-    
 }
 
 -(float)calcularAltura
