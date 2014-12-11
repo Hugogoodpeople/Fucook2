@@ -74,6 +74,8 @@
     
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
     
+    
+    
 }
 
 - (IBAction)clickHome:(id)sender
@@ -151,10 +153,8 @@
         
         // depois tenho de activar esta parte
         self.root.tableView.delegate = self;
+        [self.root.tableView setContentInset:UIEdgeInsetsMake(0, 0, 48, 0)];
     }
-    
-    
-    
 }
 
 -(void)setUpCoreData
@@ -306,8 +306,9 @@
     for (ObjectCalendario * cal in arrayDias)
     {
         NSString * diaString =[dateFormatterSemana stringFromDate:cal.data];
+        NSString * MesString =[dateFormatterMes stringFromDate:cal.data];
         
-        if ([diaString isEqualToString:diaSemana])
+        if ([diaString isEqualToString:diaSemana] && [MesString isEqualToString:diaMes])
         {
             // aqui tenho de verificar qual foi a refeição selecionada
             if ([cal.categoria isEqualToString:@"Breakfast"])

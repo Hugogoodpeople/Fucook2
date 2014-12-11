@@ -48,7 +48,6 @@
 
 - (void)handlePanGesture:(UISwipeGestureRecognizer *)sender
 {
-    
     NSLog(@"Direcção do gesto %d",sender.direction );
     if (sender.direction == UISwipeGestureRecognizerDirectionUp)
     {
@@ -62,8 +61,6 @@
         [self irParaFundo];
         NSLog(@"moveu para baixo ");
     }
-    
-    
 }
 
 -(void)irParaTopo
@@ -102,12 +99,6 @@
     
     NSLog(@"Tamanho da movel %d %d altura=%d", width, height, altura);
 }
-
-
-
-
-
-
 
 - (IBAction)clickDelete:(id)sender {
     if (self.delegate) {

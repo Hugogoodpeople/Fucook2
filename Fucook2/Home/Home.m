@@ -129,7 +129,8 @@
     
     // para ver se deu algum erro ao inserir
     NSError *error;
-    if (![context save:&error]) {
+    if (![context save:&error])
+    {
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }
     

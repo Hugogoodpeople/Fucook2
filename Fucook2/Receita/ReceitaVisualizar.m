@@ -46,7 +46,7 @@
     
     largura = [[UIScreen mainScreen] bounds].size.width;
     
-    [self.tabela setContentInset:UIEdgeInsetsMake(0, 0, 20, 0)];
+    //[self.tabela setContentInset:UIEdgeInsetsMake(0, 0, 20, 0)];
     
     self.cartAllSelected = YES;
     
@@ -103,20 +103,31 @@
     header.imagem = [UIImage imageWithData:data];
     
     
-    self.tabela.tableHeaderView = header.view;
+    // afinal nao o posso colocar dentro da tabela :( e tbm tenho de alterar o contentinsent para ajustar a nova posição do cenas
+    //self.tabela.tableHeaderView = header.view;
+    
+    [header.view setFrame:CGRectMake(0, 64, self.view.frame.size.width, header.view.frame.size.height)];
+    [self.tabela addSubview:header.view];
 
+    UIView * viewDesnecessaria = [[UIView alloc] init];
+    [viewDesnecessaria setFrame:CGRectMake(0, 0, self.view.frame.size.width, header.view.frame.size.height +64)];
+    self.tabela.tableHeaderView = viewDesnecessaria;
+
+    //[self.tabela setContentInset:UIEdgeInsetsMake(header.view.frame.size.height, 0, 20, 0)];
+    
+    
+    //[self.tabela setContentInset:UIEdgeInsetsMake(100, 0, 20, 0)];
     
     [self setUpDirections];
     // para ter a certeza que todos já executaram tenho de fazer um de cada vez
     
 }
 
+
+
 -(void)setUpDirections
 {
-    
     self.itemsDirections = [NSMutableArray new];
-    
-    
     
     NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_etapas"];
     int passo = 0;
@@ -451,6 +462,7 @@
     return 2;
 }
 
+/*
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -477,6 +489,7 @@
     
     return 60;
 }
+ */
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -540,6 +553,23 @@
     }
     
     return nil;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  
+    float Y = scrollView.contentOffset.y;
+
+    if (Y >= 280 ) {
+        [header.view setFrame:CGRectMake(0,  Y -280 + 64 , self.view.frame.size.width, header.view.frame.size.height)];
+    }
+    else
+    {
+        [header.view setFrame:CGRectMake(0,  64 , self.view.frame.size.width, header.view.frame.size.height)];
+    }
+    
+    
+     
+   // NSLog(@"Y = %f", Y);
 }
 
 -(NSString *)calcularValor:(NSIndexPath *)indexPath

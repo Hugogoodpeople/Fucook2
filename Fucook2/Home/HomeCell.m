@@ -68,8 +68,6 @@
 
 -(void)irParaDireita
 {
-
-    
     int height = self.viewMovel.frame.size.height;
     int width = self.viewMovel.frame.size.width;
     
@@ -85,16 +83,19 @@
 }
 
 - (IBAction)clickEdit:(id)sender {
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(editBook:) withObject:self.livro.managedObject];
+    [self irParaDireita];
+    if (self.delegate)
+    {
+        [self.delegate performSelector:@selector(editBook:) withObject:self.livro.managedObject afterDelay:0.2f];
     }
 }
 
 - (IBAction)clickDelete:(id)sender
 {
-    
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(apagarLivro:) withObject:self.livro.managedObject];
+    [self irParaDireita];
+    if (self.delegate)
+    {
+        [self.delegate performSelector:@selector(apagarLivro:) withObject:self.livro.managedObject afterDelay:0.2f];
     }
 }
 @end

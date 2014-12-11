@@ -11,7 +11,9 @@
 #import "AppDelegate.h"
 #import "ObjectReceita.h"
 #import "ReceitaVisualizar.h"
-
+#import "Calendario.h"
+#import "ObjectIngrediente.h"
+#import "ObjectLista.h"
 
 
 @interface PesquisaReceitas ()
@@ -141,7 +143,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 65;
+    return 145;
 }
 
 
@@ -157,36 +159,43 @@
     static NSString *simpleTableIdentifier = @"PesquisaReceitaCell";
     
     PesquisaReceitaCell *cell = (PesquisaReceitaCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
+    if (cell == nil)
+    {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PesquisaReceitaCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.contentView.clipsToBounds = YES;
     }
     
-    ObjectReceita * receita = [pesquisaReceitas objectAtIndex:indexPath.row];
+    ObjectReceita * rec = [pesquisaReceitas objectAtIndex:indexPath.row];
     
-    cell.labelTitulo.text = receita.nome;
-    cell.labelDescricao.text = receita.livro.titulo;
+    cell.labelTitulo.text = rec.nome;
+    cell.labelTempo.text = rec.tempo;
+    cell.labelCategoria.text = rec.categoria;
+    cell.labelDificuldade.text = rec.dificuldade;
+    cell.receita = rec;
+    // tenho de calcular com base no que esta no header
+    
+    //cell.labelQtd.text = [self calcularValor:indexPath];
+    cell.delegate = self;
     
     // NSString *key = [livro.imagem.description MD5Hash];
     // NSData *data = [FTWCache objectForKey:key];
     if ( [imagens objectAtIndex:indexPath.row]!= [NSNull null] )
     {
-        cell.ImageThumbnail.image = [imagens objectAtIndex:indexPath.row];
+        //UIImage *image = [UIImage imageWithData:data];
+        cell.imagemReceita.image = [imagens objectAtIndex:indexPath.row];
     }
     else
     {
         //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
-            NSData * data = [receita.imagem valueForKey:@"imagem"];
+            NSData * data = [rec.imagem valueForKey:@"imagem"];
             //[FTWCache setObject:data forKey:key];
             UIImage *image = [UIImage imageWithData:data];
             NSInteger index = indexPath.row;
             dispatch_async(dispatch_get_main_queue(), ^{
-                cell.ImageThumbnail.image = image;
+                cell.imagemReceita.image = image;
                 if (image)
                     [imagens replaceObjectAtIndex:index withObject:image];
             });
@@ -210,5 +219,97 @@
     
     [self.navigationController pushViewController:visualizar animated:YES];
 }
+
+-(void)calendarioReceita:(NSManagedObject *)receitaManaged
+{
+    NSLog(@"Delegado Calendario");
+    Calendario * cal = [Calendario new];
+    cal.receita = receitaManaged;
+    
+    [self.navigationController pushViewController:cal animated:YES];
+}
+
+-(void)adicionarReceita:(ObjectReceita *) receita
+{
+    NSLog(@"Delegado ingredientes da receita %@", receita.nome);
+    /* tenho de percorrer todos os ingredientes da receita e adicionar ao carrinho de compras :( vai ter de ter varias verificações para verificar se
+     * o ingrediente já se encontra ou não guardado... se já estiver guardado tenho de apagar para poder adicionar de novo com os novos valores
+     */
+    
+    
+    NSMutableArray * arrayIngredientes = [NSMutableArray new];
+    
+    NSSet * resultados = [receita.managedObject valueForKey:@"contem_ingredientes"];
+    for ( NSManagedObject * managedIngre in resultados )
+    {
+        ObjectIngrediente * ingrediente = [ObjectIngrediente new];
+        [ingrediente setTheManagedObject:managedIngre];
+        
+        [arrayIngredientes addObject:ingrediente];
+    }
+    
+    // ok agora neste ponto já tenho todos os ingredientes da receita
+    // agora tenho de verificar se esses ingredientes já existem no shopping cart
+    
+    NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    // para ir buscar os dados prestendidos a base de dados
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.returnsObjectsAsFaults = NO;
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"ShoppingList" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+    
+    NSError * error;
+    
+    NSMutableArray * arrayShoppingList = [NSMutableArray new];
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    for (NSManagedObject * managedItemList in fetchedObjects)
+    {
+        ObjectLista * objLista = [ObjectLista new];
+        [objLista setTheManagedObject:managedItemList forRecipe:receita];
+        
+        [arrayShoppingList addObject:objLista];
+    }
+    
+    // aqui já tenho todos os ingredientes na shoping list pertencentes a todas as receitas
+    // para todos os itens da receita vou ter de correr um ciclo que verifica se o ingrediente já existe ou nao no cart
+    // se existir tenho de remover
+    int count = 0;
+    for (ObjectIngrediente * ingrediente in arrayIngredientes)
+    {
+        for (ObjectLista * listItem in arrayShoppingList)
+        {
+            if ([ingrediente.nome isEqualToString:listItem.nome] && [ingrediente.unidade isEqualToString:listItem.unidade])
+            {
+                [context deleteObject:listItem.managedObject];
+                count = count +1;
+            }
+        }
+    }
+    
+    // aqui já apaguei os que já estavam anteriormente na lista
+    // entao agora tenho de adicionar todos os que tenho na lista a base de dados com mais um ciclo
+    
+    
+    for (ObjectIngrediente * listIgre in arrayIngredientes)
+    {
+        // ele aqui devia gravar os ingredientes 1 a 1 na base de dados
+        [listIgre gettheManagedObjectToList:context fromReceita:receita ];
+        
+    }
+    
+    
+    if (![context save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }else
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%lu ingredients added to your cart", arrayIngredientes.count - count] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        
+        [alert show];
+    }
+}
+
 
 @end

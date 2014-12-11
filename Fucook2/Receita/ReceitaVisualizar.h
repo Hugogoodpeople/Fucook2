@@ -16,5 +16,6 @@
 @property NSMutableArray * items;
 @property NSMutableArray * itemsDirections;
 @property ObjectReceita * receita;
+@property (weak, nonatomic) IBOutlet UIView *containerHeader;
 
 @end
