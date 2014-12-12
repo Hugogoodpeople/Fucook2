@@ -48,7 +48,7 @@
                             </connections>
                         </pickerView>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JiH-Bx-Ujk">
-                            <rect key="frame" x="271" y="8" width="37" height="30"/>
+                            <rect key="frame" x="266" y="4" width="47" height="38"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Done">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,7 +74,7 @@
                             </connections>
                         </pickerView>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IyP-e4-I66">
-                            <rect key="frame" x="271" y="8" width="37" height="30"/>
+                            <rect key="frame" x="266" y="4" width="47" height="38"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Done">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,7 +100,7 @@
                             </connections>
                         </pickerView>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Ul-3K-abt">
-                            <rect key="frame" x="271" y="8" width="37" height="30"/>
+                            <rect key="frame" x="267" y="4" width="47" height="38"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Done">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -126,7 +126,7 @@
                             </connections>
                         </pickerView>
                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yKP-l9-Wzw">
-                            <rect key="frame" x="271" y="8" width="37" height="30"/>
+                            <rect key="frame" x="268" y="4" width="47" height="38"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Done">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

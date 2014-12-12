@@ -95,7 +95,7 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:@"You want to create an alarm?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:[NSString stringWithFormat: @"You want to create an alarm to %@ from now?", self.labelTempo.text ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
         alert.tag = 1;
         
         [alert show];
@@ -166,6 +166,7 @@
     // localNotification.applicationIconBadgeNumber = 5;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
+    //self.labelTempo.text = @"Set timer";
 }
 
 

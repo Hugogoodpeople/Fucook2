@@ -10,6 +10,7 @@
 
 @implementation DirectionsCell
 
+
 - (void)awakeFromNib {
     // Initialization code
     [self adicionarToolBar];
@@ -43,7 +44,7 @@
         self.labelTempo.text = @"Set timer";
     }else
     {
-        self.labelTempo.text = [NSString stringWithFormat:@"%@ MIN", self.labelTempo.text];
+        self.labelTempo.text = [NSString stringWithFormat:@"%@ min", self.labelTempo.text];
         [self setNotification:nil];
     }
 }
@@ -61,7 +62,7 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:@"You want to create an alarm?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:[NSString stringWithFormat: @"You want to create an alarm to %@ from now?", self.labelTempo.text ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
         alert.tag = 1;
         
         [alert show];
@@ -79,6 +80,7 @@
         else
         {
             NSLog(@"User cancelou notificação");
+            self.labelTempo.text = @"Set timer";
         }
     }
 }
@@ -87,7 +89,7 @@
 -(void)chamarNotificacao
 {
     
-    NSString *stringWithoutMin = [self.labelTempo.text stringByReplacingOccurrencesOfString:@"MIN" withString:@""];
+    NSString *stringWithoutMin = [self.labelTempo.text stringByReplacingOccurrencesOfString:@"min" withString:@""];
     
     int tempo = [stringWithoutMin intValue];
     
@@ -104,7 +106,9 @@
     // para adicionar o cenas do numero na aplicação
     // localNotification.applicationIconBadgeNumber = 5;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+ 
     
+    self.labelTempo.text = @"Set timer";
 }
 
 @end

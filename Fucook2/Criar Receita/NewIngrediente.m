@@ -133,7 +133,8 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -144,9 +145,11 @@
 }
 
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField{
-
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
 }
+
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     //CGPoint scrollPoint = CGPointMake(0.0, -50);
     
@@ -155,7 +158,6 @@
 
 -(void)handleSingleTap
 {
-
     [self.textQuant resignFirstResponder];
 }
 

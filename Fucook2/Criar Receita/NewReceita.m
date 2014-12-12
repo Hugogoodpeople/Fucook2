@@ -109,6 +109,9 @@
     foiAlterado = YES;
     [arrayIngredientes addObject:ingr];
     [self actualizarPosicoes];
+    
+    // para ir para o fundo
+    [self scrollToPosition:dir.view];
 }
 
 
@@ -118,6 +121,9 @@
     direct.passo = (int)arraydireccoes.count +1;
     [arraydireccoes addObject:direct];
     [self actualizarPosicoes];
+    
+    // para ir para o fundo
+    [self scrollToPosition:footerFinal.view];
 }
 
 -(void)adicionarNota:(NSString *) nota
@@ -127,6 +133,9 @@
     if (nota.length > 0)
     [arrayNotas addObject:nota];
     [self actualizarPosicoes];
+    
+    // para ir para o fundo
+    [self scrollToPosition:footerFinal.view];
     
 }
 
