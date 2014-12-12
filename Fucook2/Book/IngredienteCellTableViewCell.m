@@ -31,6 +31,7 @@
         if (self.delegate) {
             [self.delegate performSelectorInBackground:@selector(deleteIngrediente:) withObject:self.ingrediente];
         }
+        self.labelAddRemove.text = @"Removed from shopping list";
         
     }
     else
@@ -39,9 +40,12 @@
         if (self.delegate) {
             [self.delegate performSelectorInBackground:@selector(saveIngrediente:) withObject:self.ingrediente];
         }
+        self.labelAddRemove.text = @"Added to shopping list";
     }
     
     self.onCart = selecionado;
+    
+    
 
 }
 
@@ -51,5 +55,17 @@
     self.ingrediente.selecionado = self.onCart;
     self.onCart = !self.onCart;
     [self addRemove:self.onCart];
+    
+    // tenho de fazer 2 animaçoes aqui
+    [UIView animateWithDuration:0.2 animations:^{
+        self.viewAddRemove.alpha = 1;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 delay:2 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            self.viewAddRemove.alpha = 0;
+        } completion:^(BOOL finished) {
+            
+        }];
+    }];
+
 }
 @end

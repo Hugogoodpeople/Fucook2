@@ -19,8 +19,10 @@
 
 @interface ReceitaVisualizar ()
 {
-    HeaderIngrediente * header;
-    NSManagedObjectContext * context ;
+    HeaderIngrediente       * header;
+    IngredientesHeader      * ingHeadercell;
+    DirectionsHeader        * dirHeaderCell;
+    NSManagedObjectContext  * context ;
     float largura;
 }
 
@@ -51,6 +53,11 @@
     self.cartAllSelected = YES;
     
     context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    ingHeadercell = [IngredientesHeader new];
+    [ingHeadercell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 108)];
+    
+    dirHeaderCell = [DirectionsHeader new];
+    [dirHeaderCell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 108)];
     
     [self initializeShoppingCart];
     [self setUpIngredientes];
@@ -71,6 +78,7 @@
     // apenas para textes
     self.items = [NSMutableArray new];
     
+    [self.items addObject:[NSNull new]];
     
     // tenho de verificar aqui se os ingredientes já estão na shopinglist
     NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_ingredientes"];
@@ -128,6 +136,7 @@
 -(void)setUpDirections
 {
     self.itemsDirections = [NSMutableArray new];
+    [self.itemsDirections addObject:[NSNull new]];
     
     NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_etapas"];
     int passo = 0;
@@ -158,7 +167,7 @@
     NSArray *sortedArray;
     sortedArray = [arrayTemp sortedArrayUsingSelector:@selector(compare:)];
     
-    self.itemsDirections = [[NSMutableArray alloc] initWithArray:sortedArray];
+    [self.itemsDirections addObjectsFromArray: sortedArray];
     
     
     [self.tabela reloadData];
@@ -179,7 +188,6 @@
             tem = YES;
         }
     }
-    
     return tem;
 }
 
@@ -203,6 +211,7 @@
     
     
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+
     for (NSManagedObject *pedido in fetchedObjects)
     {
         
@@ -350,6 +359,7 @@
     {
         for (ObjectIngrediente * ing in self.items)
         {
+            if ([ing class] != [NSNull class])
             ing.selecionado = NO;
         }
     }
@@ -357,6 +367,7 @@
     {
         for (ObjectIngrediente * ing in self.items)
         {
+            if ([ing class] != [NSNull class])
             ing.selecionado = YES;
         }
     }
@@ -372,6 +383,7 @@
     BOOL muda = YES;
     for (ObjectIngrediente * ing in self.items)
     {
+        if ([ing class] != [NSNull class])
         if (ing.selecionado != self.cartAllSelected)
         {
             muda = NO;
@@ -386,14 +398,22 @@
 
 -(void)mostrarAlteracoesAddRemove:(BOOL)added
 {
+     // tenho de mudar o texto da animaçao a informar que os ingredientes foram adicionados
+     // e tambem tenho de mudar o texto do botao que diz add all
+    
+    NSString * textoParaBotao = @"";
+    
+    
     
     if (added)
     {
-        header.labelAllitensAddedRemoved.text = @"All itens added to shopping list";
+        header.labelAllitensAddedRemoved.text   = @"All itens added to shopping list";
+        textoParaBotao                          = @"REMOVE FROM LIST";
     }
     else
     {
         header.labelAllitensAddedRemoved.text = @"All itens removed from shopping list";
+        textoParaBotao                        = @"ADD TO LIST";
     }
     
     
@@ -401,6 +421,7 @@
         [header.addedRemovedView setAlpha:1];
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.5 delay:2 options:0 animations:^{
+            header.labelAddRemoveAll.text = textoParaBotao;
             [header.addedRemovedView setAlpha:0];
         } completion:0];
     }];
@@ -423,10 +444,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (indexPath.row == 0)
+    {
+        return 108;
+    }
+    
+    
     if (indexPath.section == 1)
     {
-        
-    
         UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0, largura   , 9999)];
         label.numberOfLines=0;
         label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:13];
@@ -497,7 +523,22 @@
     
     
     
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0)
+    {
+        if (indexPath.row == 0){
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier1"];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier1"];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+        
+            //cell.textLabel.text = @"teste cell";
+            
+            [cell.contentView addSubview:ingHeadercell.view];
+        
+            return cell;
+        }
+        
         
         static NSString *simpleTableIdentifier = @"IngredienteCellTableViewCell";
    
@@ -521,10 +562,24 @@
     
         [cell addRemove: !ing.selecionado];
     
-    return cell;
+        return cell;
     }
     else if(indexPath.section == 1)
     {
+        
+        if (indexPath.row == 0){
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyIdentifier2"];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier2"];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            
+            [cell.contentView addSubview:dirHeaderCell.view];
+            
+            return cell;
+        }
+
+        
         static NSString *simpleTableIdentifier = @"DirectionsCell";
         
         

@@ -46,6 +46,8 @@
     if (self.delegateHugo) {
         [self.delegateHugo performSelector:@selector(removerIngrediente:) withObject:self.ingrediente];
     }
+
+  
 }
 
 - (void)updateConstraints

@@ -41,6 +41,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelCategoria;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *labelAddRemoveAll;
 
 
 @end

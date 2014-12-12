@@ -67,6 +67,7 @@
     if (textField.tag == 1) {
         if (self.delegate) {
             [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewDificulty];
+            [self foiAlterado];
         }
     }
 }
@@ -177,6 +178,7 @@
     
     self.imagePickerController = imagePickerController;
     [self.delegate presentViewController:imagePickerController animated:YES completion:nil];
+    [self foiAlterado];
 }
 
 
@@ -349,6 +351,8 @@
         [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewPickerCategory];
     }
     
+    [self foiAlterado];
+    
 }
 
 - (IBAction)btDificulty:(id)sender {
@@ -383,6 +387,7 @@
         [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewPickerDificulty];
     }
     
+    [self foiAlterado];
 }
 
 - (IBAction)btServings:(id)sender {
@@ -421,6 +426,7 @@
         [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewPickerServings];
     }
     
+    [self foiAlterado];
 }
 
 - (IBAction)btPretime:(id)sender {
@@ -470,6 +476,7 @@
         [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewPickerPrepa];
     }
 
+    [self foiAlterado];
 }
 
 
@@ -533,4 +540,12 @@
     self.labelDif.text = [_pickerDataDifi objectAtIndex:d];
     [self btDificulty:self];
 }
+
+-(void)foiAlterado
+{
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(setfoiAlterado)];
+    }
+}
+
 @end

@@ -22,4 +22,7 @@
 @property BOOL onCart;
 -(void)addRemove:(BOOL)selecionado;
 
+@property (weak, nonatomic) IBOutlet UIView *viewAddRemove;
+@property (weak, nonatomic) IBOutlet UILabel *labelAddRemove;
+
 @end

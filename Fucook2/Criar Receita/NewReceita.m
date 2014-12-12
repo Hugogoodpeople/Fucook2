@@ -19,7 +19,8 @@
 
 #import "AppDelegate.h"
 
-@interface NewReceita (){
+@interface NewReceita ()
+{
     HeaderNewReceita * headerFinal;
     NIngredientes * ingre;
     Directions * dir;
@@ -35,6 +36,8 @@
     NSMutableArray * arrayNotas;
     
     BOOL jaFoiAbertoAntes;
+    
+    BOOL foiAlterado;
 }
 
 @end
@@ -73,11 +76,37 @@
 }
 
 - (IBAction)back:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    // tenho de perguntar ao utilizadro se quer gravar ou não quando as cenas foram alteradas
+    if (foiAlterado)
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"changes were made, you want to save changes ?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        alert.tag = 2;
+        [alert show];
+    }else
+        [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)setfoiAlterado
+{
+    foiAlterado = YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 2) {
+        if (buttonIndex == 1) {
+            [self AdicionarReceita];
+        }
+        else
+        {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
 }
 
 -(void)addIngrediente:(ObjectIngrediente *)ingr
 {
+    foiAlterado = YES;
     [arrayIngredientes addObject:ingr];
     [self actualizarPosicoes];
 }
@@ -85,6 +114,7 @@
 
 -(void)AdicionarDirections:(ObjectDirections *) direct
 {
+    foiAlterado = YES;
     direct.passo = (int)arraydireccoes.count +1;
     [arraydireccoes addObject:direct];
     [self actualizarPosicoes];
@@ -92,6 +122,7 @@
 
 -(void)adicionarNota:(NSString *) nota
 {
+    foiAlterado = YES;
     [arrayNotas removeAllObjects];
     if (nota.length > 0)
     [arrayNotas addObject:nota];
@@ -194,6 +225,9 @@
     if (!jaFoiAbertoAntes) {
         jaFoiAbertoAntes = YES;
         tempo= 0;
+    }else
+    {
+        foiAlterado = YES;
     }
     
     [UIView animateWithDuration:tempo animations:^{
@@ -374,6 +408,8 @@
 
 -(void)removerIngrediente:(NSObject *)ingrediente
 {
+    foiAlterado = YES;
+    
     // tenho de verificar o tipo da classe
     if([ingrediente isKindOfClass:[ObjectIngrediente class]])
     {
@@ -457,12 +493,14 @@
 
 -(void)actualizarIngrediente:(ObjectIngrediente * )ingred :(ObjectIngrediente *) editedIngrediente
 {
+    foiAlterado = YES;
     [ingre.arrayOfItems replaceObjectAtIndex:[ingre.arrayOfItems indexOfObject:ingred] withObject:editedIngrediente];
     [self actualizarPosicoes];
 }
 
 -(void)editarEtapa:(ObjectDirections *)directions
 {
+    foiAlterado = YES;
     NewDirections * direct = [NewDirections new];
     direct.delegate = self;
     direct.directions = directions;
