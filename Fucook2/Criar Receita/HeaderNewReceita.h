@@ -51,5 +51,11 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 
+@property (weak, nonatomic) IBOutlet UIView *viewPrimeiraVez;
+
+- (IBAction)clickphoto:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFotoJaExiste;
+
+- (void)temFoto;
 
 @end

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderNewReceita">
             <connections>
+                <outlet property="buttonFotoJaExiste" destination="aXH-dC-aNo" id="vQn-Mw-neh"/>
                 <outlet property="img" destination="4b5-Eg-XeO" id="PTW-MO-Wva"/>
                 <outlet property="labelCat" destination="YJd-3o-EEf" id="bxc-Ww-1i0"/>
                 <outlet property="labelDif" destination="hCx-eI-ekW" id="yQk-5Q-2bA"/>
@@ -27,16 +28,67 @@
                 <outlet property="viewPickerPrepa" destination="M5g-ts-nZg" id="TV1-GH-1pW"/>
                 <outlet property="viewPickerServings" destination="Rec-cm-DCt" id="d2y-bM-if2"/>
                 <outlet property="viewPre" destination="44s-xY-sW1" id="zFN-b7-g5t"/>
+                <outlet property="viewPrimeiraVez" destination="EkF-wR-hcv" id="xoZ-mC-qbH"/>
                 <outlet property="viewServings" destination="nsS-aw-KTJ" id="5ik-RJ-rYI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="655"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="584"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
             <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="deV-Gi-v4X">
+                    <rect key="frame" x="0.0" y="64" width="320" height="166"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgbckhome.png" id="4b5-Eg-XeO">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="166"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aXH-dC-aNo">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="btnphoto1.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btFoto:" destination="-1" eventType="touchUpInside" id="N7y-ae-32E"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" id="EkF-wR-hcv">
+                            <rect key="frame" x="80" y="41" width="160" height="83"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="817-ID-dBI">
+                                    <rect key="frame" x="55" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add photo to this recipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8R7-B7-EDl">
+                                    <rect key="frame" x="0.0" y="49" width="160" height="34"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gte-Kd-qod">
+                                    <rect key="frame" x="0.0" y="0.0" width="160" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clickphoto:" destination="-1" eventType="touchUpInside" id="IuV-lm-kGh"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="CFM-ZF-Aqi">
-                    <rect key="frame" x="0.0" y="505" width="320" height="150"/>
+                    <rect key="frame" x="0.0" y="477" width="320" height="150"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <pickerView clipsSubviews="YES" tag="4" contentMode="scaleToFill" id="nkq-fv-fhO">
@@ -62,7 +114,7 @@
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="Rec-cm-DCt">
-                    <rect key="frame" x="0.0" y="455" width="320" height="150"/>
+                    <rect key="frame" x="0.0" y="427" width="320" height="150"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <pickerView clipsSubviews="YES" tag="3" contentMode="scaleToFill" id="0V2-cq-Lf8">
@@ -88,7 +140,7 @@
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="f2b-qE-C63">
-                    <rect key="frame" x="0.0" y="405" width="320" height="150"/>
+                    <rect key="frame" x="0.0" y="377" width="320" height="150"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <pickerView clipsSubviews="YES" tag="2" contentMode="scaleToFill" id="Ddx-eP-2d2">
@@ -114,7 +166,7 @@
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="M5g-ts-nZg">
-                    <rect key="frame" x="0.0" y="355" width="320" height="150"/>
+                    <rect key="frame" x="0.0" y="327" width="320" height="150"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <pickerView clipsSubviews="YES" tag="1" contentMode="scaleToFill" id="ePb-Bv-t4S">
@@ -139,45 +191,15 @@
                     </subviews>
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" id="deV-Gi-v4X">
-                    <rect key="frame" x="0.0" y="65" width="320" height="240"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgbckhome.png" id="4b5-Eg-XeO">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aXH-dC-aNo">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <state key="normal" image="btnphoto1.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="btFoto:" destination="-1" eventType="touchUpInside" id="N7y-ae-32E"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" id="MNb-pG-bCj">
-                    <rect key="frame" x="0.0" y="305" width="320" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a name for your recipe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kqa-1G-f11">
-                            <rect key="frame" x="15" y="14" width="237" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="SWZ-7X-P5N">
-                    <rect key="frame" x="0.0" y="505" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="455" width="320" height="43"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <view contentMode="scaleToFill" id="ois-Gi-Fu2">
+                            <rect key="frame" x="15" y="42" width="305" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TuB-AN-VuF">
                             <rect key="frame" x="15" y="14" width="71" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -206,9 +228,14 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="nsS-aw-KTJ">
-                    <rect key="frame" x="0.0" y="555" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="498" width="320" height="43"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <view contentMode="scaleToFill" id="NRO-88-Txw">
+                            <rect key="frame" x="15" y="42" width="305" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aBZ-hj-Npx">
                             <rect key="frame" x="15" y="14" width="67" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -244,7 +271,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="Mn2-Zp-Jh2">
-                    <rect key="frame" x="0.0" y="605" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="541" width="320" height="43"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dificulty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JgJ-k0-uRS">
@@ -275,13 +302,13 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="bPC-LM-e4P">
-                    <rect key="frame" x="0.0" y="405" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="369" width="320" height="43"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MzO-nM-wo4">
-                            <rect key="frame" x="15" y="14" width="87" height="21"/>
+                            <rect key="frame" x="11" y="17" width="87" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -289,9 +316,14 @@
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="44s-xY-sW1">
-                    <rect key="frame" x="0.0" y="455" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="412" width="320" height="43"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <view contentMode="scaleToFill" id="8cj-rw-yJn">
+                            <rect key="frame" x="15" y="42" width="305" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preparation time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="reN-Jz-oGC">
                             <rect key="frame" x="15" y="14" width="127" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -320,7 +352,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="jXY-Oe-hqw">
-                    <rect key="frame" x="0.0" y="354" width="320" height="52"/>
+                    <rect key="frame" x="0.0" y="326" width="320" height="43"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" id="pNr-lc-mkL">
@@ -334,10 +366,31 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" id="MNb-pG-bCj">
+                    <rect key="frame" x="0.0" y="230" width="320" height="96"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your recipe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kqa-1G-f11">
+                            <rect key="frame" x="11" y="71" width="237" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start compiling your recipe by adding a personal name, details, ingredients, directions and your notes." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fkc-gn-HLV">
+                            <rect key="frame" x="11" y="8" width="297" height="54"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" red="0.72549019607843135" green="0.72549019607843135" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-191" y="-3.5"/>
+            <point key="canvasLocation" x="359" y="-138"/>
         </view>
     </objects>
     <resources>

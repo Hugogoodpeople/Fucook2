@@ -78,7 +78,6 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    
     return YES;
 }
 
@@ -479,8 +478,6 @@
     [self foiAlterado];
 }
 
-
-
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
@@ -520,8 +517,6 @@
     long a = [self.pickerPrep selectedRowInComponent:0];
     self.labelPre.text = [NSString stringWithFormat:@"%@ min",[_pickerDataPrep objectAtIndex:a]];
     [self btPretime:self];
-    
-    
 }
 
 - (IBAction)btDoneCate:(id)sender {
@@ -531,7 +526,7 @@
 }
 
 - (IBAction)btDoneServ:(id)sender {
-    self.labelServ.text = [NSString stringWithFormat:@"%ld",(long)[self.pickerServi selectedRowInComponent:0]+1];
+    self.labelServ.text = [NSString stringWithFormat:@"%ld",(long)[self.pickerServi selectedRowInComponent:0] + 1];
     [self btServings:self];
 }
 
@@ -543,9 +538,22 @@
 
 -(void)foiAlterado
 {
-    if (self.delegate) {
+    if (self.delegate)
+    {
         [self.delegate performSelector:@selector(setfoiAlterado)];
     }
 }
+
+- (IBAction)clickphoto:(id)sender
+{
+    [self btFoto:nil];
+}
+
+- (void)temFoto
+{
+    self.viewPrimeiraVez.alpha      = 0;
+    self.buttonFotoJaExiste.alpha   = 1;
+}
+
 
 @end

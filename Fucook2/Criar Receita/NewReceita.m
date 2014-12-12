@@ -106,36 +106,41 @@
 
 -(void)addIngrediente:(ObjectIngrediente *)ingr
 {
+    // para ir para o fundo
+    [self scrollTotopPosition:ingre.view];
+
+    
     foiAlterado = YES;
     [arrayIngredientes addObject:ingr];
     [self actualizarPosicoes];
     
-    // para ir para o fundo
-    [self scrollToPosition:dir.view];
-}
-
+    }
 
 -(void)AdicionarDirections:(ObjectDirections *) direct
 {
+    // para ir para o fundo
+    [self scrollTotopPosition:dir.view];
+
+    
     foiAlterado = YES;
     direct.passo = (int)arraydireccoes.count +1;
     [arraydireccoes addObject:direct];
     [self actualizarPosicoes];
     
-    // para ir para o fundo
-    [self scrollToPosition:footerFinal.view];
-}
+    }
 
 -(void)adicionarNota:(NSString *) nota
 {
+    // para ir para o fundo
+    [self scrollTotopPosition:footerFinal.view];
+
+    
     foiAlterado = YES;
     [arrayNotas removeAllObjects];
     if (nota.length > 0)
     [arrayNotas addObject:nota];
     [self actualizarPosicoes];
     
-    // para ir para o fundo
-    [self scrollToPosition:footerFinal.view];
     
 }
 
@@ -149,6 +154,8 @@
     headerFinal.labelDif.text       = self.receita.dificuldade;
     headerFinal.labelPre.text       = self.receita.tempo;
     headerFinal.img.image           = [UIImage imageWithData:[self.receita.imagem valueForKey:@"imagem"]];
+    
+    [headerFinal temFoto];
     
     if (self.receita.notas.length != 0)
         arrayNotas = [[NSMutableArray alloc] initWithArray:@[self.receita.notas]];
@@ -204,6 +211,16 @@
     arraydireccoes    = [NSMutableArray new];
     arrayNotas        = [NSMutableArray new];
     
+}
+
+-(void)scrollTotopPosition:(UIView *)rect
+{
+    CGRect frame = rect.frame;
+    //frame.origin.y = frame.origin.y - frame.size.height - 100;
+    
+    float local = frame.origin.y + frame.size.height ;
+    
+    [self.scrollNewReceita scrollRectToVisible:CGRectMake(0, local, self.view.frame.size.width, 100) animated:NO];
 }
 
 -(void)scrollToPosition:(UIView *)rect
