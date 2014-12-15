@@ -16,6 +16,12 @@
 - (IBAction)clickDelete:(id)sender;
 - (IBAction)clickEdit:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonCalendario;
+@property (weak, nonatomic) IBOutlet UIButton *buttonCarrinho;
+@property (weak, nonatomic) IBOutlet UIButton *buttonDelete;
+@property (weak, nonatomic) IBOutlet UIButton *buttonEdit;
+
+
 @property (weak, nonatomic) IBOutlet UIView *viewMovel;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
 @property (weak, nonatomic) IBOutlet UILabel *labelTempo;

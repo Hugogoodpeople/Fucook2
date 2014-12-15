@@ -8,7 +8,7 @@
 
 #import "MealPlanner.h"
 #import "DiaCalendario.h"
-#import "DragableMealPlaner.h"
+#import "MealPlanerTable.h"
 #import "AppDelegate.h"
 #import "ObjectCalendario.h"
 #import "ObjectReceita.h"
@@ -25,7 +25,7 @@
 }
 
 @property (nonatomic, strong) NSMutableArray *items;
-@property DragableMealPlaner * root;
+@property MealPlanerTable * root;
 
 @property UIView * itemAnterior;
 
@@ -138,7 +138,7 @@
     }
     else
     {
-        self.root = [DragableMealPlaner new];
+        self.root = [MealPlanerTable new];
         //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
         
         // tenho de verificar a data de hoje para meter as receitas

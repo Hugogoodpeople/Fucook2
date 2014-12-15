@@ -63,6 +63,14 @@
 		BA05B7461A39A3DD00476074 /* NotesViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7441A39A3DD00476074 /* NotesViewer.xib */; };
 		BA05B7491A39C18500476074 /* imgssombralateral@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7471A39C18500476074 /* imgssombralateral@2x.png */; };
 		BA05B74A1A39C18500476074 /* imgssombralateral@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7481A39C18500476074 /* imgssombralateral@3x.png */; };
+		BA07EAE71A3B654E0087B44E /* solid231.png in Resources */ = {isa = PBXBuildFile; fileRef = BA07EAE61A3B654E0087B44E /* solid231.png */; };
+		BA07EAE91A3B671B0087B44E /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA07EAE81A3B671B0087B44E /* Images-2.xcassets */; };
+		BA1B9D041A3EF1A200E1BEA0 /* MealPlanerTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1B9D021A3EF1A200E1BEA0 /* MealPlanerTable.m */; };
+		BA1B9D051A3EF1A200E1BEA0 /* MealPlanerTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D031A3EF1A200E1BEA0 /* MealPlanerTable.xib */; };
+		BA1B9D101A3EF32300E1BEA0 /* btright3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D0E1A3EF32300E1BEA0 /* btright3@2x.png */; };
+		BA1B9D111A3EF32300E1BEA0 /* btright3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D0F1A3EF32300E1BEA0 /* btright3@3x.png */; };
+		BA1B9D141A3EF35600E1BEA0 /* btleft3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D121A3EF35600E1BEA0 /* btleft3@2x.png */; };
+		BA1B9D151A3EF35600E1BEA0 /* btleft3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D131A3EF35600E1BEA0 /* btleft3@3x.png */; };
 		BAE0F3D21A376C9E00B89316 /* linedotbig3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE0F3D01A376C9E00B89316 /* linedotbig3@2x.png */; };
 		BAE0F3D31A376C9E00B89316 /* linedotbig3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE0F3D11A376C9E00B89316 /* linedotbig3@3x.png */; };
 		BAFBA0B11A36FAA6002B2C21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B01A36FAA6002B2C21 /* main.m */; };
@@ -335,6 +343,15 @@
 		BA05B7441A39A3DD00476074 /* NotesViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotesViewer.xib; path = Receita/NotesViewer/NotesViewer.xib; sourceTree = "<group>"; };
 		BA05B7471A39C18500476074 /* imgssombralateral@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgssombralateral@2x.png"; path = "Fucook2/Imagens/imgssombralateral@2x.png"; sourceTree = "<group>"; };
 		BA05B7481A39C18500476074 /* imgssombralateral@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgssombralateral@3x.png"; path = "Fucook2/Imagens/imgssombralateral@3x.png"; sourceTree = "<group>"; };
+		BA07EAE61A3B654E0087B44E /* solid231.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = solid231.png; path = Fucook2/Imagens/solid231.png; sourceTree = "<group>"; };
+		BA07EAE81A3B671B0087B44E /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		BA1B9D011A3EF1A200E1BEA0 /* MealPlanerTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealPlanerTable.h; path = MealPlanner/MealPlanerTable.h; sourceTree = "<group>"; };
+		BA1B9D021A3EF1A200E1BEA0 /* MealPlanerTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealPlanerTable.m; path = MealPlanner/MealPlanerTable.m; sourceTree = "<group>"; };
+		BA1B9D031A3EF1A200E1BEA0 /* MealPlanerTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MealPlanerTable.xib; path = MealPlanner/MealPlanerTable.xib; sourceTree = "<group>"; };
+		BA1B9D0E1A3EF32300E1BEA0 /* btright3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright3@2x.png"; path = "Fucook2/Imagens/btright3@2x.png"; sourceTree = "<group>"; };
+		BA1B9D0F1A3EF32300E1BEA0 /* btright3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright3@3x.png"; path = "Fucook2/Imagens/btright3@3x.png"; sourceTree = "<group>"; };
+		BA1B9D121A3EF35600E1BEA0 /* btleft3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@2x.png"; path = "Fucook2/Imagens/btleft3@2x.png"; sourceTree = "<group>"; };
+		BA1B9D131A3EF35600E1BEA0 /* btleft3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@3x.png"; path = "Fucook2/Imagens/btleft3@3x.png"; sourceTree = "<group>"; };
 		BAE0F3D01A376C9E00B89316 /* linedotbig3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linedotbig3@2x.png"; path = "Fucook2/Imagens/linedotbig3@2x.png"; sourceTree = "<group>"; };
 		BAE0F3D11A376C9E00B89316 /* linedotbig3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linedotbig3@3x.png"; path = "Fucook2/Imagens/linedotbig3@3x.png"; sourceTree = "<group>"; };
 		BAFBA0AB1A36FAA6002B2C21 /* Fucook2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -699,6 +716,7 @@
 				BAFBA0BE1A36FAA6002B2C21 /* Images.xcassets */,
 				BAFBA0C01A36FAA6002B2C21 /* LaunchScreen.xib */,
 				BAFBA0B51A36FAA6002B2C21 /* Fucook2.xcdatamodeld */,
+				BA07EAE81A3B671B0087B44E /* Images-2.xcassets */,
 				BAFBA0AE1A36FAA6002B2C21 /* Supporting Files */,
 			);
 			path = Fucook2;
@@ -815,6 +833,9 @@
 				BAFBA20C1A371596002B2C21 /* MealPlanner.xib */,
 				BAFBA1FA1A3711F0002B2C21 /* DragableMealPlaner.h */,
 				BAFBA1FB1A3711F0002B2C21 /* DragableMealPlaner.m */,
+				BA1B9D011A3EF1A200E1BEA0 /* MealPlanerTable.h */,
+				BA1B9D021A3EF1A200E1BEA0 /* MealPlanerTable.m */,
+				BA1B9D031A3EF1A200E1BEA0 /* MealPlanerTable.xib */,
 			);
 			name = MealPlanner;
 			sourceTree = "<group>";
@@ -1092,6 +1113,11 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BA1B9D121A3EF35600E1BEA0 /* btleft3@2x.png */,
+				BA1B9D131A3EF35600E1BEA0 /* btleft3@3x.png */,
+				BA1B9D0E1A3EF32300E1BEA0 /* btright3@2x.png */,
+				BA1B9D0F1A3EF32300E1BEA0 /* btright3@3x.png */,
+				BA07EAE61A3B654E0087B44E /* solid231.png */,
 				BA05B7471A39C18500476074 /* imgssombralateral@2x.png */,
 				BA05B7481A39C18500476074 /* imgssombralateral@3x.png */,
 				BAFCBA2B1A38A896001EFCE2 /* linedotbigger2@2x.png */,
@@ -1372,6 +1398,7 @@
 				BAFBA2661A3717EC002B2C21 /* linedot2@3x.png in Resources */,
 				BAFCBA061A3850D8001EFCE2 /* imgdateselect@2x.png in Resources */,
 				BAE0F3D21A376C9E00B89316 /* linedotbig3@2x.png in Resources */,
+				BA07EAE91A3B671B0087B44E /* Images-2.xcassets in Resources */,
 				BAFBA25C1A3717EC002B2C21 /* imgmark@3x.png in Resources */,
 				BAFBA0BD1A36FAA6002B2C21 /* Main.storyboard in Resources */,
 				BAFBA25D1A3717EC002B2C21 /* imgroda@2x.png in Resources */,
@@ -1392,6 +1419,7 @@
 				BA00821B1A374D1A00A7871D /* imglinebadgetdown@3x.png in Resources */,
 				BAFBA0EA1A36FE6A002B2C21 /* NewBook.xib in Resources */,
 				BAFBA15B1A3707AB002B2C21 /* CellIngrediente.xib in Resources */,
+				BA1B9D151A3EF35600E1BEA0 /* btleft3@3x.png in Resources */,
 				BA0081EF1A371FFD00A7871D /* icosettings@2x.png in Resources */,
 				BAFBA2851A371DB0002B2C21 /* btleft2@3x.png in Resources */,
 				BAFBA2491A3717EC002B2C21 /* btntime@2x.png in Resources */,
@@ -1407,6 +1435,7 @@
 				BA0081EB1A371FFD00A7871D /* icoimport@2x.png in Resources */,
 				BAFCBA2A1A389D25001EFCE2 /* btncall2@3x.png in Resources */,
 				BAFBA1991A370C42002B2C21 /* ListaCompras.xib in Resources */,
+				BA1B9D111A3EF32300E1BEA0 /* btright3@3x.png in Resources */,
 				BAFBA25B1A3717EC002B2C21 /* imgmark@2x.png in Resources */,
 				BAFBA1421A3706C7002B2C21 /* NIngredientes.xib in Resources */,
 				BAFBA26F1A3719AB002B2C21 /* btnsetting2@2x.png in Resources */,
@@ -1439,6 +1468,8 @@
 				BAFBA24A1A3717EC002B2C21 /* btntime@3x.png in Resources */,
 				BAFBA2681A3717EC002B2C21 /* linedot3@3x.png in Resources */,
 				BA0081F31A371FFD00A7871D /* imglogofucook@2x.png in Resources */,
+				BA1B9D141A3EF35600E1BEA0 /* btleft3@2x.png in Resources */,
+				BA1B9D101A3EF32300E1BEA0 /* btright3@2x.png in Resources */,
 				BAFBA27C1A371D22002B2C21 /* btnaddbook@2x.png in Resources */,
 				BAFCBA121A386AFA001EFCE2 /* imgframedown@2x.png in Resources */,
 				BAFBA0F61A36FF28002B2C21 /* Book.xib in Resources */,
@@ -1464,7 +1495,9 @@
 				BAFBA24E1A3717EC002B2C21 /* icoclock@3x.png in Resources */,
 				BAFCB9FC1A384D31001EFCE2 /* btntecladodown@2x.png in Resources */,
 				BAFBA2421A3717EC002B2C21 /* btndelet3@3x.png in Resources */,
+				BA1B9D051A3EF1A200E1BEA0 /* MealPlanerTable.xib in Resources */,
 				BAFCBA331A38C047001EFCE2 /* DirectionsHeader.xib in Resources */,
+				BA07EAE71A3B654E0087B44E /* solid231.png in Resources */,
 				BAFCB9FB1A384D31001EFCE2 /* btnclosenote@3x.png in Resources */,
 				BAFCBA2E1A38A896001EFCE2 /* linedotbigger2@3x.png in Resources */,
 				BAFCB9ED1A384927001EFCE2 /* HeaderIngrediente.xib in Resources */,
@@ -1528,6 +1561,7 @@
 				BAFBA1171A370486002B2C21 /* Calendario.m in Sources */,
 				BAFBA14B1A37071F002B2C21 /* NewIngrediente.m in Sources */,
 				BAFBA15A1A3707AB002B2C21 /* CellIngrediente.m in Sources */,
+				BA1B9D041A3EF1A200E1BEA0 /* MealPlanerTable.m in Sources */,
 				BAFBA1981A370C42002B2C21 /* ListaCompras.m in Sources */,
 				BAFBA17C1A370ADB002B2C21 /* IAPHelper.m in Sources */,
 				BAFBA13C1A3706A6002B2C21 /* FooterNewReceita.m in Sources */,
@@ -1713,6 +1747,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Fucook2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1724,6 +1759,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Fucook2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

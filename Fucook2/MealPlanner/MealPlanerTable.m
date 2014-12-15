@@ -1,20 +1,20 @@
 //
-//  DragableMealPlaner.m
-//  Fucook
+//  MealPlanerTableTableViewController.m
+//  Fucook2
 //
-//  Created by Hugo Costa on 13/11/14.
+//  Created by Hugo Costa on 15/12/14.
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
-#import "DragableMealPlaner.h"
+#import "MealPlanerTable.h"
 #import "MealPlanerCell.h"
 #import "ObjectReceita.h"
 
-@interface DragableMealPlaner ()
+@interface MealPlanerTable ()
 
 @end
 
-@implementation DragableMealPlaner
+@implementation MealPlanerTable
 
 @synthesize arrayOfItems,imagens;
 
@@ -40,8 +40,8 @@
     }
     
     [self actualizarImagens];
-
-
+    
+    
     
     NSLog(@"altura da tabela %f largura %f", self.tableView.frame.size.height , self.tableView.frame.size.width);
     
@@ -72,7 +72,7 @@
      */
     
 #warning activar aqui se quiseres voltar atras para a dragable
-   // [self setReorderingEnabled:( arrayOfItems.count > 1 )];
+    // [self setReorderingEnabled:( arrayOfItems.count > 1 )];
     
     return arrayOfItems.count;
 }
@@ -173,7 +173,7 @@
 
 -(void)actualizarImagens
 {
-
+    
     imagens = [[NSMutableArray alloc] init];
     
     for (NSInteger i = 0; i < 1000; ++i)
@@ -186,36 +186,36 @@
 }
 
 /*
-// should be identical to cell returned in -tableView:cellForRowAtIndexPath:
-- (UITableViewCell *)cellIdenticalToCellAtIndexPath:(NSIndexPath *)indexPath forDragTableViewController:(ATSDragToReorderTableViewController *)dragTableViewController {
-    
-  
-    static NSString *simpleTableIdentifier = @"BookCell";
-    
-    MealPlanerCell *cell = (MealPlanerCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
-    cell = [nib objectAtIndex:0];
-    cell.transform = CGAffineTransformMakeRotation(M_PI/2);
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.contentView.clipsToBounds = YES;
-   // [cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    
-   // NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
-    
-    
-    
-    cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-    
-    
-    [cell setSelected:YES];
-    //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
-    
-    cell.delegate = self.delegate;
-    
-    return cell;
-
-    
-}
+ // should be identical to cell returned in -tableView:cellForRowAtIndexPath:
+ - (UITableViewCell *)cellIdenticalToCellAtIndexPath:(NSIndexPath *)indexPath forDragTableViewController:(ATSDragToReorderTableViewController *)dragTableViewController {
+ 
+ 
+ static NSString *simpleTableIdentifier = @"BookCell";
+ 
+ MealPlanerCell *cell = (MealPlanerCell *)[self.tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+ NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BookCell" owner:self options:nil];
+ cell = [nib objectAtIndex:0];
+ cell.transform = CGAffineTransformMakeRotation(M_PI/2);
+ cell.selectionStyle = UITableViewCellSelectionStyleNone;
+ cell.contentView.clipsToBounds = YES;
+ // [cell.contentView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+ 
+ // NSLog(@"altura da celula %f largura %f", cell.contentView.frame.size.height , cell.contentView.frame.size.width);
+ 
+ 
+ 
+ cell.labelPagina.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+ 
+ 
+ [cell setSelected:YES];
+ //cell.textLabel.text = [arrayOfItems objectAtIndex:indexPath.row];
+ 
+ cell.delegate = self.delegate;
+ 
+ return cell;
+ 
+ 
+ }
  */
 
 /*

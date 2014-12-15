@@ -16,24 +16,26 @@
 
 -(void)setTheManagedObject:(NSManagedObject *)managedObject
 {
-
     // tenho de saber qual o livro a qual pertence esta receita
     self.livro = [ObjectLivro new];
     NSManagedObject * managedLivro = [managedObject valueForKey:@"pertence_livro"];
+    
     self.livro.titulo    = [managedLivro valueForKey:@"titulo"];
     self.livro.descricao = [managedLivro valueForKey:@"descricao"];
 
+    self.data_criado     = [managedObject valueForKey:@"data_criado"];
+    self.nome            = [managedObject valueForKey:@"nome"];
+    self.categoria       = [managedObject valueForKey:@"categoria"];
+    self.servings        = [managedObject valueForKey:@"nr_pessoas"];
+    self.dificuldade     = [managedObject valueForKey:@"dificuldade"];
+    self.tempo           = [managedObject valueForKey:@"tempo"];
+    self.imagem          = [managedObject valueForKey:@"contem_imagem"];
+    self.notas           = [managedObject valueForKey:@"notas"];
     
-    self.nome           = [managedObject valueForKey:@"nome"];
-    self.categoria      = [managedObject valueForKey:@"categoria"];
-    self.servings       = [managedObject valueForKey:@"nr_pessoas"];
-    self.dificuldade    = [managedObject valueForKey:@"dificuldade"];
-    self.tempo          = [managedObject valueForKey:@"tempo"];
-    self.imagem         = [managedObject valueForKey:@"contem_imagem"];
-    self.notas          = [managedObject valueForKey:@"notas"];
+    
     NSManagedObject * imagem = [managedObject valueForKey:@"contem_imagem"];
-    self.imagem = imagem;
-    self.managedObject  = managedObject;
+    self.imagem          = imagem;
+    self.managedObject   = managedObject;
     
     self.arrayIngredientes = [NSMutableArray new];
     NSSet * inggredientes = [managedObject valueForKey:@"contem_ingredientes"];
@@ -44,18 +46,32 @@
         [self.arrayIngredientes addObject:ing];
     }
     
-    self.arrayEtapas = [NSMutableArray new];
+    NSMutableArray * arrayTemp = [NSMutableArray new];
     NSSet * etapas = [managedObject valueForKey:@"contem_etapas"];
     for (NSManagedObject * nanageDirections in etapas)
     {
         ObjectDirections * dir = [ObjectDirections new];
         [dir setTheManagedObject:nanageDirections];
-        [self.arrayEtapas addObject:dir];
+        [arrayTemp addObject:dir];
     }
     
+    NSArray *sortedArray;
+    sortedArray = [arrayTemp sortedArrayUsingSelector:@selector(compare:)];
     
+    self.arrayEtapas = [NSMutableArray new];
+    [self.arrayEtapas addObjectsFromArray: sortedArray];
     
 }
+
+- (NSComparisonResult)compare:(ObjectReceita *)otherObject
+{
+    
+    NSDate * primeiro = self.data_criado;
+    NSDate * segundo  = otherObject.data_criado;
+    
+    return [primeiro compare:segundo];
+}
+
 
 
 

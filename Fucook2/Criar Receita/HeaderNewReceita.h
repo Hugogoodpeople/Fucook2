@@ -58,4 +58,17 @@
 
 - (void)temFoto;
 
+// nova parte para as categorias
+- (IBAction)clickCat1:(id)sender;
+- (IBAction)clickCat2:(id)sender;
+- (IBAction)clickCat3:(id)sender;
+- (IBAction)clickCat4:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgCat1;
+@property (weak, nonatomic) IBOutlet UIImageView *imgCat2;
+@property (weak, nonatomic) IBOutlet UIImageView *imgCat3;
+@property (weak, nonatomic) IBOutlet UIImageView *imgCat4;
+
+
+
 @end

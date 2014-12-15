@@ -125,7 +125,7 @@
 {
     NSMutableArray * items = [NSMutableArray new];
     
-    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    //context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
     // para ver se deu algum erro ao inserir
     NSError *error;
@@ -135,7 +135,7 @@
     }
     
     
-    // para ir buscar os dados prestendidos a base de dados
+    // para ir buscar os dados pretendidos a base de dados
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     fetchRequest.returnsObjectsAsFaults = NO;
     NSEntityDescription *entity = [NSEntityDescription
@@ -167,7 +167,7 @@
         
         // agora tambem tenho de contar o numero de receitas que existem dentro do livro
          NSSet * receitas = [pedido valueForKey:@"contem_receitas"];
-        livro.countReceitas = [NSString stringWithFormat:@"%d", receitas.count];
+        livro.countReceitas = [NSString stringWithFormat:@"%lu", (unsigned long)receitas.count];
         
         // agrora tambem tenho de saber se o livro contem receitas com todas as categorias existentes
         BOOL breakFast = NO;
@@ -376,14 +376,23 @@
     cell.labelDescricao.text = liv.descricao;
     cell.labelNumeroReceitas.text = liv.countReceitas;
     cell.livro = liv;
-    // tenho de calcular com base no que esta no header
+    // sabendo o numero de receitas tenho de editar a label que diz recipes
+    
+    if ([liv.countReceitas intValue] == 1)
+    {
+        cell.labelRecipes.text = @"RECIPE";
+    }
+    else
+    {
+        cell.labelRecipes.text = @"RECIPES";
+    }
     
     //cell.labelQtd.text = [self calcularValor:indexPath];
     cell.delegate = self;
     
     // NSString *key = [livro.imagem.description MD5Hash];
     // NSData *data = [FTWCache objectForKey:key];
-    if ( [imagens objectAtIndex:indexPath.row]!= [NSNull null] )
+    if ( [imagens objectAtIndex:indexPath.row] != [NSNull null] )
     {
         //UIImage *image = [UIImage imageWithData:data];
         cell.imagemLivro.image = [imagens objectAtIndex:indexPath.row];

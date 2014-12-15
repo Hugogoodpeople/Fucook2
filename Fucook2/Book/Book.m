@@ -101,27 +101,31 @@
 }
 
 
-
-
 -(void)preencherTabela
 {
-    NSMutableArray * items = [NSMutableArray new];
+    NSMutableArray * arrayTemp = [NSMutableArray new];
     
     NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
     for (NSManagedObject *pedido in receitas)
     {
         ObjectReceita * receita = [ObjectReceita new];
         [receita setTheManagedObject:pedido];
-        [items addObject:receita];
+        [arrayTemp addObject:receita];
     }
     
     
-    NSArray* reversed = [[items reverseObjectEnumerator] allObjects];
+    // aqui tenho de organizar os objectos por data
+    NSArray *sortedArray;
+    sortedArray = [arrayTemp sortedArrayUsingSelector:@selector(compare:)];
+    //[self.itemsDirections addObjectsFromArray: sortedArray];
+
     
     
-    self.items = [NSMutableArray arrayWithArray:reversed];
+   // NSArray* reversed = [[sortedArray reverseObjectEnumerator] allObjects];
     
-   
+    
+    self.items = [NSMutableArray arrayWithArray:sortedArray];
+    
     [self.tabela reloadData];
 }
 

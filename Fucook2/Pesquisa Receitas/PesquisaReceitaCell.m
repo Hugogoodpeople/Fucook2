@@ -12,7 +12,28 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [self.buttonCalendario addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
+    [self.buttonCalendario addTarget:self action:@selector(buttonNormal:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.buttonCarrinho addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
+    [self.buttonCarrinho addTarget:self action:@selector(buttonNormal:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
 }
+
+-(void)buttonHighlight:(id)sender
+{
+    UIButton * button = (UIButton *) sender;
+    [button setBackgroundColor:[UIColor colorWithRed:152.0/255.0 green:54.0/255.0 blue:149.0/255.0 alpha:1.0]];
+}
+
+-(void)buttonNormal:(id)sender
+{
+    UIButton * button = (UIButton *) sender;
+    [button setBackgroundColor:[UIColor clearColor]];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

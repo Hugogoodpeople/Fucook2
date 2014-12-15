@@ -31,8 +31,8 @@
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagens" syncable="YES"/>
-        <relationship name="contem_receitas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Receitas" inverseName="pertence_livro" inverseEntity="Receitas" syncable="YES"/>
+        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Imagens" syncable="YES"/>
+        <relationship name="contem_receitas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Receitas" inverseName="pertence_livro" inverseEntity="Receitas" syncable="YES"/>
     </entity>
     <entity name="Nota" syncable="YES">
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
@@ -56,19 +56,18 @@
     </entity>
     <entity name="Receitas" syncable="YES">
         <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="data_criado" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dificuldade" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
-        <attribute name="id_receita" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notas" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nr_pessoas" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tempo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="contem_etapas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Etapas" syncable="YES"/>
-        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagens" syncable="YES"/>
+        <relationship name="contem_etapas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Etapas" syncable="YES"/>
+        <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Imagens" syncable="YES"/>
         <relationship name="contem_ingredientes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredientes" syncable="YES"/>
-        <relationship name="contem_nota" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Nota" syncable="YES"/>
-        <relationship name="contem_nutricao" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Nutricao" syncable="YES"/>
-        <relationship name="esta_agendada" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Agenda" inverseName="tem_receita" inverseEntity="Agenda" syncable="YES"/>
+        <relationship name="contem_nota" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Nota" syncable="YES"/>
+        <relationship name="contem_nutricao" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Nutricao" syncable="YES"/>
+        <relationship name="esta_agendada" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Agenda" inverseName="tem_receita" inverseEntity="Agenda" syncable="YES"/>
         <relationship name="pertence_livro" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Livros" inverseName="contem_receitas" inverseEntity="Livros" syncable="YES"/>
     </entity>
     <entity name="ShoppingList" syncable="YES">
@@ -89,7 +88,7 @@
         <element name="Livros" positionX="5760" positionY="-2277" width="128" height="133"/>
         <element name="Nota" positionX="5481" positionY="-1767" width="128" height="75"/>
         <element name="Nutricao" positionX="5929" positionY="-2259" width="128" height="255"/>
-        <element name="Receitas" positionX="5767" positionY="-1980" width="128" height="268"/>
+        <element name="Receitas" positionX="5767" positionY="-1980" width="128" height="253"/>
         <element name="ShoppingList" positionX="5598" positionY="-2127" width="128" height="165"/>
     </elements>
 </model>

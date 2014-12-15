@@ -16,6 +16,10 @@
 - (IBAction)clickCalendario:(id)sender;
 - (IBAction)clickCarrinho:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonCalendario;
+@property (weak, nonatomic) IBOutlet UIButton *buttonCarrinho;
+
+
 
 @property (weak, nonatomic) IBOutlet UIView *viewMovel;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;

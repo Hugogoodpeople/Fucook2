@@ -188,6 +188,7 @@
                 <outlet property="imgLunch" destination="kLs-Mf-64F" id="kzj-Vp-fT3"/>
                 <outlet property="labelDescricao" destination="VFY-bt-GkZ" id="oXQ-vd-FOE"/>
                 <outlet property="labelNumeroReceitas" destination="dUA-yj-zLF" id="MHq-0n-67p"/>
+                <outlet property="labelRecipes" destination="64g-9p-24s" id="18d-Cv-rkc"/>
                 <outlet property="labelTitulo" destination="QQ8-lE-n5N" id="bpy-Wk-TLa"/>
                 <outlet property="viewDelete" destination="3zc-Ik-bcn" id="evR-Xp-1GM"/>
                 <outlet property="viewEdit" destination="1F5-ZD-pOt" id="CHd-j1-lf2"/>

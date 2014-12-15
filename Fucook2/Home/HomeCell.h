@@ -23,12 +23,11 @@
 - (IBAction)clickDelete:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *viewMovel;
 
-
-
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
 @property (weak, nonatomic) IBOutlet UIImageView *imagemLivro;
 @property (weak, nonatomic) IBOutlet UILabel *labelDescricao;
 @property (weak, nonatomic) IBOutlet UILabel *labelNumeroReceitas;
+@property (weak, nonatomic) IBOutlet UILabel *labelRecipes;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgBreakfast;
 @property (weak, nonatomic) IBOutlet UIImageView *imgLunch;

@@ -78,8 +78,6 @@
     return @[button1, button2];
 }
 
-
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSString *str = @"Ingredient";

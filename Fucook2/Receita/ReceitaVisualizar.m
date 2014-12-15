@@ -594,7 +594,7 @@
         
         ObjectDirections * direct = [self.itemsDirections objectAtIndex:indexPath.row];
         
-        cell.labelPasso.text        = [NSString stringWithFormat:@"%dº", indexPath.row + 1];
+        cell.labelPasso.text        = [NSString stringWithFormat:@"%dº", indexPath.row ];
         cell.labelDescricao.text    = direct.descricao;
         if (direct.tempoMinutos == 0)
         {

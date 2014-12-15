@@ -144,6 +144,8 @@
                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buttonCalendario" destination="fUy-ci-JlK" id="vQW-8j-Go0"/>
+                <outlet property="buttonCarrinho" destination="pTn-Xk-1ap" id="dqN-fI-dib"/>
                 <outlet property="imagemReceita" destination="DbT-by-Mu4" id="uyE-fz-b49"/>
                 <outlet property="labelCategoria" destination="5pX-AN-Ac8" id="9sQ-66-EwE"/>
                 <outlet property="labelDificuldade" destination="Cd6-PM-gQA" id="fuP-Gd-vM4"/>
@@ -151,7 +153,7 @@
                 <outlet property="labelTitulo" destination="R95-m1-a77" id="Zzc-bs-Abw"/>
                 <outlet property="viewMovel" destination="2nj-u7-CeF" id="yHO-GX-qYC"/>
             </connections>
-            <point key="canvasLocation" x="521" y="132.5"/>
+            <point key="canvasLocation" x="441" y="165.5"/>
         </tableViewCell>
     </objects>
     <resources>

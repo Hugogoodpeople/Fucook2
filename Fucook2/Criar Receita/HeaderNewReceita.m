@@ -56,6 +56,8 @@
     [self.pickerPrep selectRow:26 inComponent:0 animated:NO];
     
     self.textName.delegate=self;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -178,6 +180,9 @@
     self.imagePickerController = imagePickerController;
     [self.delegate presentViewController:imagePickerController animated:YES completion:nil];
     [self foiAlterado];
+    
+    self.viewPrimeiraVez.alpha = 0;
+    self.buttonFotoJaExiste.alpha = 1;
 }
 
 
@@ -351,6 +356,7 @@
     }
     
     [self foiAlterado];
+    [self setUpCategorias];
     
 }
 
@@ -555,5 +561,91 @@
     self.buttonFotoJaExiste.alpha   = 1;
 }
 
+
+- (IBAction)clickCat1:(id)sender
+{
+    //self.labelCat.text = [NSString stringWithFormat:@"Breakfast"];
+    if ([self preencherCategoria:@"Breakfast"])
+    {
+        self.imgCat1.image = [UIImage imageNamed:@"btnless"];
+    }else
+    {
+        self.imgCat1.image = [UIImage imageNamed:@"btnmore"];
+    }
+}
+
+- (IBAction)clickCat2:(id)sender
+{
+    //self.labelCat.text = [NSString stringWithFormat:@"Lunch"];
+     if ([self preencherCategoria:@"Lunch"])
+    {
+        self.imgCat2.image = [UIImage imageNamed:@"btnless"];
+    }else
+    {
+        self.imgCat2.image = [UIImage imageNamed:@"btnmore"];
+    }
+}
+
+- (IBAction)clickCat3:(id)sender
+{
+    //self.labelCat.text = [NSString stringWithFormat:@"Dinner"];
+    if([self preencherCategoria:@"Dinner"])
+    {
+        self.imgCat3.image = [UIImage imageNamed:@"btnless"];
+    }else
+    {
+        self.imgCat3.image = [UIImage imageNamed:@"btnmore"];
+    }
+}
+
+- (IBAction)clickCat4:(id)sender
+{
+    //self.labelCat.text = [NSString stringWithFormat:@"Dessert"];
+    if([self preencherCategoria:@"Dessert"])
+    {
+        self.imgCat4.image = [UIImage imageNamed:@"btnless"];
+    }else
+    {
+        self.imgCat4.image = [UIImage imageNamed:@"btnmore"];
+    }
+}
+
+-(void)setUpCategorias
+{
+    if ([self.labelCat.text rangeOfString:@"Breakfast"].length != 0)
+    {
+         self.imgCat1.image = [UIImage imageNamed:@"btnless"];
+    }
+    if ([self.labelCat.text rangeOfString:@"Lunch"].length != 0)
+    {
+        self.imgCat2.image = [UIImage imageNamed:@"btnless"];
+    }
+    if ([self.labelCat.text rangeOfString:@"Dinner"].length != 0)
+    {
+        self.imgCat3.image = [UIImage imageNamed:@"btnless"];
+    }
+    if ([self.labelCat.text rangeOfString:@"Dessert"].length != 0)
+    {
+        self.imgCat4.image = [UIImage imageNamed:@"btnless"];
+    }
+}
+
+-(bool)preencherCategoria:(NSString *)categoria
+{
+    bool adicionado = NO;
+    
+    // tenho que verificar se a label já tem este valor e se sim tenho de remover, senao tenho de adicionar
+    if ([self.labelCat.text rangeOfString:categoria].length != 0)
+    {
+        self.labelCat.text = [self.labelCat.text stringByReplacingOccurrencesOfString:categoria withString:@""];
+    }
+    else
+    {
+        self.labelCat.text = [NSString stringWithFormat:@"%@ %@", categoria , self.labelCat.text];
+        adicionado = YES;
+    }
+    
+    return adicionado;
+}
 
 @end

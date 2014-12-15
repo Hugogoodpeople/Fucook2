@@ -177,6 +177,10 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buttonCalendario" destination="9Eq-KX-4uV" id="8gI-Fo-IES"/>
+                <outlet property="buttonCarrinho" destination="osH-ch-gcf" id="Kyu-mq-pmX"/>
+                <outlet property="buttonDelete" destination="hR0-GZ-450" id="QNO-bB-GlB"/>
+                <outlet property="buttonEdit" destination="GHQ-1k-rK5" id="drP-f9-UY2"/>
                 <outlet property="imagemReceita" destination="xdk-z9-AJw" id="f89-gy-R0I"/>
                 <outlet property="labelCategoria" destination="hra-YG-DR3" id="dB5-3h-fcc"/>
                 <outlet property="labelDificuldade" destination="8yJ-cO-Rym" id="6WI-ui-ixZ"/>

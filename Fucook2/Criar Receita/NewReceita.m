@@ -258,9 +258,9 @@
     
     [UIView animateWithDuration:tempo animations:^{
         [headerFinal.view setFrame:CGRectMake(0, 0, headerFinal.view.frame.size.width, headerFinal.view.frame.size.height )];
-        [ingre.view setFrame:CGRectMake(0,  headerFinal.view.frame.size.height , ingre.view.frame.size.width, 101 + [self calcularTamanhoTabela:ingre.tabela].height )];
-        [dir.view setFrame:CGRectMake(0,  headerFinal.view.frame.size.height+ingre.view.frame.size.height , dir.view.frame.size.width, 101 + [self calcularTamanhoTabela:dir.tabela].height  )];
-        [footerFinal.view setFrame:CGRectMake(0,  headerFinal.view.frame.size.height+ingre.view.frame.size.height+dir.view.frame.size.height, footerFinal.view.frame.size.width, 101 + [self calcularTamanhoTabela:footerFinal.tabela].height  )];
+        [ingre.view setFrame:CGRectMake(0,  headerFinal.view.frame.size.height , ingre.view.frame.size.width, 88 + [self calcularTamanhoTabela:ingre.tabela].height )];
+        [dir.view setFrame:CGRectMake(0,  headerFinal.view.frame.size.height+ingre.view.frame.size.height , dir.view.frame.size.width, 88 + [self calcularTamanhoTabela:dir.tabela].height  )];
+        [footerFinal.view setFrame:CGRectMake(0,  headerFinal.view.frame.size.height+ingre.view.frame.size.height+dir.view.frame.size.height, footerFinal.view.frame.size.width, 88 + [self calcularTamanhoTabela:footerFinal.tabela].height  )];
         [self.scrollNewReceita setContentSize:CGSizeMake(self.view.frame.size.width, headerFinal.view.frame.size.height+footerFinal.view.frame.size.height+dir.view.frame.size.height+ingre.view.frame.size.height +50 )];
     }];
     
@@ -281,6 +281,17 @@
 }
 
 -(void)AdicionarReceita
+{
+    if ([headerFinal.labelCat.text length] == 0) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You must select at least one category for this recipe" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }else
+    {
+        [self AdicionarReceitaCompleta];
+    }
+}
+
+-(void)AdicionarReceitaCompleta
 {
     NSLog(@"adicionar receita");
     
@@ -306,6 +317,12 @@
     NSString * tempo       = headerFinal.labelPre.text;
     
     
+    NSDate * data_actual   = [NSDate new];
+    if (self.receita) {
+         data_actual   = self.receita.data_criado;
+    }
+   
+    
     /*
     // aqui agora deixou de ser apenas uma nota e passou a ser uma lista de notas
     NSManagedObject * nota = [NSEntityDescription
@@ -330,7 +347,7 @@
         [Receita setValue:@""         forKey:@"notas"];
     }
     
-    
+    [Receita setValue:data_actual   forKey:@"data_criado"];
     [Receita setValue:nomeReceita   forKey:@"nome"];
     [Receita setValue:categoria     forKey:@"categoria"];
     [Receita setValue:servings      forKey:@"nr_pessoas"];
