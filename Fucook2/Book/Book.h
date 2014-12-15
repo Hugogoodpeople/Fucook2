@@ -20,7 +20,9 @@
 @property NSMutableArray * imagens;
 
 
+- (IBAction)clickAddRecipe:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIView *viewVazia;
 
 
 @end

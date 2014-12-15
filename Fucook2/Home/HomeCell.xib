@@ -133,19 +133,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linedotbig3.png" id="UBV-k1-d6G">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linedotbig3.png" id="ZZg-Kt-sxS">
-                                        <rect key="frame" x="0.0" y="46" width="120" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="46" width="162" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" id="WUB-b4-8U1">
                                         <rect key="frame" x="0.0" y="12" width="5" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.59607843137254901" green="0.21176470588235294" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VFY-bt-GkZ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VFY-bt-GkZ">
                                         <rect key="frame" x="13" y="8" width="149" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -191,6 +191,7 @@
                 <outlet property="labelRecipes" destination="64g-9p-24s" id="18d-Cv-rkc"/>
                 <outlet property="labelTitulo" destination="QQ8-lE-n5N" id="bpy-Wk-TLa"/>
                 <outlet property="viewDelete" destination="3zc-Ik-bcn" id="evR-Xp-1GM"/>
+                <outlet property="viewDescricao" destination="iRN-yD-lhg" id="3wl-qp-6bo"/>
                 <outlet property="viewEdit" destination="1F5-ZD-pOt" id="CHd-j1-lf2"/>
                 <outlet property="viewMovel" destination="0wq-eg-qLH" id="wsk-5o-UTz"/>
             </connections>

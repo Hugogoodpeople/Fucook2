@@ -34,5 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgDinner;
 @property (weak, nonatomic) IBOutlet UIImageView *imgDessert;
 
+@property (weak, nonatomic) IBOutlet UIView *viewDescricao;
+
 
 @end

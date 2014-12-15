@@ -38,6 +38,16 @@
     
     
     self.textNote.text = self.textoNota;
+    
+    [self scrollTextViewToBottom:self.textNote];
+}
+
+-(void)scrollTextViewToBottom:(UITextView *)textView {
+    if(textView.text.length > 0 ) {
+        NSRange bottom = NSMakeRange(textView.text.length -1, 1);
+        [textView scrollRangeToVisible:bottom];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

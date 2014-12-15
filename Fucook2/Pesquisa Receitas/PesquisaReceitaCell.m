@@ -18,9 +18,9 @@
     [self.buttonCarrinho addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
     [self.buttonCarrinho addTarget:self action:@selector(buttonNormal:) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    
+
 }
+
 
 -(void)buttonHighlight:(id)sender
 {

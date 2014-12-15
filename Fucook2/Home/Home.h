@@ -25,5 +25,7 @@
 @property NSMutableArray * items;
 @property NSMutableArray * imagens;
 
+@property (weak, nonatomic) IBOutlet UIView *viewVazia;
+- (IBAction)clickAddBook:(id)sender;
 
 @end

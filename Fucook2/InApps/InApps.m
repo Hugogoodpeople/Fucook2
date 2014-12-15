@@ -9,6 +9,9 @@
 #import "InApps.h"
 #import "FucookIAPHelper.h"
 #import <StoreKit/StoreKit.h>
+#import "Settings.h"
+#import "PesquisaReceitas.h"
+#import "NewBook.h"
 
 @interface InApps ()
 {
@@ -42,8 +45,54 @@
     // Add to end of viewDidLoad
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Restore" style:UIBarButtonItemStyleBordered target:self action:@selector(restoreTapped:)];
     
+    
+    /* bt search*/
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnsetting2"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    //self.navigationItem.leftBarButtonItem = anotherButton;
+    
+    /* bt add*/
+    UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonadd addTarget:self action:@selector(addbook) forControlEvents:UIControlEventTouchUpInside];
+    [buttonadd setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
+    
+    
+    UIButton * buttonSettings = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonSettings addTarget:self action:@selector(Findreceita) forControlEvents:UIControlEventTouchUpInside];
+    [buttonSettings setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonSettings = [[UIBarButtonItem alloc] initWithCustomView:buttonSettings];
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
+
+    
+    
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
     
+}
+
+-(void)Findreceita
+{
+    [self.navigationController pushViewController:[PesquisaReceitas new] animated:YES];
+}
+
+- (IBAction)clickSettings:(id)sender
+{
+    [self presentViewController:[Settings new] animated:YES completion:^{}];
+}
+
+-(void)addbook {
+    NSLog(@"clicou add");
+    
+    NewBook *objYourViewController = [[NewBook alloc] initWithNibName:@"NewBook" bundle:nil];
+    [self.navigationController pushViewController:objYourViewController animated:YES];
 }
 
 - (IBAction)clickHome:(id)sender

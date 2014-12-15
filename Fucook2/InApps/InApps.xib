@@ -54,13 +54,6 @@
                         <barButtonItem image="btnfeatured1.png" id="lDv-9z-W2u">
                             <color key="tintColor" red="0.59607843140000005" green="0.21176470589999999" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ddg-qE-d95"/>
-                        <barButtonItem image="btnsetting2.png" id="OFh-Wz-Y1k">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="clickSettings:" destination="-1" id="DNh-ed-smz"/>
-                            </connections>
-                        </barButtonItem>
                     </items>
                     <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
@@ -74,7 +67,6 @@
         <image name="btnbook1.png" width="27" height="24"/>
         <image name="btncall3.png" width="23" height="24"/>
         <image name="btnfeatured1.png" width="17" height="24"/>
-        <image name="btnsetting2.png" width="24" height="24"/>
         <image name="btnshop3.png" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

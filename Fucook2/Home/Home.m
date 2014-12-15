@@ -73,11 +73,11 @@
     
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [button addTarget:self action:@selector(Findreceita) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnsetting2"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = anotherButton;
+    //self.navigationItem.leftBarButtonItem = anotherButton;
     
     /* bt add*/
     UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
@@ -87,8 +87,15 @@
     UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
     
     
+    UIButton * buttonSettings = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonSettings addTarget:self action:@selector(Findreceita) forControlEvents:UIControlEventTouchUpInside];
+    [buttonSettings setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
     
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:anotherButtonadd, nil]];
+    UIBarButtonItem *anotherButtonSettings = [[UIBarButtonItem alloc] initWithCustomView:buttonSettings];
+
+    
+    
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
 
     
     
@@ -211,6 +218,15 @@
 
     [self.table reloadData];
     
+    if (self.items.count == 0) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.viewVazia.alpha = 1;
+        }];
+    }
+    else
+    {
+         self.viewVazia.alpha = 0;
+    }
     
 }
 
@@ -336,7 +352,7 @@
     InApps * apps = [InApps new];
     apps.delegate = self;
     
-    [self.navigationController pushViewController:apps animated:YES];
+    [self.navigationController pushViewController:apps animated:NO];
 }
 
 - (IBAction)clickSettings:(id)sender
@@ -359,7 +375,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     static NSString *simpleTableIdentifier = @"HomeCell";
     
     HomeCell *cell = (HomeCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -446,4 +461,7 @@
 }
 
 
+- (IBAction)clickAddBook:(id)sender {
+    [self addbook];
+}
 @end

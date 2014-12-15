@@ -565,7 +565,7 @@
 - (IBAction)clickCat1:(id)sender
 {
     //self.labelCat.text = [NSString stringWithFormat:@"Breakfast"];
-    if ([self preencherCategoria:@"Breakfast"])
+    if ([self preencherCategoria:@"Breakfast "])
     {
         self.imgCat1.image = [UIImage imageNamed:@"btnless"];
     }else
@@ -577,7 +577,7 @@
 - (IBAction)clickCat2:(id)sender
 {
     //self.labelCat.text = [NSString stringWithFormat:@"Lunch"];
-     if ([self preencherCategoria:@"Lunch"])
+     if ([self preencherCategoria:@"Lunch "])
     {
         self.imgCat2.image = [UIImage imageNamed:@"btnless"];
     }else
@@ -589,7 +589,7 @@
 - (IBAction)clickCat3:(id)sender
 {
     //self.labelCat.text = [NSString stringWithFormat:@"Dinner"];
-    if([self preencherCategoria:@"Dinner"])
+    if([self preencherCategoria:@"Dinner "])
     {
         self.imgCat3.image = [UIImage imageNamed:@"btnless"];
     }else
@@ -601,7 +601,7 @@
 - (IBAction)clickCat4:(id)sender
 {
     //self.labelCat.text = [NSString stringWithFormat:@"Dessert"];
-    if([self preencherCategoria:@"Dessert"])
+    if([self preencherCategoria:@"Dessert "])
     {
         self.imgCat4.image = [UIImage imageNamed:@"btnless"];
     }else
@@ -641,7 +641,7 @@
     }
     else
     {
-        self.labelCat.text = [NSString stringWithFormat:@"%@ %@", categoria , self.labelCat.text];
+        self.labelCat.text = [NSString stringWithFormat:@"%@%@", categoria , self.labelCat.text];
         adicionado = YES;
     }
     

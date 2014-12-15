@@ -403,8 +403,6 @@
     
     NSString * textoParaBotao = @"";
     
-    
-    
     if (added)
     {
         header.labelAllitensAddedRemoved.text   = @"All itens added to shopping list";

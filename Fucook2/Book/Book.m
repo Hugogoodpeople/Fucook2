@@ -127,6 +127,16 @@
     self.items = [NSMutableArray arrayWithArray:sortedArray];
     
     [self.tabela reloadData];
+    
+    if (self.items.count == 0) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.viewVazia.alpha = 1;
+        }];
+    }
+    else
+    {
+        self.viewVazia.alpha = 0;
+    }
 }
 
 
@@ -362,7 +372,7 @@
     
 }
 
-
-
-
+- (IBAction)clickAddRecipe:(id)sender {
+    [self addreceita:nil];
+}
 @end

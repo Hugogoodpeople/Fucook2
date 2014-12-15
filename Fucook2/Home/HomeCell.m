@@ -12,11 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -28,9 +24,21 @@
     
     [self.contentView addGestureRecognizer:swipeLeft];
     [self.contentView addGestureRecognizer:swipeRight];
+
     
     
-      
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    if (self.labelDescricao.text.length == 0)
+    {
+        self.viewDescricao.alpha = 0;
+    }
+    else
+    {
+        self.viewDescricao.alpha = 1;
+    }
 }
 
 - (void)handlePanGesture:(UISwipeGestureRecognizer *)sender

@@ -82,7 +82,7 @@
     </entity>
     <elements>
         <element name="Agenda" positionX="5992" positionY="-1846" width="128" height="118"/>
-        <element name="Etapas" positionX="5436" positionY="-2127" width="128" height="120"/>
+        <element name="Etapas" positionX="5436" positionY="-2046" width="128" height="120"/>
         <element name="Imagens" positionX="5310" positionY="-2229" width="128" height="60"/>
         <element name="Ingredientes" positionX="5265" positionY="-1854" width="128" height="150"/>
         <element name="Livros" positionX="5760" positionY="-2277" width="128" height="133"/>

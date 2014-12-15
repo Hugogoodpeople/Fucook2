@@ -168,9 +168,9 @@
 -(void)setUp
 {
     /* bt search*/
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
     [button addTarget:self action:@selector(AdicionarReceita) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = anotherButton;
@@ -282,7 +282,9 @@
 
 -(void)AdicionarReceita
 {
-    if ([headerFinal.labelCat.text length] == 0) {
+    NSString * categorias = headerFinal.labelCat.text;
+    
+    if ([categorias length] == 0) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You must select at least one category for this recipe" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
     }else

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewBook">
             <connections>
+                <outlet property="buttonFotoJaExiste" destination="Tua-mv-8hX" id="czW-4V-c9X"/>
                 <outlet property="imageView" destination="0aF-Hn-ZrZ" id="47O-DZ-kqb"/>
                 <outlet property="label1" destination="m55-63-j5T" id="IC2-af-mRK"/>
                 <outlet property="label2" destination="f2k-z2-BBO" id="29p-1U-NIE"/>
@@ -13,6 +14,7 @@
                 <outlet property="txt1" destination="Oyo-8w-aFP" id="ayU-6C-cgu"/>
                 <outlet property="txt2" destination="QQS-Ky-sjR" id="NdA-yB-2e9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPrimeiraVez" destination="FLh-PU-v9T" id="Waw-jZ-r2D"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -48,8 +50,37 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 </imageView>
+                                <view contentMode="scaleToFill" id="FLh-PU-v9T">
+                                    <rect key="frame" x="80" y="71" width="160" height="83"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnphoto1.png" id="wuN-2a-xkt">
+                                            <rect key="frame" x="55" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add photo to this recipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FCn-Ws-ynd">
+                                            <rect key="frame" x="0.0" y="49" width="160" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dsk-qX-Fxm">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="83"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="clickFoto:" destination="-1" eventType="touchUpInside" id="gUw-Cj-qkf"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tua-mv-8hX">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                    <rect key="frame" x="15" y="15" width="80" height="80"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <state key="normal" image="btnphoto1.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,7 +129,7 @@
         </view>
     </objects>
     <resources>
-        <image name="btnphoto1.png" width="35" height="30"/>
+        <image name="btnphoto1.png" width="58" height="58"/>
         <image name="imgbckhome@3x.png" width="1280" height="2272"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -27,6 +27,6 @@
 
 - (IBAction)clickHome:(id)sender;
 - (IBAction)clickCalendario:(id)sender;
-
+- (IBAction)clickInApps:(id)sender;
 
 @end

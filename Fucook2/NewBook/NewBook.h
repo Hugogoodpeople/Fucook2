@@ -15,6 +15,10 @@
 - (IBAction)btcamera:(id)sender;
 
 @property NSManagedObject * managedObject;
+@property (weak, nonatomic) IBOutlet UIView *viewPrimeiraVez;
+- (IBAction)clickFoto:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonFotoJaExiste;
 
 
 

@@ -71,6 +71,8 @@
 		BA1B9D111A3EF32300E1BEA0 /* btright3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D0F1A3EF32300E1BEA0 /* btright3@3x.png */; };
 		BA1B9D141A3EF35600E1BEA0 /* btleft3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D121A3EF35600E1BEA0 /* btleft3@2x.png */; };
 		BA1B9D151A3EF35600E1BEA0 /* btleft3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D131A3EF35600E1BEA0 /* btleft3@3x.png */; };
+		BA1B9D181A3F32CF00E1BEA0 /* btnsave@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D161A3F32CF00E1BEA0 /* btnsave@2x.png */; };
+		BA1B9D191A3F32CF00E1BEA0 /* btnsave@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D171A3F32CF00E1BEA0 /* btnsave@3x.png */; };
 		BAE0F3D21A376C9E00B89316 /* linedotbig3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE0F3D01A376C9E00B89316 /* linedotbig3@2x.png */; };
 		BAE0F3D31A376C9E00B89316 /* linedotbig3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE0F3D11A376C9E00B89316 /* linedotbig3@3x.png */; };
 		BAFBA0B11A36FAA6002B2C21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B01A36FAA6002B2C21 /* main.m */; };
@@ -352,6 +354,8 @@
 		BA1B9D0F1A3EF32300E1BEA0 /* btright3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright3@3x.png"; path = "Fucook2/Imagens/btright3@3x.png"; sourceTree = "<group>"; };
 		BA1B9D121A3EF35600E1BEA0 /* btleft3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@2x.png"; path = "Fucook2/Imagens/btleft3@2x.png"; sourceTree = "<group>"; };
 		BA1B9D131A3EF35600E1BEA0 /* btleft3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@3x.png"; path = "Fucook2/Imagens/btleft3@3x.png"; sourceTree = "<group>"; };
+		BA1B9D161A3F32CF00E1BEA0 /* btnsave@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsave@2x.png"; path = "Fucook2/Imagens/btnsave@2x.png"; sourceTree = "<group>"; };
+		BA1B9D171A3F32CF00E1BEA0 /* btnsave@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsave@3x.png"; path = "Fucook2/Imagens/btnsave@3x.png"; sourceTree = "<group>"; };
 		BAE0F3D01A376C9E00B89316 /* linedotbig3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linedotbig3@2x.png"; path = "Fucook2/Imagens/linedotbig3@2x.png"; sourceTree = "<group>"; };
 		BAE0F3D11A376C9E00B89316 /* linedotbig3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linedotbig3@3x.png"; path = "Fucook2/Imagens/linedotbig3@3x.png"; sourceTree = "<group>"; };
 		BAFBA0AB1A36FAA6002B2C21 /* Fucook2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1113,6 +1117,8 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BA1B9D161A3F32CF00E1BEA0 /* btnsave@2x.png */,
+				BA1B9D171A3F32CF00E1BEA0 /* btnsave@3x.png */,
 				BA1B9D121A3EF35600E1BEA0 /* btleft3@2x.png */,
 				BA1B9D131A3EF35600E1BEA0 /* btleft3@3x.png */,
 				BA1B9D0E1A3EF32300E1BEA0 /* btright3@2x.png */,
@@ -1386,6 +1392,7 @@
 				BAFBA2801A371D88002B2C21 /* btnsave2@2x.png in Resources */,
 				BAFCBA0F1A386AD9001EFCE2 /* imgframetop@3x.png in Resources */,
 				BAFBA1901A370BAB002B2C21 /* PesquisaReceitas.xib in Resources */,
+				BA1B9D181A3F32CF00E1BEA0 /* btnsave@2x.png in Resources */,
 				BAFBA26C1A371921002B2C21 /* btnfeatured1@3x.png in Resources */,
 				BAFBA2531A3717EC002B2C21 /* icopanela@2x.png in Resources */,
 				BAFBA2591A3717EC002B2C21 /* imglinetop@2x.png in Resources */,
@@ -1520,6 +1527,7 @@
 				BAFBA1471A3706EB002B2C21 /* Directions.xib in Resources */,
 				BAFBA1381A370685002B2C21 /* HeaderNewReceita.xib in Resources */,
 				BAFBA1181A370486002B2C21 /* Calendario.xib in Resources */,
+				BA1B9D191A3F32CF00E1BEA0 /* btnsave@3x.png in Resources */,
 				BA0081EE1A371FFD00A7871D /* icorating@3x.png in Resources */,
 				BAFBA23F1A3717EC002B2C21 /* btncall3@2x.png in Resources */,
 				BA0081E71A371FFD00A7871D /* icoexport@2x.png in Resources */,

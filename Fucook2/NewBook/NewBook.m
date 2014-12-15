@@ -39,13 +39,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
-    
-    
     /* bt search*/
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
     [button addTarget:self action:@selector(Adicionarlivro) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = anotherButton;
@@ -70,7 +67,10 @@
 
     // tenho de preencher tudo caso já tenha cenas para serem carregadas
     
-    if (self.managedObject) {
+    if (self.managedObject)
+    {
+    
+        [self temFoto];
         
         NSLog(@"************************************ Livro ************************************");
         NSLog(@"titulo: %@", [self.managedObject valueForKey:@"titulo"]);
@@ -94,7 +94,25 @@
     
         [self.imageView setImage:[[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation]];
     }
+    else
+    {
+        [self naoTemFoto];
+    }
+    
+    
 
+}
+
+-(void)naoTemFoto
+{
+    self.viewPrimeiraVez.alpha      = 1;
+    self.buttonFotoJaExiste.alpha   = 0;
+}
+
+- (void)temFoto
+{
+    self.viewPrimeiraVez.alpha      = 0;
+    self.buttonFotoJaExiste.alpha   = 1;
 }
 
 - (IBAction)back:(id)sender {
@@ -307,6 +325,8 @@
     
     self.imagePickerController = imagePickerController;
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
+    
+    [self temFoto];
 }
 
 
@@ -435,4 +455,8 @@
 }
 
 
+- (IBAction)clickFoto:(id)sender
+{
+    [self btcamera:nil];
+}
 @end

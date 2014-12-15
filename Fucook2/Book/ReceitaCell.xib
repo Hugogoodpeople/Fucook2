@@ -92,85 +92,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="xdk-z9-AJw">
+                            <view contentMode="scaleToFill" id="TZj-2a-tmL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" id="Z5P-9F-bsu">
-                                <rect key="frame" x="0.0" y="90.5" width="280" height="22"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgtira.png" id="sgO-JW-BKv">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="22"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3CM-wM-i2w">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoclock.png" id="sZC-gL-gc1">
-                                        <rect key="frame" x="13" y="6" width="10" height="10"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgssombralateral.png" id="awW-mh-pVd">
+                                        <rect key="frame" x="320" y="0.0" width="8" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KWb-m8-LJR">
-                                        <rect key="frame" x="25" y="1" width="49" height="21"/>
+                                    <view alpha="0.20000000298023224" contentMode="scaleToFill" id="TKs-8i-eX4">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoluvas.png" id="kvs-eW-IJa">
-                                        <rect key="frame" x="66" y="6" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medium" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8yJ-cO-Rym">
-                                        <rect key="frame" x="78" y="1" width="49" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icopanela.png" id="t0g-1f-0P5">
-                                        <rect key="frame" x="120" y="6" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BREAKFAST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hra-YG-DR3">
-                                        <rect key="frame" x="132" y="1" width="105" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="OCH-1o-e07">
-                                <rect key="frame" x="15" y="28.5" width="210" height="40"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jei-sX-7BK">
-                                        <rect key="frame" x="13" y="0.0" width="197" height="40"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label label label label label label label label label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r3h-4F-uu8">
+                                        <rect key="frame" x="14" y="60" width="291" height="76.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" id="9bL-0G-uax">
-                                        <rect key="frame" x="0.0" y="8" width="5" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.59607843140000005" green="0.21176470589999999" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linedotbig3.png" id="ff6-c4-d30">
-                                        <rect key="frame" x="0.0" y="0.0" width="210" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linedotbig3.png" id="FFL-W5-BGu">
-                                        <rect key="frame" x="0.0" y="39" width="210" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgssombralateral.png" id="35T-B3-0Ao">
-                                <rect key="frame" x="320" y="0.0" width="15" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -181,14 +129,11 @@
                 <outlet property="buttonCarrinho" destination="osH-ch-gcf" id="Kyu-mq-pmX"/>
                 <outlet property="buttonDelete" destination="hR0-GZ-450" id="QNO-bB-GlB"/>
                 <outlet property="buttonEdit" destination="GHQ-1k-rK5" id="drP-f9-UY2"/>
-                <outlet property="imagemReceita" destination="xdk-z9-AJw" id="f89-gy-R0I"/>
-                <outlet property="labelCategoria" destination="hra-YG-DR3" id="dB5-3h-fcc"/>
-                <outlet property="labelDificuldade" destination="8yJ-cO-Rym" id="6WI-ui-ixZ"/>
-                <outlet property="labelTempo" destination="KWb-m8-LJR" id="JbM-on-Hjw"/>
-                <outlet property="labelTitulo" destination="Jei-sX-7BK" id="041-Ep-x8y"/>
+                <outlet property="imagemReceita" destination="3CM-wM-i2w" id="BxH-7x-gtz"/>
+                <outlet property="labelTitulo" destination="r3h-4F-uu8" id="zk1-sw-9Ui"/>
                 <outlet property="viewMovel" destination="bow-2k-waW" id="Iuq-jf-6F3"/>
             </connections>
-            <point key="canvasLocation" x="267" y="-142.5"/>
+            <point key="canvasLocation" x="310" y="-143.5"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -196,12 +141,7 @@
         <image name="btndelet1.png" width="20" height="24"/>
         <image name="btnedit1.png" width="24" height="24"/>
         <image name="btnshop1.png" width="24" height="24"/>
-        <image name="icoclock.png" width="12" height="12"/>
-        <image name="icoluvas.png" width="14" height="12"/>
-        <image name="icopanela.png" width="15" height="12"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
-        <image name="imgtira.png" width="280" height="22"/>
-        <image name="linedotbig3.png" width="219" height="2"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -34,6 +34,7 @@
 #import "NewBook.h"
 
 #import "ReceitaVisualizar.h"
+#import "Settings.h"
 
 
 @interface ListaCompras ()
@@ -85,11 +86,11 @@
     
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [button addTarget:self action:@selector(Findreceita) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnsetting2"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = anotherButton;
+    //self.navigationItem.leftBarButtonItem = anotherButton;
     
     /* bt add*/
     UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
@@ -99,8 +100,20 @@
     UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
     
     
+    UIButton * buttonSettings = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    [buttonSettings addTarget:self action:@selector(Findreceita) forControlEvents:UIControlEventTouchUpInside];
+    [buttonSettings setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
     
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:anotherButtonadd, nil]];
+    UIBarButtonItem *anotherButtonSettings = [[UIBarButtonItem alloc] initWithCustomView:buttonSettings];
+    
+    
+    
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+    [self.navigationItem setTitleView:titleView];
     
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
     
@@ -109,6 +122,27 @@
 -(void)Findreceita
 {
     [self.navigationController pushViewController:[PesquisaReceitas new] animated:YES];
+}
+
+- (IBAction)clickInApps:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(clickInApps:) withObject:nil];
+    }
+}
+
+- (IBAction)clickSettings:(id)sender
+{
+    [self presentViewController:[Settings new] animated:YES completion:^{}];
+}
+
+- (IBAction)clickcarrinho:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    if (self.delegate)
+    {
+        [self.delegate performSelector:@selector(clickCarrinho:) withObject:nil];
+    }
 }
 
 -(void)addbook {
