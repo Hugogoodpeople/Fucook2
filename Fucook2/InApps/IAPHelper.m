@@ -83,7 +83,8 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
 }
 
-- (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
+- (void)request:(SKRequest *)request didFailWithError:(NSError *)error
+{
     
     NSLog(@"Failed to load list of products.");
     _productsRequest = nil;
@@ -93,7 +94,8 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
 }
 
-- (BOOL)productPurchased:(NSString *)productIdentifier {
+- (BOOL)productPurchased:(NSString *)productIdentifier
+{
     return [_purchasedProductIdentifiers containsObject:productIdentifier];
 }
 
@@ -125,7 +127,8 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     };
 }
 
-- (void)completeTransaction:(SKPaymentTransaction *)transaction {
+- (void)completeTransaction:(SKPaymentTransaction *)transaction
+{
     NSLog(@"completeTransaction...");
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
@@ -150,10 +153,9 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 }
 
-
-
 // Add new method
-- (void)provideContentForProductIdentifier:(NSString *)productIdentifier {
+- (void)provideContentForProductIdentifier:(NSString *)productIdentifier
+{
     
     [_purchasedProductIdentifiers addObject:productIdentifier];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:productIdentifier];

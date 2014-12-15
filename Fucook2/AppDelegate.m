@@ -68,6 +68,8 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
     
+
+    
     // inicializar o globals
     
     [Globals setimagensTemp:[NSMutableArray new]];
@@ -109,8 +111,14 @@
     
     [self.window setRootViewController:nav];
     
+    
+    UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    
     return YES;
 }
+
+
 
 + (AppDelegate *)sharedAppDelegate
 {
