@@ -29,4 +29,7 @@
 - (IBAction)clickCalendario:(id)sender;
 - (IBAction)clickInApps:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIView *header;
+
+
 @end

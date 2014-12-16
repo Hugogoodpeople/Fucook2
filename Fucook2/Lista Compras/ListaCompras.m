@@ -117,6 +117,12 @@
     
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
     
+    
+    
+    
+    self.tabbleView.tableHeaderView = self.header;
+    [self.tabbleView setContentInset:UIEdgeInsetsMake(0, 0, 52, 0)];
+    
 }
 
 -(void)Findreceita
@@ -612,5 +618,22 @@
     }
 }
 
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    float Y = scrollView.contentOffset.y;
+    
+    if (Y >= 130 ) {
+        [self.header setFrame:CGRectMake(0,  Y - 130 + 64 , self.view.frame.size.width, self.header.frame.size.height)];
+    }
+    else
+    {
+        [self.header setFrame:CGRectMake(0,  64 , self.view.frame.size.width, self.header.frame.size.height)];
+    }
+    
+    
+    
+     NSLog(@"Y = %f", Y);
+}
 
 @end
