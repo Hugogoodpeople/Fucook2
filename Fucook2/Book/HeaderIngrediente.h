@@ -35,6 +35,7 @@
 @property NSString * dificuldade;
 @property NSString * nome;
 @property NSString * servings;
+@property NSString * categoria;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTempo;
 @property (weak, nonatomic) IBOutlet UILabel *labelDificuldade;

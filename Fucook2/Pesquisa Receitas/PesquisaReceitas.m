@@ -190,7 +190,7 @@
         //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
-            NSData * data = [rec.imagem valueForKey:@"imagem"];
+            NSData * data = [rec.managedImagem valueForKey:@"imagem"];
             //[FTWCache setObject:data forKey:key];
             UIImage *image = [UIImage imageWithData:data];
             NSInteger index = indexPath.row;

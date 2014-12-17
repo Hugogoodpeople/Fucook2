@@ -105,7 +105,8 @@
     header.tempo            = self.receita.tempo;
     header.nome             = self.receita.nome;
     header.servings         = self.receita.servings;
-    NSData * data           = [self.receita.imagem valueForKey:@"imagem"];
+    header.categoria        = self.receita.categoria;
+    NSData * data           = [self.receita.managedImagem valueForKey:@"imagem"];
     
     
     header.imagem = [UIImage imageWithData:data];

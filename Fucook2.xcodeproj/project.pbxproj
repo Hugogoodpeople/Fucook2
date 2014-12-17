@@ -274,6 +274,31 @@
 		BAFCBA2E1A38A896001EFCE2 /* linedotbigger2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFCBA2C1A38A896001EFCE2 /* linedotbigger2@3x.png */; };
 		BAFCBA321A38C047001EFCE2 /* DirectionsHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFCBA301A38C047001EFCE2 /* DirectionsHeader.m */; };
 		BAFCBA331A38C047001EFCE2 /* DirectionsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFCBA311A38C047001EFCE2 /* DirectionsHeader.xib */; };
+		BAFE403E1A405B66005E8069 /* InAppsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFE403C1A405B66005E8069 /* InAppsCell.m */; };
+		BAFE403F1A405B66005E8069 /* InAppsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFE403D1A405B66005E8069 /* InAppsCell.xib */; };
+		BAFEB15D1A4190E000DEE4ED /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFEB15C1A4190E000DEE4ED /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BAFEB1621A41D0FA00DEE4ED /* InAppsTeste.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFEB1601A41D0FA00DEE4ED /* InAppsTeste.m */; };
+		BAFEB1631A41D0FA00DEE4ED /* InAppsTeste.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1611A41D0FA00DEE4ED /* InAppsTeste.xib */; };
+		BAFEB1671A41E35500DEE4ED /* PreviewBook.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFEB1651A41E35500DEE4ED /* PreviewBook.m */; };
+		BAFEB1681A41E35500DEE4ED /* PreviewBook.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1661A41E35500DEE4ED /* PreviewBook.xib */; };
+		BAFEB17B1A41F24700DEE4ED /* btnclose2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1691A41F24700DEE4ED /* btnclose2@2x.png */; };
+		BAFEB17C1A41F24700DEE4ED /* btnclose2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB16A1A41F24700DEE4ED /* btnclose2@3x.png */; };
+		BAFEB17D1A41F24700DEE4ED /* btndelet1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB16B1A41F24700DEE4ED /* btndelet1@2x.png */; };
+		BAFEB17E1A41F24700DEE4ED /* btndelet1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB16C1A41F24700DEE4ED /* btndelet1@3x.png */; };
+		BAFEB17F1A41F24700DEE4ED /* btnedit1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB16D1A41F24700DEE4ED /* btnedit1@2x.png */; };
+		BAFEB1801A41F24700DEE4ED /* btnedit1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB16E1A41F24700DEE4ED /* btnedit1@3x.png */; };
+		BAFEB1811A41F24700DEE4ED /* btnopen1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB16F1A41F24700DEE4ED /* btnopen1@2x.png */; };
+		BAFEB1821A41F24700DEE4ED /* btnopen1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1701A41F24700DEE4ED /* btnopen1@3x.png */; };
+		BAFEB1831A41F24700DEE4ED /* btnsearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1711A41F24700DEE4ED /* btnsearch@2x.png */; };
+		BAFEB1841A41F24700DEE4ED /* btnsearch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1721A41F24700DEE4ED /* btnsearch@3x.png */; };
+		BAFEB1851A41F24700DEE4ED /* btnsetting2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1731A41F24700DEE4ED /* btnsetting2@2x.png */; };
+		BAFEB1861A41F24700DEE4ED /* btnsetting2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1741A41F24700DEE4ED /* btnsetting2@3x.png */; };
+		BAFEB1871A41F24700DEE4ED /* btndelet2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1751A41F24700DEE4ED /* btndelet2@2x.png */; };
+		BAFEB1881A41F24700DEE4ED /* btndelet2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1761A41F24700DEE4ED /* btndelet2@3x.png */; };
+		BAFEB1891A41F24700DEE4ED /* btnedit2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1771A41F24700DEE4ED /* btnedit2@2x.png */; };
+		BAFEB18A1A41F24700DEE4ED /* btnedit2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1781A41F24700DEE4ED /* btnedit2@3x.png */; };
+		BAFEB18B1A41F24700DEE4ED /* btnsetting1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1791A41F24700DEE4ED /* btnsetting1@2x.png */; };
+		BAFEB18C1A41F24700DEE4ED /* btnsetting1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB17A1A41F24700DEE4ED /* btnsetting1@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -642,6 +667,35 @@
 		BAFCBA2F1A38C047001EFCE2 /* DirectionsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsHeader.h; path = Receita/DirectionsHeader.h; sourceTree = "<group>"; };
 		BAFCBA301A38C047001EFCE2 /* DirectionsHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsHeader.m; path = Receita/DirectionsHeader.m; sourceTree = "<group>"; };
 		BAFCBA311A38C047001EFCE2 /* DirectionsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectionsHeader.xib; path = Receita/DirectionsHeader.xib; sourceTree = "<group>"; };
+		BAFE403B1A405B66005E8069 /* InAppsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InAppsCell.h; path = "Fucook2/InApps/untitled folder/InAppsCell.h"; sourceTree = "<group>"; };
+		BAFE403C1A405B66005E8069 /* InAppsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InAppsCell.m; path = "Fucook2/InApps/untitled folder/InAppsCell.m"; sourceTree = "<group>"; };
+		BAFE403D1A405B66005E8069 /* InAppsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InAppsCell.xib; path = "Fucook2/InApps/untitled folder/InAppsCell.xib"; sourceTree = "<group>"; };
+		BAFEB15B1A4190E000DEE4ED /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Fucook2/Utils/NSData+Base64.h"; sourceTree = "<group>"; };
+		BAFEB15C1A4190E000DEE4ED /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Fucook2/Utils/NSData+Base64.m"; sourceTree = "<group>"; };
+		BAFEB15F1A41D0FA00DEE4ED /* InAppsTeste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InAppsTeste.h; path = Fucook2/InApps/InAppsTeste.h; sourceTree = "<group>"; };
+		BAFEB1601A41D0FA00DEE4ED /* InAppsTeste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InAppsTeste.m; path = Fucook2/InApps/InAppsTeste.m; sourceTree = "<group>"; };
+		BAFEB1611A41D0FA00DEE4ED /* InAppsTeste.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InAppsTeste.xib; path = Fucook2/InApps/InAppsTeste.xib; sourceTree = "<group>"; };
+		BAFEB1641A41E35500DEE4ED /* PreviewBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviewBook.h; path = Fucook2/InApps/PreviewBook.h; sourceTree = "<group>"; };
+		BAFEB1651A41E35500DEE4ED /* PreviewBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewBook.m; path = Fucook2/InApps/PreviewBook.m; sourceTree = "<group>"; };
+		BAFEB1661A41E35500DEE4ED /* PreviewBook.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreviewBook.xib; path = Fucook2/InApps/PreviewBook.xib; sourceTree = "<group>"; };
+		BAFEB1691A41F24700DEE4ED /* btnclose2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnclose2@2x.png"; path = "Fucook2/Imagens/btnclose2@2x.png"; sourceTree = "<group>"; };
+		BAFEB16A1A41F24700DEE4ED /* btnclose2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnclose2@3x.png"; path = "Fucook2/Imagens/btnclose2@3x.png"; sourceTree = "<group>"; };
+		BAFEB16B1A41F24700DEE4ED /* btndelet1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btndelet1@2x.png"; path = "Fucook2/Imagens/btndelet1@2x.png"; sourceTree = "<group>"; };
+		BAFEB16C1A41F24700DEE4ED /* btndelet1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btndelet1@3x.png"; path = "Fucook2/Imagens/btndelet1@3x.png"; sourceTree = "<group>"; };
+		BAFEB16D1A41F24700DEE4ED /* btnedit1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnedit1@2x.png"; path = "Fucook2/Imagens/btnedit1@2x.png"; sourceTree = "<group>"; };
+		BAFEB16E1A41F24700DEE4ED /* btnedit1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnedit1@3x.png"; path = "Fucook2/Imagens/btnedit1@3x.png"; sourceTree = "<group>"; };
+		BAFEB16F1A41F24700DEE4ED /* btnopen1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnopen1@2x.png"; path = "Fucook2/Imagens/btnopen1@2x.png"; sourceTree = "<group>"; };
+		BAFEB1701A41F24700DEE4ED /* btnopen1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnopen1@3x.png"; path = "Fucook2/Imagens/btnopen1@3x.png"; sourceTree = "<group>"; };
+		BAFEB1711A41F24700DEE4ED /* btnsearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsearch@2x.png"; path = "Fucook2/Imagens/btnsearch@2x.png"; sourceTree = "<group>"; };
+		BAFEB1721A41F24700DEE4ED /* btnsearch@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsearch@3x.png"; path = "Fucook2/Imagens/btnsearch@3x.png"; sourceTree = "<group>"; };
+		BAFEB1731A41F24700DEE4ED /* btnsetting2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsetting2@2x.png"; path = "Fucook2/Imagens/btnsetting2@2x.png"; sourceTree = "<group>"; };
+		BAFEB1741A41F24700DEE4ED /* btnsetting2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsetting2@3x.png"; path = "Fucook2/Imagens/btnsetting2@3x.png"; sourceTree = "<group>"; };
+		BAFEB1751A41F24700DEE4ED /* btndelet2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btndelet2@2x.png"; path = "Fucook2/Imagens/btndelet2@2x.png"; sourceTree = "<group>"; };
+		BAFEB1761A41F24700DEE4ED /* btndelet2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btndelet2@3x.png"; path = "Fucook2/Imagens/btndelet2@3x.png"; sourceTree = "<group>"; };
+		BAFEB1771A41F24700DEE4ED /* btnedit2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnedit2@2x.png"; path = "Fucook2/Imagens/btnedit2@2x.png"; sourceTree = "<group>"; };
+		BAFEB1781A41F24700DEE4ED /* btnedit2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnedit2@3x.png"; path = "Fucook2/Imagens/btnedit2@3x.png"; sourceTree = "<group>"; };
+		BAFEB1791A41F24700DEE4ED /* btnsetting1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsetting1@2x.png"; path = "Fucook2/Imagens/btnsetting1@2x.png"; sourceTree = "<group>"; };
+		BAFEB17A1A41F24700DEE4ED /* btnsetting1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsetting1@3x.png"; path = "Fucook2/Imagens/btnsetting1@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -933,6 +987,8 @@
 		BAFBA1291A37054F002B2C21 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BAFEB15B1A4190E000DEE4ED /* NSData+Base64.h */,
+				BAFEB15C1A4190E000DEE4ED /* NSData+Base64.m */,
 				BAFBA1F61A370FCE002B2C21 /* Utils Dragable */,
 				BAFBA1CD1A370D8B002B2C21 /* Directions Hugo */,
 				BAFBA1A11A370D1C002B2C21 /* RATreeView */,
@@ -976,6 +1032,8 @@
 		BAFBA1761A370A9B002B2C21 /* InApps */ = {
 			isa = PBXGroup;
 			children = (
+				BAFEB15E1A41D0CB00DEE4ED /* Testes inApps */,
+				BAFE403A1A405B32005E8069 /* Cells */,
 				BAFBA19C1A370C90002B2C21 /* InApps.h */,
 				BAFBA19D1A370C90002B2C21 /* InApps.m */,
 				BAFBA19E1A370C90002B2C21 /* InApps.xib */,
@@ -983,6 +1041,9 @@
 				BAFBA17B1A370ADB002B2C21 /* IAPHelper.m */,
 				BAFBA1771A370AA5002B2C21 /* FucookIAPHelper.h */,
 				BAFBA1781A370AA5002B2C21 /* FucookIAPHelper.m */,
+				BAFEB1641A41E35500DEE4ED /* PreviewBook.h */,
+				BAFEB1651A41E35500DEE4ED /* PreviewBook.m */,
+				BAFEB1661A41E35500DEE4ED /* PreviewBook.xib */,
 			);
 			name = InApps;
 			sourceTree = "<group>";
@@ -1117,6 +1178,24 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BAFEB1691A41F24700DEE4ED /* btnclose2@2x.png */,
+				BAFEB16A1A41F24700DEE4ED /* btnclose2@3x.png */,
+				BAFEB16B1A41F24700DEE4ED /* btndelet1@2x.png */,
+				BAFEB16C1A41F24700DEE4ED /* btndelet1@3x.png */,
+				BAFEB16D1A41F24700DEE4ED /* btnedit1@2x.png */,
+				BAFEB16E1A41F24700DEE4ED /* btnedit1@3x.png */,
+				BAFEB16F1A41F24700DEE4ED /* btnopen1@2x.png */,
+				BAFEB1701A41F24700DEE4ED /* btnopen1@3x.png */,
+				BAFEB1711A41F24700DEE4ED /* btnsearch@2x.png */,
+				BAFEB1721A41F24700DEE4ED /* btnsearch@3x.png */,
+				BAFEB1731A41F24700DEE4ED /* btnsetting2@2x.png */,
+				BAFEB1741A41F24700DEE4ED /* btnsetting2@3x.png */,
+				BAFEB1751A41F24700DEE4ED /* btndelet2@2x.png */,
+				BAFEB1761A41F24700DEE4ED /* btndelet2@3x.png */,
+				BAFEB1771A41F24700DEE4ED /* btnedit2@2x.png */,
+				BAFEB1781A41F24700DEE4ED /* btnedit2@3x.png */,
+				BAFEB1791A41F24700DEE4ED /* btnsetting1@2x.png */,
+				BAFEB17A1A41F24700DEE4ED /* btnsetting1@3x.png */,
 				BA1B9D161A3F32CF00E1BEA0 /* btnsave@2x.png */,
 				BA1B9D171A3F32CF00E1BEA0 /* btnsave@3x.png */,
 				BA1B9D121A3EF35600E1BEA0 /* btleft3@2x.png */,
@@ -1274,6 +1353,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BAFE403A1A405B32005E8069 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE403B1A405B66005E8069 /* InAppsCell.h */,
+				BAFE403C1A405B66005E8069 /* InAppsCell.m */,
+				BAFE403D1A405B66005E8069 /* InAppsCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		BAFEB15E1A41D0CB00DEE4ED /* Testes inApps */ = {
+			isa = PBXGroup;
+			children = (
+				BAFEB15F1A41D0FA00DEE4ED /* InAppsTeste.h */,
+				BAFEB1601A41D0FA00DEE4ED /* InAppsTeste.m */,
+				BAFEB1611A41D0FA00DEE4ED /* InAppsTeste.xib */,
+			);
+			name = "Testes inApps";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1366,6 +1465,7 @@
 				BAFBA1EC1A370F14002B2C21 /* IngreTwoOptionsController.xib in Resources */,
 				BAFBA1D81A370E11002B2C21 /* DirectionsCell.xib in Resources */,
 				BAFBA20E1A371596002B2C21 /* MealPlanner.xib in Resources */,
+				BAFEB17F1A41F24700DEE4ED /* btnedit1@2x.png in Resources */,
 				BAFBA2441A3717EC002B2C21 /* btnedit3@3x.png in Resources */,
 				BAFCBA0E1A386AD9001EFCE2 /* imgframetop@2x.png in Resources */,
 				BA0081E11A371FFD00A7871D /* icoabout@2x.png in Resources */,
@@ -1373,9 +1473,11 @@
 				BA0081F21A371FFD00A7871D /* icoshare@3x.png in Resources */,
 				BA0081E21A371FFD00A7871D /* icoabout@3x.png in Resources */,
 				BAFBA2131A3715CF002B2C21 /* MealPlanerCell.xib in Resources */,
+				BAFEB17C1A41F24700DEE4ED /* btnclose2@3x.png in Resources */,
 				BAFBA1511A370745002B2C21 /* NewNotes.xib in Resources */,
 				BA0082161A374D1A00A7871D /* imgbadgetbig@2x.png in Resources */,
 				BAFCBA211A3894EE001EFCE2 /* imglinenotes1@2x.png in Resources */,
+				BAFEB1851A41F24700DEE4ED /* btnsetting2@2x.png in Resources */,
 				BA0081E41A371FFD00A7871D /* icobug@3x.png in Resources */,
 				BA0082041A3722E300A7871D /* btndelet1@2x.png in Resources */,
 				BAFBA1E21A370EA7002B2C21 /* NewIngredienteShoppingList.xib in Resources */,
@@ -1389,10 +1491,12 @@
 				BAFCBA021A38500D001EFCE2 /* btncall1@2x.png in Resources */,
 				BA0082181A374D1A00A7871D /* imgbadgetsmall@2x.png in Resources */,
 				BAFBA25E1A3717EC002B2C21 /* imgroda@3x.png in Resources */,
+				BAFEB18A1A41F24700DEE4ED /* btnedit2@3x.png in Resources */,
 				BAFBA2461A3717EC002B2C21 /* btnnotes@3x.png in Resources */,
 				BAFBA2801A371D88002B2C21 /* btnsave2@2x.png in Resources */,
 				BAFCBA0F1A386AD9001EFCE2 /* imgframetop@3x.png in Resources */,
 				BAFBA1901A370BAB002B2C21 /* PesquisaReceitas.xib in Resources */,
+				BAFEB1821A41F24700DEE4ED /* btnopen1@3x.png in Resources */,
 				BA1B9D181A3F32CF00E1BEA0 /* btnsave@2x.png in Resources */,
 				BAFBA26C1A371921002B2C21 /* btnfeatured1@3x.png in Resources */,
 				BAFBA2531A3717EC002B2C21 /* icopanela@2x.png in Resources */,
@@ -1400,10 +1504,12 @@
 				BAFBA2551A3717EC002B2C21 /* icouncheck@2x.png in Resources */,
 				BAFCB9FE1A384D31001EFCE2 /* lightpaperfibers_@3x.png in Resources */,
 				BAFCBA221A3894EE001EFCE2 /* imglinenotes1@3x.png in Resources */,
+				BAFEB1831A41F24700DEE4ED /* btnsearch@2x.png in Resources */,
 				BAFBA2601A3717EC002B2C21 /* imgsombrarecipe@3x.png in Resources */,
 				BA0081D81A371FFD00A7871D /* btnaddhomebook2@3x.png in Resources */,
 				BAFCBA0B1A3850FC001EFCE2 /* btnshop1@3x.png in Resources */,
 				BAFBA2661A3717EC002B2C21 /* linedot2@3x.png in Resources */,
+				BAFEB18C1A41F24700DEE4ED /* btnsetting1@3x.png in Resources */,
 				BAFCBA061A3850D8001EFCE2 /* imgdateselect@2x.png in Resources */,
 				BAE0F3D21A376C9E00B89316 /* linedotbig3@2x.png in Resources */,
 				BA07EAE91A3B671B0087B44E /* Images-2.xcassets in Resources */,
@@ -1412,6 +1518,7 @@
 				BAFBA25D1A3717EC002B2C21 /* imgroda@2x.png in Resources */,
 				BAFBA2561A3717EC002B2C21 /* icouncheck@3x.png in Resources */,
 				BA0081D61A371FFD00A7871D /* btnsave2@3x.png in Resources */,
+				BAFEB1811A41F24700DEE4ED /* btnopen1@2x.png in Resources */,
 				BA0081D51A371FFD00A7871D /* btnsave2@2x.png in Resources */,
 				BAFBA2611A3717EC002B2C21 /* imgtira@2x.png in Resources */,
 				BA05B74A1A39C18500476074 /* imgssombralateral@3x.png in Resources */,
@@ -1421,9 +1528,11 @@
 				BAFBA2671A3717EC002B2C21 /* linedot3@2x.png in Resources */,
 				BAFBA2701A3719AB002B2C21 /* btnsetting2@3x.png in Resources */,
 				BA0082171A374D1A00A7871D /* imgbadgetbig@3x.png in Resources */,
+				BAFE403F1A405B66005E8069 /* InAppsCell.xib in Resources */,
 				BA0081DD1A371FFD00A7871D /* btnmore@2x.png in Resources */,
 				BAFBA0C21A36FAA6002B2C21 /* LaunchScreen.xib in Resources */,
 				BAE0F3D31A376C9E00B89316 /* linedotbig3@3x.png in Resources */,
+				BAFEB1801A41F24700DEE4ED /* btnedit1@3x.png in Resources */,
 				BA00821B1A374D1A00A7871D /* imglinebadgetdown@3x.png in Resources */,
 				BAFBA0EA1A36FE6A002B2C21 /* NewBook.xib in Resources */,
 				BAFBA15B1A3707AB002B2C21 /* CellIngrediente.xib in Resources */,
@@ -1433,10 +1542,14 @@
 				BAFBA2491A3717EC002B2C21 /* btntime@2x.png in Resources */,
 				BA0081EA1A371FFD00A7871D /* icoguide@3x.png in Resources */,
 				BA0082001A37229800A7871D /* btnedit1@2x.png in Resources */,
+				BAFEB18B1A41F24700DEE4ED /* btnsetting1@2x.png in Resources */,
 				BAFBA2651A3717EC002B2C21 /* linedot2@2x.png in Resources */,
+				BAFEB17D1A41F24700DEE4ED /* btndelet1@2x.png in Resources */,
 				BAFBA0E01A36FCDE002B2C21 /* Home.xib in Resources */,
 				BA0081E61A371FFD00A7871D /* icocloud@3x.png in Resources */,
+				BAFEB1881A41F24700DEE4ED /* btndelet2@3x.png in Resources */,
 				BAFBA0BF1A36FAA6002B2C21 /* Images.xcassets in Resources */,
+				BAFEB17E1A41F24700DEE4ED /* btndelet1@3x.png in Resources */,
 				BAFBA1811A370B1B002B2C21 /* EtapaTwoOptionsController.xib in Resources */,
 				BA0081DF1A371FFD00A7871D /* btnphoto1@2x.png in Resources */,
 				BAFBA2781A371CD7002B2C21 /* btnsearch@2x.png in Resources */,
@@ -1487,13 +1600,17 @@
 				BAFCB9E81A3848B2001EFCE2 /* IngredienteCellTableViewCell.xib in Resources */,
 				BA0082051A3722E300A7871D /* btndelet1@3x.png in Resources */,
 				BAFBA27D1A371D22002B2C21 /* btnaddbook@3x.png in Resources */,
+				BAFEB17B1A41F24700DEE4ED /* btnclose2@2x.png in Resources */,
 				BAFBA1E71A370EDF002B2C21 /* JATableViewCell.xib in Resources */,
 				BA0081D71A371FFD00A7871D /* btnaddhomebook2@2x.png in Resources */,
 				BA0082191A374D1A00A7871D /* imgbadgetsmall@3x.png in Resources */,
+				BAFEB1861A41F24700DEE4ED /* btnsetting2@3x.png in Resources */,
 				BAFCB9F31A384A43001EFCE2 /* ReceitaCell.xib in Resources */,
 				BAFBA24B1A3717EC002B2C21 /* icocheck@2x.png in Resources */,
 				BA00821C1A374D1A00A7871D /* linedottitle1@2x.png in Resources */,
+				BAFEB1891A41F24700DEE4ED /* btnedit2@2x.png in Resources */,
 				BA0081F71A37203D00A7871D /* btnopen1@2x.png in Resources */,
+				BAFEB1631A41D0FA00DEE4ED /* InAppsTeste.xib in Resources */,
 				BA0081DC1A371FFD00A7871D /* btnless@3x.png in Resources */,
 				BA0081F11A371FFD00A7871D /* icoshare@2x.png in Resources */,
 				BA00821D1A374D1A00A7871D /* linedottitle1@3x.png in Resources */,
@@ -1504,6 +1621,7 @@
 				BAFCB9FC1A384D31001EFCE2 /* btntecladodown@2x.png in Resources */,
 				BAFBA2421A3717EC002B2C21 /* btndelet3@3x.png in Resources */,
 				BA1B9D051A3EF1A200E1BEA0 /* MealPlanerTable.xib in Resources */,
+				BAFEB1681A41E35500DEE4ED /* PreviewBook.xib in Resources */,
 				BAFCBA331A38C047001EFCE2 /* DirectionsHeader.xib in Resources */,
 				BA07EAE71A3B654E0087B44E /* solid231.png in Resources */,
 				BAFCB9FB1A384D31001EFCE2 /* btnclosenote@3x.png in Resources */,
@@ -1531,10 +1649,12 @@
 				BA1B9D191A3F32CF00E1BEA0 /* btnsave@3x.png in Resources */,
 				BA0081EE1A371FFD00A7871D /* icorating@3x.png in Resources */,
 				BAFBA23F1A3717EC002B2C21 /* btncall3@2x.png in Resources */,
+				BAFEB1871A41F24700DEE4ED /* btndelet2@2x.png in Resources */,
 				BA0081E71A371FFD00A7871D /* icoexport@2x.png in Resources */,
 				BAFBA2451A3717EC002B2C21 /* btnnotes@2x.png in Resources */,
 				BAFCB9FA1A384D31001EFCE2 /* btnclosenote@2x.png in Resources */,
 				BA0081E31A371FFD00A7871D /* icobug@2x.png in Resources */,
+				BAFEB1841A41F24700DEE4ED /* btnsearch@3x.png in Resources */,
 				BA0081FD1A37211200A7871D /* HomeCell.xib in Resources */,
 				BAFBA2641A3717EC002B2C21 /* linedot1@3x.png in Resources */,
 				BAFCBA0A1A3850FC001EFCE2 /* btnshop1@2x.png in Resources */,
@@ -1567,6 +1687,7 @@
 				BAFBA1011A3702D5002B2C21 /* NewReceita.m in Sources */,
 				BAFBA1281A3704C5002B2C21 /* VRGCalendarView.m in Sources */,
 				BAFBA0E91A36FE6A002B2C21 /* NewBook.m in Sources */,
+				BAFEB1621A41D0FA00DEE4ED /* InAppsTeste.m in Sources */,
 				BAFBA1171A370486002B2C21 /* Calendario.m in Sources */,
 				BAFBA14B1A37071F002B2C21 /* NewIngrediente.m in Sources */,
 				BAFBA15A1A3707AB002B2C21 /* CellIngrediente.m in Sources */,
@@ -1583,6 +1704,7 @@
 				BAFBA20D1A371596002B2C21 /* MealPlanner.m in Sources */,
 				BAFBA1DC1A370E42002B2C21 /* IngredientesHeader.m in Sources */,
 				BAFBA0B71A36FAA6002B2C21 /* Fucook2.xcdatamodeld in Sources */,
+				BAFE403E1A405B66005E8069 /* InAppsCell.m in Sources */,
 				BAFBA19F1A370C90002B2C21 /* InApps.m in Sources */,
 				BAFBA18F1A370BAB002B2C21 /* PesquisaReceitas.m in Sources */,
 				BAFBA1CB1A370D3B002B2C21 /* RATreeView+TableViewDelegate.m in Sources */,
@@ -1590,6 +1712,7 @@
 				BAFBA1241A3704C5002B2C21 /* NSDate+convenience.m in Sources */,
 				BAFBA1621A3708B6002B2C21 /* JASwipeCell.m in Sources */,
 				BAFBA1091A37036A002B2C21 /* ObjectReceita.m in Sources */,
+				BAFEB1671A41E35500DEE4ED /* PreviewBook.m in Sources */,
 				BAFBA1CA1A370D3B002B2C21 /* RATreeView+TableViewDataSource.m in Sources */,
 				BAFBA1851A370B68002B2C21 /* iCarousel.m in Sources */,
 				BAFBA1C11A370D3B002B2C21 /* RABatchChanges.m in Sources */,
@@ -1625,6 +1748,7 @@
 				BAFBA1261A3704C5002B2C21 /* UIColor+expanded.m in Sources */,
 				BAFBA1D71A370E11002B2C21 /* DirectionsCell.m in Sources */,
 				BAFBA1551A370767002B2C21 /* NewDirections.m in Sources */,
+				BAFEB15D1A4190E000DEE4ED /* NSData+Base64.m in Sources */,
 				BAFBA1EB1A370F14002B2C21 /* IngreTwoOptionsController.m in Sources */,
 				BAFBA1411A3706C7002B2C21 /* NIngredientes.m in Sources */,
 				BAFCBA321A38C047001EFCE2 /* DirectionsHeader.m in Sources */,

@@ -29,12 +29,12 @@
     self.servings        = [managedObject valueForKey:@"nr_pessoas"];
     self.dificuldade     = [managedObject valueForKey:@"dificuldade"];
     self.tempo           = [managedObject valueForKey:@"tempo"];
-    self.imagem          = [managedObject valueForKey:@"contem_imagem"];
+    self.managedImagem          = [managedObject valueForKey:@"contem_imagem"];
     self.notas           = [managedObject valueForKey:@"notas"];
     
     
     NSManagedObject * imagem = [managedObject valueForKey:@"contem_imagem"];
-    self.imagem          = imagem;
+    self.managedImagem          = imagem;
     self.managedObject   = managedObject;
     
     self.arrayIngredientes = [NSMutableArray new];
@@ -70,6 +70,26 @@
     NSDate * segundo  = otherObject.data_criado;
     
     return [primeiro compare:segundo];
+}
+
+-(void)AddToCoreData:(NSManagedObjectContext *)context
+{
+    NSManagedObject *Livro = [NSEntityDescription
+                              insertNewObjectForEntityForName:@"Receitas"
+                              inManagedObjectContext:context];
+    [Livro setValue:self.nome               forKey:@"nome"];
+    [Livro setValue:self.data_criado        forKey:@"data_criado"];
+    [Livro setValue:self.categoria          forKey:@"categoria"];
+    [Livro setValue:self.servings           forKey:@"nr_pessoas"];
+    [Livro setValue:self.dificuldade        forKey:@"dificuldade"];
+    [Livro setValue:self.tempo              forKey:@"tempo"];
+    [Livro setValue:self.managedImagem             forKey:@"contem_imagem"];
+    [Livro setValue:self.notas              forKey:@"notas"];
+    
+    self.managedObject = Livro;
+    
+#warning ainda imcompleto
+    
 }
 
 

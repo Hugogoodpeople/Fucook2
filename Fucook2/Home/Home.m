@@ -17,7 +17,7 @@
 #import "ObjectLivro.h"
 #import "UIImage+fixOrientation.h"
 #import "ListaCompras.h"
-#import "InApps.h"
+#import "InAppsTeste.h"
 #import "HomeCell.h"
 #import "ObjectReceita.h"
 
@@ -26,7 +26,6 @@
     NSManagedObject * managedObject;
     NSManagedObjectContext * context;
 }
-
 
 
 @property bool selectedView;
@@ -69,12 +68,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-   
-    
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsetting2"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsetting1"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     //self.navigationItem.leftBarButtonItem = anotherButton;
@@ -92,8 +89,6 @@
     [buttonSettings setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonSettings = [[UIBarButtonItem alloc] initWithCustomView:buttonSettings];
-
-    
     
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
 
@@ -167,10 +162,11 @@
         
         livro.titulo =[pedido valueForKey:@"titulo"];
         livro.descricao =[pedido valueForKey:@"descricao"];
+        livro.comprado = [[pedido valueForKey:@"comprado"] boolValue];
         livro.managedObject = pedido;
         
         NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
-        livro.imagem = imagem;
+        livro.managedImagem = imagem;
         
         // agora tambem tenho de contar o numero de receitas que existem dentro do livro
          NSSet * receitas = [pedido valueForKey:@"contem_receitas"];
@@ -206,7 +202,9 @@
         livro.lunch = lunch;
         livro.dessert = dessert;
         
-        [items addObject:livro];
+        // o livro tem de ter sido comprado para poder aparecer na lista do utilizador
+        //if (livro.comprado)
+            [items addObject:livro];
     }
 
 
@@ -349,7 +347,7 @@
 
 - (IBAction)clickInApps:(id)sender
 {
-    InApps * apps = [InApps new];
+    InAppsTeste * apps = [InAppsTeste new];
     apps.delegate = self;
     
     [self.navigationController pushViewController:apps animated:NO];
@@ -417,7 +415,7 @@
         //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
         dispatch_async(queue, ^{
-            NSData * data = [liv.imagem valueForKey:@"imagem"];
+            NSData * data = [liv.managedImagem valueForKey:@"imagem"];
             //[FTWCache setObject:data forKey:key];
             UIImage *image = [UIImage imageWithData:data];
             NSInteger index = indexPath.row;

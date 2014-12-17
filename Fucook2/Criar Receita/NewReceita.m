@@ -153,7 +153,7 @@
     headerFinal.labelServ.text      = self.receita.servings;
     headerFinal.labelDif.text       = self.receita.dificuldade;
     headerFinal.labelPre.text       = self.receita.tempo;
-    headerFinal.img.image           = [UIImage imageWithData:[self.receita.imagem valueForKey:@"imagem"]];
+    headerFinal.img.image           = [UIImage imageWithData:[self.receita.managedImagem valueForKey:@"imagem"]];
     
     [headerFinal temFoto];
     

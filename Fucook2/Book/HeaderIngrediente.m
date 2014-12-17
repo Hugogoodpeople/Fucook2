@@ -24,6 +24,7 @@
     self.labelDificuldade.text  = self.dificuldade;
     self.labelNome.text         = self.nome;
     self.labelNumberServings.text = self.servings;
+    self.labelCategoria.text    = self.categoria;
 }
 
 - (void)didReceiveMemoryWarning {

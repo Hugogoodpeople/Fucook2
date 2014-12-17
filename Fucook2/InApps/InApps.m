@@ -12,18 +12,181 @@
 #import "Settings.h"
 #import "PesquisaReceitas.h"
 #import "NewBook.h"
+#import "WebServiceSender.h"
+#import "ObjectLivro.h"
+#import "ObjectReceita.h"
+#import "ObjectIngrediente.h"
+#import "ObjectDirections.h"
+#import "NSData+Base64.h"
 
 @interface InApps ()
 {
     NSArray *_products;
     // Add new instance variable to class extension
     NSNumberFormatter * _priceFormatter;
+    
+    NSMutableArray * array_livros;
+    
+    WebServiceSender * listaIdsInApps;
+    
+    NSManagedObjectContext * context;
 }
 
 @end
 
 @implementation InApps
 
+-(void)dealloc
+{
+    if (listaIdsInApps) {
+        [listaIdsInApps cancel];
+    }
+    listaIdsInApps = nil;
+    
+}
+
+
+-(void)webserviceInApps
+{
+#warning colocar aqui o url correcto para poder abrir o webservice
+    listaIdsInApps = [[WebServiceSender alloc] initWithUrl:@"http://www.fucook.com/webservices/get_all_books.php" method:@"" tag:1];
+    listaIdsInApps.delegate = self;
+    
+    NSMutableDictionary * dict = [NSMutableDictionary new];
+    // aqui nao tenho de enviar nada por enquanto
+    
+    [listaIdsInApps sendDict:dict];
+}
+
+-(void)sendCompleteWithResult:(NSDictionary*)result withError:(NSError*)error
+{
+    
+    if (!error)
+    {
+        int tag=[WebServiceSender getTagFromWebServiceSenderDict:result];
+        switch (tag)
+        {
+            case 1:
+            {
+                NSLog(@"resultado da lista de inApps  =>  %@", result.description);
+                
+                
+                
+                array_livros = [NSMutableArray new];
+                
+                for (NSMutableDictionary * dictLivro in [result objectForKey:@"res"])
+                {
+                    ObjectLivro * livro = [ObjectLivro new];
+                    
+                    livro.titulo            = [dictLivro objectForKey:@"nome_livro"];
+                    livro.descricao         = [dictLivro objectForKey:@"descricao_livro"];
+                    livro.id_inapps         = [dictLivro objectForKey:@"id_inapp"];
+                    livro.comprado          = NO;
+                    
+                    NSManagedObject *managedImagem = [NSEntityDescription
+                                                    insertNewObjectForEntityForName:@"Imagens"
+                                                    inManagedObjectContext:context];
+                    
+                    // tenho de transformar o bsse64 em imagem
+                    NSString * strData = [dictLivro objectForKey:@"foto_livro"];
+                    
+                    NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
+                    
+                    //Now data is decoded. You can convert them to UIImage
+                    //UIImage *image = [UIImage imageWithData:data];
+                    
+                    [managedImagem setValue:data forKey:@"imagem"];
+                                    
+                    livro.managedImagem = managedImagem;
+                    
+                    
+                    // agora tenho de ir buscar as receitas e colocalas dentro do livro
+                    
+                    NSMutableArray * arrayReceitas = [NSMutableArray new];
+                    
+                    for (NSMutableDictionary * dictRec in [dictLivro objectForKey:@"receitas"])
+                    {
+                        ObjectReceita * receita     = [ObjectReceita new];
+                        receita.nome                = [dictRec objectForKey:@"nome_receita"];
+                        receita.categoria           = [dictRec objectForKey:@"categoria"];
+                        receita.dificuldade         = [dictRec objectForKey:@"dificuldade"];
+                        receita.notas               = [dictRec objectForKey:@"notas"];
+                        receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
+                        receita.tempo               = [dictRec objectForKey:@"tempo"];
+                        
+                        NSManagedObject *managedImagem = [NSEntityDescription
+                                                          insertNewObjectForEntityForName:@"Imagens"
+                                                          inManagedObjectContext:context];
+                        NSString * strData = [dictRec objectForKey:@"foto_receita"];
+                        NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
+                        [managedImagem setValue:data forKey:@"imagem"];
+                        
+                        receita.managedImagem = managedImagem;
+                        
+                        
+                        // agora tenho de ir buscar as etapas e os ingredientes
+                        NSMutableArray * arrayIngredientes = [NSMutableArray new];
+                        
+                        for (NSMutableDictionary * dictIngre in [dictRec objectForKey:@"ingredientes"])
+                        {
+                            ObjectIngrediente * ingrediente = [ObjectIngrediente new];
+                            ingrediente.nome                = [dictIngre objectForKey:@"nome_ingrediente"];
+                            ingrediente.quantidadeDecimal   = @"";
+                            ingrediente.quantidade          = [dictIngre objectForKey:@"quantidade"];
+                            ingrediente.unidade             = [dictIngre objectForKey:@"unidade"];
+                            
+                            [arrayIngredientes addObject:[ingrediente getManagedObject:context]];
+                        }
+                        
+                        
+                        // para a parte das direcções/etapas
+                        // agora tenho de ir buscar as etapas e os ingredientes
+                        NSMutableArray * arrayEtapas = [NSMutableArray new];
+                        
+                        for (NSMutableDictionary * dictEtap in [dictRec objectForKey:@"etapas"])
+                        {
+                            ObjectDirections * direction    = [ObjectDirections new];
+                            direction.descricao             = [dictEtap objectForKey:@"descricao"];
+                            direction.passo                 = [[dictEtap objectForKey:@"ordem"] intValue];
+                            direction.tempoMinutos          = [[dictEtap objectForKey:@"tempo_etapa"] intValue];
+                            
+                            [arrayEtapas addObject:[direction getManagedObject:context]];
+                        }
+
+                        
+                        
+                        [receita AddToCoreData:context];
+                        
+                        [receita.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayEtapas]] forKey:@"contem_etapas"];
+                        
+                        [receita.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayIngredientes]] forKey:@"contem_ingredientes"];
+                   
+                        
+                        receita.livro = livro;
+                        
+                        [arrayReceitas addObject:receita.managedObject];
+                    }
+                    
+                    [livro AddToCoreData:context];
+                    
+                    // este tem de ser o ultimo passo a concluir
+                    [livro.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayReceitas]]  forKey:@"contem_receitas"];
+                    
+                    [array_livros addObject:livro];
+                    
+                }
+                
+                break;
+            }
+                
+        }
+    }else
+    {
+        NSLog(@"webservice error %@", error.description);
+    }
+    
+    
+}
 
 // 3
 - (void)viewDidLoad
@@ -49,7 +212,7 @@
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsetting2"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsetting1"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     //self.navigationItem.leftBarButtonItem = anotherButton;
@@ -75,6 +238,10 @@
     
     
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
+    
+    context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    [self webserviceInApps];
     
 }
 

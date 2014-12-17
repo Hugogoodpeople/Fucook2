@@ -22,41 +22,7 @@
 @implementation AppDelegate
 
 
--(void)webserviceInApps
-{
-#warning colocar aqui o url correcto para poder abrir o webservice
-    listaIdsInApps = [[WebServiceSender alloc] initWithUrl:@"defenir url aqui" method:@"" tag:1];
-    listaIdsInApps.delegate = self;
-    
-    NSMutableDictionary * dict = [NSMutableDictionary new];
-    // aqui nao tenho de enviar nada por enquanto
-    
-    [listaIdsInApps sendDict:dict];
-}
 
--(void)sendCompleteWithResult:(NSDictionary*)result withError:(NSError*)error
-{
-    
-    if (!error)
-    {
-        int tag=[WebServiceSender getTagFromWebServiceSenderDict:result];
-        switch (tag)
-        {
-            case 1:
-            {
-                NSLog(@"resultado da lista de inApps  =>  %@", result.description);
-                
-                break;
-            }
-                
-        }
-    }else
-    {
-        NSLog(@"webservice error %@", error.description);
-    }
-    
-    
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -114,6 +80,9 @@
     
     UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    
+    
+    
     
     return YES;
 }

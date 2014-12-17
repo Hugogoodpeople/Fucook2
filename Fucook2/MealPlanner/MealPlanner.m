@@ -57,7 +57,7 @@
     
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsetting2"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsetting1"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     //self.navigationItem.leftBarButtonItem = anotherButton;
@@ -352,7 +352,7 @@
 
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
-    NSLog(@"mudou indice %ld", (long)carousel.currentItemIndex);
+   // NSLog(@"mudou indice %ld", (long)carousel.currentItemIndex);
     
     if (self.itemAnterior) {
         DiaCalendario * dia = [DiaCalendario new];
@@ -361,7 +361,6 @@
         dia.ImgSelected = (UIImageView *)[dia.view viewWithTag:1];
         [UIView animateWithDuration:0.2 animations:^{
             dia.ImgSelected.alpha = 0;
-            
         }];
         
         // para as sombras programaticamente
@@ -390,8 +389,6 @@
     dia.view.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
     dia.view.layer.shadowOpacity = 0.5f;
     dia.view.layer.shadowPath = shadowPath.CGPath;
-    
-    
     
     self.itemAnterior = dia.view;
     

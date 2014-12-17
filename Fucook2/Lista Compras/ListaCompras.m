@@ -87,7 +87,7 @@
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsetting2"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsetting1"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     //self.navigationItem.leftBarButtonItem = anotherButton;

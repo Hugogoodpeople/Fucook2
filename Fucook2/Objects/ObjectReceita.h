@@ -28,10 +28,12 @@
 
 @property NSManagedObject * agendamento;
 
-@property NSManagedObject * imagem;
+@property UIImage         * imagem;
+@property NSManagedObject * managedImagem;
 @property NSManagedObject * managedObject;
 @property ObjectLivro     * livro;
 
 -(void)setTheManagedObject:(NSManagedObject *)managedObject;
+-(void)AddToCoreData:(NSManagedObjectContext *)context;
 
 @end

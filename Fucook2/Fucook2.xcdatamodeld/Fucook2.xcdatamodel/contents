@@ -27,8 +27,10 @@
         <attribute name="unidade" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Livros" syncable="YES">
+        <attribute name="comprado" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_inapp" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id_livro" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="contem_imagem" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Imagens" syncable="YES"/>
@@ -81,14 +83,14 @@
         <relationship name="pertence_receita" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Receitas" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Agenda" positionX="5992" positionY="-1846" width="128" height="118"/>
-        <element name="Etapas" positionX="5436" positionY="-2046" width="128" height="120"/>
-        <element name="Imagens" positionX="5310" positionY="-2229" width="128" height="60"/>
-        <element name="Ingredientes" positionX="5265" positionY="-1854" width="128" height="150"/>
-        <element name="Livros" positionX="5760" positionY="-2277" width="128" height="133"/>
-        <element name="Nota" positionX="5481" positionY="-1767" width="128" height="75"/>
-        <element name="Nutricao" positionX="5929" positionY="-2259" width="128" height="255"/>
-        <element name="Receitas" positionX="5767" positionY="-1980" width="128" height="253"/>
-        <element name="ShoppingList" positionX="5598" positionY="-2127" width="128" height="165"/>
+        <element name="Agenda" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Etapas" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Imagens" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Ingredientes" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Livros" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Nota" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Nutricao" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Receitas" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ShoppingList" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

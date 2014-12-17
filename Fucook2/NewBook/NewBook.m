@@ -87,12 +87,12 @@
     
     
         NSManagedObject * imagem = [self.managedObject valueForKey:@"contem_imagem"];
-        livro.imagem = imagem;
+        livro.managedImagem = imagem;
     
         self.txt1.text = livro.titulo;
         self.txt2.text = livro.descricao;
     
-        [self.imageView setImage:[[UIImage imageWithData:[livro.imagem valueForKey:@"imagem"]] fixOrientation]];
+        [self.imageView setImage:[[UIImage imageWithData:[livro.managedImagem valueForKey:@"imagem"]] fixOrientation]];
     }
     else
     {
@@ -144,6 +144,7 @@
         NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.15);
         [Imagem setValue:imageData forKey:@"imagem"];
         [Livro setValue:Imagem forKey:@"contem_imagem"];
+        [Livro setValue:[NSNumber numberWithBool:YES] forKey:@"comprado"];
     
         [self listarTodosLivros];
     

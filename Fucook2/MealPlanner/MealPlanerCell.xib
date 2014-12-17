@@ -55,7 +55,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="70" height="140.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="khC-SC-V6H">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="khC-SC-V6H">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="140"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <state key="normal" image="btndelet1.png">
@@ -106,7 +106,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
@@ -117,13 +117,13 @@
                 <outlet property="labelTitulo" destination="vQV-zZ-s2h" id="C4W-nJ-P2b"/>
                 <outlet property="viewMovel" destination="xpI-VN-fpt" id="1Ix-zx-CaF"/>
             </connections>
-            <point key="canvasLocation" x="341" y="-271.5"/>
+            <point key="canvasLocation" x="187" y="-263.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btncall1.png" width="23" height="24"/>
-        <image name="btndelet1.png" width="20" height="24"/>
-        <image name="btnshop1.png" width="24" height="24"/>
+        <image name="btncall1.png" width="21" height="22"/>
+        <image name="btndelet1.png" width="15" height="18"/>
+        <image name="btnshop1.png" width="23" height="19"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

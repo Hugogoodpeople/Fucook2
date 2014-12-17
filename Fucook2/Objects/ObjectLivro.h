@@ -14,13 +14,21 @@
 
 @property NSString * titulo;
 @property NSString * descricao;
+@property NSString * id_inapps;
 @property NSString * countReceitas;
-@property NSManagedObject * imagem;
+@property UIImage  * imagem;
+@property NSManagedObject * managedImagem;
 @property NSManagedObject * managedObject;
+@property NSMutableArray  * receitas;
+
+@property BOOL comprado;
+
 
 @property BOOL breakFast;
 @property BOOL dinner;
 @property BOOL lunch;
 @property BOOL dessert;
+
+-(void)AddToCoreData:(NSManagedObjectContext *)context;
 
 @end

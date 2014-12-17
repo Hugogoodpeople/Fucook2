@@ -21,7 +21,7 @@
                 <view contentMode="scaleToFill" id="s0w-nz-zYa">
                     <rect key="frame" x="0.0" y="153" width="320" height="415"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="h7t-wp-NkV" customClass="iCarousel">
                     <rect key="frame" x="0.0" y="94" width="320" height="60"/>
@@ -79,30 +79,32 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="IR1-Ch-RMM"/>
                         <barButtonItem image="btnbook1.png" style="plain" id="Pif-3t-AuB">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickHome:" destination="-1" id="xBw-yC-ERn"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="hI8-mt-W75"/>
-                        <barButtonItem image="btnshop3.png" style="plain" id="049-MI-oTg">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <barButtonItem image="btnshop2.png" style="plain" id="049-MI-oTg">
+                            <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickcarrinho:" destination="-1" id="rUG-iL-4U4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="tna-fj-ANO"/>
-                        <barButtonItem image="btncall3.png" id="VHW-fW-c7z">
+                        <barButtonItem image="btncall1.png" id="VHW-fW-c7z">
                             <color key="tintColor" red="0.59607843140000005" green="0.21176470589999999" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="21q-oJ-EZf"/>
                         <barButtonItem image="btnfeatured1.png" id="M42-2V-1lc">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickInApps:" destination="-1" id="Dtq-pz-EhQ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="mmg-Gj-1xr"/>
                     </items>
                     <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
@@ -110,15 +112,15 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="191" y="-77"/>
+            <point key="canvasLocation" x="435" y="-68"/>
         </view>
     </objects>
     <resources>
-        <image name="btleft3.png" width="15" height="24"/>
-        <image name="btnbook1.png" width="27" height="24"/>
-        <image name="btncall3.png" width="23" height="24"/>
-        <image name="btnfeatured1.png" width="17" height="24"/>
-        <image name="btnshop3.png" width="24" height="24"/>
+        <image name="btleft3.png" width="11" height="17"/>
+        <image name="btnbook1.png" width="28" height="24"/>
+        <image name="btncall1.png" width="17" height="18"/>
+        <image name="btnfeatured1.png" width="17" height="22"/>
+        <image name="btnshop2.png" width="23" height="19"/>
         <image name="btright3.png" width="15" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
