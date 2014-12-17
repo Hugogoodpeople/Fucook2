@@ -23,7 +23,7 @@
     
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [buttonback setImage:[UIImage imageNamed:@"btleft2"] forState:UIControlStateNormal];
+    [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;
@@ -106,7 +106,7 @@
     // tenho de calcular com base no que esta no header
     
     //cell.labelQtd.text = [self calcularValor:indexPath];
-    cell.delegate = self;
+    //cell.delegate = self;
     
 
            

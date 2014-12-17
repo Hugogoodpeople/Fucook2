@@ -299,6 +299,8 @@
 		BAFEB18A1A41F24700DEE4ED /* btnedit2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1781A41F24700DEE4ED /* btnedit2@3x.png */; };
 		BAFEB18B1A41F24700DEE4ED /* btnsetting1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB1791A41F24700DEE4ED /* btnsetting1@2x.png */; };
 		BAFEB18C1A41F24700DEE4ED /* btnsetting1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB17A1A41F24700DEE4ED /* btnsetting1@3x.png */; };
+		BAFEB18F1A41FA6800DEE4ED /* btleft1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB18D1A41FA6800DEE4ED /* btleft1@2x.png */; };
+		BAFEB1901A41FA6800DEE4ED /* btleft1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB18E1A41FA6800DEE4ED /* btleft1@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -696,6 +698,8 @@
 		BAFEB1781A41F24700DEE4ED /* btnedit2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnedit2@3x.png"; path = "Fucook2/Imagens/btnedit2@3x.png"; sourceTree = "<group>"; };
 		BAFEB1791A41F24700DEE4ED /* btnsetting1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsetting1@2x.png"; path = "Fucook2/Imagens/btnsetting1@2x.png"; sourceTree = "<group>"; };
 		BAFEB17A1A41F24700DEE4ED /* btnsetting1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsetting1@3x.png"; path = "Fucook2/Imagens/btnsetting1@3x.png"; sourceTree = "<group>"; };
+		BAFEB18D1A41FA6800DEE4ED /* btleft1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft1@2x.png"; path = "Fucook2/Imagens/btleft1@2x.png"; sourceTree = "<group>"; };
+		BAFEB18E1A41FA6800DEE4ED /* btleft1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft1@3x.png"; path = "Fucook2/Imagens/btleft1@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1178,6 +1182,8 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BAFEB18D1A41FA6800DEE4ED /* btleft1@2x.png */,
+				BAFEB18E1A41FA6800DEE4ED /* btleft1@3x.png */,
 				BAFEB1691A41F24700DEE4ED /* btnclose2@2x.png */,
 				BAFEB16A1A41F24700DEE4ED /* btnclose2@3x.png */,
 				BAFEB16B1A41F24700DEE4ED /* btndelet1@2x.png */,
@@ -1615,6 +1621,7 @@
 				BA0081F11A371FFD00A7871D /* icoshare@2x.png in Resources */,
 				BA00821D1A374D1A00A7871D /* linedottitle1@3x.png in Resources */,
 				BAFBA2581A3717EC002B2C21 /* imglinedown@3x.png in Resources */,
+				BAFEB18F1A41FA6800DEE4ED /* btleft1@2x.png in Resources */,
 				BAFBA24F1A3717EC002B2C21 /* icoitens@2x.png in Resources */,
 				BAFBA2411A3717EC002B2C21 /* btndelet3@2x.png in Resources */,
 				BAFBA24E1A3717EC002B2C21 /* icoclock@3x.png in Resources */,
@@ -1649,6 +1656,7 @@
 				BA1B9D191A3F32CF00E1BEA0 /* btnsave@3x.png in Resources */,
 				BA0081EE1A371FFD00A7871D /* icorating@3x.png in Resources */,
 				BAFBA23F1A3717EC002B2C21 /* btncall3@2x.png in Resources */,
+				BAFEB1901A41FA6800DEE4ED /* btleft1@3x.png in Resources */,
 				BAFEB1871A41F24700DEE4ED /* btndelet2@2x.png in Resources */,
 				BA0081E71A371FFD00A7871D /* icoexport@2x.png in Resources */,
 				BAFBA2451A3717EC002B2C21 /* btnnotes@2x.png in Resources */,

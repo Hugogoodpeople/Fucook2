@@ -342,7 +342,6 @@
         cell.labelRecipes.text = @"RECIPES";
     }
     
-    //cell.labelQtd.text = [self calcularValor:indexPath];
     cell.delegate = self;
     
     // NSString *key = [livro.imagem.description MD5Hash];
