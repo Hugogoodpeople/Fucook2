@@ -58,10 +58,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    
-
-    
 }
 
 - (void)handlePanGesture:(UISwipeGestureRecognizer *)sender
@@ -86,7 +82,7 @@
     int height = self.viewMovel.frame.size.height;
     int width = self.viewMovel.frame.size.width;
     
-    
+    if(self.delegate)
     [UIView animateWithDuration:0.2f animations:^{
         [self.viewMovel setFrame:CGRectMake(-140, 0, width, height)];
     }];
@@ -104,7 +100,7 @@
     int height = self.viewMovel.frame.size.height;
     int width = self.viewMovel.frame.size.width;
     
-    
+    if(self.delegate)
     [UIView animateWithDuration:0.2f animations:^{
         [self.viewMovel setFrame:CGRectMake(0, 0, width, height)];
     }];
@@ -154,22 +150,7 @@
 // tenho de fazer #import <Social/Social.h> para funcionar
 - (IBAction)partilharFacebook:(id)sender {
     
-    // esta parte funciona correctamente mas tem de abrir logo ou twitter ou facebook
-    /*
-    // este cosigo deixa o utilizador escolher qual o tipo de ferramenta pretende usar para partilhar o desejado
-    UIImage *postImage = self.imagemReceita.image;
-    
-    NSArray *activityItems = @[@"texto exemplo", postImage];
-    
-    UIActivityViewController *activityController =
-    [[UIActivityViewController alloc]
-     initWithActivityItems:activityItems
-     applicationActivities:nil];
-    
-    [self.delegate presentViewController:activityController
-                       animated:YES completion:nil];
-     */
-    
+
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         // Device is able to send a Twitter message

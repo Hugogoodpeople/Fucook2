@@ -39,8 +39,10 @@
 
 - (NSComparisonResult)compare:(ObjectDirections *)otherObject {
     
-    NSString * primeiro = [NSString stringWithFormat:@"%d", self.passo];
-    NSString * segundo  = [NSString stringWithFormat:@"%d", otherObject.passo];
+    
+    
+    NSNumber * primeiro = [NSNumber numberWithInt: self.passo];
+    NSNumber * segundo  = [NSNumber numberWithInt: otherObject.passo];
     
     return [primeiro compare:segundo];
 }
