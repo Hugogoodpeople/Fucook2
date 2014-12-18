@@ -36,5 +36,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewDescricao;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelCategoria;
+@property (weak, nonatomic) IBOutlet UIView *viewCategoria;
+
 
 @end

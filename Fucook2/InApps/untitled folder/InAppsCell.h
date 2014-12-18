@@ -42,5 +42,5 @@
 @property (weak, nonatomic) IBOutlet UIView *viewBloqueada;
 
 - (IBAction)clickAddLivro:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UIView *viewCategoria;
 @end

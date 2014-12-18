@@ -64,53 +64,16 @@
                             </imageView>
                             <view contentMode="scaleToFill" id="bmJ-NM-MwO">
                                 <rect key="frame" x="63" y="171" width="245" height="25"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgtira.png" id="gCq-D8-psv">
                                         <rect key="frame" x="0.0" y="0.0" width="245" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icocheck.png" id="AUK-Sn-Xch">
-                                        <rect key="frame" x="7" y="7" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BREAKFAST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8HZ-dM-apd">
-                                        <rect key="frame" x="19" y="2" width="49" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icocheck.png" id="kLs-Mf-64F">
-                                        <rect key="frame" x="76" y="7" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUNCH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NmM-nI-sqG">
-                                        <rect key="frame" x="87" y="2" width="31" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icocheck.png" id="JiY-47-dh1">
-                                        <rect key="frame" x="123" y="7" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DINNER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3YR-b1-Bc1">
-                                        <rect key="frame" x="134" y="2" width="34" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icocheck.png" id="YfZ-4V-2kD">
-                                        <rect key="frame" x="174" y="7" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESSERT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cmp-M6-mGp">
-                                        <rect key="frame" x="185" y="2" width="46" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <rect key="frame" x="8" y="2" width="237" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -183,14 +146,12 @@
                 <outlet property="ButtonDelete" destination="Ip5-ZC-fy9" id="t1P-10-QUt"/>
                 <outlet property="buttonEdit" destination="7WY-1j-TpI" id="f9a-Fv-8ka"/>
                 <outlet property="imagemLivro" destination="wuf-90-shg" id="g9S-hV-oUC"/>
-                <outlet property="imgBreakfast" destination="AUK-Sn-Xch" id="jY5-UR-I8N"/>
-                <outlet property="imgDessert" destination="YfZ-4V-2kD" id="Ma9-pj-Q0k"/>
-                <outlet property="imgDinner" destination="JiY-47-dh1" id="MGO-dZ-QRe"/>
-                <outlet property="imgLunch" destination="kLs-Mf-64F" id="kzj-Vp-fT3"/>
+                <outlet property="labelCategoria" destination="8HZ-dM-apd" id="2GO-6Q-DKI"/>
                 <outlet property="labelDescricao" destination="VFY-bt-GkZ" id="oXQ-vd-FOE"/>
                 <outlet property="labelNumeroReceitas" destination="dUA-yj-zLF" id="MHq-0n-67p"/>
                 <outlet property="labelRecipes" destination="64g-9p-24s" id="18d-Cv-rkc"/>
                 <outlet property="labelTitulo" destination="QQ8-lE-n5N" id="bpy-Wk-TLa"/>
+                <outlet property="viewCategoria" destination="bmJ-NM-MwO" id="W2f-6z-W7T"/>
                 <outlet property="viewDelete" destination="3zc-Ik-bcn" id="evR-Xp-1GM"/>
                 <outlet property="viewDescricao" destination="iRN-yD-lhg" id="3wl-qp-6bo"/>
                 <outlet property="viewEdit" destination="1F5-ZD-pOt" id="CHd-j1-lf2"/>
@@ -200,9 +161,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btndelet1.png" width="20" height="24"/>
-        <image name="btnedit1.png" width="24" height="24"/>
-        <image name="icocheck.png" width="8" height="6"/>
+        <image name="btndelet1.png" width="15" height="18"/>
+        <image name="btnedit1.png" width="17" height="17"/>
         <image name="imgroda.png" width="60" height="60"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
         <image name="imgtira.png" width="280" height="22"/>

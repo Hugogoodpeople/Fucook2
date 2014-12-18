@@ -68,12 +68,12 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgtira.png" id="twW-iQ-jQY">
                                         <rect key="frame" x="0.0" y="0.0" width="245" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BREAKFAST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8pH-Ki-x9g">
-                                        <rect key="frame" x="19" y="2" width="213" height="21"/>
+                                        <rect key="frame" x="8" y="2" width="237" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -260,6 +260,7 @@
                 <outlet property="labelTitulo" destination="LmD-hR-DwY" id="qak-bm-67T"/>
                 <outlet property="viewAdquirida" destination="D4w-zO-eP0" id="SFY-bu-seS"/>
                 <outlet property="viewBloqueada" destination="ocq-Xf-ZIa" id="egW-ik-JTQ"/>
+                <outlet property="viewCategoria" destination="1Ug-9R-9eP" id="JRh-Yx-mgP"/>
                 <outlet property="viewDelete" destination="eMf-Ue-CWE" id="3da-Ec-XFz"/>
                 <outlet property="viewDescricao" destination="Plu-Oe-F5x" id="49K-gF-HAV"/>
                 <outlet property="viewEdit" destination="8lB-zO-6GZ" id="258-zs-m4q"/>

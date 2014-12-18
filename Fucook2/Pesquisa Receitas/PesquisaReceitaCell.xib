@@ -60,7 +60,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="DbT-by-Mu4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgssombralateral.png" id="soH-wW-fj8">
                                 <rect key="frame" x="320" y="0.0" width="8" height="140"/>
@@ -95,8 +95,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btncall1.png" width="23" height="24"/>
-        <image name="btnshop1.png" width="24" height="24"/>
+        <image name="btncall1.png" width="17" height="18"/>
+        <image name="btnshop1.png" width="19" height="15"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

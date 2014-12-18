@@ -163,6 +163,7 @@
         livro.titulo =[pedido valueForKey:@"titulo"];
         livro.descricao =[pedido valueForKey:@"descricao"];
         livro.comprado = [[pedido valueForKey:@"comprado"] boolValue];
+        livro.id_livro = [pedido valueForKey:@"id_livro"];
         livro.managedObject = pedido;
         
         NSManagedObject * imagem = [pedido valueForKey:@"contem_imagem"];
@@ -427,30 +428,43 @@
         });
     }
     
-    
+    /*
     [cell.imgBreakfast setImage:[UIImage imageNamed:@"icouncheck"]];
     [cell.imgDinner setImage:[UIImage imageNamed:@"icouncheck"]];
     [cell.imgDessert setImage:[UIImage imageNamed:@"icouncheck"]];
     [cell.imgLunch setImage:[UIImage imageNamed:@"icouncheck"]];
+    */
     
+    cell.labelCategoria.text = @"";
+    int larguraview = 28;
     
+    // tenho de verificar o cenas para ver se o livro tem as cetegorias
     // tenho de verificar o cenas para ver se o livro tem as cetegorias
     if (liv.breakFast)
     {
-        [cell.imgBreakfast setImage:[UIImage imageNamed:@"icocheck"]];
+        cell.labelCategoria.text = @" Breakfast";
+        larguraview = larguraview + 40;
     }
     if (liv.dinner)
     {
-        [cell.imgDinner setImage:[UIImage imageNamed:@"icocheck"]];
+        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dinner", cell.labelCategoria.text ];
+        larguraview = larguraview + 30;
     }
     if (liv.dessert)
     {
-        [cell.imgDessert setImage:[UIImage imageNamed:@"icocheck"]];
+        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dessert", cell.labelCategoria.text ];
+        larguraview = larguraview + 35;
     }
     if (liv.lunch)
     {
-        [cell.imgLunch setImage:[UIImage imageNamed:@"icocheck"]];
+        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Lunch", cell.labelCategoria.text ];
+        larguraview = larguraview + 35;
     }
+    
+    [cell.viewCategoria setFrame:CGRectMake(cell.viewCategoria.frame.origin.x,
+                                            cell.viewCategoria.frame.origin.y,
+                                            larguraview,
+                                            cell.viewCategoria.frame.size.height)];
 
     
     [cell setSelected:false animated:NO];

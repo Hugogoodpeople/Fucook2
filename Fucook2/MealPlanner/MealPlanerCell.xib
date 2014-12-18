@@ -77,19 +77,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" id="X8Q-ip-PpJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="aTm-bG-mnB">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgssombralateral.png" id="YNR-8f-B0P">
                                         <rect key="frame" x="320" y="0.0" width="8" height="140"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view alpha="0.20000000298023224" contentMode="scaleToFill" id="JiZ-Pl-hX0">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="140"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label label label label label label label label label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vQV-zZ-s2h">
@@ -121,9 +121,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btncall1.png" width="21" height="22"/>
+        <image name="btncall1.png" width="17" height="18"/>
         <image name="btndelet1.png" width="15" height="18"/>
-        <image name="btnshop1.png" width="23" height="19"/>
+        <image name="btnshop1.png" width="19" height="15"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -18,6 +18,7 @@
 #import "PesquisaReceitas.h"
 #import "NewBook.h"
 #import "Settings.h"
+#import "ReceitaVisualizar.h"
 
 @interface MealPlanner ()
 {
@@ -172,6 +173,14 @@
         self.root.tableView.delegate = self;
         [self.root.tableView setContentInset:UIEdgeInsetsMake(0, 0, 48, 0)];
     }
+}
+
+-(void)verReceita:(ObjectReceita *) receita
+{
+    ReceitaVisualizar * recietas = [ReceitaVisualizar new];
+    recietas.receita = receita;
+    
+    [self.navigationController pushViewController:recietas animated:YES];
 }
 
 -(void)setUpCoreData
@@ -480,9 +489,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ObjectReceita * objR = [self.root.arrayOfItems objectAtIndex:indexPath.row];
+    NSLog(@"selected %ld", (long)indexPath.row);
     
-    self.dataActual = [objR.agendamento valueForKey:@"data"];
+    // tenho de ir buscar os valores a tabela para poder abrir o objecto correcto
+    
+    ObjectReceita * receita = [self.root.arrayOfItems objectAtIndex:indexPath.row];
+    ReceitaVisualizar * recietas = [ReceitaVisualizar new];
+    recietas.receita = receita;
+    
+    [self.navigationController pushViewController:recietas animated:YES];
+    
 }
 
 -(void)apagarReceita:(ObjectReceita *)receita
@@ -630,6 +646,9 @@
         [alert show];
     }
 }
+
+
+
 
 
 

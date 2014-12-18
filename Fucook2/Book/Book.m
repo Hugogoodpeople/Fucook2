@@ -33,15 +33,17 @@
     
 
 
+    if ([self.livro.id_livro isEqualToString:@"0"]){
     
-    /* bt mais*/
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [button addTarget:self action:@selector(addreceita:) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
+        /* bt mais*/
+        UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+        [button addTarget:self action:@selector(addreceita:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
     
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = anotherButton;
+        UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+        self.navigationItem.rightBarButtonItem = anotherButton;
 
+    }
     
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
@@ -328,7 +330,10 @@
     // tenho de calcular com base no que esta no header
     
     //cell.labelQtd.text = [self calcularValor:indexPath];
-    cell.delegate = self;
+    if ([self.livro.id_livro isEqualToString:@"0"]) {
+            cell.delegate = self;
+    }
+
     
     // NSString *key = [livro.imagem.description MD5Hash];
     // NSData *data = [FTWCache objectForKey:key];

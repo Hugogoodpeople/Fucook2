@@ -46,7 +46,7 @@
 
     
     
-    largura = [[UIScreen mainScreen] bounds].size.width;
+    largura = [[UIScreen mainScreen] bounds].size.width - 44;
     
     //[self.tabela setContentInset:UIEdgeInsetsMake(0, 0, 20, 0)];
     
@@ -380,7 +380,6 @@
 
 -(void)verificaMudarCartAllSelecte
 {
-    
     BOOL muda = YES;
     for (ObjectIngrediente * ing in self.items)
     {

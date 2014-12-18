@@ -383,27 +383,36 @@
         cell.viewBloqueada.alpha = 0;
         cell.viewAdquirida.alpha = 1;
     }
-        
     cell.labelCategoria.text = @"";
+    int larguraview = 28;
     
+    // tenho de verificar o cenas para ver se o livro tem as cetegorias
     // tenho de verificar o cenas para ver se o livro tem as cetegorias
     if (liv.breakFast)
     {
-        cell.labelCategoria.text = @"Breakfast";
+        cell.labelCategoria.text = @" Breakfast";
+        larguraview = larguraview + 40;
     }
     if (liv.dinner)
     {
         cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dinner", cell.labelCategoria.text ];
+        larguraview = larguraview + 30;
     }
     if (liv.dessert)
     {
         cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dessert", cell.labelCategoria.text ];
+        larguraview = larguraview + 35;
     }
     if (liv.lunch)
     {
         cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Lunch", cell.labelCategoria.text ];
+        larguraview = larguraview + 35;
     }
     
+    [cell.viewCategoria setFrame:CGRectMake(cell.viewCategoria.frame.origin.x,
+                                            cell.viewCategoria.frame.origin.y,
+                                            larguraview,
+                                            cell.viewCategoria.frame.size.height)];
     
     [cell setSelected:false animated:NO];
     
