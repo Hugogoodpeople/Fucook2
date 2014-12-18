@@ -73,7 +73,7 @@
         {
             case 1:
             {
-                // NSLog(@"resultado da lista de inApps  =>  %@", result.description);
+                 NSLog(@"resultado da lista de inApps  =>  %@", result.description);
                 
                 
                 
@@ -86,6 +86,7 @@
                     livro.titulo            = [dictLivro objectForKey:@"nome_livro"];
                     livro.descricao         = [dictLivro objectForKey:@"descricao_livro"];
                     livro.id_inapps         = [dictLivro objectForKey:@"id_inapp"];
+                    livro.partilha          = [[dictLivro objectForKey:@"partilha"] intValue];
                     livro.comprado          = NO;
                     
                     
@@ -138,6 +139,8 @@
                             
                             
                             [arrayIngredientes addObject:ingrediente];
+                            
+                            
                         }
                         
                         
@@ -167,6 +170,36 @@
                         
                         [arrayReceitas addObject:receita];
                     }
+                    
+                    // agrora tambem tenho de saber se o livro contem receitas com todas as categorias existentes
+                    BOOL breakFast = NO;
+                    BOOL dinner = NO;
+                    BOOL lunch = NO;
+                    BOOL dessert = NO;
+                    
+                    for (ObjectReceita * receita in arrayReceitas)
+                    {
+                        
+                        if ([receita.categoria rangeOfString:@"Breakfast"].location != NSNotFound) {
+                            breakFast = YES;
+                        }
+                        if ([receita.categoria rangeOfString:@"Dinner"].location != NSNotFound) {
+                            dinner = YES;
+                        }
+                        if ([receita.categoria rangeOfString:@"Lunch"].location != NSNotFound) {
+                            lunch = YES;
+                        }
+                        if ([receita.categoria rangeOfString:@"Dessert"].location != NSNotFound) {
+                            dessert = YES;
+                        }
+                        
+                    }
+                    
+                    livro.breakFast = breakFast;
+                    livro.dinner = dinner;
+                    livro.lunch = lunch;
+                    livro.dessert = dessert;
+
                     
                     livro.countReceitas = [NSString stringWithFormat:@"%lu", (unsigned long)arrayReceitas.count];
                     //[livro AddToCoreData:context];
@@ -327,6 +360,7 @@
     
     ObjectLivro * liv = [array_livros objectAtIndex:indexPath.row];
     
+    cell.labelCategoria.text = @"categorias dentro do livro aqui";
     cell.labelTitulo.text = liv.titulo;
     cell.labelDescricao.text = liv.descricao;
     cell.labelNumeroReceitas.text = liv.countReceitas;
@@ -366,33 +400,37 @@
             });
         });
     }
+
     
-    
-    [cell.imgBreakfast setImage:[UIImage imageNamed:@"icouncheck"]];
-    [cell.imgDinner setImage:[UIImage imageNamed:@"icouncheck"]];
-    [cell.imgDessert setImage:[UIImage imageNamed:@"icouncheck"]];
-    [cell.imgLunch setImage:[UIImage imageNamed:@"icouncheck"]];
-    
-    
-    cell.viewAdquirida.alpha = 0;
-    
+    if (liv.partilha == 1)
+    {
+        cell.viewBloqueada.alpha = 1;
+        cell.viewAdquirida.alpha = 0;
+    }
+    else
+    {
+        cell.viewBloqueada.alpha = 0;
+        cell.viewAdquirida.alpha = 1;
+    }
+        
+    cell.labelCategoria.text = @"";
     
     // tenho de verificar o cenas para ver se o livro tem as cetegorias
     if (liv.breakFast)
     {
-        [cell.imgBreakfast setImage:[UIImage imageNamed:@"icocheck"]];
+        cell.labelCategoria.text = @"Breakfast";
     }
     if (liv.dinner)
     {
-        [cell.imgDinner setImage:[UIImage imageNamed:@"icocheck"]];
+        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dinner", cell.labelCategoria.text ];
     }
     if (liv.dessert)
     {
-        [cell.imgDessert setImage:[UIImage imageNamed:@"icocheck"]];
+        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dessert", cell.labelCategoria.text ];
     }
     if (liv.lunch)
     {
-        [cell.imgLunch setImage:[UIImage imageNamed:@"icocheck"]];
+        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Lunch", cell.labelCategoria.text ];
     }
     
     
@@ -417,7 +455,16 @@
     
 }
 
-
+-(void)comprarLivro:(ObjectLivro *)Livro
+{
+    // tenho de pegar no livor de adicionar ao core data do utilizador :!
+    
+    [Livro AddToCoreData:context];
+    
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Book now you own this book" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+    [alert show];
+}
 
 
 

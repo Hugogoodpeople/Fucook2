@@ -56,6 +56,24 @@
     
     [self.delegate presentViewController:composeController
                                 animated:YES completion:nil];
+    
+    SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result){
+        if (result == SLComposeViewControllerResultCancelled) {
+            
+            NSLog(@"cancele");
+            
+        } else
+            
+        {
+            NSLog(@"post to facebook done");
+            // tenho de adicionar o livro a lista de livros do utilizador
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(comprarLivro:) withObject:self.livro];
+            }
+        }
+    };
+    composeController.completionHandler =myBlock;
+
 }
 
 - (IBAction)partilhaTwitter:(id)sender
@@ -73,8 +91,36 @@
     [composeController addURL: [NSURL URLWithString:
                                 @"http://www.fucook.com"]];
     
-    [self.delegate presentViewController:composeController
-                                animated:YES completion:nil];
+
+    
+    [self.delegate presentViewController:composeController animated:YES completion:nil];
+    
+    SLComposeViewControllerCompletionHandler myBlock = ^(SLComposeViewControllerResult result)
+    {
+        if (result == SLComposeViewControllerResultCancelled)
+        {
+            NSLog(@"cancele");
+        } else
+            
+        {
+            NSLog(@"post to twitter done");
+            // tenho de adicionar o livro a lista de livros do utilizador
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(comprarLivro:) withObject:self.livro];
+            }
+        }
+        
+    };
+    composeController.completionHandler = myBlock;
+
 }
 
+
+
+- (IBAction)clickAddLivro:(id)sender
+{
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(comprarLivro:) withObject:self.livro];
+    }
+}
 @end

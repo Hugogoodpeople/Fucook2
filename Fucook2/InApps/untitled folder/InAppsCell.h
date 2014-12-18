@@ -28,10 +28,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelNumeroReceitas;
 @property (weak, nonatomic) IBOutlet UILabel *labelRecipes;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgBreakfast;
-@property (weak, nonatomic) IBOutlet UIImageView *imgLunch;
-@property (weak, nonatomic) IBOutlet UIImageView *imgDinner;
-@property (weak, nonatomic) IBOutlet UIImageView *imgDessert;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelCategoria;
 
 @property (weak, nonatomic) IBOutlet UIView *viewDescricao;
 
@@ -43,5 +41,6 @@
 @property (weak, nonatomic) IBOutlet UIView *viewAdquirida;
 @property (weak, nonatomic) IBOutlet UIView *viewBloqueada;
 
+- (IBAction)clickAddLivro:(id)sender;
 
 @end

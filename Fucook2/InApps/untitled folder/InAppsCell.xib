@@ -70,45 +70,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="245" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icocheck.png" id="Y8h-LL-dPP">
-                                        <rect key="frame" x="7" y="7" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BREAKFAST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8pH-Ki-x9g">
-                                        <rect key="frame" x="19" y="2" width="49" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icocheck.png" id="Wtw-Kd-jFj">
-                                        <rect key="frame" x="76" y="7" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LUNCH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UnS-mr-Cab">
-                                        <rect key="frame" x="87" y="2" width="31" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icocheck.png" id="xOQ-Fj-PgK">
-                                        <rect key="frame" x="123" y="7" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DINNER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vr3-Xe-OkG">
-                                        <rect key="frame" x="134" y="2" width="34" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icocheck.png" id="3H7-pr-UrJ">
-                                        <rect key="frame" x="174" y="7" width="10" height="10"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESSERT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5fb-zN-tYN">
-                                        <rect key="frame" x="185" y="2" width="46" height="21"/>
+                                        <rect key="frame" x="19" y="2" width="213" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -177,6 +140,16 @@
                                 <rect key="frame" x="210" y="0.0" width="105" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="teM-Si-Xc7">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickAddLivro:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2Y0-uE-DWD"/>
+                                        </connections>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgbadgetsmall.png" id="2Qu-nU-vhU">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="70"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,10 +253,7 @@
                 <outlet property="ButtonDelete" destination="MCu-lj-2rQ" id="Ioh-b5-Ahb"/>
                 <outlet property="buttonEdit" destination="p6b-tw-6Ds" id="hb0-ii-guh"/>
                 <outlet property="imagemLivro" destination="GcF-oS-l1F" id="azi-pV-7fE"/>
-                <outlet property="imgBreakfast" destination="Y8h-LL-dPP" id="zh8-B0-KyL"/>
-                <outlet property="imgDessert" destination="3H7-pr-UrJ" id="obP-nW-2U3"/>
-                <outlet property="imgDinner" destination="xOQ-Fj-PgK" id="zPD-Oh-FEl"/>
-                <outlet property="imgLunch" destination="Wtw-Kd-jFj" id="tB6-Dk-mDh"/>
+                <outlet property="labelCategoria" destination="8pH-Ki-x9g" id="M1P-Yk-1xM"/>
                 <outlet property="labelDescricao" destination="Plu-Oe-F5x" id="MiG-M9-9GW"/>
                 <outlet property="labelNumeroReceitas" destination="ZEs-a4-cRk" id="kgQ-Xb-pvY"/>
                 <outlet property="labelRecipes" destination="ZK9-zE-vDA" id="Wfx-u1-Tou"/>
@@ -295,15 +265,14 @@
                 <outlet property="viewEdit" destination="8lB-zO-6GZ" id="258-zs-m4q"/>
                 <outlet property="viewMovel" destination="NVD-Ja-51g" id="mlU-8k-eie"/>
             </connections>
-            <point key="canvasLocation" x="245" y="200"/>
+            <point key="canvasLocation" x="487" y="137"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btndelet1.png" width="20" height="24"/>
-        <image name="btnedit1.png" width="24" height="24"/>
+        <image name="btndelet1.png" width="15" height="18"/>
+        <image name="btnedit1.png" width="17" height="17"/>
         <image name="btnfacebook.png" width="20" height="20"/>
         <image name="btntwitter.png" width="20" height="20"/>
-        <image name="icocheck.png" width="8" height="6"/>
         <image name="imgbadgetbig.png" width="108" height="135"/>
         <image name="imgbadgetsmall.png" width="108" height="72"/>
         <image name="imglinebadgetdown.png" width="88" height="2"/>

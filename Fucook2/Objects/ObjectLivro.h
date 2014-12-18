@@ -17,6 +17,7 @@
 @property NSString * id_inapps;
 @property NSString * countReceitas;
 @property UIImage  * imagem;
+@property int        partilha;
 @property NSManagedObject * managedImagem;
 @property NSManagedObject * managedObject;
 @property NSMutableArray  * receitas;

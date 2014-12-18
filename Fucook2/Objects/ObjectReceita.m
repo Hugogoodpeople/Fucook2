@@ -74,21 +74,51 @@
 
 -(void)AddToCoreData:(NSManagedObjectContext *)context
 {
-    NSManagedObject *Livro = [NSEntityDescription
+    NSManagedObject *receita = [NSEntityDescription
                               insertNewObjectForEntityForName:@"Receitas"
                               inManagedObjectContext:context];
-    [Livro setValue:self.nome               forKey:@"nome"];
-    [Livro setValue:self.data_criado        forKey:@"data_criado"];
-    [Livro setValue:self.categoria          forKey:@"categoria"];
-    [Livro setValue:self.servings           forKey:@"nr_pessoas"];
-    [Livro setValue:self.dificuldade        forKey:@"dificuldade"];
-    [Livro setValue:self.tempo              forKey:@"tempo"];
-    [Livro setValue:self.managedImagem             forKey:@"contem_imagem"];
-    [Livro setValue:self.notas              forKey:@"notas"];
+    [receita setValue:self.nome               forKey:@"nome"];
+    [receita setValue:self.data_criado        forKey:@"data_criado"];
+    [receita setValue:self.categoria          forKey:@"categoria"];
+    [receita setValue:self.servings           forKey:@"nr_pessoas"];
+    [receita setValue:self.dificuldade        forKey:@"dificuldade"];
+    [receita setValue:self.tempo              forKey:@"tempo"];
+    //[receita setValue:self.managedImagem      forKey:@"contem_imagem"];
+    [receita setValue:self.notas              forKey:@"notas"];
     
-    self.managedObject = Livro;
+    NSManagedObject *ImagemR = [NSEntityDescription
+                                insertNewObjectForEntityForName:@"Imagens"
+                                inManagedObjectContext:context];
     
-#warning ainda imcompleto
+    NSData *imageData = UIImageJPEGRepresentation(self.imagem, 1.0);
+    [ImagemR setValue:imageData forKey:@"imagem"];
+    [receita setValue:ImagemR forKey:@"contem_imagem"];
+
+    
+    // aqui tenho de adicionar os ingredientes e as etapas um a um á receita
+    NSMutableArray * managedArrayIngre = [NSMutableArray new];
+    
+    for (ObjectIngrediente * ingrediente in self.arrayIngredientes)
+    {
+            [managedArrayIngre addObject:[ingrediente getManagedObject:context]];
+    }
+    
+    [receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:managedArrayIngre]] forKey:@"contem_ingredientes"];
+    
+    
+    // aqui tenho de adicionar os ingredientes e as etapas um a um á receita
+    NSMutableArray * managedArrayEtapas = [NSMutableArray new];
+    
+    for (ObjectDirections * ingrediente in self.arrayEtapas)
+    {
+        [managedArrayEtapas addObject:[ingrediente getManagedObject:context]];
+    }
+    
+    [receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:managedArrayEtapas]] forKey:@"contem_etapas"];
+    
+    
+    self.managedObject = receita;
+
     
 }
 
