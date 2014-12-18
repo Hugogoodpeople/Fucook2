@@ -18,6 +18,7 @@
                               insertNewObjectForEntityForName:@"Livros"
                               inManagedObjectContext:context];
     [Livro setValue:self.titulo forKey:@"titulo"];
+    [Livro setValue:self.id_livro forKey:@"id_livro"];
     
     // esta imagem ainda nao foi colacada correctamente porque ainda nao criei o managed object da imagem a ser associada ao livro
     //[Livro setValue:self.descricao forKey:@"descricao"];

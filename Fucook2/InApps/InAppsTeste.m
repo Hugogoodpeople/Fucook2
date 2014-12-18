@@ -29,7 +29,6 @@
     NSNumberFormatter * _priceFormatter;
     
     NSMutableArray * array_livros;
-    NSMutableArray * imagens;
     
     WebServiceSender * listaIdsInApps;
     
@@ -61,6 +60,8 @@
     // aqui nao tenho de enviar nada por enquanto
     
     [listaIdsInApps sendDict:dict];
+    
+    [self.loadingIndicator startAnimating];
 }
 
 -(void)sendCompleteWithResult:(NSDictionary*)result withError:(NSError*)error
@@ -73,9 +74,7 @@
         {
             case 1:
             {
-                 NSLog(@"resultado da lista de inApps  =>  %@", result.description);
-                
-                
+                 // NSLog(@"resultado da lista de inApps  =>  %@", result.description);
                 
                 array_livros = [NSMutableArray new];
                 
@@ -87,6 +86,7 @@
                     livro.descricao         = [dictLivro objectForKey:@"descricao_livro"];
                     livro.id_inapps         = [dictLivro objectForKey:@"id_inapp"];
                     livro.partilha          = [[dictLivro objectForKey:@"partilha"] intValue];
+                    livro.id_livro          = [dictLivro objectForKey:@"id_livro"];
                     livro.comprado          = NO;
                     
                     
@@ -213,6 +213,9 @@
                 
                 [self.tableView reloadData];
                 
+                [self.loadingIndicator stopAnimating];
+                self.loadingIndicator.alpha = 0;
+                
                 break;
             }
                 
@@ -225,18 +228,7 @@
     
 }
 
--(void)actualizarImagens
-{
-    imagens = [[NSMutableArray alloc] init];
-    
-    for (NSInteger i = 0; i < 1000; ++i)
-    {
-        [imagens addObject:[NSNull null]];
-    }
-    
-    //[self.tableView reloadData];
-    
-}
+
 
 // 3
 - (void)viewDidLoad
@@ -278,8 +270,7 @@
     [self.tableView setContentInset:UIEdgeInsetsMake(0, 0, 48, 0)];
     
     context = [AppDelegate sharedAppDelegate].managedObjectContext;
-    
-    [self actualizarImagens];
+
     
     [self webserviceInApps];
     
@@ -380,27 +371,7 @@
     
     // NSString *key = [livro.imagem.description MD5Hash];
     // NSData *data = [FTWCache objectForKey:key];
-    if ( [imagens objectAtIndex:indexPath.row] != [NSNull null] )
-    {
-        //UIImage *image = [UIImage imageWithData:data];
-        cell.imagemLivro.image = [imagens objectAtIndex:indexPath.row];
-    }
-    else
-    {
-        //cell.imageCapa.image = [UIImage imageNamed:@"icn_default"];
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-        dispatch_async(queue, ^{
-
-            UIImage *image = liv.imagem;
-            NSInteger index = indexPath.row;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                cell.imagemLivro.image = image;
-                if (image)
-                    [imagens replaceObjectAtIndex:index withObject:image];
-            });
-        });
-    }
-
+    cell.imagemLivro.image = liv.imagem;
     
     if (liv.partilha == 1)
     {
@@ -457,15 +428,44 @@
 
 -(void)comprarLivro:(ObjectLivro *)Livro
 {
-    // tenho de pegar no livor de adicionar ao core data do utilizador :!
+    // tenho de pegar no livro de adicionar ao core data do utilizador :!
     
-    [Livro AddToCoreData:context];
+    // antes de adicionar o livro tenho de ir ao coredata verificar se este livro já lá existe e se sim nao posso adicionar de novo
+    if ([self ExisteLivro:Livro])
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Ups" message:@"You alredy have this book" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }else
+    {
+        [Livro AddToCoreData:context];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Now you own this book" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
     
-    
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Book now you own this book" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-    [alert show];
 }
 
+-(BOOL)ExisteLivro:(ObjectLivro *)livro
+{
+    BOOL existe = NO;
+    
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Livros"];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_livro = %@", livro.id_livro];
+    [fetch setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *results = [context executeFetchRequest:fetch error:&error];
+    if(results) {
+        NSLog(@"Entities with that name: %@", results);
+        for(NSManagedObject *p in results) {
+            existe = YES;
+        }
+    } else {
+        NSLog(@"Error: %@", error);
+    }
+
+    return existe;
+}
 
 
 @end

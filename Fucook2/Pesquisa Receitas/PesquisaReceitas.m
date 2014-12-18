@@ -73,7 +73,7 @@
     // fazer o codigo aqui para limpar as receitas
     for (ObjectReceita * receita in receitas)
     {
-        if( [receita.nome rangeOfString:searchText].location != NSNotFound )
+        if( [receita.nome rangeOfString:searchText options:NSCaseInsensitiveSearch].location != NSNotFound )
         //if ([receita.nome caseInsensitiveCompare:searchText ])
         {
             [pesquisaReceitas addObject:receita];

@@ -15,6 +15,7 @@
 @property NSString * titulo;
 @property NSString * descricao;
 @property NSString * id_inapps;
+@property NSString * id_livro;
 @property NSString * countReceitas;
 @property UIImage  * imagem;
 @property int        partilha;

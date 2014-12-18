@@ -23,4 +23,7 @@
 - (IBAction)clickcarrinho:(id)sender;
 - (IBAction)clickSettings:(id)sender;
 
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+
 @end
