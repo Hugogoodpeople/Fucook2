@@ -45,9 +45,11 @@
 
     }
     
-    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 15, 40)];
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
+    
+
     
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;

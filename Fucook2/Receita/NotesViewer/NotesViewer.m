@@ -52,4 +52,25 @@
     
     
 }
+
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.viewMovel setFrame:CGRectMake(self.viewMovel.frame.origin.x,
+                                            self.viewMovel.frame.origin.y,
+                                            self.viewMovel.frame.size.width,
+                                            100)];
+    }];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.viewMovel setFrame:CGRectMake(self.viewMovel.frame.origin.x,
+                                            self.viewMovel.frame.origin.y,
+                                            self.viewMovel.frame.size.width,
+                                            520)];
+    }];
+}
 @end

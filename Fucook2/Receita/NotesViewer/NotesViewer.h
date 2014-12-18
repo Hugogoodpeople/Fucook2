@@ -21,4 +21,7 @@
 @property NSString * notas;
 @property (weak, nonatomic) IBOutlet UIView *viewEscura;
 
+@property (weak, nonatomic) IBOutlet UIView *viewMovel;
+
+
 @end
