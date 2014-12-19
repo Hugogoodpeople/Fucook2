@@ -40,4 +40,6 @@
 @property (weak, nonatomic) IBOutlet UIView *viewCategoria;
 
 
+
+
 @end

@@ -225,6 +225,8 @@
 
 -(void)scrollToPosition:(UIView *)rect
 {
+    [rect setFrame:CGRectMake(rect.frame.origin.x, rect.frame.origin.y + 100, rect.frame.size.width, rect.frame.size.height)];
+    
     [self.scrollNewReceita scrollRectToVisible:rect.frame animated:YES];
 }
 

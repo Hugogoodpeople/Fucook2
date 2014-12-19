@@ -29,8 +29,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelCategoria;
 @property (weak, nonatomic) IBOutlet UIImageView *imagemReceita;
 
+@property (weak, nonatomic) IBOutlet UIView *viewBotoes;
+
+
 @property ObjectReceita * receita;
 
 @property (nonatomic , assign) id delegate;
+@property BOOL comprada;
 
 @end

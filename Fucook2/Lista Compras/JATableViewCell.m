@@ -46,7 +46,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel newAutoLayoutView];
         _titleLabel.numberOfLines = 0;
-        _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     }
     return _titleLabel;
 }

@@ -132,6 +132,7 @@
                 <outlet property="buttonEdit" destination="GHQ-1k-rK5" id="drP-f9-UY2"/>
                 <outlet property="imagemReceita" destination="3CM-wM-i2w" id="BxH-7x-gtz"/>
                 <outlet property="labelTitulo" destination="r3h-4F-uu8" id="zk1-sw-9Ui"/>
+                <outlet property="viewBotoes" destination="P5w-j1-kfT" id="dQJ-kj-tS3"/>
                 <outlet property="viewMovel" destination="bow-2k-waW" id="Iuq-jf-6F3"/>
             </connections>
             <point key="canvasLocation" x="420" y="-151.5"/>

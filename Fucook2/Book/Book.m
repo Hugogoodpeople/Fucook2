@@ -31,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = self.livro.titulo;
 
 
     if ([self.livro.id_livro isEqualToString:@"0"]){
@@ -333,9 +334,10 @@
     
     //cell.labelQtd.text = [self calcularValor:indexPath];
     if ([self.livro.id_livro isEqualToString:@"0"]) {
-            cell.delegate = self;
+            cell.comprada = YES;
     }
 
+    cell.delegate = self;
     
     // NSString *key = [livro.imagem.description MD5Hash];
     // NSData *data = [FTWCache objectForKey:key];

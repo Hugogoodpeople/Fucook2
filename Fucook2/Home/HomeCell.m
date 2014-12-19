@@ -24,8 +24,6 @@
     
     [self.contentView addGestureRecognizer:swipeLeft];
     [self.contentView addGestureRecognizer:swipeRight];
-
-    
     
 }
 

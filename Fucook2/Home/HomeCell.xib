@@ -62,13 +62,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" id="ES8-HU-T1h">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="225"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                             <view contentMode="scaleToFill" id="bmJ-NM-MwO">
                                 <rect key="frame" x="63" y="171" width="245" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgtira.png" id="gCq-D8-psv">
+                                    <view alpha="0.74999999999999978" contentMode="scaleToFill" id="wTZ-QW-tH1">
                                         <rect key="frame" x="0.0" y="0.0" width="245" height="25"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgtira.png" id="gCq-D8-psv">
+                                        <rect key="frame" x="245" y="0.0" width="12" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BREAKFAST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8HZ-dM-apd">
                                         <rect key="frame" x="8" y="2" width="237" height="21"/>
@@ -157,7 +167,7 @@
                 <outlet property="viewEdit" destination="1F5-ZD-pOt" id="CHd-j1-lf2"/>
                 <outlet property="viewMovel" destination="0wq-eg-qLH" id="wsk-5o-UTz"/>
             </connections>
-            <point key="canvasLocation" x="239" y="169"/>
+            <point key="canvasLocation" x="141" y="107"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -165,7 +175,7 @@
         <image name="btnedit1.png" width="17" height="17"/>
         <image name="imgroda.png" width="60" height="60"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
-        <image name="imgtira.png" width="280" height="22"/>
+        <image name="imgtira.png" width="10" height="22"/>
         <image name="linedotbig3.png" width="219" height="2"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -41,6 +41,10 @@
     [self.buttonEdit addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
     [self.buttonEdit addTarget:self action:@selector(buttonNormal:) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    
+    
+    
 }
 
 -(void)buttonHighlight:(id)sender
@@ -82,10 +86,28 @@
     int height = self.viewMovel.frame.size.height;
     int width = self.viewMovel.frame.size.width;
     
-    if(self.delegate)
-    [UIView animateWithDuration:0.2f animations:^{
-        [self.viewMovel setFrame:CGRectMake(-140, 0, width, height)];
-    }];
+    
+    // se nao tiver delegado é porque é uma receita de um livro comprado
+    // se foi um livro comprado nao o posso editar
+    // mas posso adicionar os itens ao carrinho e agendar por isso vou mover a view com os botoes
+    
+    if (!self.comprada) {
+        [self.viewBotoes setFrame:CGRectMake(self.viewMovel.frame.size.width - self.viewBotoes.frame.size.width / 2,
+                                             0,
+                                             self.viewBotoes.frame.size.width,
+                                             self.viewBotoes.frame.size.height)];
+    }
+    
+    if(self.comprada){
+        [UIView animateWithDuration:0.2f animations:^{
+            [self.viewMovel setFrame:CGRectMake(-140, 0, width, height)];
+        }];
+    }else
+    {
+        [UIView animateWithDuration:0.2f animations:^{
+            [self.viewMovel setFrame:CGRectMake(-70, 0, width, height)];
+        }];
+    }
     
     int altura = [[UIScreen mainScreen] bounds].size.height;
     
@@ -100,10 +122,13 @@
     int height = self.viewMovel.frame.size.height;
     int width = self.viewMovel.frame.size.width;
     
-    if(self.delegate)
-    [UIView animateWithDuration:0.2f animations:^{
-        [self.viewMovel setFrame:CGRectMake(0, 0, width, height)];
-    }];
+   
+        [UIView animateWithDuration:0.2f animations:^{
+            [self.viewMovel setFrame:CGRectMake(0, 0, width, height)];
+        }];
+    
+   
+        
     
     int altura = [[UIScreen mainScreen] bounds].size.height;
     

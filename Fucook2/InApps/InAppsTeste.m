@@ -261,7 +261,7 @@
     
     self.navigationItem.hidesBackButton = YES;
     
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
+    //[self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
     
     
     
@@ -383,6 +383,7 @@
         cell.viewBloqueada.alpha = 0;
         cell.viewAdquirida.alpha = 1;
     }
+    
     cell.labelCategoria.text = @"";
     int larguraview = 28;
     
@@ -390,23 +391,23 @@
     // tenho de verificar o cenas para ver se o livro tem as cetegorias
     if (liv.breakFast)
     {
-        cell.labelCategoria.text = @" Breakfast";
-        larguraview = larguraview + 40;
+        cell.labelCategoria.text = @" Breakfast  ";
+        larguraview = larguraview + 45;
     }
     if (liv.dinner)
     {
-        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dinner", cell.labelCategoria.text ];
-        larguraview = larguraview + 30;
+        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dinner  ", cell.labelCategoria.text ];
+        larguraview = larguraview + 35;
     }
     if (liv.dessert)
     {
-        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dessert", cell.labelCategoria.text ];
-        larguraview = larguraview + 35;
+        cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Dessert  ", cell.labelCategoria.text ];
+        larguraview = larguraview + 40;
     }
     if (liv.lunch)
     {
         cell.labelCategoria.text = [NSString stringWithFormat:@"%@ Lunch", cell.labelCategoria.text ];
-        larguraview = larguraview + 35;
+        larguraview = larguraview + 40;
     }
     
     [cell.viewCategoria setFrame:CGRectMake(cell.viewCategoria.frame.origin.x,

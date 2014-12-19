@@ -38,6 +38,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navigationController.navigationBarHidden = NO;
+    
+    self.title = self.receita.nome;
+    
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
@@ -61,6 +65,7 @@
     
     [self initializeShoppingCart];
     [self setUpIngredientes];
+    
 }
 
 -(void)back
@@ -648,6 +653,7 @@
 -(void)abrirNotes
 {
     NotesViewer * notes = [NotesViewer new];
+    notes.delegate = self;
     // notes.delegate = self;
     notes.notas = self.receita.notas;
     notes.modalPresentationStyle = UIModalPresentationOverCurrentContext;
@@ -655,6 +661,20 @@
         [UIView animateWithDuration:0.2 animations:^{
             notes.viewEscura.alpha = 0.6;
         }];}];
+}
+
+-(void)actualizarNota:(NSString *)nota
+{
+    self.receita.notas = nota;
+    [self.receita.managedObject setValue:nota forKey:@"notas"];
+    
+    NSError *error = nil;
+    if (![context save:&error])
+    {
+        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+        return;
+    }
+
 }
 
 @end

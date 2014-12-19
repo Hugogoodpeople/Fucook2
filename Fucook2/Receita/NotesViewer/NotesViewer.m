@@ -9,6 +9,9 @@
 #import "NotesViewer.h"
 
 @interface NotesViewer ()
+{
+    CGRect frameInicial;
+}
 
 @end
 
@@ -24,7 +27,23 @@
     self.imageArredondar.clipsToBounds = YES;
     
     
+    // para o apply button
     
+    UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
+    numberToolbar.barStyle = UIBarStyleBlackTranslucent;
+    numberToolbar.items = [NSArray arrayWithObjects:
+                           /*[[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],*/
+                           [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                           [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithTextArea)],
+                           nil];
+    [numberToolbar sizeToFit];
+    self.textviewNote.inputAccessoryView = numberToolbar;
+    
+}
+
+-(void)doneWithTextArea
+{
+    [self.textviewNote resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +66,13 @@
      [UIView animateWithDuration:0.2 animations:^{
          self.viewEscura.alpha = 0;
      } completion:^(BOOL finished) {
-         [self dismissViewControllerAnimated:YES completion:^{}];
+         [self dismissViewControllerAnimated:YES completion:^{
+         
+             if (self.delegate) {
+                 [self.delegate performSelector:@selector(actualizarNota:) withObject:self.textviewNote.text];
+             }
+             
+         }];
      }];
     
     
@@ -56,21 +81,20 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+    frameInicial = self.viewMovel.frame;
+    
     [UIView animateWithDuration:0.5 animations:^{
         [self.viewMovel setFrame:CGRectMake(self.viewMovel.frame.origin.x,
                                             self.viewMovel.frame.origin.y,
                                             self.viewMovel.frame.size.width,
-                                            100)];
+                                            self.view.frame.size.height - 320)];
     }];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     [UIView animateWithDuration:0.5 animations:^{
-        [self.viewMovel setFrame:CGRectMake(self.viewMovel.frame.origin.x,
-                                            self.viewMovel.frame.origin.y,
-                                            self.viewMovel.frame.size.width,
-                                            520)];
+        [self.viewMovel setFrame:frameInicial];
     }];
 }
 @end

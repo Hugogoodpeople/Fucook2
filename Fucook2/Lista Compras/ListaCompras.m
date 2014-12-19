@@ -55,6 +55,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"Shopping list";
+    /*
+    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+    [self.navigationItem setTitleView:titleView];
+    */
+     
     self.tabbleView.delegate = self;
     self.tabbleView.dataSource = self;
     //[self preencherTabela];
@@ -75,7 +82,7 @@
     self.pickerQuant.dataSource = self;
     self.pickerQuant.delegate = self;
     
-   //[self loadData];
+    //[self loadData];
     /*
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [buttonback addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
@@ -108,20 +115,20 @@
     
     
     
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
+    // [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
     
     self.navigationItem.hidesBackButton = YES;
     
-    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-    [self.navigationItem setTitleView:titleView];
     
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
     
     
+    [self.header setFrame:CGRectMake(0,64 + self.header.frame.size.height, self.view.frame.size.width, self.header.frame.size.height)];
     
+    [self.view addSubview:self.header];
     
-    self.tabbleView.tableHeaderView = self.header;
-    [self.tabbleView setContentInset:UIEdgeInsetsMake(0, 0, 52, 0)];
+    //self.tabbleView.tableHeaderView = self.header;
+    [self.tabbleView setContentInset:UIEdgeInsetsMake(self.header.frame.size.height, 0, 52, 0)];
     
 }
 
@@ -334,41 +341,7 @@
 {
     
     ObjectLista * listas = [arrayOfItems objectAtIndex:indexPath.row];
-    /*
-    
-    static NSString *simpleTableIdentifier = @"ListaComprasCell";
-    
-    ListaComprasCell *cell = (ListaComprasCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ListaComprasCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    
-  
-    // tenho de saber se o ingrediente percente a alguma receita, se nao pertencer o botao de ver a receita deve ficar desactivo
-    
-    NSLog(@"%@",listas.unidade);
-    cell.labelTitle.text    = listas.nome;
-    cell.labelPeso.text     = listas.quantidade;
-    cell.labelUnit.text     = listas.unidade;
-    cell.labelQuanDeci.text = listas.quantidade_decimal;
-    cell.objectLista        = listas;
-    cell.index              = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
-    cell.delegate           = self;
-    
-    if(listas.managedObjectReceita == nil)
-    {
-        [cell.viewVer setAlpha:0.6];
-    }
-    else
-    {
-        [cell.viewVer setAlpha:0];
-    }
-    
-    return cell;
-     */
+ 
     
     JATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kJATableViewCellReuseIdentifier];
     
@@ -376,7 +349,16 @@
     [cell addActionButtons:[self rightButtons] withButtonWidth:kJAButtonWidth withButtonPosition:JAButtonLocationRight];
     
     cell.delegate = self;
-    [cell configureCellWithTitle:[NSString stringWithFormat:@" %@%@%@ %@",listas.quantidade, listas.quantidade_decimal, listas.unidade, listas.nome]];
+    
+
+    
+    
+    NSString *val =[NSString stringWithFormat:@" %@%@%@ %@",listas.quantidade, listas.quantidade_decimal, listas.unidade, listas.nome];
+    val = [val stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+
+    val =[NSString stringWithFormat:@" %@", val];
+    
+    [cell configureCellWithTitle:val];
     [cell setNeedsLayout];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
@@ -385,12 +367,23 @@
 
 }
 
+/*
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    /*if(selectedIndex == indexPath.row){
-        return 87;
-    }else*/{
         return 44;
-    }
+}
+*/
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //NSString *str = @"Ingredient";
+    NSString *str = ((ObjectIngrediente *)[arrayOfItems objectAtIndex:indexPath.row]).nome;
+    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:15] constrainedToSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width -50, 999) lineBreakMode:NSLineBreakByWordWrapping];
+    
+    NSLog(@"%f",size.height);
+    if(size.height == 0)
+        return 51;
+    
+    return size.height +30;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -623,17 +616,20 @@
     
     float Y = scrollView.contentOffset.y;
     
-    if (Y >= 130 ) {
-        [self.header setFrame:CGRectMake(0,  Y - 130 + 64 , self.view.frame.size.width, self.header.frame.size.height)];
+    float claculado = -Y - self.header.frame.size.height;
+    
+    if (claculado >= - 65.5 )
+    {
+        [self.header setFrame:CGRectMake(0,  claculado , self.view.frame.size.width, self.header.frame.size.height)];
     }
     else
     {
-        [self.header setFrame:CGRectMake(0,  64 , self.view.frame.size.width, self.header.frame.size.height)];
+        [self.header setFrame:CGRectMake(0,  -65.5 , self.view.frame.size.width, self.header.frame.size.height)];
     }
     
     
     
-     NSLog(@"Y = %f", Y);
+     //NSLog(@"Y = %f         calculado = %f", Y, claculado);
 }
 
 @end

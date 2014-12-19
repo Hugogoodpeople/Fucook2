@@ -56,6 +56,7 @@
 {
     [super viewDidLoad];
     
+    
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
     [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsetting1"] forState:UIControlStateNormal];
@@ -85,13 +86,17 @@
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
 }
 
+
+
 - (IBAction)clickHome:(id)sender
 {
+    self.navigationController.navigationBarHidden = NO;
     [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (IBAction)clickcarrinho:(id)sender
 {
+    self.navigationController.navigationBarHidden = NO;
     [self.navigationController popToRootViewControllerAnimated:NO];
     if (self.delegate)
     {
@@ -100,6 +105,7 @@
 }
 
 - (IBAction)clickInApps:(id)sender {
+    self.navigationController.navigationBarHidden = NO;
     [self.navigationController popToRootViewControllerAnimated:NO];
     if (self.delegate) {
         [self.delegate performSelector:@selector(clickInApps:) withObject:nil];
@@ -113,6 +119,7 @@
 
 -(void)Findreceita
 {
+    self.navigationController.navigationBarHidden = NO;
     [self.navigationController pushViewController:[PesquisaReceitas new] animated:YES];
 }
 
@@ -126,6 +133,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.navigationController.navigationBarHidden = YES;
     [super viewWillAppear:animated];
     [self setUp];
     [self setUpCoreData];
@@ -177,10 +185,13 @@
 
 -(void)verReceita:(ObjectReceita *) receita
 {
+    
     ReceitaVisualizar * recietas = [ReceitaVisualizar new];
     recietas.receita = receita;
     
     [self.navigationController pushViewController:recietas animated:YES];
+    
+    
 }
 
 -(void)setUpCoreData

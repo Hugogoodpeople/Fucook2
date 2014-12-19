@@ -43,7 +43,10 @@
     
 }
 
-- (IBAction)back:(id)sender {
+- (IBAction)back:(id)sender
+{
+    [self.searcBar resignFirstResponder];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
