@@ -50,8 +50,6 @@
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
     
-
-    
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;
     
@@ -305,7 +303,8 @@
     return self.items.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     return 145 ;
 }
 
@@ -325,12 +324,38 @@
     
     ObjectReceita * rec = [self.items objectAtIndex:indexPath.row];
     
-    cell.labelTitulo.text = rec.nome;
+    cell.labelTitulo.text = [rec.nome uppercaseString];
     cell.labelTempo.text = rec.tempo;
-    cell.labelCategoria.text = rec.categoria;
+    cell.labelCategoria.text = [NSString stringWithFormat:@"%@ · %@ · %@",rec.tempo, rec.dificuldade , rec.categoria];
     cell.labelDificuldade.text = rec.dificuldade;
     cell.receita = rec;
     // tenho de calcular com base no que esta no header
+    
+    int larguraview = 55;
+    
+    if ([rec.categoria rangeOfString:@"Breakfast"].location != NSNotFound) {
+        larguraview = larguraview + 75;
+    }
+    if ([rec.categoria rangeOfString:@"Dinner"].location != NSNotFound) {
+        larguraview = larguraview + 55;
+    }
+    if ([rec.categoria rangeOfString:@"Lunch"].location != NSNotFound) {
+        larguraview = larguraview + 65;
+    }
+    if ([rec.categoria rangeOfString:@"Dessert"].location != NSNotFound) {
+        larguraview = larguraview + 75;
+    }
+    
+    if (larguraview > 220) {
+        larguraview = 220;
+    }
+    
+    [cell.viewAumentea setFrame:CGRectMake(cell.viewAumentea.frame.origin.x,
+                                            cell.viewAumentea.frame.origin.y,
+                                            larguraview,
+                                            cell.viewAumentea.frame.size.height)];
+
+
     
     //cell.labelQtd.text = [self calcularValor:indexPath];
     if ([self.livro.id_livro isEqualToString:@"0"]) {

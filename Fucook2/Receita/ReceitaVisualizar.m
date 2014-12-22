@@ -58,6 +58,7 @@
     
     context = [AppDelegate sharedAppDelegate].managedObjectContext;
     ingHeadercell = [IngredientesHeader new];
+    ingHeadercell.passo = self.receita.servings;
     [ingHeadercell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 108)];
     
     dirHeaderCell = [DirectionsHeader new];
@@ -623,8 +624,8 @@
   
     float Y = scrollView.contentOffset.y;
 
-    if (Y >= 280 ) {
-        [header.view setFrame:CGRectMake(0,  Y - 280 + 64 , self.view.frame.size.width, header.view.frame.size.height)];
+    if (Y >= 270 ) {
+        [header.view setFrame:CGRectMake(0,  Y - 270 + 64 , self.view.frame.size.width, header.view.frame.size.height)];
     }
     else
     {
@@ -633,7 +634,7 @@
     
     
      
-   // NSLog(@"Y = %f", Y);
+    NSLog(@"Y = %f", Y);
 }
 
 -(NSString *)calcularValor:(NSIndexPath *)indexPath

@@ -109,13 +109,38 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label label label label label label label label label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r3h-4F-uu8">
-                                        <rect key="frame" x="14" y="60" width="291" height="76.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="30"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="lWY-Db-85p">
+                                        <rect key="frame" x="10" y="7" width="270" height="87"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" id="7B1-SH-8ce">
+                                        <rect key="frame" x="0.0" y="105" width="230" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XYC-iA-Sf7">
+                                                <rect key="frame" x="0.0" y="0.0" width="230" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgtira.png" id="wCI-Ye-2YI">
+                                                <rect key="frame" x="230" y="0.0" width="11" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r0f-TX-oLU">
+                                                <rect key="frame" x="15" y="0.0" width="215" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -131,11 +156,13 @@
                 <outlet property="buttonDelete" destination="hR0-GZ-450" id="QNO-bB-GlB"/>
                 <outlet property="buttonEdit" destination="GHQ-1k-rK5" id="drP-f9-UY2"/>
                 <outlet property="imagemReceita" destination="3CM-wM-i2w" id="BxH-7x-gtz"/>
-                <outlet property="labelTitulo" destination="r3h-4F-uu8" id="zk1-sw-9Ui"/>
+                <outlet property="labelCategoria" destination="r0f-TX-oLU" id="t6Z-49-E62"/>
+                <outlet property="labelTitulo" destination="lWY-Db-85p" id="MUj-2p-yix"/>
+                <outlet property="viewAumentea" destination="7B1-SH-8ce" id="Zfq-kH-G8X"/>
                 <outlet property="viewBotoes" destination="P5w-j1-kfT" id="dQJ-kj-tS3"/>
                 <outlet property="viewMovel" destination="bow-2k-waW" id="Iuq-jf-6F3"/>
             </connections>
-            <point key="canvasLocation" x="420" y="-151.5"/>
+            <point key="canvasLocation" x="442" y="-191.5"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -144,6 +171,7 @@
         <image name="btnedit1.png" width="17" height="17"/>
         <image name="btnshop1.png" width="19" height="15"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
+        <image name="imgtira.png" width="10" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

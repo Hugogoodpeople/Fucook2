@@ -26,20 +26,36 @@
 - (IBAction)partilharFacebook:(id)sender {
     
     // esta parte funciona correctamente mas tem de abrir logo ou twitter ou facebook
-    /*
+    
      // este cosigo deixa o utilizador escolher qual o tipo de ferramenta pretende usar para partilhar o desejado
-     UIImage *postImage = self.imagemReceita.image;
+     UIImage *postImage = self.imagemLivro.image;
      
-     NSArray *activityItems = @[@"texto exemplo", postImage];
+     NSArray *activityItems = @[@"Just found this great book on fucook",[NSURL URLWithString:@"http://www.fucook.com"], postImage];
      
      UIActivityViewController *activityController =
      [[UIActivityViewController alloc]
      initWithActivityItems:activityItems
      applicationActivities:nil];
+    
+
+    activityController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList, UIActivityTypeMail ];
+    
+    
+    [activityController setCompletionHandler:^(NSString *activityType, BOOL completed) {
+        
+        if (completed) {
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(comprarLivro:) withObject:self.livro];
+            }
+        }
+        
+    }];
      
      [self.delegate presentViewController:activityController
      animated:YES completion:nil];
-     */
+     
+    
+    /*
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
@@ -73,6 +89,8 @@
         }
     };
     composeController.completionHandler =myBlock;
+     
+     */
 
 }
 

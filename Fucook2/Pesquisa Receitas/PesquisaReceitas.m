@@ -41,7 +41,40 @@
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;
     
+    
+    [self addCloseToTextView:self.searcBar];
 }
+
+-(void)addCloseToTextView:(UISearchBar *)textView
+{
+    UIView* numberToolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width -15 -44, 15.5, 44, 44)];
+    [button addTarget:self action:@selector(doneWithTextArea) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btntecladodown"] forState:UIControlStateNormal];
+    
+    [button setClipsToBounds:NO];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    // finally do the magic
+    float topInset = 14.0f;
+    anotherButton.imageInsets = UIEdgeInsetsMake(topInset, 0.0f, -topInset, 0.0f);
+    
+    [numberToolbar setBackgroundColor:[UIColor clearColor]];
+    
+    [numberToolbar addSubview:button];
+    
+    //[numberToolbar sizeToFit];
+    textView.inputAccessoryView = numberToolbar;
+    
+}
+
+-(void)doneWithTextArea
+{
+    [self.searcBar resignFirstResponder];
+}
+
 
 - (IBAction)back:(id)sender
 {

@@ -40,7 +40,7 @@
                             <rect key="frame" x="40" y="13" width="240" height="21"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m8w-c9-5vy">
@@ -63,16 +63,16 @@
                                 <action selector="clickMesSeguinte:" destination="-1" eventType="touchUpInside" id="Yfi-Vv-hee"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btleft3.png" id="2Mw-Oa-miK">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btleft2.png" id="2Mw-Oa-miK">
                             <rect key="frame" x="15" y="14" width="12" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btright3.png" id="4XP-Eg-xik">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btright2.png" id="4XP-Eg-xik">
                             <rect key="frame" x="292" y="14" width="12" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RS1-lv-8Df">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
@@ -116,12 +116,12 @@
         </view>
     </objects>
     <resources>
-        <image name="btleft3.png" width="11" height="17"/>
+        <image name="btleft2.png" width="11" height="17"/>
         <image name="btnbook1.png" width="28" height="24"/>
         <image name="btncall1.png" width="17" height="18"/>
         <image name="btnfeatured1.png" width="17" height="22"/>
         <image name="btnshop2.png" width="23" height="19"/>
-        <image name="btright3.png" width="15" height="24"/>
+        <image name="btright2.png" width="11" height="17"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -470,14 +470,34 @@
 
 - (IBAction)clickMesSeguinte:(id)sender
 {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *comp = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self.dataActual];
-    [comp setDay:1];
+    NSDateFormatter *dateFormatterDia = [[NSDateFormatter alloc] init];
+    [dateFormatterDia setDateFormat:@"dd"];
+    NSString * diaMes = [dateFormatterDia stringFromDate:self.dataActual];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comp = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self.dataActual];
+    
     NSDateFormatter *dateFormatterMes = [[NSDateFormatter alloc] init];
     [dateFormatterMes setDateFormat:@"MM"];
     NSString * mesSeguinte = [dateFormatterMes stringFromDate:self.dataActual];
     
+    
     [comp setMonth:mesSeguinte.intValue +1];
+    [comp setDay:diaMes.intValue];
+    
+    NSRange days = [gregorian rangeOfUnit:NSCalendarUnitDay
+                           inUnit:NSCalendarUnitMonth
+                          forDate:[gregorian dateFromComponents:comp]];
+    
+    if (days.length < diaMes.intValue)
+    {
+        [comp setDay:days.length];
+    }
+    else
+    {
+        [comp setDay:diaMes.intValue];
+    }
+    
     self.dataActual = [gregorian dateFromComponents:comp];
     
     [self setUpCarrocel];
@@ -485,14 +505,34 @@
 
 - (IBAction)clickMesAnterior:(id)sender
 {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *comp = [gregorian components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:self.dataActual];
-    [comp setDay:1];
+    NSDateFormatter *dateFormatterDia = [[NSDateFormatter alloc] init];
+    [dateFormatterDia setDateFormat:@"dd"];
+    NSString * diaMes = [dateFormatterDia stringFromDate:self.dataActual];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comp = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:self.dataActual];
+    [comp setDay:diaMes.intValue];
     NSDateFormatter *dateFormatterMes = [[NSDateFormatter alloc] init];
     [dateFormatterMes setDateFormat:@"MM"];
     NSString * mesSeguinte = [dateFormatterMes stringFromDate:self.dataActual];
     
-    [comp setMonth:mesSeguinte.intValue -1];
+    [comp setMonth:mesSeguinte.intValue -1 ];
+    
+    
+    NSCalendar *c = [NSCalendar currentCalendar];
+    NSRange days = [gregorian rangeOfUnit:NSCalendarUnitDay
+                           inUnit:NSCalendarUnitMonth
+                          forDate:[gregorian dateFromComponents:comp]];
+    
+    if (days.length < diaMes.intValue)
+    {
+        [comp setDay:days.length];
+    }
+    else
+    {
+        [comp setDay:diaMes.intValue];
+    }
+    
     self.dataActual = [gregorian dateFromComponents:comp];
     
     [self setUpCarrocel];
@@ -503,13 +543,11 @@
     NSLog(@"selected %ld", (long)indexPath.row);
     
     // tenho de ir buscar os valores a tabela para poder abrir o objecto correcto
-    
     ObjectReceita * receita = [self.root.arrayOfItems objectAtIndex:indexPath.row];
     ReceitaVisualizar * recietas = [ReceitaVisualizar new];
     recietas.receita = receita;
     
     [self.navigationController pushViewController:recietas animated:YES];
-    
 }
 
 -(void)apagarReceita:(ObjectReceita *)receita
@@ -519,8 +557,6 @@
     [context deleteObject:receita.agendamento];
     
     // aqui tenho de percorrer o agendamento que contem a receita... provavelmente nao preciso de receber a receita
-    
-    
     
     NSError *error = nil;
     if (![context save:&error])

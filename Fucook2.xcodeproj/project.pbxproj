@@ -320,6 +320,16 @@
 		BAFEB1901A41FA6800DEE4ED /* btleft1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFEB18E1A41FA6800DEE4ED /* btleft1@3x.png */; };
 		BAFEC9FE1A4831DF00D0431B /* HeaderBotoesListaComras.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFEC9FC1A4831DF00D0431B /* HeaderBotoesListaComras.m */; };
 		BAFEC9FF1A4831DF00D0431B /* HeaderBotoesListaComras.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFEC9FD1A4831DF00D0431B /* HeaderBotoesListaComras.xib */; };
+		BAFECA021A48614E00D0431B /* btright2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA001A48614E00D0431B /* btright2@2x.png */; };
+		BAFECA031A48614E00D0431B /* btright2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA011A48614E00D0431B /* btright2@3x.png */; };
+		BAFECA061A48760700D0431B /* imgtiracomprida@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA041A48760700D0431B /* imgtiracomprida@2x.png */; };
+		BAFECA071A48760700D0431B /* imgtiracomprida@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA051A48760700D0431B /* imgtiracomprida@3x.png */; };
+		BAFECA0E1A4888B200D0431B /* etiqbuy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA081A4888B200D0431B /* etiqbuy@2x.png */; };
+		BAFECA0F1A4888B200D0431B /* etiqbuy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA091A4888B200D0431B /* etiqbuy@3x.png */; };
+		BAFECA101A4888B200D0431B /* etiqface@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA0A1A4888B200D0431B /* etiqface@2x.png */; };
+		BAFECA111A4888B200D0431B /* etiqface@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA0B1A4888B200D0431B /* etiqface@3x.png */; };
+		BAFECA121A4888B200D0431B /* etiqfree@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA0C1A4888B200D0431B /* etiqfree@2x.png */; };
+		BAFECA131A4888B200D0431B /* etiqfree@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAFECA0D1A4888B200D0431B /* etiqfree@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -757,6 +767,16 @@
 		BAFEC9FB1A4831DF00D0431B /* HeaderBotoesListaComras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderBotoesListaComras.h; path = ListaCompras/HeaderBotoesListaComras.h; sourceTree = "<group>"; };
 		BAFEC9FC1A4831DF00D0431B /* HeaderBotoesListaComras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderBotoesListaComras.m; path = ListaCompras/HeaderBotoesListaComras.m; sourceTree = "<group>"; };
 		BAFEC9FD1A4831DF00D0431B /* HeaderBotoesListaComras.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderBotoesListaComras.xib; path = ListaCompras/HeaderBotoesListaComras.xib; sourceTree = "<group>"; };
+		BAFECA001A48614E00D0431B /* btright2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright2@2x.png"; path = "Fucook2/Imagens/btright2@2x.png"; sourceTree = "<group>"; };
+		BAFECA011A48614E00D0431B /* btright2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btright2@3x.png"; path = "Fucook2/Imagens/btright2@3x.png"; sourceTree = "<group>"; };
+		BAFECA041A48760700D0431B /* imgtiracomprida@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgtiracomprida@2x.png"; path = "Fucook2/Imagens/imgtiracomprida@2x.png"; sourceTree = "<group>"; };
+		BAFECA051A48760700D0431B /* imgtiracomprida@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgtiracomprida@3x.png"; path = "Fucook2/Imagens/imgtiracomprida@3x.png"; sourceTree = "<group>"; };
+		BAFECA081A4888B200D0431B /* etiqbuy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "etiqbuy@2x.png"; path = "Fucook2/Imagens/etiqbuy@2x.png"; sourceTree = "<group>"; };
+		BAFECA091A4888B200D0431B /* etiqbuy@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "etiqbuy@3x.png"; path = "Fucook2/Imagens/etiqbuy@3x.png"; sourceTree = "<group>"; };
+		BAFECA0A1A4888B200D0431B /* etiqface@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "etiqface@2x.png"; path = "Fucook2/Imagens/etiqface@2x.png"; sourceTree = "<group>"; };
+		BAFECA0B1A4888B200D0431B /* etiqface@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "etiqface@3x.png"; path = "Fucook2/Imagens/etiqface@3x.png"; sourceTree = "<group>"; };
+		BAFECA0C1A4888B200D0431B /* etiqfree@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "etiqfree@2x.png"; path = "Fucook2/Imagens/etiqfree@2x.png"; sourceTree = "<group>"; };
+		BAFECA0D1A4888B200D0431B /* etiqfree@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "etiqfree@3x.png"; path = "Fucook2/Imagens/etiqfree@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1293,6 +1313,16 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BAFECA081A4888B200D0431B /* etiqbuy@2x.png */,
+				BAFECA091A4888B200D0431B /* etiqbuy@3x.png */,
+				BAFECA0A1A4888B200D0431B /* etiqface@2x.png */,
+				BAFECA0B1A4888B200D0431B /* etiqface@3x.png */,
+				BAFECA0C1A4888B200D0431B /* etiqfree@2x.png */,
+				BAFECA0D1A4888B200D0431B /* etiqfree@3x.png */,
+				BAFECA041A48760700D0431B /* imgtiracomprida@2x.png */,
+				BAFECA051A48760700D0431B /* imgtiracomprida@3x.png */,
+				BAFECA001A48614E00D0431B /* btright2@2x.png */,
+				BAFECA011A48614E00D0431B /* btright2@3x.png */,
 				BAFEB18D1A41FA6800DEE4ED /* btleft1@2x.png */,
 				BAFEB18E1A41FA6800DEE4ED /* btleft1@3x.png */,
 				BAFEB1691A41F24700DEE4ED /* btnclose2@2x.png */,
@@ -1572,6 +1602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFBA2541A3717EC002B2C21 /* icopanela@3x.png in Resources */,
+				BAFECA071A48760700D0431B /* imgtiracomprida@3x.png in Resources */,
 				BAFBA24C1A3717EC002B2C21 /* icocheck@3x.png in Resources */,
 				BAFBA2471A3717EC002B2C21 /* btnshop3@2x.png in Resources */,
 				BAFBA25A1A3717EC002B2C21 /* imglinetop@3x.png in Resources */,
@@ -1606,6 +1637,7 @@
 				BAFCBA2D1A38A896001EFCE2 /* linedotbigger2@2x.png in Resources */,
 				BAFBA1DD1A370E42002B2C21 /* IngredientesHeader.xib in Resources */,
 				BAFCBA021A38500D001EFCE2 /* btncall1@2x.png in Resources */,
+				BAFECA031A48614E00D0431B /* btright2@3x.png in Resources */,
 				BA0082181A374D1A00A7871D /* imgbadgetsmall@2x.png in Resources */,
 				BAFBA25E1A3717EC002B2C21 /* imgroda@3x.png in Resources */,
 				BAFEB18A1A41F24700DEE4ED /* btnedit2@3x.png in Resources */,
@@ -1615,6 +1647,7 @@
 				BAFBA1901A370BAB002B2C21 /* PesquisaReceitas.xib in Resources */,
 				BAFEB1821A41F24700DEE4ED /* btnopen1@3x.png in Resources */,
 				BA1B9D181A3F32CF00E1BEA0 /* btnsave@2x.png in Resources */,
+				BAFECA0E1A4888B200D0431B /* etiqbuy@2x.png in Resources */,
 				BAFBA26C1A371921002B2C21 /* btnfeatured1@3x.png in Resources */,
 				BAFBA2531A3717EC002B2C21 /* icopanela@2x.png in Resources */,
 				BAFBA2591A3717EC002B2C21 /* imglinetop@2x.png in Resources */,
@@ -1624,6 +1657,7 @@
 				BAFEB1831A41F24700DEE4ED /* btnsearch@2x.png in Resources */,
 				BAFBA2601A3717EC002B2C21 /* imgsombrarecipe@3x.png in Resources */,
 				BA0081D81A371FFD00A7871D /* btnaddhomebook2@3x.png in Resources */,
+				BAFECA111A4888B200D0431B /* etiqface@3x.png in Resources */,
 				BAFCBA0B1A3850FC001EFCE2 /* btnshop1@3x.png in Resources */,
 				BAFBA2661A3717EC002B2C21 /* linedot2@3x.png in Resources */,
 				BAFEB18C1A41F24700DEE4ED /* btnsetting1@3x.png in Resources */,
@@ -1653,6 +1687,7 @@
 				BA00821B1A374D1A00A7871D /* imglinebadgetdown@3x.png in Resources */,
 				BAFBA0EA1A36FE6A002B2C21 /* NewBook.xib in Resources */,
 				BAFBA15B1A3707AB002B2C21 /* CellIngrediente.xib in Resources */,
+				BAFECA021A48614E00D0431B /* btright2@2x.png in Resources */,
 				BA1B9D151A3EF35600E1BEA0 /* btleft3@3x.png in Resources */,
 				BA0081EF1A371FFD00A7871D /* icosettings@2x.png in Resources */,
 				BAFBA2851A371DB0002B2C21 /* btleft2@3x.png in Resources */,
@@ -1670,6 +1705,7 @@
 				BAFBA1811A370B1B002B2C21 /* EtapaTwoOptionsController.xib in Resources */,
 				BA0081DF1A371FFD00A7871D /* btnphoto1@2x.png in Resources */,
 				BAFBA2781A371CD7002B2C21 /* btnsearch@2x.png in Resources */,
+				BAFECA0F1A4888B200D0431B /* etiqbuy@3x.png in Resources */,
 				BA0081EB1A371FFD00A7871D /* icoimport@2x.png in Resources */,
 				BAFCBA2A1A389D25001EFCE2 /* btncall2@3x.png in Resources */,
 				BAFBA1991A370C42002B2C21 /* ListaCompras.xib in Resources */,
@@ -1690,6 +1726,7 @@
 				BAFCBA031A38500D001EFCE2 /* btncall1@3x.png in Resources */,
 				BAFBA2501A3717EC002B2C21 /* icoitens@3x.png in Resources */,
 				BAFBA1F11A370F57002B2C21 /* DiaCalendario.xib in Resources */,
+				BAFECA131A4888B200D0431B /* etiqfree@3x.png in Resources */,
 				BA0081E01A371FFD00A7871D /* btnphoto1@3x.png in Resources */,
 				BAFBA25F1A3717EC002B2C21 /* imgsombrarecipe@2x.png in Resources */,
 				BA0082011A37229800A7871D /* btnedit1@3x.png in Resources */,
@@ -1718,6 +1755,7 @@
 				BA0082051A3722E300A7871D /* btndelet1@3x.png in Resources */,
 				BAFBA27D1A371D22002B2C21 /* btnaddbook@3x.png in Resources */,
 				BAFEB17B1A41F24700DEE4ED /* btnclose2@2x.png in Resources */,
+				BAFECA121A4888B200D0431B /* etiqfree@2x.png in Resources */,
 				BAFBA1E71A370EDF002B2C21 /* JATableViewCell.xib in Resources */,
 				BA0081D71A371FFD00A7871D /* btnaddhomebook2@2x.png in Resources */,
 				BA0082191A374D1A00A7871D /* imgbadgetsmall@3x.png in Resources */,
@@ -1732,6 +1770,7 @@
 				BA0081F11A371FFD00A7871D /* icoshare@2x.png in Resources */,
 				BAFEC9FF1A4831DF00D0431B /* HeaderBotoesListaComras.xib in Resources */,
 				BA00821D1A374D1A00A7871D /* linedottitle1@3x.png in Resources */,
+				BAFECA101A4888B200D0431B /* etiqface@2x.png in Resources */,
 				BAFBA2581A3717EC002B2C21 /* imglinedown@3x.png in Resources */,
 				BAFEB18F1A41FA6800DEE4ED /* btleft1@2x.png in Resources */,
 				BAFBA24F1A3717EC002B2C21 /* icoitens@2x.png in Resources */,
@@ -1768,6 +1807,7 @@
 				BA1B9D191A3F32CF00E1BEA0 /* btnsave@3x.png in Resources */,
 				BA0081EE1A371FFD00A7871D /* icorating@3x.png in Resources */,
 				BAFBA23F1A3717EC002B2C21 /* btncall3@2x.png in Resources */,
+				BAFECA061A48760700D0431B /* imgtiracomprida@2x.png in Resources */,
 				BAFEB1901A41FA6800DEE4ED /* btleft1@3x.png in Resources */,
 				BAFEB1871A41F24700DEE4ED /* btndelet2@2x.png in Resources */,
 				BA0081E71A371FFD00A7871D /* icoexport@2x.png in Resources */,
