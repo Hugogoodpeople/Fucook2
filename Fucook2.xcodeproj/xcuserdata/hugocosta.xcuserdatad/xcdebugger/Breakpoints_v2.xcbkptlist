@@ -379,12 +379,12 @@
                   symbolName = "-[MealPlanner adicionarReceita:]"
                   moduleName = "Fucook2"
                   urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/MealPlanner/MealPlanner.m"
-                  timestampString = "440962933.737151"
+                  timestampString = "440964138.877938"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "657"
                   endingLineNumber = "657"
-                  offsetFromSymbolStart = "1697">
+                  offsetFromSymbolStart = "1434">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -393,12 +393,12 @@
                   symbolName = "-[MealPlanner adicionarReceita:]"
                   moduleName = "Fucook2"
                   urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/MealPlanner/MealPlanner.m"
-                  timestampString = "440962933.737316"
+                  timestampString = "440964138.878074"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "657"
                   endingLineNumber = "657"
-                  offsetFromSymbolStart = "1855">
+                  offsetFromSymbolStart = "1536">
                </Location>
             </Locations>
          </BreakpointContent>
