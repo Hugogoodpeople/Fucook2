@@ -37,7 +37,8 @@
 
 @implementation HeaderNewReceita
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
      self.capturedImages = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view from its nib.
@@ -58,6 +59,40 @@
     self.textName.delegate=self;
     
     
+    [self addCloseToTextView:self.textName];
+    
+}
+
+-(void)addCloseToTextView:(UITextField *)textView
+{
+    UIView* numberToolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width -15 -44, 15.5, 44, 44)];
+    [button addTarget:self action:@selector(doneWithTextArea) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btntecladodown"] forState:UIControlStateNormal];
+    
+    [button setClipsToBounds:NO];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    // finally do the magic
+    float topInset = 14.0f;
+    anotherButton.imageInsets = UIEdgeInsetsMake(topInset, 0.0f, -topInset, 0.0f);
+    
+    [numberToolbar setBackgroundColor:[UIColor clearColor]];
+    
+    
+    [numberToolbar addSubview:button];
+    
+    //[numberToolbar sizeToFit];
+    textView.inputAccessoryView = numberToolbar;
+    
+}
+
+-(void)doneWithTextArea
+{
+    [self.textName resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +103,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField.tag == 1) {
         if (self.delegate) {
-            [self.delegate performSelector:@selector(scrollToPosition:) withObject:self.viewDificulty];
+            [self.delegate performSelector:@selector(scrollToPositionTop)];
             [self foiAlterado];
         }
     }
@@ -181,9 +216,44 @@
     [self.delegate presentViewController:imagePickerController animated:YES completion:nil];
     [self foiAlterado];
     
-    self.viewPrimeiraVez.alpha = 0;
-    self.buttonFotoJaExiste.alpha = 1;
+   
 }
+
+-(void)naoTemFoto
+{
+    self.viewPrimeiraVez.alpha      = 1;
+    self.buttonFotoJaExiste.alpha   = 0;
+}
+
+- (void)temFoto
+{
+    /*
+     self.viewPrimeiraVez.alpha      = 0;
+     self.buttonFotoJaExiste.alpha   = 1;
+     */
+    
+    /*
+     [UIView animateWithDuration:0.5 animations:^{
+     [self.viewPrimeiraVez setFrame:self.buttonFotoJaExiste.frame];
+     self.labelAddFoto.alpha = 0;
+     }];
+     */
+    
+    self.labelAddFoto.alpha = 0;
+    
+    [UIView animateWithDuration: 1.5
+                          delay: 0.5
+         usingSpringWithDamping: 0.5
+          initialSpringVelocity: 0.4
+                        options: 0
+                     animations: ^{
+                         [self.viewPrimeiraVez setFrame:self.buttonFotoJaExiste.frame];
+                         
+                     } completion:^(BOOL finished) {
+                     }];
+    
+}
+
 
 
 #pragma mark - Toolbar actions
@@ -259,6 +329,7 @@
         {
             // Camera took a single picture.
             [self.img setImage:[self.capturedImages objectAtIndex:0]];
+            [self temFoto];
         }
         else
         {
@@ -553,12 +624,6 @@
 - (IBAction)clickphoto:(id)sender
 {
     [self btFoto:nil];
-}
-
-- (void)temFoto
-{
-    self.viewPrimeiraVez.alpha      = 0;
-    self.buttonFotoJaExiste.alpha   = 1;
 }
 
 

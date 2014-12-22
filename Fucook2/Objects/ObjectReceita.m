@@ -116,13 +116,8 @@
     
     [receita setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:managedArrayEtapas]] forKey:@"contem_etapas"];
     
-    
     self.managedObject = receita;
 
-    
 }
-
-
-
 
 @end

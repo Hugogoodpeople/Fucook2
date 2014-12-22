@@ -35,6 +35,7 @@
 
 #import "ReceitaVisualizar.h"
 #import "Settings.h"
+#import "HeaderBotoesListaComras.h"
 
 
 @interface ListaCompras ()
@@ -45,6 +46,7 @@
     NSString *indexCell;
     ObjectLista * lista;
     NSManagedObject * managedObjectaux;
+    HeaderBotoesListaComras * bh;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tabbleView;
@@ -123,13 +125,47 @@
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
     
     
-    [self.header setFrame:CGRectMake(0,64 + self.header.frame.size.height, self.view.frame.size.width, self.header.frame.size.height)];
+    //[self.header setFrame:CGRectMake(0,64 + self.header.frame.size.height, self.view.frame.size.width, self.header.frame.size.height)];
     
     [self.view addSubview:self.header];
     
-    //self.tabbleView.tableHeaderView = self.header;
-    [self.tabbleView setContentInset:UIEdgeInsetsMake(self.header.frame.size.height, 0, 52, 0)];
+    self.tabbleView.tableHeaderView = self.header;
+    //[self.tabbleView setContentInset:UIEdgeInsetsMake(self.header.frame.size.height, 0, 52, 0)];
     
+    
+    // Initialize the refresh control.
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    //refreshControl.backgroundColor = [UIColor colorWithRed:231.0/255.0 green:231.0/255.0 blue:231.0/255.0 alpha:1];
+    refreshControl.backgroundColor = [UIColor whiteColor];
+    refreshControl.tintColor = [UIColor blackColor];
+    NSString *title = [NSString stringWithFormat:@"Cean all shopping list"];
+    NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor blackColor]
+                                                                forKey:NSForegroundColorAttributeName];
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+    refreshControl.attributedTitle = attributedTitle;
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tabbleView addSubview:refreshControl];
+    
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl
+{
+    [refreshControl endRefreshing];
+    
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"WARNING" message:@"Do you wan to delete all items on the shopping list? " delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    alert.tag = 1;
+    [alert show];
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1) {
+        if (buttonIndex == 1) {
+            [self ApagarTodosNaListaDeCompras];
+        }
+    }
 }
 
 -(void)Findreceita
@@ -386,6 +422,19 @@
     return size.height +30;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    bh = [HeaderBotoesListaComras new];
+    bh.delegate = self;
+    
+    return bh.view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 48;
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(selectedIndex == indexPath.row){
         selectedIndex  = -1;
@@ -552,30 +601,21 @@
     NSLog(@"deleteou");
    // NSLog(@"%@",index);
     
-    
- 
-    
     selectedIndex = -1;
     //[self.tabbleView reloadData];
     
-    
     NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
-    
-    
-    
-    
-    
+
     [context deleteObject:managedObject];
     
-    
     NSError *error = nil;
-    if (![context save:&error]) {
+    if (![context save:&error])
+    {
         NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
         return;
     }
 
     //[self preencherTabela];
-    
 }
 
 -(void)OpenReceita: (ObjectLista *) objLista{
@@ -611,7 +651,7 @@
     }
 }
 
-
+/*
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     float Y = scrollView.contentOffset.y;
@@ -630,6 +670,29 @@
     
     
      //NSLog(@"Y = %f         calculado = %f", Y, claculado);
+}
+*/
+-(void)ApagarTodosNaListaDeCompras
+{
+    NSManagedObjectContext *context = [AppDelegate sharedAppDelegate].managedObjectContext;
+    
+    NSFetchRequest * allItems = [[NSFetchRequest alloc] init];
+    [allItems setEntity:[NSEntityDescription entityForName:@"ShoppingList" inManagedObjectContext:context]];
+    [allItems setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSError * error = nil;
+    NSArray * arrayItems = [context executeFetchRequest:allItems error:&error];
+    //error handling goes here
+    for (NSManagedObject * item in arrayItems) {
+        [context deleteObject:item];
+    }
+    NSError *saveError = nil;
+    [context save:&saveError];
+    //more error handling here
+    
+    [arrayOfItems removeAllObjects];
+    
+    [self.tabbleView reloadData];
 }
 
 @end

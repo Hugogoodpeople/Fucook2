@@ -31,7 +31,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="fhW-le-oFX"/>
+                        <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="fhW-le-oFX"/>
                         <barButtonItem image="btnbook1.png" style="plain" id="hmu-s4-spy">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -56,7 +56,7 @@
                         <barButtonItem image="btnfeatured1.png" id="4as-0r-Bbs">
                             <color key="tintColor" red="0.59607843140000005" green="0.21176470589999999" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
-                        <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="dOS-Nv-bBe"/>
+                        <barButtonItem width="37" style="plain" systemItem="fixedSpace" id="dOS-Nv-bBe"/>
                     </items>
                     <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>

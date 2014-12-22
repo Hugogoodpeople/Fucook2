@@ -29,6 +29,7 @@
 @property NSManagedObject * agendamento;
 
 @property UIImage         * imagem;
+@property NSString        * urlImagem;
 @property NSManagedObject * managedImagem;
 @property NSManagedObject * managedObject;
 @property ObjectLivro     * livro;

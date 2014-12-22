@@ -115,6 +115,7 @@
     cell.labelTempo.text = rec.tempo;
     cell.labelCategoria.text = rec.categoria;
     cell.labelDificuldade.text = rec.dificuldade;
+    cell.labelCategoria.text = rec.categoriaAgendada;
     cell.receita = rec;
     // tenho de calcular com base no que esta no header
     
@@ -221,16 +222,15 @@
 /*
 	Required for drag tableview controller
  */
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
     
     NSString *itemToMove = [arrayOfItems objectAtIndex:fromIndexPath.row];
     [arrayOfItems removeObjectAtIndex:fromIndexPath.row];
     [arrayOfItems insertObject:itemToMove atIndex:toIndexPath.row];
     
 }
-
-
-
 
 /*
  #pragma mark -

@@ -37,8 +37,17 @@
     [button addTarget:self action:@selector(AdicionarDirections) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
     
+    
+    
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = anotherButton;
+    //self.navigationItem.rightBarButtonItem = anotherButton;
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [negativeSpacer setWidth:-4];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
+    
+    
     
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
     [buttonback addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
@@ -78,7 +87,43 @@
         else
             self.labelTime.text = @"Set time";
     }
+
     
+    [self addCloseToTextView:self.textDesc];
+    
+}
+
+
+-(void)addCloseToTextView:(UITextView *)textView
+{
+    UIView* numberToolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width -15 -44, 15.5, 44, 44)];
+    [button addTarget:self action:@selector(doneWithTextArea) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btntecladodown"] forState:UIControlStateNormal];
+    
+    [button setClipsToBounds:NO];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    // finally do the magic
+    float topInset = 14.0f;
+    anotherButton.imageInsets = UIEdgeInsetsMake(topInset, 0.0f, -topInset, 0.0f);
+    
+    [numberToolbar setBackgroundColor:[UIColor clearColor]];
+    
+    
+    [numberToolbar addSubview:button];
+    
+    //[numberToolbar sizeToFit];
+    textView.inputAccessoryView = numberToolbar;
+    
+}
+
+-(void)doneWithTextArea
+{
+    [self.textDesc resignFirstResponder];
 }
 
 -(void)AdicionarDirections

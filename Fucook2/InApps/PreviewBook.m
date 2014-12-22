@@ -8,6 +8,7 @@
 
 #import "PreviewBook.h"
 #import "ReceitaCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface PreviewBook ()
 
@@ -102,16 +103,17 @@
     cell.labelTempo.text = rec.tempo;
     cell.labelCategoria.text = rec.categoria;
     cell.labelDificuldade.text = rec.dificuldade;
+    cell.pode = YES;
     cell.receita = rec;
     // tenho de calcular com base no que esta no header
     
     //cell.labelQtd.text = [self calcularValor:indexPath];
     //cell.delegate = self;
     
-
-           
-            UIImage *image = rec.imagem;
-                cell.imagemReceita.image = image;
+    [cell.imagemReceita sd_setImageWithURL:[NSURL URLWithString:rec.urlImagem ] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        rec.imagem = image;
+    }];
+    
        
     
     

@@ -20,6 +20,7 @@
 @property UIImage  * imagem;
 @property int        partilha;
 @property NSManagedObject * managedImagem;
+@property NSString        * urlImagem;
 @property NSManagedObject * managedObject;
 @property NSMutableArray  * receitas;
 

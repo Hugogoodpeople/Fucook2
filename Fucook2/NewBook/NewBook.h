@@ -20,6 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonFotoJaExiste;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelAddFoto;
 
 
 @end

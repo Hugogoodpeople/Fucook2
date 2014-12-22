@@ -69,6 +69,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgCat3;
 @property (weak, nonatomic) IBOutlet UIImageView *imgCat4;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelAddFoto;
 
 
 @end

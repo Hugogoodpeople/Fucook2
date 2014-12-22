@@ -74,7 +74,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" id="ZYz-Tk-Fk2">
-                            <rect key="frame" x="0.0" y="107" width="320" height="43"/>
+                            <rect key="frame" x="0.0" y="107" width="320" height="42.999999552965164"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dff-4c-EGu">
@@ -95,7 +95,7 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" id="Ony-Rx-U58">
-                                    <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                                    <rect key="frame" x="0.0" y="41.999999552965164" width="320" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -133,7 +133,7 @@
                                             <rect key="frame" x="8" y="8" width="304" height="137"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <view contentMode="scaleToFill" id="ml8-FP-40R">

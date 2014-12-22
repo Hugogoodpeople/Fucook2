@@ -24,10 +24,14 @@
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
     
-    
-    
     [self.contentView addGestureRecognizer:swipeLeft];
     [self.contentView addGestureRecognizer:swipeRight];
+    
+    
+    
+    
+    
+   
     
     [self.buttonCalendario addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
     [self.buttonCalendario addTarget:self action:@selector(buttonNormal:) forControlEvents:UIControlEventTouchUpInside];
@@ -98,15 +102,19 @@
                                              self.viewBotoes.frame.size.height)];
     }
     
-    if(self.comprada){
-        [UIView animateWithDuration:0.2f animations:^{
-            [self.viewMovel setFrame:CGRectMake(-140, 0, width, height)];
-        }];
-    }else
+    
+    if(self.pode == NO)
     {
-        [UIView animateWithDuration:0.2f animations:^{
-            [self.viewMovel setFrame:CGRectMake(-70, 0, width, height)];
-        }];
+        if(self.comprada){
+            [UIView animateWithDuration:0.2f animations:^{
+                [self.viewMovel setFrame:CGRectMake(-140, 0, width, height)];
+            }];
+        }else
+        {
+            [UIView animateWithDuration:0.2f animations:^{
+                [self.viewMovel setFrame:CGRectMake(-70, 0, width, height)];
+            }];
+        }
     }
     
     int altura = [[UIScreen mainScreen] bounds].size.height;

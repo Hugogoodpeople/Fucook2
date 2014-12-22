@@ -45,7 +45,12 @@
     [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = anotherButton;
+    //self.navigationItem.rightBarButtonItem = anotherButton;
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [negativeSpacer setWidth:-4];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
     
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
     [buttonback addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
@@ -70,7 +75,8 @@
     if (self.managedObject)
     {
     
-        [self temFoto];
+        [self.viewPrimeiraVez setFrame:self.buttonFotoJaExiste.frame];
+        self.labelAddFoto.alpha = 0;
         
         NSLog(@"************************************ Livro ************************************");
         NSLog(@"titulo: %@", [self.managedObject valueForKey:@"titulo"]);
@@ -100,7 +106,41 @@
     }
     
     
+    [self addCloseToTextView:self.txt1];
+    [self addCloseToTextView:self.txt2];
+}
 
+-(void)addCloseToTextView:(UITextField *)textView
+{
+    UIView* numberToolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width -15 -44, 15.5, 44, 44)];
+    [button addTarget:self action:@selector(doneWithTextArea) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btntecladodown"] forState:UIControlStateNormal];
+    
+    [button setClipsToBounds:NO];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    // finally do the magic
+    float topInset = 14.0f;
+    anotherButton.imageInsets = UIEdgeInsetsMake(topInset, 0.0f, -topInset, 0.0f);
+    
+    [numberToolbar setBackgroundColor:[UIColor clearColor]];
+    
+    
+    [numberToolbar addSubview:button];
+    
+    //[numberToolbar sizeToFit];
+    textView.inputAccessoryView = numberToolbar;
+    
+}
+
+-(void)doneWithTextArea
+{
+    [self.txt1 resignFirstResponder];
+    [self.txt2 resignFirstResponder];
 }
 
 -(void)naoTemFoto
@@ -111,8 +151,31 @@
 
 - (void)temFoto
 {
+    /*
     self.viewPrimeiraVez.alpha      = 0;
     self.buttonFotoJaExiste.alpha   = 1;
+    */
+    
+    /*
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.viewPrimeiraVez setFrame:self.buttonFotoJaExiste.frame];
+        self.labelAddFoto.alpha = 0;
+    }];
+     */
+    
+    self.labelAddFoto.alpha = 0;
+    
+    [UIView animateWithDuration: 1.5
+                          delay: 0.5
+         usingSpringWithDamping: 0.5
+          initialSpringVelocity: 0.4
+                        options: 0
+                     animations: ^{
+                         [self.viewPrimeiraVez setFrame:self.buttonFotoJaExiste.frame];
+                       
+                     } completion:^(BOOL finished) {
+                     }];
+    
 }
 
 - (IBAction)back:(id)sender {
@@ -327,7 +390,7 @@
     self.imagePickerController = imagePickerController;
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
     
-    [self temFoto];
+    
 }
 
 
@@ -404,6 +467,7 @@
         {
             // Camera took a single picture.
             [self.imageView setImage:[self.capturedImages objectAtIndex:0]];
+            [self temFoto];
         }
         else
         {

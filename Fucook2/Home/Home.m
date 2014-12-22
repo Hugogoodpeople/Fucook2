@@ -92,8 +92,6 @@
     
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
 
-    
-    
     UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
     [self.navigationItem setTitleView:titleView];
 
@@ -103,16 +101,6 @@
     [aFlowLayout setMinimumInteritemSpacing:0];
     [aFlowLayout setMinimumLineSpacing:0];
 
-    
-    // para mudar a cor da toolbar
-    /*
-    [self.yoolbar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
-    [self.yoolbar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    self.yoolbar.clipsToBounds = YES;
-     */
-    
-    
-    //[self preencherTabela];
     
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
     

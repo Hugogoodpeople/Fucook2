@@ -36,5 +36,6 @@
 
 @property (nonatomic , assign) id delegate;
 @property BOOL comprada;
+@property BOOL pode;
 
 @end

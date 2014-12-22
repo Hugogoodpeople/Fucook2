@@ -20,6 +20,8 @@
 #import "NSData+Base64.h"
 #import "InAppsCell.h"
 #import "PreviewBook.h"
+#import "UIImageView+WebCache.h"
+#import "MBProgressHUD.h"
 
 @interface InAppsTeste ()
 {
@@ -31,6 +33,9 @@
     NSMutableArray * array_livros;
     
     WebServiceSender * listaIdsInApps;
+    WebServiceSender * comparLivro;
+    
+    MBProgressHUD *HUD;
     
     NSManagedObjectContext * context;
     
@@ -47,13 +52,17 @@
     }
     listaIdsInApps = nil;
     
+    if (comparLivro) {
+        [comparLivro cancel];
+    }
+    comparLivro = nil;
 }
 
 
 -(void)webserviceInApps
 {
 #warning colocar aqui o url correcto para poder abrir o webservice
-    listaIdsInApps = [[WebServiceSender alloc] initWithUrl:@"http://www.fucook.com/webservices/get_all_books.php" method:@"" tag:1];
+    listaIdsInApps = [[WebServiceSender alloc] initWithUrl:@"http://www.fucook.com/webservices/get_all_books_url.php" method:@"" tag:1];
     listaIdsInApps.delegate = self;
     
     NSMutableDictionary * dict = [NSMutableDictionary new];
@@ -88,20 +97,8 @@
                     livro.partilha          = [[dictLivro objectForKey:@"partilha"] intValue];
                     livro.id_livro          = [dictLivro objectForKey:@"id_livro"];
                     livro.comprado          = NO;
-                    
-                    
-                    
-                    // tenho de transformar o bsse64 em imagem
-                    NSString * strData = [dictLivro objectForKey:@"foto_livro"];
-                    
-                    NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
-                    
-                    //Now data is decoded. You can convert them to UIImage
-                    UIImage *image = [UIImage imageWithData:data];
-                    
-                
-                    
-                    livro.imagem = image;
+   
+                    livro.urlImagem = [dictLivro objectForKey:@"foto_livro"];
                     
                     
                     // agora tenho de ir buscar as receitas e colocalas dentro do livro
@@ -118,12 +115,14 @@
                         receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
                         receita.tempo               = [dictRec objectForKey:@"tempo"];
                         
-                        
+                        /*
                         NSString * strData = [dictRec objectForKey:@"foto_receita"];
                         NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
                         
                         receita.imagem = [UIImage imageWithData:data];
-
+                        */
+                        
+                        receita.urlImagem           = [dictRec objectForKey:@"foto_receita"];
                         
                         
                         // agora tenho de ir buscar as etapas e os ingredientes
@@ -139,7 +138,6 @@
                             
                             
                             [arrayIngredientes addObject:ingrediente];
-                            
                             
                         }
                         
@@ -218,6 +216,142 @@
                 
                 break;
             }
+            case 2:
+            {
+                NSLog(@"resultado da lista de inApps  =>  %@", result.description);
+                
+                
+                
+                array_livros = [NSMutableArray new];
+                
+                for (NSMutableDictionary * dictLivro in [result objectForKey:@"res"])
+                {
+                    ObjectLivro * livro = [ObjectLivro new];
+                    
+                    livro.titulo            = [dictLivro objectForKey:@"nome_livro"];
+                    livro.descricao         = [dictLivro objectForKey:@"descricao_livro"];
+                    livro.id_inapps         = [dictLivro objectForKey:@"id_inapp"];
+                    livro.partilha          = [[dictLivro objectForKey:@"partilha"] intValue];
+                    livro.id_livro          = [dictLivro objectForKey:@"id_livro"];
+                    livro.comprado          = NO;
+                    
+                    NSManagedObject *managedImagem = [NSEntityDescription
+                                                      insertNewObjectForEntityForName:@"Imagens"
+                                                      inManagedObjectContext:context];
+                    
+                    // tenho de transformar o bsse64 em imagem
+                    NSString * strData = [dictLivro objectForKey:@"foto_livro"];
+                    
+                    NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
+                    
+                    //Now data is decoded. You can convert them to UIImage
+                    //UIImage *image = [UIImage imageWithData:data];
+                    
+                    [managedImagem setValue:data forKey:@"imagem"];
+                    
+                    livro.managedImagem = managedImagem;
+                    
+                    
+                    
+                    // agora tenho de ir buscar as receitas e colocalas dentro do livro
+                    
+                    NSMutableArray * arrayReceitas = [NSMutableArray new];
+                    
+                    for (NSMutableDictionary * dictRec in [dictLivro objectForKey:@"receitas"])
+                    {
+                        ObjectReceita * receita     = [ObjectReceita new];
+                        receita.nome                = [dictRec objectForKey:@"nome_receita"];
+                        receita.categoria           = [dictRec objectForKey:@"categoria"];
+                        receita.dificuldade         = [dictRec objectForKey:@"dificuldade"];
+                        receita.notas               = [dictRec objectForKey:@"notas"];
+                        receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
+                        receita.tempo               = [dictRec objectForKey:@"tempo"];
+                        
+                        NSManagedObject *managedImagem = [NSEntityDescription
+                                                          insertNewObjectForEntityForName:@"Imagens"
+                                                          inManagedObjectContext:context];
+                        NSString * strData = [dictRec objectForKey:@"foto_receita"];
+                        NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
+                        [managedImagem setValue:data forKey:@"imagem"];
+                        
+                        receita.managedImagem = managedImagem;
+                        
+                        
+                        // agora tenho de ir buscar as etapas e os ingredientes
+                        NSMutableArray * arrayIngredientes = [NSMutableArray new];
+                        
+                        for (NSMutableDictionary * dictIngre in [dictRec objectForKey:@"ingredientes"])
+                        {
+                            ObjectIngrediente * ingrediente = [ObjectIngrediente new];
+                            ingrediente.nome                = [dictIngre objectForKey:@"nome_ingrediente"];
+                            ingrediente.quantidadeDecimal   = @"";
+                            ingrediente.quantidade          = [dictIngre objectForKey:@"quantidade"];
+                            ingrediente.unidade             = [dictIngre objectForKey:@"unidade"];
+                            
+                            [arrayIngredientes addObject:[ingrediente getManagedObject:context]];
+                        }
+                        
+                        
+                        // para a parte das direcções/etapas
+                        // agora tenho de ir buscar as etapas e os ingredientes
+                        NSMutableArray * arrayEtapas = [NSMutableArray new];
+                        
+                        for (NSMutableDictionary * dictEtap in [dictRec objectForKey:@"etapas"])
+                        {
+                            ObjectDirections * direction    = [ObjectDirections new];
+                            direction.descricao             = [dictEtap objectForKey:@"descricao"];
+                            direction.passo                 = [[dictEtap objectForKey:@"ordem"] intValue];
+                            direction.tempoMinutos          = [[dictEtap objectForKey:@"tempo_etapa"] intValue];
+                            
+                            [arrayEtapas addObject:[direction getManagedObject:context]];
+                        }
+                        
+                        
+                        
+                        [receita AddToCoreData:context];
+                        
+                        [receita.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayEtapas]] forKey:@"contem_etapas"];
+                        
+                        [receita.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayIngredientes]] forKey:@"contem_ingredientes"];
+                        
+                        [receita.managedObject setValue:receita.managedImagem forKey:@"contem_imagem"];
+                        
+                        receita.livro = livro;
+                        
+                        [arrayReceitas addObject:receita.managedObject];
+                    }
+                    
+                    [livro AddToCoreData:context];
+                    
+                    // este tem de ser o ultimo passo a concluir
+                    [livro.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayReceitas]]  forKey:@"contem_receitas"];
+                
+                    [livro.managedObject setValue:livro.managedImagem forKey:@"contem_imagem"];
+                    
+                    NSError *error = nil;
+                    if (![context save:&error])
+                    {
+                        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+                        
+                        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Cannot buy this book now, try later" delegate:nil cancelButtonTitle:@"ok"   otherButtonTitles:nil, nil];
+                        [alert show];
+                        
+                        return;
+                    }
+                    else{
+                   
+                        //[LoadingaAlert dismissWithClickedButtonIndex:0 animated:YES];
+                        [HUD hide:YES ];
+                        
+                        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Now you own this book" delegate:nil cancelButtonTitle:@"ok"   otherButtonTitles:nil, nil];
+                        [alert show];
+                    }
+                    
+                }
+                
+                break;
+            }
+
                 
         }
     }else
@@ -369,9 +503,11 @@
     
     cell.delegate = self;
     
-    // NSString *key = [livro.imagem.description MD5Hash];
-    // NSData *data = [FTWCache objectForKey:key];
-    cell.imagemLivro.image = liv.imagem;
+
+    [cell.imagemLivro sd_setImageWithURL:[NSURL URLWithString:liv.urlImagem ] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        liv.imagem = image;
+    }];
+    //cell.imagemLivro.image = liv.imagem;
     
     if (liv.partilha == 1)
     {
@@ -447,9 +583,22 @@
         [alert show];
     }else
     {
-        [Livro AddToCoreData:context];
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Now you own this book" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-        [alert show];
+        //[Livro AddToCoreData:context];
+        comparLivro = [[WebServiceSender alloc] initWithUrl:@"http://www.fucook.com/webservices/get_all_books.php" method:@"" tag:2];
+        comparLivro.delegate = self;
+        
+        NSMutableDictionary * dict = [NSMutableDictionary new];
+        [dict setObject:Livro.id_livro forKey:@"id_livro"];
+        
+        [comparLivro sendDict:dict];
+        
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        
+        HUD.delegate = self;
+        HUD.labelText = @"Loading";
+        
+        [HUD show:YES];
     }
     
 }

@@ -94,7 +94,8 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView.tag == 2) {
-        if (buttonIndex == 1) {
+        if (buttonIndex == 1)
+        {
             [self AdicionarReceita];
         }
         else
@@ -134,13 +135,13 @@
     // para ir para o fundo
     [self scrollTotopPosition:footerFinal.view];
 
-    
     foiAlterado = YES;
     [arrayNotas removeAllObjects];
-    if (nota.length > 0)
-    [arrayNotas addObject:nota];
-    [self actualizarPosicoes];
     
+    if (nota.length > 0)
+        [arrayNotas addObject:nota];
+    
+    [self actualizarPosicoes];
     
 }
 
@@ -154,6 +155,9 @@
     headerFinal.labelDif.text       = self.receita.dificuldade;
     headerFinal.labelPre.text       = self.receita.tempo;
     headerFinal.img.image           = [UIImage imageWithData:[self.receita.managedImagem valueForKey:@"imagem"]];
+    
+    [headerFinal.viewPrimeiraVez setFrame:headerFinal.buttonFotoJaExiste.frame];
+
     
     [headerFinal temFoto];
     
@@ -173,7 +177,13 @@
     [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = anotherButton;
+    //self.navigationItem.rightBarButtonItem = anotherButton;
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [negativeSpacer setWidth:-4];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
+
     
     headerFinal = [HeaderNewReceita alloc];
     //////[headerFinal.view setFrame:CGRectMake(0, 0, headerFinal.view.frame.size.width, headerFinal.view.frame.size.height )];
@@ -213,19 +223,24 @@
     
 }
 
+-(void)scrollToPositionTop
+{
+     [self.scrollNewReceita scrollRectToVisible:CGRectMake(0, 550, self.view.frame.size.width, 100) animated:NO];
+}
+
 -(void)scrollTotopPosition:(UIView *)rect
 {
     CGRect frame = rect.frame;
     //frame.origin.y = frame.origin.y - frame.size.height - 100;
     
-    float local = frame.origin.y + frame.size.height ;
+    float local = frame.origin.y + frame.size.height -200 ;
     
     [self.scrollNewReceita scrollRectToVisible:CGRectMake(0, local, self.view.frame.size.width, 100) animated:NO];
 }
 
 -(void)scrollToPosition:(UIView *)rect
 {
-    [rect setFrame:CGRectMake(rect.frame.origin.x, rect.frame.origin.y + 100, rect.frame.size.width, rect.frame.size.height)];
+    //[rect setFrame:CGRectMake(rect.frame.origin.x, rect.frame.origin.y + 100, rect.frame.size.width, rect.frame.size.height)];
     
     [self.scrollNewReceita scrollRectToVisible:rect.frame animated:YES];
 }

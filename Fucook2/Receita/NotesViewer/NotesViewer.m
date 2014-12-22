@@ -29,16 +29,37 @@
     
     // para o apply button
     
-    UIToolbar* numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
-    numberToolbar.barStyle = UIBarStyleBlackTranslucent;
-    numberToolbar.items = [NSArray arrayWithObjects:
-                           /*[[UIBarButtonItem alloc]initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelNumberPad)],*/
-                           [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                           [[UIBarButtonItem alloc]initWithTitle:@"Apply" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithTextArea)],
-                           nil];
-    [numberToolbar sizeToFit];
-    self.textviewNote.inputAccessoryView = numberToolbar;
     
+    [self addCloseToTextView:self.textviewNote];
+    
+    
+}
+
+-(void)addCloseToTextView:(UITextView *)textView
+{
+    UIView* numberToolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width -15 -44, 15.5, 44, 44)];
+    [button addTarget:self action:@selector(doneWithTextArea) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btntecladodown"] forState:UIControlStateNormal];
+    
+    [button setClipsToBounds:NO];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    // finally do the magic
+    float topInset = 14.0f;
+    anotherButton.imageInsets = UIEdgeInsetsMake(topInset, 0.0f, -topInset, 0.0f);
+    
+    [numberToolbar setBackgroundColor:[UIColor clearColor]];
+    
+    
+    [numberToolbar addSubview:button];
+    
+    //[numberToolbar sizeToFit];
+    textView.inputAccessoryView = numberToolbar;
+
 }
 
 -(void)doneWithTextArea
@@ -67,15 +88,11 @@
          self.viewEscura.alpha = 0;
      } completion:^(BOOL finished) {
          [self dismissViewControllerAnimated:YES completion:^{
-         
              if (self.delegate) {
                  [self.delegate performSelector:@selector(actualizarNota:) withObject:self.textviewNote.text];
              }
-             
          }];
      }];
-    
-    
 }
 
 
@@ -87,7 +104,7 @@
         [self.viewMovel setFrame:CGRectMake(self.viewMovel.frame.origin.x,
                                             self.viewMovel.frame.origin.y,
                                             self.viewMovel.frame.size.width,
-                                            self.view.frame.size.height - 320)];
+                                            self.view.frame.size.height - 290)];
     }];
 }
 

@@ -20,38 +20,19 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ERe-DR-ynv">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="8Ik-rF-Kid"/>
+                        <outlet property="delegate" destination="-1" id="fxn-Gp-11X"/>
+                    </connections>
+                </tableView>
                 <view contentMode="scaleToFill" id="9po-2Y-ROt">
-                    <rect key="frame" x="0.0" y="64" width="320" height="178"/>
+                    <rect key="frame" x="0.0" y="64" width="320" height="130"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" id="Db3-jS-MiW">
-                            <rect key="frame" x="0.0" y="130" width="320" height="48"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HDy-do-gDR">
-                                    <rect key="frame" x="16" y="13" width="64" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnmore.png" id="gmV-fv-AtI">
-                                    <rect key="frame" x="91" y="12" width="24" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b2B-01-khd">
-                                    <rect key="frame" x="0.0" y="0.0" width="115" height="47.5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="clickAddIng:" destination="-1" eventType="touchUpInside" id="O37-Cz-H3f"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgsample001.jpg" id="XBC-dW-Efv">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -66,21 +47,12 @@
                     </subviews>
                     <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ERe-DR-ynv">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="8Ik-rF-Kid"/>
-                        <outlet property="delegate" destination="-1" id="fxn-Gp-11X"/>
-                    </connections>
-                </tableView>
                 <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="heO-F9-PbV">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="nH4-KW-iL7"/>
+                        <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="nH4-KW-iL7"/>
                         <barButtonItem image="btnbook1.png" style="plain" id="ur0-iy-K4A">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -105,7 +77,7 @@
                                 <action selector="clickInApps:" destination="-1" id="SZP-a2-IPB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="25" style="plain" systemItem="fixedSpace" id="DcP-gN-Ojc"/>
+                        <barButtonItem width="37" style="plain" systemItem="fixedSpace" id="DcP-gN-Ojc"/>
                     </items>
                     <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
@@ -149,7 +121,6 @@
         <image name="btnbook1.png" width="28" height="24"/>
         <image name="btncall1.png" width="17" height="18"/>
         <image name="btnfeatured1.png" width="17" height="22"/>
-        <image name="btnmore.png" width="20" height="20"/>
         <image name="btnshop2.png" width="23" height="19"/>
         <image name="imgsample001.jpg" width="320" height="568"/>
     </resources>

@@ -458,10 +458,10 @@
     {
         UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0, largura   , 9999)];
         label.numberOfLines=0;
-        label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:13];
+        label.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
         label.text = ((ObjectDirections *)[self.itemsDirections objectAtIndex:indexPath.row]).descricao;
     
-        CGSize maximumLabelSize = CGSizeMake(320, 9999);
+        CGSize maximumLabelSize = CGSizeMake(largura, 9999);
         CGSize expectedSize = [label sizeThatFits:maximumLabelSize];
         return expectedSize.height + 35 + 20;
     }
@@ -555,8 +555,14 @@
         }
     
         ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
+        
+        NSString *val =[NSString stringWithFormat:@"%@%@%@ %@",ing.quantidade, ing.quantidadeDecimal ,ing.unidade , ing.nome];
+        val = [val stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+        
+        val =[NSString stringWithFormat:@" %@", val];
+
     
-        cell.LabelTitulo.text = [NSString stringWithFormat:@"%@%@%@ %@",ing.quantidade, ing.quantidadeDecimal ,ing.unidade , ing.nome];
+        cell.LabelTitulo.text = val;
         cell.ingrediente = ing;
         // tenho de calcular com base no que esta no header
     
