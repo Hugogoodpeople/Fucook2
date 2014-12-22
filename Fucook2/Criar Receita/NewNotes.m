@@ -30,7 +30,6 @@
     
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
 
-    
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
     [buttonback addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];

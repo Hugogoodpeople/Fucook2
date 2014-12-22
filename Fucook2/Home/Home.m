@@ -69,7 +69,7 @@
     // Do any additional setup after loading the view from its nib.
 
     /* bt search*/
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 43, 40)];
     [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsetting1"] forState:UIControlStateNormal];
     
@@ -77,20 +77,25 @@
     //self.navigationItem.leftBarButtonItem = anotherButton;
     
     /* bt add*/
-    UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 43, 40)];
     [buttonadd addTarget:self action:@selector(addbook) forControlEvents:UIControlEventTouchUpInside];
     [buttonadd setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
     
     
-    UIButton * buttonSettings = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
+    UIButton * buttonSettings = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 42, 40)];
     [buttonSettings addTarget:self action:@selector(Findreceita) forControlEvents:UIControlEventTouchUpInside];
     [buttonSettings setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonSettings = [[UIBarButtonItem alloc] initWithCustomView:buttonSettings];
     
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [negativeSpacer setWidth:-7];
+    
+
+    
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: negativeSpacer, anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
 
     UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
     [self.navigationItem setTitleView:titleView];
@@ -230,8 +235,6 @@
     [self.navigationController pushViewController:receitas animated:YES];
 }
 
-
-
 -(void)addbook {
     NSLog(@"clicou add");
 
@@ -251,14 +254,10 @@
 
 -(void)apagarLivro:(NSManagedObject*)mo
 {
-    
     managedObject = mo;
     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Are you sure you want to delete this recipe book?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     alert.tag = 1;
     [alert show];
-    
-    
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

@@ -130,7 +130,7 @@
     [self.view addSubview:self.header];
     
     self.tabbleView.tableHeaderView = self.header;
-    //[self.tabbleView setContentInset:UIEdgeInsetsMake(self.header.frame.size.height, 0, 52, 0)];
+    [self.tabbleView setContentInset:UIEdgeInsetsMake(0, 0, 52, 0)];
     
     
     // Initialize the refresh control.

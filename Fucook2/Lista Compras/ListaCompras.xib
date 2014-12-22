@@ -52,7 +52,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="nH4-KW-iL7"/>
+                        <barButtonItem width="18" style="plain" systemItem="fixedSpace" id="nH4-KW-iL7"/>
                         <barButtonItem image="btnbook1.png" style="plain" id="ur0-iy-K4A">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -77,7 +77,7 @@
                                 <action selector="clickInApps:" destination="-1" id="SZP-a2-IPB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="37" style="plain" systemItem="fixedSpace" id="DcP-gN-Ojc"/>
+                        <barButtonItem width="21" style="plain" systemItem="fixedSpace" id="DcP-gN-Ojc"/>
                     </items>
                     <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                 </toolbar>
