@@ -47,6 +47,8 @@
     ObjectLista * lista;
     NSManagedObject * managedObjectaux;
     HeaderBotoesListaComras * bh;
+    
+    MFMailComposeViewController *mailComposer;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tabbleView;
@@ -95,29 +97,17 @@
     
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [button addTarget:self action:@selector(clickSettings:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(sendMail:) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsetting1"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     //self.navigationItem.leftBarButtonItem = anotherButton;
     
-    /* bt add*/
-    UIButton * buttonadd = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [buttonadd addTarget:self action:@selector(addbook) forControlEvents:UIControlEventTouchUpInside];
-    [buttonadd setImage:[UIImage imageNamed:@"btnaddbook"] forState:UIControlStateNormal];
-    
-    UIBarButtonItem *anotherButtonadd = [[UIBarButtonItem alloc] initWithCustomView:buttonadd];
-    
-    
-    UIButton * buttonSettings = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
-    [buttonSettings addTarget:self action:@selector(Findreceita) forControlEvents:UIControlEventTouchUpInside];
-    [buttonSettings setImage:[UIImage imageNamed:@"btnsearch"] forState:UIControlStateNormal];
-    
-    UIBarButtonItem *anotherButtonSettings = [[UIBarButtonItem alloc] initWithCustomView:buttonSettings];
+
     
     
     
-    // [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton,anotherButtonadd, anotherButtonSettings, nil]];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton, nil]];
     
     self.navigationItem.hidesBackButton = YES;
     
@@ -699,6 +689,42 @@
     [arrayOfItems removeAllObjects];
     
     [self.tabbleView reloadData];
+}
+
+-(void)sendMail:(id)sender{
+    mailComposer = [[MFMailComposeViewController alloc]init];
+    mailComposer.mailComposeDelegate = self;
+    [mailComposer setSubject:@"Test mail"];
+    
+    NSString * stringEnviar = [NSString stringWithFormat:@"List of ingredientes to send<br> %@", [self listarIngredientes]];
+    
+    [mailComposer setMessageBody:stringEnviar isHTML:YES];
+    
+    [self presentViewController:mailComposer animated:YES completion:nil];
+}
+     
+#pragma mark - mail compose delegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    if (result) {
+        NSLog(@"Result : %d",result);
+    }
+    if (error) {
+        NSLog(@"Error : %@",error);
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(NSString *)listarIngredientes
+{
+    NSString * stringIngredientes = @"";
+    
+    for (ObjectLista * ing in arrayOfItems)
+    {
+        stringIngredientes = [NSString stringWithFormat:@"%@ <br>%@%@ %@ ", stringIngredientes, ing.quantidade, ing.unidade, ing.nome ];
+    }
+    
+    return stringIngredientes;
 }
 
 @end
