@@ -371,36 +371,6 @@
             endingLineNumber = "657"
             landmarkName = "-adicionarReceita:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MealPlanner adicionarReceita:]"
-                  moduleName = "Fucook2"
-                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/MealPlanner/MealPlanner.m"
-                  timestampString = "440964138.877938"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "657"
-                  endingLineNumber = "657"
-                  offsetFromSymbolStart = "1434">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MealPlanner adicionarReceita:]"
-                  moduleName = "Fucook2"
-                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/MealPlanner/MealPlanner.m"
-                  timestampString = "440964138.878074"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "657"
-                  endingLineNumber = "657"
-                  offsetFromSymbolStart = "1536">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -417,6 +387,36 @@
             endingLineNumber = "678"
             landmarkName = "-adicionarReceita:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MealPlanner adicionarReceita:]"
+                  moduleName = "Fucook2"
+                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/MealPlanner/MealPlanner.m"
+                  timestampString = "441033048.347912"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "678"
+                  endingLineNumber = "678"
+                  offsetFromSymbolStart = "3105">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MealPlanner adicionarReceita:]"
+                  moduleName = "Fucook2"
+                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/MealPlanner/MealPlanner.m"
+                  timestampString = "441033048.348019"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "678"
+                  endingLineNumber = "678"
+                  offsetFromSymbolStart = "3246">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

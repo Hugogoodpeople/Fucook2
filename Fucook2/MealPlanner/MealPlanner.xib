@@ -63,11 +63,11 @@
                                 <action selector="clickMesSeguinte:" destination="-1" eventType="touchUpInside" id="Yfi-Vv-hee"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btleft2.png" id="2Mw-Oa-miK">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btleft1.png" id="2Mw-Oa-miK">
                             <rect key="frame" x="15" y="14" width="12" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btright2.png" id="4XP-Eg-xik">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnopen1.png" id="4XP-Eg-xik">
                             <rect key="frame" x="292" y="14" width="12" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -116,12 +116,12 @@
         </view>
     </objects>
     <resources>
-        <image name="btleft2.png" width="11" height="17"/>
+        <image name="btleft1.png" width="11" height="17"/>
         <image name="btnbook1.png" width="28" height="24"/>
         <image name="btncall1.png" width="17" height="18"/>
         <image name="btnfeatured1.png" width="17" height="22"/>
+        <image name="btnopen1.png" width="6" height="10"/>
         <image name="btnshop2.png" width="23" height="19"/>
-        <image name="btright2.png" width="11" height="17"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

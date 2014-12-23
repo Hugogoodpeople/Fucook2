@@ -84,6 +84,12 @@
     //[self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:anotherButtonadd, nil]];
     
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
+    
+    // para remover a linha da tollbar
+    [self.toobar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [self.toobar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
+    [self.toobar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
+
 }
 
 
@@ -236,7 +242,6 @@
         [arrayDias addObject:dia];
         [arrayDatas addObject:dia.data];
     }
-    
 }
 
 -(void)back

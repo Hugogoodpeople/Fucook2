@@ -63,6 +63,14 @@
 		BA05B7461A39A3DD00476074 /* NotesViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7441A39A3DD00476074 /* NotesViewer.xib */; };
 		BA05B7491A39C18500476074 /* imgssombralateral@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7471A39C18500476074 /* imgssombralateral@2x.png */; };
 		BA05B74A1A39C18500476074 /* imgssombralateral@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7481A39C18500476074 /* imgssombralateral@3x.png */; };
+		BA06C88D1A49775E007AE029 /* btnopen1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA06C88B1A49775E007AE029 /* btnopen1@2x.png */; };
+		BA06C88E1A49775E007AE029 /* btnopen1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA06C88C1A49775E007AE029 /* btnopen1@3x.png */; };
+		BA06C8BB1A498E76007AE029 /* ShareFucook.m in Sources */ = {isa = PBXBuildFile; fileRef = BA06C8B91A498E76007AE029 /* ShareFucook.m */; };
+		BA06C8BC1A498E76007AE029 /* ShareFucook.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA06C8BA1A498E76007AE029 /* ShareFucook.xib */; };
+		BA06C8C11A499A2B007AE029 /* icoshareface@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA06C8BD1A499A2B007AE029 /* icoshareface@2x.png */; };
+		BA06C8C21A499A2B007AE029 /* icoshareface@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA06C8BE1A499A2B007AE029 /* icoshareface@3x.png */; };
+		BA06C8C31A499A2B007AE029 /* icosharetwitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA06C8BF1A499A2B007AE029 /* icosharetwitter@2x.png */; };
+		BA06C8C41A499A2B007AE029 /* icosharetwitter@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA06C8C01A499A2B007AE029 /* icosharetwitter@3x.png */; };
 		BA07EAE71A3B654E0087B44E /* solid231.png in Resources */ = {isa = PBXBuildFile; fileRef = BA07EAE61A3B654E0087B44E /* solid231.png */; };
 		BA07EAE91A3B671B0087B44E /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA07EAE81A3B671B0087B44E /* Images-2.xcassets */; };
 		BA1B9D041A3EF1A200E1BEA0 /* MealPlanerTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1B9D021A3EF1A200E1BEA0 /* MealPlanerTable.m */; };
@@ -73,6 +81,12 @@
 		BA1B9D151A3EF35600E1BEA0 /* btleft3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D131A3EF35600E1BEA0 /* btleft3@3x.png */; };
 		BA1B9D181A3F32CF00E1BEA0 /* btnsave@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D161A3F32CF00E1BEA0 /* btnsave@2x.png */; };
 		BA1B9D191A3F32CF00E1BEA0 /* btnsave@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D171A3F32CF00E1BEA0 /* btnsave@3x.png */; };
+		BA24B3CB1A49A0A000D674C2 /* DMActivityInstagram.m in Sources */ = {isa = PBXBuildFile; fileRef = BA24B3C11A49A0A000D674C2 /* DMActivityInstagram.m */; };
+		BA24B3CC1A49A0A000D674C2 /* DMAIDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA24B3C31A49A0A000D674C2 /* DMAIDemoViewController.m */; };
+		BA24B3CD1A49A0A000D674C2 /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA24B3C51A49A0A000D674C2 /* DMAppDelegate.m */; };
+		BA24B3CE1A49A0A000D674C2 /* DMColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA24B3C71A49A0A000D674C2 /* DMColorPickerView.m */; };
+		BA24B3CF1A49A0A000D674C2 /* DMResizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA24B3C91A49A0A000D674C2 /* DMResizerViewController.m */; };
+		BA24B3D01A49A0A000D674C2 /* DMResizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3CA1A49A0A000D674C2 /* DMResizerViewController.xib */; };
 		BADD4B0B1A444DF200A30F87 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AEB1A444DF200A30F87 /* MKAnnotationView+WebCache.m */; };
 		BADD4B0C1A444DF200A30F87 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AED1A444DF200A30F87 /* NSData+ImageContentType.m */; };
 		BADD4B0D1A444DF200A30F87 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AEF1A444DF200A30F87 /* SDImageCache.m */; };
@@ -401,6 +415,15 @@
 		BA05B7441A39A3DD00476074 /* NotesViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotesViewer.xib; path = Receita/NotesViewer/NotesViewer.xib; sourceTree = "<group>"; };
 		BA05B7471A39C18500476074 /* imgssombralateral@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgssombralateral@2x.png"; path = "Fucook2/Imagens/imgssombralateral@2x.png"; sourceTree = "<group>"; };
 		BA05B7481A39C18500476074 /* imgssombralateral@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imgssombralateral@3x.png"; path = "Fucook2/Imagens/imgssombralateral@3x.png"; sourceTree = "<group>"; };
+		BA06C88B1A49775E007AE029 /* btnopen1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnopen1@2x.png"; path = "Fucook2/Imagens/btnopen1@2x.png"; sourceTree = "<group>"; };
+		BA06C88C1A49775E007AE029 /* btnopen1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnopen1@3x.png"; path = "Fucook2/Imagens/btnopen1@3x.png"; sourceTree = "<group>"; };
+		BA06C8B81A498E76007AE029 /* ShareFucook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareFucook.h; path = Fucook2/ShareFucook/ShareFucook.h; sourceTree = "<group>"; };
+		BA06C8B91A498E76007AE029 /* ShareFucook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareFucook.m; path = Fucook2/ShareFucook/ShareFucook.m; sourceTree = "<group>"; };
+		BA06C8BA1A498E76007AE029 /* ShareFucook.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShareFucook.xib; path = Fucook2/ShareFucook/ShareFucook.xib; sourceTree = "<group>"; };
+		BA06C8BD1A499A2B007AE029 /* icoshareface@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshareface@2x.png"; path = "Fucook2/Imagens/icoshareface@2x.png"; sourceTree = "<group>"; };
+		BA06C8BE1A499A2B007AE029 /* icoshareface@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshareface@3x.png"; path = "Fucook2/Imagens/icoshareface@3x.png"; sourceTree = "<group>"; };
+		BA06C8BF1A499A2B007AE029 /* icosharetwitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharetwitter@2x.png"; path = "Fucook2/Imagens/icosharetwitter@2x.png"; sourceTree = "<group>"; };
+		BA06C8C01A499A2B007AE029 /* icosharetwitter@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharetwitter@3x.png"; path = "Fucook2/Imagens/icosharetwitter@3x.png"; sourceTree = "<group>"; };
 		BA07EAE61A3B654E0087B44E /* solid231.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = solid231.png; path = Fucook2/Imagens/solid231.png; sourceTree = "<group>"; };
 		BA07EAE81A3B671B0087B44E /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		BA1B9D011A3EF1A200E1BEA0 /* MealPlanerTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealPlanerTable.h; path = MealPlanner/MealPlanerTable.h; sourceTree = "<group>"; };
@@ -412,6 +435,17 @@
 		BA1B9D131A3EF35600E1BEA0 /* btleft3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btleft3@3x.png"; path = "Fucook2/Imagens/btleft3@3x.png"; sourceTree = "<group>"; };
 		BA1B9D161A3F32CF00E1BEA0 /* btnsave@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsave@2x.png"; path = "Fucook2/Imagens/btnsave@2x.png"; sourceTree = "<group>"; };
 		BA1B9D171A3F32CF00E1BEA0 /* btnsave@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnsave@3x.png"; path = "Fucook2/Imagens/btnsave@3x.png"; sourceTree = "<group>"; };
+		BA24B3C01A49A0A000D674C2 /* DMActivityInstagram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMActivityInstagram.h; path = Fucook2/ShareFucook/Instagram/DMActivityInstagram.h; sourceTree = "<group>"; };
+		BA24B3C11A49A0A000D674C2 /* DMActivityInstagram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMActivityInstagram.m; path = Fucook2/ShareFucook/Instagram/DMActivityInstagram.m; sourceTree = "<group>"; };
+		BA24B3C21A49A0A000D674C2 /* DMAIDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMAIDemoViewController.h; path = Fucook2/ShareFucook/Instagram/DMAIDemoViewController.h; sourceTree = "<group>"; };
+		BA24B3C31A49A0A000D674C2 /* DMAIDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMAIDemoViewController.m; path = Fucook2/ShareFucook/Instagram/DMAIDemoViewController.m; sourceTree = "<group>"; };
+		BA24B3C41A49A0A000D674C2 /* DMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMAppDelegate.h; path = Fucook2/ShareFucook/Instagram/DMAppDelegate.h; sourceTree = "<group>"; };
+		BA24B3C51A49A0A000D674C2 /* DMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMAppDelegate.m; path = Fucook2/ShareFucook/Instagram/DMAppDelegate.m; sourceTree = "<group>"; };
+		BA24B3C61A49A0A000D674C2 /* DMColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMColorPickerView.h; path = Fucook2/ShareFucook/Instagram/DMColorPickerView.h; sourceTree = "<group>"; };
+		BA24B3C71A49A0A000D674C2 /* DMColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMColorPickerView.m; path = Fucook2/ShareFucook/Instagram/DMColorPickerView.m; sourceTree = "<group>"; };
+		BA24B3C81A49A0A000D674C2 /* DMResizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMResizerViewController.h; path = Fucook2/ShareFucook/Instagram/DMResizerViewController.h; sourceTree = "<group>"; };
+		BA24B3C91A49A0A000D674C2 /* DMResizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMResizerViewController.m; path = Fucook2/ShareFucook/Instagram/DMResizerViewController.m; sourceTree = "<group>"; };
+		BA24B3CA1A49A0A000D674C2 /* DMResizerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DMResizerViewController.xib; path = Fucook2/ShareFucook/Instagram/DMResizerViewController.xib; sourceTree = "<group>"; };
 		BADD4AEA1A444DF200A30F87 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKAnnotationView+WebCache.h"; path = "Fucook2/ImageDownloader/MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		BADD4AEB1A444DF200A30F87 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKAnnotationView+WebCache.m"; path = "Fucook2/ImageDownloader/MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		BADD4AEC1A444DF200A30F87 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "Fucook2/ImageDownloader/NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -810,6 +844,35 @@
 			name = Notas;
 			sourceTree = "<group>";
 		};
+		BA06C8B71A498E4B007AE029 /* Partilha Facebook Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				BA06C8C51A49A06C007AE029 /* Instagram */,
+				BA06C8B81A498E76007AE029 /* ShareFucook.h */,
+				BA06C8B91A498E76007AE029 /* ShareFucook.m */,
+				BA06C8BA1A498E76007AE029 /* ShareFucook.xib */,
+			);
+			name = "Partilha Facebook Twitter";
+			sourceTree = "<group>";
+		};
+		BA06C8C51A49A06C007AE029 /* Instagram */ = {
+			isa = PBXGroup;
+			children = (
+				BA24B3C01A49A0A000D674C2 /* DMActivityInstagram.h */,
+				BA24B3C11A49A0A000D674C2 /* DMActivityInstagram.m */,
+				BA24B3C21A49A0A000D674C2 /* DMAIDemoViewController.h */,
+				BA24B3C31A49A0A000D674C2 /* DMAIDemoViewController.m */,
+				BA24B3C41A49A0A000D674C2 /* DMAppDelegate.h */,
+				BA24B3C51A49A0A000D674C2 /* DMAppDelegate.m */,
+				BA24B3C61A49A0A000D674C2 /* DMColorPickerView.h */,
+				BA24B3C71A49A0A000D674C2 /* DMColorPickerView.m */,
+				BA24B3C81A49A0A000D674C2 /* DMResizerViewController.h */,
+				BA24B3C91A49A0A000D674C2 /* DMResizerViewController.m */,
+				BA24B3CA1A49A0A000D674C2 /* DMResizerViewController.xib */,
+			);
+			name = Instagram;
+			sourceTree = "<group>";
+		};
 		BADD4AE91A444DE200A30F87 /* ImageDownloader */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,6 +925,7 @@
 		BAFBA0A21A36FAA5002B2C21 = {
 			isa = PBXGroup;
 			children = (
+				BA06C8B71A498E4B007AE029 /* Partilha Facebook Twitter */,
 				BADD4B5B1A446F7A00A30F87 /* AlertsCuston */,
 				BADD4AE91A444DE200A30F87 /* ImageDownloader */,
 				BAFBA2141A3717DD002B2C21 /* Imagens */,
@@ -1313,6 +1377,12 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BA06C8BD1A499A2B007AE029 /* icoshareface@2x.png */,
+				BA06C8BE1A499A2B007AE029 /* icoshareface@3x.png */,
+				BA06C8BF1A499A2B007AE029 /* icosharetwitter@2x.png */,
+				BA06C8C01A499A2B007AE029 /* icosharetwitter@3x.png */,
+				BA06C88B1A49775E007AE029 /* btnopen1@2x.png */,
+				BA06C88C1A49775E007AE029 /* btnopen1@3x.png */,
 				BAFECA081A4888B200D0431B /* etiqbuy@2x.png */,
 				BAFECA091A4888B200D0431B /* etiqbuy@3x.png */,
 				BAFECA0A1A4888B200D0431B /* etiqface@2x.png */,
@@ -1619,9 +1689,12 @@
 				BA0081E11A371FFD00A7871D /* icoabout@2x.png in Resources */,
 				BAFBA2521A3717EC002B2C21 /* icoluvas@3x.png in Resources */,
 				BA0081F21A371FFD00A7871D /* icoshare@3x.png in Resources */,
+				BA06C8BC1A498E76007AE029 /* ShareFucook.xib in Resources */,
 				BA0081E21A371FFD00A7871D /* icoabout@3x.png in Resources */,
+				BA06C88D1A49775E007AE029 /* btnopen1@2x.png in Resources */,
 				BAFBA2131A3715CF002B2C21 /* MealPlanerCell.xib in Resources */,
 				BAFEB17C1A41F24700DEE4ED /* btnclose2@3x.png in Resources */,
+				BA06C88E1A49775E007AE029 /* btnopen1@3x.png in Resources */,
 				BAFBA1511A370745002B2C21 /* NewNotes.xib in Resources */,
 				BA0082161A374D1A00A7871D /* imgbadgetbig@2x.png in Resources */,
 				BAFCBA211A3894EE001EFCE2 /* imglinenotes1@2x.png in Resources */,
@@ -1651,6 +1724,7 @@
 				BAFBA26C1A371921002B2C21 /* btnfeatured1@3x.png in Resources */,
 				BAFBA2531A3717EC002B2C21 /* icopanela@2x.png in Resources */,
 				BAFBA2591A3717EC002B2C21 /* imglinetop@2x.png in Resources */,
+				BA06C8C41A499A2B007AE029 /* icosharetwitter@3x.png in Resources */,
 				BAFBA2551A3717EC002B2C21 /* icouncheck@2x.png in Resources */,
 				BAFCB9FE1A384D31001EFCE2 /* lightpaperfibers_@3x.png in Resources */,
 				BAFCBA221A3894EE001EFCE2 /* imglinenotes1@3x.png in Resources */,
@@ -1678,6 +1752,7 @@
 				BA0081ED1A371FFD00A7871D /* icorating@2x.png in Resources */,
 				BAFBA2671A3717EC002B2C21 /* linedot3@2x.png in Resources */,
 				BAFBA2701A3719AB002B2C21 /* btnsetting2@3x.png in Resources */,
+				BA24B3D01A49A0A000D674C2 /* DMResizerViewController.xib in Resources */,
 				BA0082171A374D1A00A7871D /* imgbadgetbig@3x.png in Resources */,
 				BAFE403F1A405B66005E8069 /* InAppsCell.xib in Resources */,
 				BA0081DD1A371FFD00A7871D /* btnmore@2x.png in Resources */,
@@ -1741,6 +1816,7 @@
 				BAFBA2621A3717EC002B2C21 /* imgtira@3x.png in Resources */,
 				BAFBA26B1A371921002B2C21 /* btnfeatured1@2x.png in Resources */,
 				BAFBA24A1A3717EC002B2C21 /* btntime@3x.png in Resources */,
+				BA06C8C11A499A2B007AE029 /* icoshareface@2x.png in Resources */,
 				BAFBA2681A3717EC002B2C21 /* linedot3@3x.png in Resources */,
 				BA0081F31A371FFD00A7871D /* imglogofucook@2x.png in Resources */,
 				BA1B9D141A3EF35600E1BEA0 /* btleft3@2x.png in Resources */,
@@ -1783,6 +1859,7 @@
 				BAFCBA331A38C047001EFCE2 /* DirectionsHeader.xib in Resources */,
 				BA07EAE71A3B654E0087B44E /* solid231.png in Resources */,
 				BAFCB9FB1A384D31001EFCE2 /* btnclosenote@3x.png in Resources */,
+				BA06C8C21A499A2B007AE029 /* icoshareface@3x.png in Resources */,
 				BAFCBA2E1A38A896001EFCE2 /* linedotbigger2@3x.png in Resources */,
 				BAFCB9ED1A384927001EFCE2 /* HeaderIngrediente.xib in Resources */,
 				BAFBA2401A3717EC002B2C21 /* btncall3@3x.png in Resources */,
@@ -1792,6 +1869,7 @@
 				BA0081F41A371FFD00A7871D /* imglogofucook@3x.png in Resources */,
 				BAFBA2791A371CD7002B2C21 /* btnsearch@3x.png in Resources */,
 				BAFBA1021A3702D5002B2C21 /* NewReceita.xib in Resources */,
+				BA06C8C31A499A2B007AE029 /* icosharetwitter@2x.png in Resources */,
 				BA00821A1A374D1A00A7871D /* imglinebadgetdown@2x.png in Resources */,
 				BAFCBA071A3850D8001EFCE2 /* imgdateselect@3x.png in Resources */,
 				BA0081EC1A371FFD00A7871D /* icoimport@3x.png in Resources */,
@@ -1850,6 +1928,7 @@
 				BADD4B1A1A444DF200A30F87 /* UIView+WebCacheOperation.m in Sources */,
 				BAFBA1281A3704C5002B2C21 /* VRGCalendarView.m in Sources */,
 				BAFBA0E91A36FE6A002B2C21 /* NewBook.m in Sources */,
+				BA24B3CE1A49A0A000D674C2 /* DMColorPickerView.m in Sources */,
 				BAFEB1621A41D0FA00DEE4ED /* InAppsTeste.m in Sources */,
 				BAFBA1171A370486002B2C21 /* Calendario.m in Sources */,
 				BADD4B161A444DF200A30F87 /* UIImage+MultiFormat.m in Sources */,
@@ -1860,9 +1939,11 @@
 				BAFBA17C1A370ADB002B2C21 /* IAPHelper.m in Sources */,
 				BAFBA13C1A3706A6002B2C21 /* FooterNewReceita.m in Sources */,
 				BAFBA0EF1A36FEEA002B2C21 /* Settings.m in Sources */,
+				BA24B3CD1A49A0A000D674C2 /* DMAppDelegate.m in Sources */,
 				BAFBA1C81A370D3B002B2C21 /* RATreeView+Private.m in Sources */,
 				BADD4B131A444DF200A30F87 /* SDWebImagePrefetcher.m in Sources */,
 				BADD4B181A444DF200A30F87 /* UIImageView+HighlightedWebCache.m in Sources */,
+				BA24B3CC1A49A0A000D674C2 /* DMAIDemoViewController.m in Sources */,
 				BAFBA1E61A370EDF002B2C21 /* JATableViewCell.m in Sources */,
 				BAFBA1C21A370D3B002B2C21 /* RATreeNode.m in Sources */,
 				BAFBA1371A370685002B2C21 /* HeaderNewReceita.m in Sources */,
@@ -1879,6 +1960,7 @@
 				BAFBA1241A3704C5002B2C21 /* NSDate+convenience.m in Sources */,
 				BAFBA1621A3708B6002B2C21 /* JASwipeCell.m in Sources */,
 				BAFBA1091A37036A002B2C21 /* ObjectReceita.m in Sources */,
+				BA24B3CB1A49A0A000D674C2 /* DMActivityInstagram.m in Sources */,
 				BAFEB1671A41E35500DEE4ED /* PreviewBook.m in Sources */,
 				BAFBA1CA1A370D3B002B2C21 /* RATreeView+TableViewDataSource.m in Sources */,
 				BADD4B5E1A446F8B00A30F87 /* MBProgressHUD.m in Sources */,
@@ -1895,6 +1977,7 @@
 				BAFBA1E11A370EA7002B2C21 /* NewIngredienteShoppingList.m in Sources */,
 				BAFBA0BA1A36FAA6002B2C21 /* ViewController.m in Sources */,
 				BAFBA1461A3706EB002B2C21 /* Directions.m in Sources */,
+				BA24B3CF1A49A0A000D674C2 /* DMResizerViewController.m in Sources */,
 				BAFBA1CC1A370D3B002B2C21 /* RATreeView+UIScrollView.m in Sources */,
 				BAFBA1251A3704C5002B2C21 /* NSMutableArray+convenience.m in Sources */,
 				BAFBA10C1A37039E002B2C21 /* ObjectIngrediente.m in Sources */,
@@ -1905,6 +1988,7 @@
 				BAFEC9FE1A4831DF00D0431B /* HeaderBotoesListaComras.m in Sources */,
 				BA05B7451A39A3DD00476074 /* NotesViewer.m in Sources */,
 				BAFBA2121A3715CF002B2C21 /* MealPlanerCell.m in Sources */,
+				BA06C8BB1A498E76007AE029 /* ShareFucook.m in Sources */,
 				BADD4B101A444DF200A30F87 /* SDWebImageDownloader.m in Sources */,
 				BAFBA1F91A37100D002B2C21 /* ATSDragToReorderTableViewController.m in Sources */,
 				BAFBA1061A370327002B2C21 /* UIImage+fixOrientation.m in Sources */,

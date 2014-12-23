@@ -352,14 +352,11 @@
                 break;
             }
 
-                
         }
     }else
     {
         NSLog(@"webservice error %@", error.description);
     }
-    
-    
 }
 
 
@@ -407,6 +404,12 @@
 
     
     [self webserviceInApps];
+    
+    // para remover a linha da tollbar
+    [self.toobar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [self.toobar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
+    [self.toobar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
+
     
 }
 

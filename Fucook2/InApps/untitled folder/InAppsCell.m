@@ -8,6 +8,7 @@
 
 #import "InAppsCell.h"
 #import <Social/Social.h>
+#import "ShareFucook.h"
 
 @implementation InAppsCell
 
@@ -25,10 +26,23 @@
 // tenho de fazer #import <Social/Social.h> para funcionar
 - (IBAction)partilharFacebook:(id)sender {
     
+    
+    ShareFucook * share = [ShareFucook new];
+    share.delegate = self.delegate;
+    share.livro = self.livro;
+    share.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self.delegate presentViewController:share animated:YES completion:^{
+        [UIView animateWithDuration:0.2 animations:^{
+            share.viewEscura.alpha = 0.6;
+        }];}];
+
+    
+    
     // esta parte funciona correctamente mas tem de abrir logo ou twitter ou facebook
     
+    /*
      // este cosigo deixa o utilizador escolher qual o tipo de ferramenta pretende usar para partilhar o desejado
-     UIImage *postImage = self.imagemLivro.image;
+     UIImage *postImage = [self imageWithView:self.viewMovel];
      
      NSArray *activityItems = @[@"Just found this great book on fucook",[NSURL URLWithString:@"http://www.fucook.com"], postImage];
      
@@ -38,7 +52,19 @@
      applicationActivities:nil];
     
 
-    activityController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList, UIActivityTypeMail ];
+    activityController.excludedActivityTypes = @[UIActivityTypePostToWeibo,
+                                                                         UIActivityTypeMessage,
+                                                                         UIActivityTypeMail,
+                                                                         UIActivityTypePrint,
+                                                                         UIActivityTypeCopyToPasteboard,
+                                                                         UIActivityTypeAssignToContact,
+                                                                         UIActivityTypeSaveToCameraRoll,
+                                                                         UIActivityTypeAddToReadingList,
+                                                                         UIActivityTypePostToFlickr,
+                                                                         UIActivityTypePostToVimeo,
+                                                                         UIActivityTypePostToTencentWeibo,
+                                                                         UIActivityTypeAirDrop
+                                                                         ];
     
     
     [activityController setCompletionHandler:^(NSString *activityType, BOOL completed) {
@@ -53,7 +79,9 @@
      
      [self.delegate presentViewController:activityController
      animated:YES completion:nil];
-     
+    
+  
+    */
     
     /*
     
@@ -133,6 +161,17 @@
 
 }
 
+-(UIImage *) imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
 
 
 - (IBAction)clickAddLivro:(id)sender
