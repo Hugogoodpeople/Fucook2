@@ -85,6 +85,8 @@
 		BA24B3DE1A49B19E00D674C2 /* icoshareinsta@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3DA1A49B19E00D674C2 /* icoshareinsta@3x.png */; };
 		BA24B3DF1A49B19E00D674C2 /* icosharepinterest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3DB1A49B19E00D674C2 /* icosharepinterest@2x.png */; };
 		BA24B3E01A49B19E00D674C2 /* icosharepinterest@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3DC1A49B19E00D674C2 /* icosharepinterest@3x.png */; };
+		BA24B3E91A49D50300D674C2 /* Pinterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA24B3E61A49D50300D674C2 /* Pinterest.framework */; };
+		BA24B3EA1A49D50300D674C2 /* PinterestSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */; };
 		BADD4B0B1A444DF200A30F87 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AEB1A444DF200A30F87 /* MKAnnotationView+WebCache.m */; };
 		BADD4B0C1A444DF200A30F87 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AED1A444DF200A30F87 /* NSData+ImageContentType.m */; };
 		BADD4B0D1A444DF200A30F87 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AEF1A444DF200A30F87 /* SDImageCache.m */; };
@@ -437,6 +439,8 @@
 		BA24B3DA1A49B19E00D674C2 /* icoshareinsta@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshareinsta@3x.png"; path = "Fucook2/Imagens/icoshareinsta@3x.png"; sourceTree = "<group>"; };
 		BA24B3DB1A49B19E00D674C2 /* icosharepinterest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharepinterest@2x.png"; path = "Fucook2/Imagens/icosharepinterest@2x.png"; sourceTree = "<group>"; };
 		BA24B3DC1A49B19E00D674C2 /* icosharepinterest@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharepinterest@3x.png"; path = "Fucook2/Imagens/icosharepinterest@3x.png"; sourceTree = "<group>"; };
+		BA24B3E61A49D50300D674C2 /* Pinterest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pinterest.framework; sourceTree = "<group>"; };
+		BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PinterestSDKResources.bundle; sourceTree = "<group>"; };
 		BADD4AEA1A444DF200A30F87 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKAnnotationView+WebCache.h"; path = "Fucook2/ImageDownloader/MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		BADD4AEB1A444DF200A30F87 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKAnnotationView+WebCache.m"; path = "Fucook2/ImageDownloader/MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		BADD4AEC1A444DF200A30F87 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "Fucook2/ImageDownloader/NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -810,6 +814,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFCBA191A387D69001EFCE2 /* Accounts.framework in Frameworks */,
+				BA24B3E91A49D50300D674C2 /* Pinterest.framework in Frameworks */,
 				BAFBA2001A37124D002B2C21 /* CoreData.framework in Frameworks */,
 				BAFBA1FE1A371246002B2C21 /* StoreKit.framework in Frameworks */,
 			);
@@ -843,6 +848,23 @@
 				BA06C8BA1A498E76007AE029 /* ShareFucook.xib */,
 			);
 			name = "Partilha Facebook Twitter";
+			sourceTree = "<group>";
+		};
+		BA24B3E51A49D50300D674C2 /* Pinterest.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				BA24B3E61A49D50300D674C2 /* Pinterest.framework */,
+				BA24B3E71A49D50300D674C2 /* Resources */,
+			);
+			path = Pinterest.embeddedframework;
+			sourceTree = "<group>";
+		};
+		BA24B3E71A49D50300D674C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		BADD4AE91A444DE200A30F87 /* ImageDownloader */ = {
@@ -1539,6 +1561,7 @@
 		BAFBA2751A371C07002B2C21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA24B3E51A49D50300D674C2 /* Pinterest.embeddedframework */,
 				BAFCBA181A387D69001EFCE2 /* Accounts.framework */,
 				BAFBA1FF1A37124D002B2C21 /* CoreData.framework */,
 				BAFBA1FD1A371246002B2C21 /* StoreKit.framework */,
@@ -1788,6 +1811,7 @@
 				BAFCBA261A389A59001EFCE2 /* btnshop2@3x.png in Resources */,
 				BA0081D91A371FFD00A7871D /* btnclose2@2x.png in Resources */,
 				BAFCB9FF1A384D31001EFCE2 /* lightpaperfibers@2x.png in Resources */,
+				BA24B3EA1A49D50300D674C2 /* PinterestSDKResources.bundle in Resources */,
 				BA05B7491A39C18500476074 /* imgssombralateral@2x.png in Resources */,
 				BA05B7461A39A3DD00476074 /* NotesViewer.xib in Resources */,
 				BAFBA24D1A3717EC002B2C21 /* icoclock@2x.png in Resources */,
@@ -2122,6 +2146,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Paula Almeida (3A7UN6Y88P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paula Almeida (3A7UN6Y88P)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pinterest.embeddedframework",
+				);
 				INFOPLIST_FILE = Fucook2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2137,6 +2165,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pinterest.embeddedframework",
+				);
 				INFOPLIST_FILE = Fucook2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

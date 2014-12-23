@@ -30,6 +30,7 @@
     ShareFucook * share = [ShareFucook new];
     share.delegate = self.delegate;
     share.livro = self.livro;
+    share.isInInApps = YES;
     share.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self.delegate presentViewController:share animated:YES completion:^{
         [UIView animateWithDuration:0.2 animations:^{

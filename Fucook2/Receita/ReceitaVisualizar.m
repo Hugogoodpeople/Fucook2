@@ -16,6 +16,7 @@
 #import "DirectionsHeader.h"
 #import "Calendario.h"
 #import "NotesViewer.h"
+#import "ShareFucook.h"
 
 @interface ReceitaVisualizar ()
 {
@@ -67,6 +68,34 @@
     [self initializeShoppingCart];
     [self setUpIngredientes];
     
+    
+    /* bt search*/
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
+    [button addTarget:self action:@selector(shareLivro) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    //self.navigationItem.rightBarButtonItem = anotherButton;
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [negativeSpacer setWidth:-4];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
+
+    
+}
+
+-(void)shareLivro
+{
+    ShareFucook * share = [ShareFucook new];
+    share.delegate = self;
+    share.receita = self.receita;
+    share.isInInApps = NO;
+    share.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:share animated:YES completion:^{
+        [UIView animateWithDuration:0.2 animations:^{
+            share.viewEscura.alpha = 0.6;
+        }];}];
 }
 
 -(void)back
