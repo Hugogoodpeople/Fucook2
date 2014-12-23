@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ObjectLivro.h"
 
-@interface ShareFucook : UIViewController
+@interface ShareFucook : UIViewController <UIDocumentInteractionControllerDelegate>
 
 @property (nonatomic, assign) id delegate;
 

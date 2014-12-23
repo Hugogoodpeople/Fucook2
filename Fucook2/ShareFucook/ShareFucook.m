@@ -8,7 +8,6 @@
 
 #import "ShareFucook.h"
 #import <Social/Social.h>
-#import "DMActivityInstagram.h"
 
 @interface ShareFucook ()
 
@@ -128,12 +127,36 @@
 
 - (IBAction)clickInstagram:(id)sender
 {
-    DMActivityInstagram *instagramActivity = [[DMActivityInstagram alloc] init];
+    //Remember Image must be larger than 612x612 size if not resize it.
     
-    NSArray *activityItems = @[self.livro.imagem, @"CatPaint #catpaint", [NSURL URLWithString:@"http://catpaint.info"]];
+    NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];
     
-    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[instagramActivity]];
-    [self presentViewController:activityController animated:YES completion:^{}];
+    if([[UIApplication sharedApplication] canOpenURL:instagramURL])
+    {
+        NSString *documentDirectory=[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+        NSString *saveImagePath=[documentDirectory stringByAppendingPathComponent:@"Image.ig"];
+        NSData *imageData=UIImagePNGRepresentation(self.livro.imagem);
+        [imageData writeToFile:saveImagePath atomically:YES];
+        
+        NSURL *imageURL=[NSURL fileURLWithPath:saveImagePath];
+        
+        UIDocumentInteractionController *docController=[[UIDocumentInteractionController alloc]init];
+        docController.delegate=self;
+        docController.UTI=@"com.instagram.photo";
+        
+        docController.annotation=[NSDictionary dictionaryWithObjectsAndKeys:@"Image Taken via @App",@"InstagramCaption", nil];
+        
+        [docController setURL:imageURL];
+        
+        
+        [docController presentOpenInMenuFromBarButtonItem:self.navigationItem.rightBarButtonItem animated:YES];  //Here try which one is suitable for u to present the doc Controller. if crash occurs
+        
+    }
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"warning" message:@"App not found" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 - (IBAction)clickCancel:(id)sender
