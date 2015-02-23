@@ -17,6 +17,7 @@
         NSSet * productIdentifiers = [NSSet setWithObjects:
                                       @"rcpk0",
                                       @"rcpk1",
+                                      @"rcpk2",
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });

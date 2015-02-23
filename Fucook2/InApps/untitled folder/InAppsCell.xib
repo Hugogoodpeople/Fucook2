@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
@@ -153,7 +154,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="teM-Si-Xc7">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="70"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -196,6 +197,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="ButtonDelete" destination="MCu-lj-2rQ" id="Ioh-b5-Ahb"/>
+                <outlet property="buttonAdd1" destination="teM-Si-Xc7" id="4Jv-h2-iWo"/>
+                <outlet property="buttonAdd2" destination="KGk-Uw-lih" id="ioE-Uq-L67"/>
                 <outlet property="buttonEdit" destination="p6b-tw-6Ds" id="hb0-ii-guh"/>
                 <outlet property="imagemLivro" destination="GcF-oS-l1F" id="azi-pV-7fE"/>
                 <outlet property="labelCategoria" destination="8pH-Ki-x9g" id="M1P-Yk-1xM"/>

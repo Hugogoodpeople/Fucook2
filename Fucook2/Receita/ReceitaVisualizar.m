@@ -88,7 +88,7 @@
 -(void)shareLivro
 {
     ShareFucook * share = [ShareFucook new];
-    share.delegate = self;
+    //share.delegate = self;
     share.receita = self.receita;
     share.isInInApps = NO;
     share.modalPresentationStyle = UIModalPresentationOverCurrentContext;
@@ -143,9 +143,10 @@
     header.categoria        = self.receita.categoria;
     NSData * data           = [self.receita.managedImagem valueForKey:@"imagem"];
     
-    
-    header.imagem = [UIImage imageWithData:data];
-    
+    if (data)
+        header.imagem = [UIImage imageWithData:data];
+    else
+        header.imagem = [UIImage imageNamed:@"imgsample.png"];
     
     // afinal nao o posso colocar dentro da tabela :( e tbm tenho de alterar o contentinsent para ajustar a nova posição do cenas
     //self.tabela.tableHeaderView = header.view;
@@ -663,7 +664,7 @@
     
     
      
-    NSLog(@"Y = %f", Y);
+    // NSLog(@"Y = %f", Y);
 }
 
 -(NSString *)calcularValor:(NSIndexPath *)indexPath

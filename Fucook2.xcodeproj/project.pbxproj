@@ -87,6 +87,9 @@
 		BA24B3E01A49B19E00D674C2 /* icosharepinterest@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3DC1A49B19E00D674C2 /* icosharepinterest@3x.png */; };
 		BA24B3E91A49D50300D674C2 /* Pinterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA24B3E61A49D50300D674C2 /* Pinterest.framework */; };
 		BA24B3EA1A49D50300D674C2 /* PinterestSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */; };
+		BAA9E04E1A9B440200940A0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA9E04D1A9B440200940A0C /* Images.xcassets */; };
+		BAC1EE511A9B95970018DDE5 /* imgsample@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC1EE4F1A9B95970018DDE5 /* imgsample@2x.png */; };
+		BAC1EE521A9B95970018DDE5 /* imgsample@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC1EE501A9B95970018DDE5 /* imgsample@3x.png */; };
 		BADD4B0B1A444DF200A30F87 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AEB1A444DF200A30F87 /* MKAnnotationView+WebCache.m */; };
 		BADD4B0C1A444DF200A30F87 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AED1A444DF200A30F87 /* NSData+ImageContentType.m */; };
 		BADD4B0D1A444DF200A30F87 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BADD4AEF1A444DF200A30F87 /* SDImageCache.m */; };
@@ -110,9 +113,6 @@
 		BAFBA0B41A36FAA6002B2C21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B31A36FAA6002B2C21 /* AppDelegate.m */; };
 		BAFBA0B71A36FAA6002B2C21 /* Fucook2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B51A36FAA6002B2C21 /* Fucook2.xcdatamodeld */; };
 		BAFBA0BA1A36FAA6002B2C21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0B91A36FAA6002B2C21 /* ViewController.m */; };
-		BAFBA0BD1A36FAA6002B2C21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAFBA0BB1A36FAA6002B2C21 /* Main.storyboard */; };
-		BAFBA0BF1A36FAA6002B2C21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFBA0BE1A36FAA6002B2C21 /* Images.xcassets */; };
-		BAFBA0C21A36FAA6002B2C21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFBA0C01A36FAA6002B2C21 /* LaunchScreen.xib */; };
 		BAFBA0CE1A36FAA6002B2C21 /* Fucook2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0CD1A36FAA6002B2C21 /* Fucook2Tests.m */; };
 		BAFBA0DA1A36FC57002B2C21 /* WebServiceSender.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0D91A36FC57002B2C21 /* WebServiceSender.m */; };
 		BAFBA0DF1A36FCDE002B2C21 /* Home.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBA0DD1A36FCDE002B2C21 /* Home.m */; };
@@ -441,6 +441,9 @@
 		BA24B3DC1A49B19E00D674C2 /* icosharepinterest@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharepinterest@3x.png"; path = "Fucook2/Imagens/icosharepinterest@3x.png"; sourceTree = "<group>"; };
 		BA24B3E61A49D50300D674C2 /* Pinterest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pinterest.framework; sourceTree = "<group>"; };
 		BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PinterestSDKResources.bundle; sourceTree = "<group>"; };
+		BAA9E04D1A9B440200940A0C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BAC1EE4F1A9B95970018DDE5 /* imgsample@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsample@2x.png"; sourceTree = "<group>"; };
+		BAC1EE501A9B95970018DDE5 /* imgsample@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsample@3x.png"; sourceTree = "<group>"; };
 		BADD4AEA1A444DF200A30F87 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKAnnotationView+WebCache.h"; path = "Fucook2/ImageDownloader/MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		BADD4AEB1A444DF200A30F87 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKAnnotationView+WebCache.m"; path = "Fucook2/ImageDownloader/MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		BADD4AEC1A444DF200A30F87 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "Fucook2/ImageDownloader/NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -487,7 +490,6 @@
 		BAFBA0B81A36FAA6002B2C21 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BAFBA0B91A36FAA6002B2C21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BAFBA0BC1A36FAA6002B2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BAFBA0BE1A36FAA6002B2C21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BAFBA0C11A36FAA6002B2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BAFBA0C71A36FAA6002B2C21 /* Fucook2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Fucook2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFBA0CC1A36FAA6002B2C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -961,10 +963,10 @@
 				BAFBA0B81A36FAA6002B2C21 /* ViewController.h */,
 				BAFBA0B91A36FAA6002B2C21 /* ViewController.m */,
 				BAFBA0BB1A36FAA6002B2C21 /* Main.storyboard */,
-				BAFBA0BE1A36FAA6002B2C21 /* Images.xcassets */,
 				BAFBA0C01A36FAA6002B2C21 /* LaunchScreen.xib */,
 				BAFBA0B51A36FAA6002B2C21 /* Fucook2.xcdatamodeld */,
 				BA07EAE81A3B671B0087B44E /* Images-2.xcassets */,
+				BAA9E04D1A9B440200940A0C /* Images.xcassets */,
 				BAFBA0AE1A36FAA6002B2C21 /* Supporting Files */,
 			);
 			path = Fucook2;
@@ -1371,6 +1373,8 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BAC1EE4F1A9B95970018DDE5 /* imgsample@2x.png */,
+				BAC1EE501A9B95970018DDE5 /* imgsample@3x.png */,
 				BA24B3D91A49B19E00D674C2 /* icoshareinsta@2x.png */,
 				BA24B3DA1A49B19E00D674C2 /* icoshareinsta@3x.png */,
 				BA24B3DB1A49B19E00D674C2 /* icosharepinterest@2x.png */,
@@ -1694,6 +1698,7 @@
 				BA0081E21A371FFD00A7871D /* icoabout@3x.png in Resources */,
 				BA06C88D1A49775E007AE029 /* btnopen1@2x.png in Resources */,
 				BAFBA2131A3715CF002B2C21 /* MealPlanerCell.xib in Resources */,
+				BAC1EE521A9B95970018DDE5 /* imgsample@3x.png in Resources */,
 				BAFEB17C1A41F24700DEE4ED /* btnclose2@3x.png in Resources */,
 				BA24B3DF1A49B19E00D674C2 /* icosharepinterest@2x.png in Resources */,
 				BA06C88E1A49775E007AE029 /* btnopen1@3x.png in Resources */,
@@ -1742,7 +1747,6 @@
 				BAE0F3D21A376C9E00B89316 /* linedotbig3@2x.png in Resources */,
 				BA07EAE91A3B671B0087B44E /* Images-2.xcassets in Resources */,
 				BAFBA25C1A3717EC002B2C21 /* imgmark@3x.png in Resources */,
-				BAFBA0BD1A36FAA6002B2C21 /* Main.storyboard in Resources */,
 				BAFBA25D1A3717EC002B2C21 /* imgroda@2x.png in Resources */,
 				BAFBA2561A3717EC002B2C21 /* icouncheck@3x.png in Resources */,
 				BA0081D61A371FFD00A7871D /* btnsave2@3x.png in Resources */,
@@ -1758,7 +1762,6 @@
 				BA0082171A374D1A00A7871D /* imgbadgetbig@3x.png in Resources */,
 				BAFE403F1A405B66005E8069 /* InAppsCell.xib in Resources */,
 				BA0081DD1A371FFD00A7871D /* btnmore@2x.png in Resources */,
-				BAFBA0C21A36FAA6002B2C21 /* LaunchScreen.xib in Resources */,
 				BAE0F3D31A376C9E00B89316 /* linedotbig3@3x.png in Resources */,
 				BAFEB1801A41F24700DEE4ED /* btnedit1@3x.png in Resources */,
 				BA00821B1A374D1A00A7871D /* imglinebadgetdown@3x.png in Resources */,
@@ -1777,7 +1780,6 @@
 				BAFBA0E01A36FCDE002B2C21 /* Home.xib in Resources */,
 				BA0081E61A371FFD00A7871D /* icocloud@3x.png in Resources */,
 				BAFEB1881A41F24700DEE4ED /* btndelet2@3x.png in Resources */,
-				BAFBA0BF1A36FAA6002B2C21 /* Images.xcassets in Resources */,
 				BAFEB17E1A41F24700DEE4ED /* btndelet1@3x.png in Resources */,
 				BAFBA1811A370B1B002B2C21 /* EtapaTwoOptionsController.xib in Resources */,
 				BA0081DF1A371FFD00A7871D /* btnphoto1@2x.png in Resources */,
@@ -1793,6 +1795,7 @@
 				BA0081E81A371FFD00A7871D /* icoexport@3x.png in Resources */,
 				BA0082131A374D1A00A7871D /* btnfacebook@3x.png in Resources */,
 				BA0081DE1A371FFD00A7871D /* btnmore@3x.png in Resources */,
+				BAC1EE511A9B95970018DDE5 /* imgsample@2x.png in Resources */,
 				BA0081DB1A371FFD00A7871D /* btnless@2x.png in Resources */,
 				BAFBA2631A3717EC002B2C21 /* linedot1@2x.png in Resources */,
 				BAFBA2731A371A35002B2C21 /* imgbckhome@2x.png in Resources */,
@@ -1887,6 +1890,7 @@
 				BAFBA1181A370486002B2C21 /* Calendario.xib in Resources */,
 				BA1B9D191A3F32CF00E1BEA0 /* btnsave@3x.png in Resources */,
 				BA0081EE1A371FFD00A7871D /* icorating@3x.png in Resources */,
+				BAA9E04E1A9B440200940A0C /* Images.xcassets in Resources */,
 				BAFBA23F1A3717EC002B2C21 /* btncall3@2x.png in Resources */,
 				BAFECA061A48760700D0431B /* imgtiracomprida@2x.png in Resources */,
 				BAFEB1901A41FA6800DEE4ED /* btleft1@3x.png in Resources */,
@@ -2077,8 +2081,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Paula Almeida (3A7UN6Y88P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paula Almeida (3A7UN6Y88P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2095,10 +2099,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "df4d9013-aa83-4316-b41d-6f5e651de5f2";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2120,6 +2124,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -2131,9 +2136,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "df4d9013-aa83-4316-b41d-6f5e651de5f2";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2143,26 +2148,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Paula Almeida (3A7UN6Y88P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Paula Almeida (3A7UN6Y88P)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pinterest.embeddedframework",
-				);
-				INFOPLIST_FILE = Fucook2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "df4d9013-aa83-4316-b41d-6f5e651de5f2";
-			};
-			name = Debug;
-		};
-		BAFBA0D31A36FAA6002B2C21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2170,10 +2156,29 @@
 					"$(PROJECT_DIR)/Pinterest.embeddedframework",
 				);
 				INFOPLIST_FILE = Fucook2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "df4d9013-aa83-4316-b41d-6f5e651de5f2";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		BAFBA0D31A36FAA6002B2C21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pinterest.embeddedframework",
+				);
+				INFOPLIST_FILE = Fucook2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

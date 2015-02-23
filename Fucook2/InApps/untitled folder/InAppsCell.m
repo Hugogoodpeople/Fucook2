@@ -178,7 +178,9 @@
 - (IBAction)clickAddLivro:(id)sender
 {
     if (self.delegate) {
-        [self.delegate performSelector:@selector(comprarLivro:) withObject:self.livro];
+        // foi alterado aqui para suportar as in apps comprarItem
+        //[self.delegate performSelector:@selector(comprarLivro:) withObject:self.livro];
+        [self.delegate performSelector:@selector(comprarItem:) withObject:self.livro];
     }
 }
 @end

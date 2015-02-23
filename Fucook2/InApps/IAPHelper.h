@@ -27,4 +27,6 @@ UIKIT_EXTERN NSString *const IAPHelperProductPurchasedNotification;
 - (BOOL)productPurchased:(NSString *)productIdentifier;
 - (void)restoreCompletedTransactions;
 
+@property (nonatomic, assign) id delegate;
+
 @end

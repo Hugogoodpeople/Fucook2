@@ -103,17 +103,12 @@
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     //self.navigationItem.leftBarButtonItem = anotherButton;
     
-
-    
-    
-    
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects: anotherButton, nil]];
     
     self.navigationItem.hidesBackButton = YES;
     
     
     [self.toobar setFrame:CGRectMake(0, self.toobar.frame.origin.y -4, self.toobar.frame.size.width, 48)];
-    
     
     //[self.header setFrame:CGRectMake(0,64 + self.header.frame.size.height, self.view.frame.size.width, self.header.frame.size.height)];
     
@@ -411,7 +406,7 @@
     NSString *str = ((ObjectIngrediente *)[arrayOfItems objectAtIndex:indexPath.row]).nome;
     CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:15] constrainedToSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width -50, 999) lineBreakMode:NSLineBreakByWordWrapping];
     
-    NSLog(@"%f",size.height);
+    //NSLog(@"%f",size.height);
     if(size.height == 0)
         return 51;
     
@@ -694,9 +689,9 @@
 -(void)sendMail:(id)sender{
     mailComposer = [[MFMailComposeViewController alloc]init];
     mailComposer.mailComposeDelegate = self;
-    [mailComposer setSubject:@"Test mail"];
+    [mailComposer setSubject:@"Fuccok list"];
     
-    NSString * stringEnviar = [NSString stringWithFormat:@"List of ingredientes to send<br> %@", [self listarIngredientes]];
+    NSString * stringEnviar = [NSString stringWithFormat:@"<h3>List of ingredientes to send</h3><br><h5>%@</h5>", [self listarIngredientes]];
     
     [mailComposer setMessageBody:stringEnviar isHTML:YES];
     

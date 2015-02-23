@@ -9,6 +9,7 @@
 #import "PreviewBook.h"
 #import "ReceitaCell.h"
 #import "UIImageView+WebCache.h"
+#import "ReceitaVisualizar.h"
 
 @interface PreviewBook ()
 
@@ -67,10 +68,6 @@
     self.items = self.livro.receitas;
 }
 
-
-
-
-
 #pragma table
 
 - (NSInteger)tableView:(UITableView *)tableView
@@ -119,6 +116,28 @@
     
     return cell;
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selected %ld", (long)indexPath.row);
+    
+    // tenho de ir buscar os valores a tabela para poder abrir o objecto correcto
+    
+    ObjectReceita * receita = [self.items objectAtIndex:indexPath.row];
+    
+    if (![receita.gratis isEqualToString:@"nao"])
+    {
+        ReceitaVisualizar * recietas = [ReceitaVisualizar new];
+        recietas.receita = receita;
+        
+        [self.navigationController pushViewController:recietas animated:YES];
+    }
+    else
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"This recipe is not free, to get access you need to buy the book" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+    }
+
 }
 
 @end

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Hugo Costa. All rights reserved.
 //
 
+#import "ObjectLivro.h"
 #import <UIKit/UIKit.h>
 
 @interface InAppsTeste : UIViewController
@@ -25,5 +26,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+
+@property ObjectLivro * livro;
 
 @end

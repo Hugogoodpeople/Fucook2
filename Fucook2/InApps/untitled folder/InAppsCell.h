@@ -43,4 +43,8 @@
 
 - (IBAction)clickAddLivro:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *viewCategoria;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonAdd1;
+@property (weak, nonatomic) IBOutlet UIButton *buttonAdd2;
+
 @end

@@ -133,6 +133,11 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
     [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+    
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(adicionarLivro)];
+    }
+  
 }
 
 - (void)restoreTransaction:(SKPaymentTransaction *)transaction {

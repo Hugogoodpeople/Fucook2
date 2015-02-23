@@ -24,6 +24,7 @@
 
 @property ObjectLivro * livro;
 @property ObjectReceita * receita;
+
 @property (weak, nonatomic) IBOutlet UIView *viewCancel;
 @property (weak, nonatomic) IBOutlet UIView *viewButtons;
 

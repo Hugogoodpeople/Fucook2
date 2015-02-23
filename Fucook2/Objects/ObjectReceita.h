@@ -18,6 +18,7 @@
 @property NSString * categoria;
 @property NSString * servings;
 @property NSString * notas;
+@property NSString * gratis;
 @property NSDate   * data_criado;
 
 // dava jeito ter isto aqui para saber o que marcou na agenda

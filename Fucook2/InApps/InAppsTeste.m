@@ -13,7 +13,6 @@
 #import "PesquisaReceitas.h"
 #import "NewBook.h"
 #import "WebServiceSender.h"
-#import "ObjectLivro.h"
 #import "ObjectReceita.h"
 #import "ObjectIngrediente.h"
 #import "ObjectDirections.h"
@@ -22,6 +21,7 @@
 #import "PreviewBook.h"
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD.h"
+#import "FucookIAPHelper.h"
 
 @interface InAppsTeste ()
 {
@@ -38,6 +38,8 @@
     MBProgressHUD *HUD;
     
     NSManagedObjectContext * context;
+    
+    
     
 }
 
@@ -114,6 +116,7 @@
                         receita.notas               = [dictRec objectForKey:@"notas"];
                         receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
                         receita.tempo               = [dictRec objectForKey:@"tempo"];
+                        receita.gratis              = [dictRec objectForKey:@"gratis"];
                         
                         /*
                         NSString * strData = [dictRec objectForKey:@"foto_receita"];
@@ -220,8 +223,6 @@
             {
                 NSLog(@"resultado da lista de inApps  =>  %@", result.description);
                 
-                
-                
                 array_livros = [NSMutableArray new];
                 
                 for (NSMutableDictionary * dictLivro in [result objectForKey:@"res"])
@@ -251,8 +252,7 @@
                     
                     livro.managedImagem = managedImagem;
                     
-                    
-                    
+
                     // agora tenho de ir buscar as receitas e colocalas dentro do livro
                     
                     NSMutableArray * arrayReceitas = [NSMutableArray new];
@@ -347,7 +347,12 @@
                         [alert show];
                     }
                     
+                    
+                    
+                     //[self comprarItem:livro];
                 }
+                
+               
                 
                 break;
             }
@@ -410,6 +415,8 @@
     [self.toobar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
     [self.toobar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
 
+    [FucookIAPHelper sharedInstance].delegate = self;
+    [self reload];
     
 }
 
@@ -556,6 +563,18 @@
     
     [cell setSelected:false animated:NO];
     
+    
+   
+    // [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+    // cell.buttonAdd1.tag = indexPath.row;
+    // [cell.buttonAdd1 addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // cell.buttonAdd2.tag = indexPath.row;
+    // [cell.buttonAdd2 addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    // cell.accessoryType = UITableViewCellAccessoryNone;
+    // cell.accessoryView = buyButton;
+     
+    
  
     return cell;
 
@@ -577,6 +596,8 @@
 
 -(void)comprarLivro:(ObjectLivro *)Livro
 {
+    
+    
     // tenho de pegar no livro de adicionar ao core data do utilizador :!
     
     // antes de adicionar o livro tenho de ir ao coredata verificar se este livro já lá existe e se sim nao posso adicionar de novo
@@ -587,6 +608,7 @@
     }else
     {
         //[Livro AddToCoreData:context];
+        // apesar de dizer get all books no webservice na realidade ele so busca 1... lol
         comparLivro = [[WebServiceSender alloc] initWithUrl:@"http://www.fucook.com/webservices/get_all_books.php" method:@"" tag:2];
         comparLivro.delegate = self;
         
@@ -627,6 +649,67 @@
     }
 
     return existe;
+}
+
+/*
+- (void)buyButtonTapped:(id)sender {
+    
+    UIButton *buyButton = (UIButton *)sender;
+    SKProduct *product = _products[buyButton.tag];
+    
+    NSLog(@"Buying %@...", product.productIdentifier);
+    [[FucookIAPHelper sharedInstance] buyProduct:product];
+    
+}
+ */
+
+-(void)adicionarLivro
+{
+    [self comprarLivro:self.livro];
+}
+
+-(void)comprarItem:(ObjectLivro *)livro
+{
+    // aqui tenho de encontrar o produto dentro de _products
+    // se conseguir encontrar entao faço a compra, senao considero que nao preciso de adicionar as inApps
+    
+    self.livro = livro;
+    
+    for (SKProduct * prod in _products)
+    {
+        if ([prod.productIdentifier isEqualToString:livro.id_inapps])
+        {
+            NSLog(@"Buying %@...", prod.productIdentifier);
+            [[FucookIAPHelper sharedInstance] buyProduct:prod];
+
+        }
+        
+    }
+    
+}
+
+- (void)productPurchased:(NSNotification *)notification {
+    
+    NSString * productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
+        if ([product.productIdentifier isEqualToString:productIdentifier]) {
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+            *stop = YES;
+        }
+    }];
+    
+}
+
+- (void)reload {
+    _products = nil;
+    [self.tableView reloadData];
+    [[FucookIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            _products = products;
+            [self.tableView reloadData];
+        }
+        [self.refreshControl endRefreshing];
+    }];
 }
 
 

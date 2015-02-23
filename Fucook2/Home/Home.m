@@ -415,9 +415,18 @@
             UIImage *image = [UIImage imageWithData:data];
             NSInteger index = indexPath.row;
             dispatch_async(dispatch_get_main_queue(), ^{
-                cell.imagemLivro.image = image;
+                
                 if (image)
+                {
+                    cell.imagemLivro.image = image;
                     [imagens replaceObjectAtIndex:index withObject:image];
+                }
+                else
+                {
+                    cell.imagemLivro.image = [UIImage imageNamed:@"imgsample.png"];
+                    [imagens replaceObjectAtIndex:index withObject:[UIImage imageNamed:@"imgsample.png"]];
+                }
+                
             });
         });
     }
