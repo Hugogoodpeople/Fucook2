@@ -27,19 +27,19 @@
     // aqui tenho de verificar qual foi a refeição selecionada
     if (self.img1Selected)
     {
-        [self.img1 setBackgroundColor:[UIColor blackColor]];
+        [self.img1 setImage:[UIImage imageNamed:@"imgcomiten.png"]];
     }
      if(self.img2Selected)
     {
-        [self.img2 setBackgroundColor:[UIColor blackColor]];
+        [self.img2 setImage:[UIImage imageNamed:@"imgcomiten.png"]];
     }
      if(self.img3Selected)
     {
-        [self.img3 setBackgroundColor:[UIColor blackColor]];
+        [self.img3 setImage:[UIImage imageNamed:@"imgcomiten.png"]];
     }
      if(self.img4Selected)
     {
-        [self.img4 setBackgroundColor:[UIColor blackColor]];
+        [self.img4 setImage:[UIImage imageNamed:@"imgcomiten.png"]];
     }
 }
 

@@ -31,5 +31,6 @@
 @property ObjectReceita * receita;
 
 @property (nonatomic , assign) id delegate;
+@property (weak, nonatomic) IBOutlet UIView *viewAumentea;
 
 @end

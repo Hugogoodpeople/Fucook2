@@ -139,12 +139,43 @@
             UIImage *image = [UIImage imageWithData:data];
             NSInteger index = indexPath.row;
             dispatch_async(dispatch_get_main_queue(), ^{
-                cell.imagemReceita.image = image;
                 if (image)
+                {
+                    cell.imagemReceita.image = image;
                     [imagens replaceObjectAtIndex:index withObject:image];
+                }
+                else
+                {
+                    cell.imagemReceita.image = [UIImage imageNamed:@"imgsample.png"];
+                    [imagens replaceObjectAtIndex:index withObject:[UIImage imageNamed:@"imgsample.png"]];
+                }
             });
         });
     }
+    
+    
+    // tenho de ajustar o texto ao fundo... tipo?
+    
+    CGSize textSize = [cell.labelTitulo.text sizeWithFont:[UIFont fontWithName:@"Baskerville" size:30] constrainedToSize:CGSizeMake(cell.labelTitulo.frame.size.width, 20000) lineBreakMode: NSLineBreakByWordWrapping];
+    
+    float heightToAdd = MIN(textSize.height, 100.0f) + 10; //Some fix height is returned if height is small or change it to MAX(textSize.height, 150.0f); // whatever best fits for you
+    
+    if (heightToAdd > 80) {
+        heightToAdd = 80;
+    }
+    
+    [cell.labelTitulo setFrame:CGRectMake(cell.labelTitulo.frame.origin.x,
+                                          cell.frame.size.height - heightToAdd - 10,
+                                          cell.labelTitulo.frame.size.width,
+                                          heightToAdd)];
+    
+    
+    [cell.viewAumentea setFrame:CGRectMake(cell.viewAumentea.frame.origin.x,
+                                           cell.labelTitulo.frame.origin.y - 30,
+                                           cell.viewAumentea.frame.size.width,
+                                           cell.viewAumentea.frame.size.height)];
+    
+
     
     return cell;
 }

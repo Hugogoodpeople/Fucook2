@@ -26,7 +26,7 @@
 {
     if (selecionado)
     {
-        [self.imgAddRemove setImage:[UIImage imageNamed:@"btnmore.png"]];
+        [self.imgAddRemove setImage:[UIImage imageNamed:@"icoadd.png"]];
       
         if (self.delegate) {
             [self.delegate performSelectorInBackground:@selector(deleteIngrediente:) withObject:self.ingrediente];

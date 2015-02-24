@@ -7,7 +7,7 @@
 //
 
 #import "PesquisaReceitas.h"
-#import "PesquisaReceitaCell.h"
+#import "ReceitaCell.h"
 #import "AppDelegate.h"
 #import "ObjectReceita.h"
 #import "ReceitaVisualizar.h"
@@ -192,26 +192,28 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"PesquisaReceitaCell";
+    static NSString *simpleTableIdentifier = @"ReceitaCell";
     
-    PesquisaReceitaCell *cell = (PesquisaReceitaCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    ReceitaCell *cell = (ReceitaCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil)
     {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PesquisaReceitaCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ReceitaCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
     ObjectReceita * rec = [pesquisaReceitas objectAtIndex:indexPath.row];
     
-    cell.labelTitulo.text = rec.nome;
+    cell.labelTitulo.text = rec.nome;//[rec.nome uppercaseString];
     cell.labelTempo.text = rec.tempo;
-    cell.labelCategoria.text = rec.categoria;
+    cell.labelCategoria.text = [NSString stringWithFormat:@"%@ · %@ · %@",rec.tempo, rec.dificuldade , rec.categoria];
     cell.labelDificuldade.text = rec.dificuldade;
     cell.receita = rec;
     // tenho de calcular com base no que esta no header
     
-    //cell.labelQtd.text = [self calcularValor:indexPath];
+    
+    
+    
     cell.delegate = self;
     
     // NSString *key = [livro.imagem.description MD5Hash];
@@ -231,14 +233,46 @@
             UIImage *image = [UIImage imageWithData:data];
             NSInteger index = indexPath.row;
             dispatch_async(dispatch_get_main_queue(), ^{
-                cell.imagemReceita.image = image;
                 if (image)
+                {
+                    cell.imagemReceita.image = image;
                     [imagens replaceObjectAtIndex:index withObject:image];
+                }
+                else
+                {
+                    cell.imagemReceita.image = [UIImage imageNamed:@"imgsample.png"];
+                    [imagens replaceObjectAtIndex:index withObject:[UIImage imageNamed:@"imgsample.png"]];
+                }
             });
         });
     }
     
+    
+    // tenho de ajustar o texto ao fundo... tipo?
+    
+    CGSize textSize = [cell.labelTitulo.text sizeWithFont:[UIFont fontWithName:@"Baskerville" size:30] constrainedToSize:CGSizeMake(cell.labelTitulo.frame.size.width, 20000) lineBreakMode: NSLineBreakByWordWrapping];
+    
+    float heightToAdd = MIN(textSize.height, 100.0f) + 10; //Some fix height is returned if height is small or change it to MAX(textSize.height, 150.0f); // whatever best fits for you
+    
+    if (heightToAdd > 80) {
+        heightToAdd = 80;
+    }
+    
+    [cell.labelTitulo setFrame:CGRectMake(cell.labelTitulo.frame.origin.x,
+                                          cell.frame.size.height - heightToAdd - 10,
+                                          cell.labelTitulo.frame.size.width,
+                                          heightToAdd)];
+    
+    
+    [cell.viewAumentea setFrame:CGRectMake(cell.viewAumentea.frame.origin.x,
+                                           cell.labelTitulo.frame.origin.y - 30,
+                                           cell.viewAumentea.frame.size.width,
+                                           cell.viewAumentea.frame.size.height)];
+    
+    
+    
     return cell;
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

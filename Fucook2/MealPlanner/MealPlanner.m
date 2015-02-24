@@ -335,7 +335,7 @@
     NSString * diaMes = [dateFormatterMes stringFromDate:[self.items objectAtIndex:index]];
     
     DiaCalendario * dia = [DiaCalendario new];
-    dia.diaSemana = diaSemana;
+    dia.diaSemana = [diaSemana uppercaseString];
     dia.dia = diaMes;
     
     dia.img1Selected = false;

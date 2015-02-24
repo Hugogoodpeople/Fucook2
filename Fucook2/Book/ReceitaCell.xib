@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
@@ -109,35 +110,30 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="lWY-Db-85p">
-                                        <rect key="frame" x="10" y="7" width="270" height="87"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KdZ-rr-1jG">
+                                        <rect key="frame" x="10" y="7" width="300" height="87"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" id="7B1-SH-8ce">
-                                        <rect key="frame" x="0.0" y="105" width="230" height="22"/>
+                                        <rect key="frame" x="0.0" y="105" width="312" height="22"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XYC-iA-Sf7">
-                                                <rect key="frame" x="0.0" y="0.0" width="230" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgtira.png" id="wCI-Ye-2YI">
-                                                <rect key="frame" x="230" y="0.0" width="11" height="22"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r0f-TX-oLU">
-                                                <rect key="frame" x="15" y="0.0" width="215" height="22"/>
+                                                <rect key="frame" x="18" y="0.0" width="212" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="10"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" id="RFf-lO-mH8">
+                                                <rect key="frame" x="10" y="5" width="2" height="12.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.92156862745098034" green="0.37254901960784315" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -157,12 +153,12 @@
                 <outlet property="buttonEdit" destination="GHQ-1k-rK5" id="drP-f9-UY2"/>
                 <outlet property="imagemReceita" destination="3CM-wM-i2w" id="BxH-7x-gtz"/>
                 <outlet property="labelCategoria" destination="r0f-TX-oLU" id="t6Z-49-E62"/>
-                <outlet property="labelTitulo" destination="lWY-Db-85p" id="MUj-2p-yix"/>
+                <outlet property="labelTitulo" destination="KdZ-rr-1jG" id="ND7-Qx-b3H"/>
                 <outlet property="viewAumentea" destination="7B1-SH-8ce" id="Zfq-kH-G8X"/>
                 <outlet property="viewBotoes" destination="P5w-j1-kfT" id="dQJ-kj-tS3"/>
                 <outlet property="viewMovel" destination="bow-2k-waW" id="Iuq-jf-6F3"/>
             </connections>
-            <point key="canvasLocation" x="442" y="-191.5"/>
+            <point key="canvasLocation" x="496" y="-274.5"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -171,7 +167,6 @@
         <image name="btnedit1.png" width="17" height="17"/>
         <image name="btnshop1.png" width="19" height="15"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
-        <image name="imgtira.png" width="10" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

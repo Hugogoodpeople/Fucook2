@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
@@ -80,25 +81,25 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
                         <barButtonItem width="18" style="plain" systemItem="fixedSpace" id="Jzz-6w-iNr"/>
-                        <barButtonItem image="btnbook1.png" style="plain" id="Pif-3t-AuB">
+                        <barButtonItem image="icoreceitas.png" style="plain" id="Pif-3t-AuB">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickHome:" destination="-1" id="xBw-yC-ERn"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="hI8-mt-W75"/>
-                        <barButtonItem image="btnshop2.png" style="plain" id="049-MI-oTg">
+                        <barButtonItem image="icocesto.png" style="plain" id="049-MI-oTg">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickcarrinho:" destination="-1" id="rUG-iL-4U4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="tna-fj-ANO"/>
-                        <barButtonItem image="btncall1.png" id="VHW-fW-c7z">
-                            <color key="tintColor" red="0.59607843140000005" green="0.21176470589999999" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <barButtonItem image="icocalendar.png" id="VHW-fW-c7z">
+                            <color key="tintColor" red="0.96078431369999995" green="0.66666666669999997" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="21q-oJ-EZf"/>
-                        <barButtonItem image="btnfeatured1.png" id="M42-2V-1lc">
+                        <barButtonItem image="icoinaps.png" id="M42-2V-1lc">
                             <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clickInApps:" destination="-1" id="Dtq-pz-EhQ"/>
@@ -117,11 +118,11 @@
     </objects>
     <resources>
         <image name="btleft1.png" width="11" height="17"/>
-        <image name="btnbook1.png" width="28" height="24"/>
-        <image name="btncall1.png" width="17" height="18"/>
-        <image name="btnfeatured1.png" width="17" height="22"/>
         <image name="btnopen1.png" width="6" height="10"/>
-        <image name="btnshop2.png" width="23" height="19"/>
+        <image name="icocalendar.png" width="22" height="23"/>
+        <image name="icocesto.png" width="28" height="23"/>
+        <image name="icoinaps.png" width="18" height="24"/>
+        <image name="icoreceitas.png" width="23" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

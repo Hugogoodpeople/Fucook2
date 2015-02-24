@@ -324,36 +324,12 @@
     
     ObjectReceita * rec = [self.items objectAtIndex:indexPath.row];
     
-    cell.labelTitulo.text = [rec.nome uppercaseString];
+    cell.labelTitulo.text = rec.nome;//[rec.nome uppercaseString];
     cell.labelTempo.text = rec.tempo;
     cell.labelCategoria.text = [NSString stringWithFormat:@"%@ · %@ · %@",rec.tempo, rec.dificuldade , rec.categoria];
     cell.labelDificuldade.text = rec.dificuldade;
     cell.receita = rec;
     // tenho de calcular com base no que esta no header
-    
-    int larguraview = 55;
-    
-    if ([rec.categoria rangeOfString:@"Breakfast"].location != NSNotFound) {
-        larguraview = larguraview + 75;
-    }
-    if ([rec.categoria rangeOfString:@"Dinner"].location != NSNotFound) {
-        larguraview = larguraview + 55;
-    }
-    if ([rec.categoria rangeOfString:@"Lunch"].location != NSNotFound) {
-        larguraview = larguraview + 65;
-    }
-    if ([rec.categoria rangeOfString:@"Dessert"].location != NSNotFound) {
-        larguraview = larguraview + 75;
-    }
-    
-    if (larguraview > 220) {
-        larguraview = 220;
-    }
-    
-    [cell.viewAumentea setFrame:CGRectMake(cell.viewAumentea.frame.origin.x,
-                                            cell.viewAumentea.frame.origin.y,
-                                            larguraview,
-                                            cell.viewAumentea.frame.size.height)];
 
 
     
@@ -394,7 +370,31 @@
             });
         });
     }
-
+    
+    
+    // tenho de ajustar o texto ao fundo... tipo?
+    
+    CGSize textSize = [cell.labelTitulo.text sizeWithFont:[UIFont fontWithName:@"Baskerville" size:30] constrainedToSize:CGSizeMake(cell.labelTitulo.frame.size.width, 20000) lineBreakMode: NSLineBreakByWordWrapping];
+    
+    float heightToAdd = MIN(textSize.height, 100.0f) + 10; //Some fix height is returned if height is small or change it to MAX(textSize.height, 150.0f); // whatever best fits for you
+    
+    if (heightToAdd > 80) {
+        heightToAdd = 80;
+    }
+    
+    [cell.labelTitulo setFrame:CGRectMake(cell.labelTitulo.frame.origin.x,
+                                          cell.frame.size.height - heightToAdd - 10,
+                                          cell.labelTitulo.frame.size.width,
+                                          heightToAdd)];
+    
+    
+    [cell.viewAumentea setFrame:CGRectMake(cell.viewAumentea.frame.origin.x,
+                                           cell.labelTitulo.frame.origin.y - 30,
+                                           cell.viewAumentea.frame.size.width,
+                                           cell.viewAumentea.frame.size.height)];
+    
+    
+    
     return cell;
     
 }

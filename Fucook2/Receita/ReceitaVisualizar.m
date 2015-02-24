@@ -70,6 +70,7 @@
     
     
     /* bt search*/
+    /*
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
     [button addTarget:self action:@selector(shareLivro) forControlEvents:UIControlEventTouchUpInside];
     [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
@@ -81,6 +82,7 @@
     [negativeSpacer setWidth:-4];
     
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
+     */
 
     
 }
@@ -270,7 +272,7 @@
 
 -(void)deleteIngrediente:(ObjectIngrediente *) ingrediente
 {
-    NSLog(@"remover %@", ingrediente.nome);
+    // NSLog(@"remover %@", ingrediente.nome);
     // tenho de percorrer todos os ingredientes na shopping list e remover o selecionado
     
     

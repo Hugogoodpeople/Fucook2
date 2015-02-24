@@ -62,7 +62,7 @@
                                                 <action selector="clickCart:" destination="-1" eventType="touchUpInside" id="hcA-Xp-niT"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnshop2.png" id="wON-ey-byp">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoaddlist.png" id="wON-ey-byp">
                                             <rect key="frame" x="32" y="10" width="16" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -90,7 +90,7 @@
                                                 <action selector="clickCalendar:" destination="-1" eventType="touchUpInside" id="ste-Hm-brT"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btncall2.png" id="jl1-HS-iWt">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoaddcalendar.png" id="jl1-HS-iWt">
                                             <rect key="frame" x="32" y="10" width="16" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -118,7 +118,7 @@
                                                 <action selector="clickNotas:" destination="-1" eventType="touchUpInside" id="J5H-tR-Wkd"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnnotes.png" id="dSS-IU-pKA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icoviewnotes.png" id="dSS-IU-pKA">
                                             <rect key="frame" x="32" y="10" width="16" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -146,7 +146,7 @@
                                                 <action selector="clickTimer:" destination="-1" eventType="touchUpInside" id="Lbw-As-Pau"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btntime.png" id="xAb-rl-vra">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icotimercounter.png" id="xAb-rl-vra">
                                             <rect key="frame" x="32" y="10" width="15" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -303,10 +303,10 @@
         </view>
     </objects>
     <resources>
-        <image name="btncall2.png" width="21" height="22"/>
-        <image name="btnnotes.png" width="22" height="24"/>
-        <image name="btnshop2.png" width="23" height="19"/>
-        <image name="btntime.png" width="21" height="24"/>
+        <image name="icoaddcalendar.png" width="14" height="15"/>
+        <image name="icoaddlist.png" width="15" height="15"/>
+        <image name="icotimercounter.png" width="13" height="15"/>
+        <image name="icoviewnotes.png" width="13" height="15"/>
         <image name="imgsombrarecipe.png" width="318" height="20"/>
         <image name="linedotbigger2.png" width="363" height="2"/>
     </resources>
