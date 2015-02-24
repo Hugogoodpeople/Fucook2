@@ -19,11 +19,13 @@
 #import "NewBook.h"
 #import "Settings.h"
 #import "ReceitaVisualizar.h"
+#import "PesquisaVazio.h"
 
 @interface MealPlanner ()
 {
     NSMutableArray * arrayDias;
     NSMutableArray * arrayDatas;
+    PesquisaVazio  * vazio;
 }
 
 @property (nonatomic, strong) NSMutableArray *items;
@@ -89,10 +91,19 @@
     [self.toobar setBackgroundImage:[UIImage new] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     [self.toobar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
     [self.toobar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
+    
+    vazio = [PesquisaVazio new];
+    
+    
+    [vazio.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
+    
+    [vazio.labelTitulo setText:@"Add recipes to your calendar!"];
+    [vazio.labelDescricao setText:@"You dont have any recipe added on your calendar."];
+    [vazio.img setImage:[UIImage imageNamed:@"imgaddrecipe.png"]];
+    
+    //[self.container addSubview:vazio.view];
 
 }
-
-
 
 - (IBAction)clickHome:(id)sender
 {
@@ -447,12 +458,22 @@
         [self.root actualizarImagens];
         
         
+        
         //[self.root.tableView reloadData];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             // codigo a exutar na main thread
             [self.root.tableView reloadData];
+            
+            if (self.root.arrayOfItems.count == 0) {
+                [self.container addSubview:vazio.view];
+            }
+            else
+            {
+                [vazio.view removeFromSuperview];
+            }
+
         });
     });
 }

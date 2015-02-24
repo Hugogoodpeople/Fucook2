@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PesquisaVazio">
             <connections>
+                <outlet property="img" destination="rGV-nc-Q7y" id="HzW-Zr-OUY"/>
                 <outlet property="labelDescricao" destination="8Py-1x-xTo" id="cS5-Nr-0S0"/>
                 <outlet property="labelTitulo" destination="CX0-uT-Ihz" id="VnR-u4-ofE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

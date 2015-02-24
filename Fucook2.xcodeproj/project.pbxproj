@@ -117,6 +117,8 @@
 		BA043C9F1A9CDA6300AF9DDE /* imgaddmore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C9D1A9CDA6300AF9DDE /* imgaddmore@2x.png */; };
 		BA043CA21A9CDDE100AF9DDE /* imgsemfoto@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA01A9CDDE100AF9DDE /* imgsemfoto@3x.png */; };
 		BA043CA31A9CDDE100AF9DDE /* imgsemfoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA11A9CDDE100AF9DDE /* imgsemfoto@2x.png */; };
+		BA043CA61A9CE4C100AF9DDE /* imgaddrecipe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA41A9CE4C100AF9DDE /* imgaddrecipe@3x.png */; };
+		BA043CA71A9CE4C100AF9DDE /* imgaddrecipe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA51A9CE4C100AF9DDE /* imgaddrecipe@2x.png */; };
 		BA05B7451A39A3DD00476074 /* NotesViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05B7431A39A3DD00476074 /* NotesViewer.m */; };
 		BA05B7461A39A3DD00476074 /* NotesViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7441A39A3DD00476074 /* NotesViewer.xib */; };
 		BA05B7491A39C18500476074 /* imgssombralateral@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7471A39C18500476074 /* imgssombralateral@2x.png */; };
@@ -527,6 +529,8 @@
 		BA043C9D1A9CDA6300AF9DDE /* imgaddmore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgaddmore@2x.png"; sourceTree = "<group>"; };
 		BA043CA01A9CDDE100AF9DDE /* imgsemfoto@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsemfoto@3x.png"; sourceTree = "<group>"; };
 		BA043CA11A9CDDE100AF9DDE /* imgsemfoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsemfoto@2x.png"; sourceTree = "<group>"; };
+		BA043CA41A9CE4C100AF9DDE /* imgaddrecipe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgaddrecipe@3x.png"; sourceTree = "<group>"; };
+		BA043CA51A9CE4C100AF9DDE /* imgaddrecipe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgaddrecipe@2x.png"; sourceTree = "<group>"; };
 		BA05B7421A39A3DD00476074 /* NotesViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotesViewer.h; path = Receita/NotesViewer/NotesViewer.h; sourceTree = "<group>"; };
 		BA05B7431A39A3DD00476074 /* NotesViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotesViewer.m; path = Receita/NotesViewer/NotesViewer.m; sourceTree = "<group>"; };
 		BA05B7441A39A3DD00476074 /* NotesViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotesViewer.xib; path = Receita/NotesViewer/NotesViewer.xib; sourceTree = "<group>"; };
@@ -1493,6 +1497,8 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BA043CA41A9CE4C100AF9DDE /* imgaddrecipe@3x.png */,
+				BA043CA51A9CE4C100AF9DDE /* imgaddrecipe@2x.png */,
 				BA043CA01A9CDDE100AF9DDE /* imgsemfoto@3x.png */,
 				BA043CA11A9CDDE100AF9DDE /* imgsemfoto@2x.png */,
 				BA043C9C1A9CDA6300AF9DDE /* imgaddmore@3x.png */,
@@ -2024,6 +2030,7 @@
 				BA043C971A9CD2D800AF9DDE /* PesquisaVazio.xib in Resources */,
 				BAFCBA1E1A389292001EFCE2 /* ReceitaVisualizar.xib in Resources */,
 				BAFCBA261A389A59001EFCE2 /* btnshop2@3x.png in Resources */,
+				BA043CA71A9CE4C100AF9DDE /* imgaddrecipe@2x.png in Resources */,
 				BA043C391A9C8FF400AF9DDE /* imgsemiten@2x.png in Resources */,
 				BA0081D91A371FFD00A7871D /* btnclose2@2x.png in Resources */,
 				BAFCB9FF1A384D31001EFCE2 /* lightpaperfibers@2x.png in Resources */,
@@ -2040,6 +2047,7 @@
 				BAFBA2681A3717EC002B2C21 /* linedot3@3x.png in Resources */,
 				BA0081F31A371FFD00A7871D /* imglogofucook@2x.png in Resources */,
 				BA1B9D141A3EF35600E1BEA0 /* btleft3@2x.png in Resources */,
+				BA043CA61A9CE4C100AF9DDE /* imgaddrecipe@3x.png in Resources */,
 				BA1B9D101A3EF32300E1BEA0 /* btright3@2x.png in Resources */,
 				BA043C861A9CC7A500AF9DDE /* icocalendar3@2x.png in Resources */,
 				BAFBA27C1A371D22002B2C21 /* btnaddbook@2x.png in Resources */,

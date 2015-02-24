@@ -63,7 +63,7 @@
     [ingHeadercell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 108)];
     
     dirHeaderCell = [DirectionsHeader new];
-    [dirHeaderCell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 108)];
+    [dirHeaderCell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 55)];
     
     [self initializeShoppingCart];
     [self setUpIngredientes];
@@ -481,7 +481,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (indexPath.row == 0)
+    if (indexPath.row == 0 && indexPath.section == 1)
+    {
+        return 55;
+    }
+    
+    
+    else if (indexPath.row == 0)
     {
         return 108;
     }

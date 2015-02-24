@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelDescricao;
 @property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
+@property (weak, nonatomic) IBOutlet UIImageView *img;
 
 @end
