@@ -35,7 +35,7 @@
     
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
     [button addTarget:self action:@selector(AdicionarDirections) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
     
     
     

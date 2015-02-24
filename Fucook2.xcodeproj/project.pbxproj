@@ -91,6 +91,32 @@
 		BA043C6A1A9C9E5D00AF9DDE /* imgorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C681A9C9E5D00AF9DDE /* imgorder@2x.png */; };
 		BA043C6D1A9C9F7600AF9DDE /* icoremove@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C6B1A9C9F7600AF9DDE /* icoremove@3x.png */; };
 		BA043C6E1A9C9F7600AF9DDE /* icoremove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C6C1A9C9F7600AF9DDE /* icoremove@2x.png */; };
+		BA043C711A9CA13400AF9DDE /* icotimeintext@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C6F1A9CA13400AF9DDE /* icotimeintext@3x.png */; };
+		BA043C721A9CA13400AF9DDE /* icotimeintext@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C701A9CA13400AF9DDE /* icotimeintext@2x.png */; };
+		BA043C751A9CBFFE00AF9DDE /* icodelete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C731A9CBFFE00AF9DDE /* icodelete@3x.png */; };
+		BA043C761A9CBFFE00AF9DDE /* icodelete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C741A9CBFFE00AF9DDE /* icodelete@2x.png */; };
+		BA043C791A9CC1D800AF9DDE /* icocalendar2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C771A9CC1D800AF9DDE /* icocalendar2@3x.png */; };
+		BA043C7A1A9CC1D800AF9DDE /* icocalendar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C781A9CC1D800AF9DDE /* icocalendar2@2x.png */; };
+		BA043C7D1A9CC43100AF9DDE /* imgflor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C7B1A9CC43100AF9DDE /* imgflor@3x.png */; };
+		BA043C7E1A9CC43100AF9DDE /* imgflor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C7C1A9CC43100AF9DDE /* imgflor@2x.png */; };
+		BA043C811A9CC62500AF9DDE /* icoedit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C7F1A9CC62500AF9DDE /* icoedit@3x.png */; };
+		BA043C821A9CC62500AF9DDE /* icoedit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C801A9CC62500AF9DDE /* icoedit@2x.png */; };
+		BA043C851A9CC7A500AF9DDE /* icocalendar3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C831A9CC7A500AF9DDE /* icocalendar3@3x.png */; };
+		BA043C861A9CC7A500AF9DDE /* icocalendar3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C841A9CC7A500AF9DDE /* icocalendar3@2x.png */; };
+		BA043C891A9CC7DB00AF9DDE /* icocarrinho@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C871A9CC7DB00AF9DDE /* icocarrinho@3x.png */; };
+		BA043C8A1A9CC7DB00AF9DDE /* icocarrinho@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C881A9CC7DB00AF9DDE /* icocarrinho@2x.png */; };
+		BA043C8D1A9CCC6D00AF9DDE /* icoaddwhite@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C8B1A9CCC6D00AF9DDE /* icoaddwhite@3x.png */; };
+		BA043C8E1A9CCC6D00AF9DDE /* icoaddwhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C8C1A9CCC6D00AF9DDE /* icoaddwhite@2x.png */; };
+		BA043C911A9CCFCF00AF9DDE /* btnsave2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C8F1A9CCFCF00AF9DDE /* btnsave2@2x.png */; };
+		BA043C921A9CCFCF00AF9DDE /* btnsave2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C901A9CCFCF00AF9DDE /* btnsave2@3x.png */; };
+		BA043C961A9CD2D800AF9DDE /* PesquisaVazio.m in Sources */ = {isa = PBXBuildFile; fileRef = BA043C941A9CD2D800AF9DDE /* PesquisaVazio.m */; };
+		BA043C971A9CD2D800AF9DDE /* PesquisaVazio.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA043C951A9CD2D800AF9DDE /* PesquisaVazio.xib */; };
+		BA043C9A1A9CD53500AF9DDE /* imgsemresult@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C981A9CD53500AF9DDE /* imgsemresult@3x.png */; };
+		BA043C9B1A9CD53500AF9DDE /* imgsemresult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C991A9CD53500AF9DDE /* imgsemresult@2x.png */; };
+		BA043C9E1A9CDA6300AF9DDE /* imgaddmore@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C9C1A9CDA6300AF9DDE /* imgaddmore@3x.png */; };
+		BA043C9F1A9CDA6300AF9DDE /* imgaddmore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043C9D1A9CDA6300AF9DDE /* imgaddmore@2x.png */; };
+		BA043CA21A9CDDE100AF9DDE /* imgsemfoto@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA01A9CDDE100AF9DDE /* imgsemfoto@3x.png */; };
+		BA043CA31A9CDDE100AF9DDE /* imgsemfoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA11A9CDDE100AF9DDE /* imgsemfoto@2x.png */; };
 		BA05B7451A39A3DD00476074 /* NotesViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05B7431A39A3DD00476074 /* NotesViewer.m */; };
 		BA05B7461A39A3DD00476074 /* NotesViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7441A39A3DD00476074 /* NotesViewer.xib */; };
 		BA05B7491A39C18500476074 /* imgssombralateral@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7471A39C18500476074 /* imgssombralateral@2x.png */; };
@@ -474,6 +500,33 @@
 		BA043C681A9C9E5D00AF9DDE /* imgorder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgorder@2x.png"; sourceTree = "<group>"; };
 		BA043C6B1A9C9F7600AF9DDE /* icoremove@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoremove@3x.png"; sourceTree = "<group>"; };
 		BA043C6C1A9C9F7600AF9DDE /* icoremove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoremove@2x.png"; sourceTree = "<group>"; };
+		BA043C6F1A9CA13400AF9DDE /* icotimeintext@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icotimeintext@3x.png"; sourceTree = "<group>"; };
+		BA043C701A9CA13400AF9DDE /* icotimeintext@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icotimeintext@2x.png"; sourceTree = "<group>"; };
+		BA043C731A9CBFFE00AF9DDE /* icodelete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icodelete@3x.png"; sourceTree = "<group>"; };
+		BA043C741A9CBFFE00AF9DDE /* icodelete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icodelete@2x.png"; sourceTree = "<group>"; };
+		BA043C771A9CC1D800AF9DDE /* icocalendar2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icocalendar2@3x.png"; sourceTree = "<group>"; };
+		BA043C781A9CC1D800AF9DDE /* icocalendar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icocalendar2@2x.png"; sourceTree = "<group>"; };
+		BA043C7B1A9CC43100AF9DDE /* imgflor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgflor@3x.png"; sourceTree = "<group>"; };
+		BA043C7C1A9CC43100AF9DDE /* imgflor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgflor@2x.png"; sourceTree = "<group>"; };
+		BA043C7F1A9CC62500AF9DDE /* icoedit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoedit@3x.png"; sourceTree = "<group>"; };
+		BA043C801A9CC62500AF9DDE /* icoedit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoedit@2x.png"; sourceTree = "<group>"; };
+		BA043C831A9CC7A500AF9DDE /* icocalendar3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icocalendar3@3x.png"; sourceTree = "<group>"; };
+		BA043C841A9CC7A500AF9DDE /* icocalendar3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icocalendar3@2x.png"; sourceTree = "<group>"; };
+		BA043C871A9CC7DB00AF9DDE /* icocarrinho@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icocarrinho@3x.png"; sourceTree = "<group>"; };
+		BA043C881A9CC7DB00AF9DDE /* icocarrinho@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icocarrinho@2x.png"; sourceTree = "<group>"; };
+		BA043C8B1A9CCC6D00AF9DDE /* icoaddwhite@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoaddwhite@3x.png"; sourceTree = "<group>"; };
+		BA043C8C1A9CCC6D00AF9DDE /* icoaddwhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoaddwhite@2x.png"; sourceTree = "<group>"; };
+		BA043C8F1A9CCFCF00AF9DDE /* btnsave2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnsave2@2x.png"; sourceTree = "<group>"; };
+		BA043C901A9CCFCF00AF9DDE /* btnsave2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnsave2@3x.png"; sourceTree = "<group>"; };
+		BA043C931A9CD2D800AF9DDE /* PesquisaVazio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PesquisaVazio.h; path = "Pesquisa Receitas/PesquisaVazio.h"; sourceTree = "<group>"; };
+		BA043C941A9CD2D800AF9DDE /* PesquisaVazio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PesquisaVazio.m; path = "Pesquisa Receitas/PesquisaVazio.m"; sourceTree = "<group>"; };
+		BA043C951A9CD2D800AF9DDE /* PesquisaVazio.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PesquisaVazio.xib; path = "Pesquisa Receitas/PesquisaVazio.xib"; sourceTree = "<group>"; };
+		BA043C981A9CD53500AF9DDE /* imgsemresult@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsemresult@3x.png"; sourceTree = "<group>"; };
+		BA043C991A9CD53500AF9DDE /* imgsemresult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsemresult@2x.png"; sourceTree = "<group>"; };
+		BA043C9C1A9CDA6300AF9DDE /* imgaddmore@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgaddmore@3x.png"; sourceTree = "<group>"; };
+		BA043C9D1A9CDA6300AF9DDE /* imgaddmore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgaddmore@2x.png"; sourceTree = "<group>"; };
+		BA043CA01A9CDDE100AF9DDE /* imgsemfoto@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsemfoto@3x.png"; sourceTree = "<group>"; };
+		BA043CA11A9CDDE100AF9DDE /* imgsemfoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsemfoto@2x.png"; sourceTree = "<group>"; };
 		BA05B7421A39A3DD00476074 /* NotesViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotesViewer.h; path = Receita/NotesViewer/NotesViewer.h; sourceTree = "<group>"; };
 		BA05B7431A39A3DD00476074 /* NotesViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotesViewer.m; path = Receita/NotesViewer/NotesViewer.m; sourceTree = "<group>"; };
 		BA05B7441A39A3DD00476074 /* NotesViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotesViewer.xib; path = Receita/NotesViewer/NotesViewer.xib; sourceTree = "<group>"; };
@@ -1322,6 +1375,9 @@
 				BAFBA18A1A370BAB002B2C21 /* PesquisaReceitas.h */,
 				BAFBA18B1A370BAB002B2C21 /* PesquisaReceitas.m */,
 				BAFBA18C1A370BAB002B2C21 /* PesquisaReceitas.xib */,
+				BA043C931A9CD2D800AF9DDE /* PesquisaVazio.h */,
+				BA043C941A9CD2D800AF9DDE /* PesquisaVazio.m */,
+				BA043C951A9CD2D800AF9DDE /* PesquisaVazio.xib */,
 			);
 			name = "Pesquisa Receitas";
 			sourceTree = "<group>";
@@ -1437,6 +1493,30 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BA043CA01A9CDDE100AF9DDE /* imgsemfoto@3x.png */,
+				BA043CA11A9CDDE100AF9DDE /* imgsemfoto@2x.png */,
+				BA043C9C1A9CDA6300AF9DDE /* imgaddmore@3x.png */,
+				BA043C9D1A9CDA6300AF9DDE /* imgaddmore@2x.png */,
+				BA043C981A9CD53500AF9DDE /* imgsemresult@3x.png */,
+				BA043C991A9CD53500AF9DDE /* imgsemresult@2x.png */,
+				BA043C8F1A9CCFCF00AF9DDE /* btnsave2@2x.png */,
+				BA043C901A9CCFCF00AF9DDE /* btnsave2@3x.png */,
+				BA043C8B1A9CCC6D00AF9DDE /* icoaddwhite@3x.png */,
+				BA043C8C1A9CCC6D00AF9DDE /* icoaddwhite@2x.png */,
+				BA043C871A9CC7DB00AF9DDE /* icocarrinho@3x.png */,
+				BA043C881A9CC7DB00AF9DDE /* icocarrinho@2x.png */,
+				BA043C831A9CC7A500AF9DDE /* icocalendar3@3x.png */,
+				BA043C841A9CC7A500AF9DDE /* icocalendar3@2x.png */,
+				BA043C7F1A9CC62500AF9DDE /* icoedit@3x.png */,
+				BA043C801A9CC62500AF9DDE /* icoedit@2x.png */,
+				BA043C7B1A9CC43100AF9DDE /* imgflor@3x.png */,
+				BA043C7C1A9CC43100AF9DDE /* imgflor@2x.png */,
+				BA043C771A9CC1D800AF9DDE /* icocalendar2@3x.png */,
+				BA043C781A9CC1D800AF9DDE /* icocalendar2@2x.png */,
+				BA043C731A9CBFFE00AF9DDE /* icodelete@3x.png */,
+				BA043C741A9CBFFE00AF9DDE /* icodelete@2x.png */,
+				BA043C6F1A9CA13400AF9DDE /* icotimeintext@3x.png */,
+				BA043C701A9CA13400AF9DDE /* icotimeintext@2x.png */,
 				BA043C6B1A9C9F7600AF9DDE /* icoremove@3x.png */,
 				BA043C6C1A9C9F7600AF9DDE /* icoremove@2x.png */,
 				BA043C671A9C9E5D00AF9DDE /* imgorder@3x.png */,
@@ -1794,6 +1874,7 @@
 				BA043C2D1A9C8E6100AF9DDE /* imgshoplist@3x.png in Resources */,
 				BA0081E21A371FFD00A7871D /* icoabout@3x.png in Resources */,
 				BA06C88D1A49775E007AE029 /* btnopen1@2x.png in Resources */,
+				BA043C821A9CC62500AF9DDE /* icoedit@2x.png in Resources */,
 				BAFBA2131A3715CF002B2C21 /* MealPlanerCell.xib in Resources */,
 				BAC1EE521A9B95970018DDE5 /* imgsample@3x.png in Resources */,
 				BAFEB17C1A41F24700DEE4ED /* btnclose2@3x.png in Resources */,
@@ -1806,11 +1887,13 @@
 				BA0081E41A371FFD00A7871D /* icobug@3x.png in Resources */,
 				BA0082041A3722E300A7871D /* btndelet1@2x.png in Resources */,
 				BAFBA1E21A370EA7002B2C21 /* NewIngredienteShoppingList.xib in Resources */,
+				BA043C7D1A9CC43100AF9DDE /* imgflor@3x.png in Resources */,
 				BA0081E91A371FFD00A7871D /* icoguide@2x.png in Resources */,
 				BA0081F01A371FFD00A7871D /* icosettings@3x.png in Resources */,
 				BA0081E51A371FFD00A7871D /* icocloud@2x.png in Resources */,
 				BA043C6D1A9C9F7600AF9DDE /* icoremove@3x.png in Resources */,
 				BAFCBA161A387205001EFCE2 /* btnbook1@2x.png in Resources */,
+				BA043C9F1A9CDA6300AF9DDE /* imgaddmore@2x.png in Resources */,
 				BAFBA0F01A36FEEA002B2C21 /* Settings.xib in Resources */,
 				BA043C6A1A9C9E5D00AF9DDE /* imgorder@2x.png in Resources */,
 				BAFCBA2D1A38A896001EFCE2 /* linedotbigger2@2x.png in Resources */,
@@ -1818,11 +1901,13 @@
 				BA043C3E1A9C93E200AF9DDE /* icoreceitas@3x.png in Resources */,
 				BAFBA1DD1A370E42002B2C21 /* IngredientesHeader.xib in Resources */,
 				BAFCBA021A38500D001EFCE2 /* btncall1@2x.png in Resources */,
+				BA043C761A9CBFFE00AF9DDE /* icodelete@2x.png in Resources */,
 				BAFECA031A48614E00D0431B /* btright2@3x.png in Resources */,
 				BA0082181A374D1A00A7871D /* imgbadgetsmall@2x.png in Resources */,
 				BA043C3D1A9C93E200AF9DDE /* icoreceitas@2x.png in Resources */,
 				BAFBA25E1A3717EC002B2C21 /* imgroda@3x.png in Resources */,
 				BAFEB18A1A41F24700DEE4ED /* btnedit2@3x.png in Resources */,
+				BA043C9A1A9CD53500AF9DDE /* imgsemresult@3x.png in Resources */,
 				BAFBA2461A3717EC002B2C21 /* btnnotes@3x.png in Resources */,
 				BAFBA2801A371D88002B2C21 /* btnsave2@2x.png in Resources */,
 				BAFCBA0F1A386AD9001EFCE2 /* imgframetop@3x.png in Resources */,
@@ -1838,6 +1923,7 @@
 				BA24B3DE1A49B19E00D674C2 /* icoshareinsta@3x.png in Resources */,
 				BA06C8C41A499A2B007AE029 /* icosharetwitter@3x.png in Resources */,
 				BAFBA2551A3717EC002B2C21 /* icouncheck@2x.png in Resources */,
+				BA043C751A9CBFFE00AF9DDE /* icodelete@3x.png in Resources */,
 				BAFCB9FE1A384D31001EFCE2 /* lightpaperfibers_@3x.png in Resources */,
 				BAFCBA221A3894EE001EFCE2 /* imglinenotes1@3x.png in Resources */,
 				BAFEB1831A41F24700DEE4ED /* btnsearch@2x.png in Resources */,
@@ -1859,6 +1945,7 @@
 				BAFBA2611A3717EC002B2C21 /* imgtira@2x.png in Resources */,
 				BA043C6E1A9C9F7600AF9DDE /* icoremove@2x.png in Resources */,
 				BA05B74A1A39C18500476074 /* imgssombralateral@3x.png in Resources */,
+				BA043C8A1A9CC7DB00AF9DDE /* icocarrinho@2x.png in Resources */,
 				BAFBA19B1A370C42002B2C21 /* ListaComprasCell.xib in Resources */,
 				BAFBA2571A3717EC002B2C21 /* imglinedown@2x.png in Resources */,
 				BA0081ED1A371FFD00A7871D /* icorating@2x.png in Resources */,
@@ -1872,10 +1959,13 @@
 				BAFEB1801A41F24700DEE4ED /* btnedit1@3x.png in Resources */,
 				BA00821B1A374D1A00A7871D /* imglinebadgetdown@3x.png in Resources */,
 				BAFBA0EA1A36FE6A002B2C21 /* NewBook.xib in Resources */,
+				BA043C9E1A9CDA6300AF9DDE /* imgaddmore@3x.png in Resources */,
 				BAFBA15B1A3707AB002B2C21 /* CellIngrediente.xib in Resources */,
 				BA043C351A9C8F7000AF9DDE /* imgcomiten@2x.png in Resources */,
+				BA043C721A9CA13400AF9DDE /* icotimeintext@2x.png in Resources */,
 				BAFECA021A48614E00D0431B /* btright2@2x.png in Resources */,
 				BA1B9D151A3EF35600E1BEA0 /* btleft3@3x.png in Resources */,
+				BA043C711A9CA13400AF9DDE /* icotimeintext@3x.png in Resources */,
 				BA0081EF1A371FFD00A7871D /* icosettings@2x.png in Resources */,
 				BAFBA2851A371DB0002B2C21 /* btleft2@3x.png in Resources */,
 				BAFBA2491A3717EC002B2C21 /* btntime@2x.png in Resources */,
@@ -1883,6 +1973,8 @@
 				BA0082001A37229800A7871D /* btnedit1@2x.png in Resources */,
 				BAFEB18B1A41F24700DEE4ED /* btnsetting1@2x.png in Resources */,
 				BAFBA2651A3717EC002B2C21 /* linedot2@2x.png in Resources */,
+				BA043C9B1A9CD53500AF9DDE /* imgsemresult@2x.png in Resources */,
+				BA043C891A9CC7DB00AF9DDE /* icocarrinho@3x.png in Resources */,
 				BAFEB17D1A41F24700DEE4ED /* btndelet1@2x.png in Resources */,
 				BA043C3A1A9C8FF400AF9DDE /* imgsemiten@3x.png in Resources */,
 				BAFBA0E01A36FCDE002B2C21 /* Home.xib in Resources */,
@@ -1890,7 +1982,9 @@
 				BAFEB1881A41F24700DEE4ED /* btndelet2@3x.png in Resources */,
 				BAFEB17E1A41F24700DEE4ED /* btndelet1@3x.png in Resources */,
 				BAFBA1811A370B1B002B2C21 /* EtapaTwoOptionsController.xib in Resources */,
+				BA043CA31A9CDDE100AF9DDE /* imgsemfoto@2x.png in Resources */,
 				BA0081DF1A371FFD00A7871D /* btnphoto1@2x.png in Resources */,
+				BA043C8D1A9CCC6D00AF9DDE /* icoaddwhite@3x.png in Resources */,
 				BAFBA2781A371CD7002B2C21 /* btnsearch@2x.png in Resources */,
 				BAFECA0F1A4888B200D0431B /* etiqbuy@3x.png in Resources */,
 				BA0081EB1A371FFD00A7871D /* icoimport@2x.png in Resources */,
@@ -1924,14 +2018,17 @@
 				BA043C691A9C9E5D00AF9DDE /* imgorder@3x.png in Resources */,
 				BA043C611A9C9D0C00AF9DDE /* icotimercounter@3x.png in Resources */,
 				BA0081E01A371FFD00A7871D /* btnphoto1@3x.png in Resources */,
+				BA043C7A1A9CC1D800AF9DDE /* icocalendar2@2x.png in Resources */,
 				BAFBA25F1A3717EC002B2C21 /* imgsombrarecipe@2x.png in Resources */,
 				BA0082011A37229800A7871D /* btnedit1@3x.png in Resources */,
+				BA043C971A9CD2D800AF9DDE /* PesquisaVazio.xib in Resources */,
 				BAFCBA1E1A389292001EFCE2 /* ReceitaVisualizar.xib in Resources */,
 				BAFCBA261A389A59001EFCE2 /* btnshop2@3x.png in Resources */,
 				BA043C391A9C8FF400AF9DDE /* imgsemiten@2x.png in Resources */,
 				BA0081D91A371FFD00A7871D /* btnclose2@2x.png in Resources */,
 				BAFCB9FF1A384D31001EFCE2 /* lightpaperfibers@2x.png in Resources */,
 				BA24B3EA1A49D50300D674C2 /* PinterestSDKResources.bundle in Resources */,
+				BA043C851A9CC7A500AF9DDE /* icocalendar3@3x.png in Resources */,
 				BA05B7491A39C18500476074 /* imgssombralateral@2x.png in Resources */,
 				BA05B7461A39A3DD00476074 /* NotesViewer.xib in Resources */,
 				BAFBA24D1A3717EC002B2C21 /* icoclock@2x.png in Resources */,
@@ -1944,7 +2041,9 @@
 				BA0081F31A371FFD00A7871D /* imglogofucook@2x.png in Resources */,
 				BA1B9D141A3EF35600E1BEA0 /* btleft3@2x.png in Resources */,
 				BA1B9D101A3EF32300E1BEA0 /* btright3@2x.png in Resources */,
+				BA043C861A9CC7A500AF9DDE /* icocalendar3@2x.png in Resources */,
 				BAFBA27C1A371D22002B2C21 /* btnaddbook@2x.png in Resources */,
+				BA043C911A9CCFCF00AF9DDE /* btnsave2@2x.png in Resources */,
 				BAFCBA121A386AFA001EFCE2 /* imgframedown@2x.png in Resources */,
 				BAFBA0F61A36FF28002B2C21 /* Book.xib in Resources */,
 				BAFBA13D1A3706A6002B2C21 /* FooterNewReceita.xib in Resources */,
@@ -1954,6 +2053,7 @@
 				BAFCB9E81A3848B2001EFCE2 /* IngredienteCellTableViewCell.xib in Resources */,
 				BA0082051A3722E300A7871D /* btndelet1@3x.png in Resources */,
 				BAFBA27D1A371D22002B2C21 /* btnaddbook@3x.png in Resources */,
+				BA043C791A9CC1D800AF9DDE /* icocalendar2@3x.png in Resources */,
 				BAFEB17B1A41F24700DEE4ED /* btnclose2@2x.png in Resources */,
 				BAFECA121A4888B200D0431B /* etiqfree@2x.png in Resources */,
 				BAFBA1E71A370EDF002B2C21 /* JATableViewCell.xib in Resources */,
@@ -1972,8 +2072,10 @@
 				BA0081DC1A371FFD00A7871D /* btnless@3x.png in Resources */,
 				BA0081F11A371FFD00A7871D /* icoshare@2x.png in Resources */,
 				BAFEC9FF1A4831DF00D0431B /* HeaderBotoesListaComras.xib in Resources */,
+				BA043CA21A9CDDE100AF9DDE /* imgsemfoto@3x.png in Resources */,
 				BA00821D1A374D1A00A7871D /* linedottitle1@3x.png in Resources */,
 				BAFECA101A4888B200D0431B /* etiqface@2x.png in Resources */,
+				BA043C921A9CCFCF00AF9DDE /* btnsave2@3x.png in Resources */,
 				BAFBA2581A3717EC002B2C21 /* imglinedown@3x.png in Resources */,
 				BAFEB18F1A41FA6800DEE4ED /* btleft1@2x.png in Resources */,
 				BAFBA24F1A3717EC002B2C21 /* icoitens@2x.png in Resources */,
@@ -1985,6 +2087,7 @@
 				BAFCB9FC1A384D31001EFCE2 /* btntecladodown@2x.png in Resources */,
 				BAFBA2421A3717EC002B2C21 /* btndelet3@3x.png in Resources */,
 				BA1B9D051A3EF1A200E1BEA0 /* MealPlanerTable.xib in Resources */,
+				BA043C8E1A9CCC6D00AF9DDE /* icoaddwhite@2x.png in Resources */,
 				BAFEB1681A41E35500DEE4ED /* PreviewBook.xib in Resources */,
 				BAFCBA331A38C047001EFCE2 /* DirectionsHeader.xib in Resources */,
 				BA07EAE71A3B654E0087B44E /* solid231.png in Resources */,
@@ -2000,6 +2103,7 @@
 				BA043C2E1A9C8E6100AF9DDE /* imgshoplist@2x.png in Resources */,
 				BA0081F41A371FFD00A7871D /* imglogofucook@3x.png in Resources */,
 				BAFBA2791A371CD7002B2C21 /* btnsearch@3x.png in Resources */,
+				BA043C811A9CC62500AF9DDE /* icoedit@3x.png in Resources */,
 				BAFBA1021A3702D5002B2C21 /* NewReceita.xib in Resources */,
 				BA043C561A9C9C2800AF9DDE /* imgtitle@2x.png in Resources */,
 				BA06C8C31A499A2B007AE029 /* icosharetwitter@2x.png in Resources */,
@@ -2016,6 +2120,7 @@
 				BAFBA1381A370685002B2C21 /* HeaderNewReceita.xib in Resources */,
 				BAFBA1181A370486002B2C21 /* Calendario.xib in Resources */,
 				BA1B9D191A3F32CF00E1BEA0 /* btnsave@3x.png in Resources */,
+				BA043C7E1A9CC43100AF9DDE /* imgflor@2x.png in Resources */,
 				BA0081EE1A371FFD00A7871D /* icorating@3x.png in Resources */,
 				BAA9E04E1A9B440200940A0C /* Images.xcassets in Resources */,
 				BAFBA23F1A3717EC002B2C21 /* btncall3@2x.png in Resources */,
@@ -2062,6 +2167,7 @@
 				BAFBA1011A3702D5002B2C21 /* NewReceita.m in Sources */,
 				BADD4B1A1A444DF200A30F87 /* UIView+WebCacheOperation.m in Sources */,
 				BAFBA1281A3704C5002B2C21 /* VRGCalendarView.m in Sources */,
+				BA043C961A9CD2D800AF9DDE /* PesquisaVazio.m in Sources */,
 				BAFBA0E91A36FE6A002B2C21 /* NewBook.m in Sources */,
 				BAFEB1621A41D0FA00DEE4ED /* InAppsTeste.m in Sources */,
 				BAFBA1171A370486002B2C21 /* Calendario.m in Sources */,

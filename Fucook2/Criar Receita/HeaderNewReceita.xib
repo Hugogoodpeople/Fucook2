@@ -65,7 +65,7 @@
                             <rect key="frame" x="80" y="29" width="160" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnphoto1.png" id="817-ID-dBI">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgsemfoto.png" id="817-ID-dBI">
                                     <rect key="frame" x="45" y="14" width="70" height="70"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -542,6 +542,7 @@
     <resources>
         <image name="btnphoto1.png" width="58" height="58"/>
         <image name="icoadd.png" width="20" height="20"/>
+        <image name="imgsemfoto.png" width="58" height="58"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

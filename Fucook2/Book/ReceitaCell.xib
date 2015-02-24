@@ -15,17 +15,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" id="P5w-j1-kfT">
-                        <rect key="frame" x="180" y="0.5" width="140" height="140.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="180" y="0.0" width="140" height="140.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="gTG-4U-Yf1">
-                                <rect key="frame" x="0.0" y="0.0" width="69" height="69.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="69.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Eq-KX-4uV">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="69"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" image="btncall1.png">
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.66666666669999997" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="icocalendar3.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -33,16 +34,16 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="q5C-gz-ag8">
-                                <rect key="frame" x="0.0" y="70" width="69" height="70.5"/>
+                                <rect key="frame" x="0.0" y="70" width="70" height="70.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="osH-ch-gcf">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" image="btnshop1.png">
+                                        <state key="normal" image="icocarrinho.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -50,16 +51,17 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="Tc7-fp-haF">
-                                <rect key="frame" x="70" y="70" width="70" height="70.5"/>
+                                <rect key="frame" x="70" y="69" width="70" height="70.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hR0-GZ-450">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" image="btndelet1.png">
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.37254901959999998" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="icodelete.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -67,7 +69,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="uMK-oV-rRG">
                                 <rect key="frame" x="70" y="0.0" width="70" height="69.5"/>
@@ -76,7 +78,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GHQ-1k-rK5">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="69"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" image="btnedit1.png">
+                                        <state key="normal" image="icoedit.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -84,10 +86,10 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <view contentMode="scaleToFill" id="bow-2k-waW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
@@ -103,7 +105,7 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgssombralateral.png" id="awW-mh-pVd">
                                         <rect key="frame" x="320" y="0.0" width="8" height="140"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view alpha="0.20000000298023224" contentMode="scaleToFill" id="TKs-8i-eX4">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
@@ -144,7 +146,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </tableViewCellContentView>
             <connections>
                 <outlet property="buttonCalendario" destination="9Eq-KX-4uV" id="8gI-Fo-IES"/>
@@ -162,10 +164,10 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btncall1.png" width="17" height="18"/>
-        <image name="btndelet1.png" width="15" height="18"/>
-        <image name="btnedit1.png" width="17" height="17"/>
-        <image name="btnshop1.png" width="19" height="15"/>
+        <image name="icocalendar3.png" width="19" height="20"/>
+        <image name="icocarrinho.png" width="20" height="20"/>
+        <image name="icodelete.png" width="16" height="20"/>
+        <image name="icoedit.png" width="20" height="20"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

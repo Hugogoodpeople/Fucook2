@@ -73,7 +73,7 @@
     /*
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
     [button addTarget:self action:@selector(shareLivro) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     //self.navigationItem.rightBarButtonItem = anotherButton;
@@ -491,7 +491,7 @@
     {
         UILabel  * label = [[UILabel alloc] initWithFrame:CGRectMake(0,0, largura   , 9999)];
         label.numberOfLines=0;
-        label.font = [UIFont fontWithName:@"HelveticaNeue" size:16];
+        label.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
         label.text = ((ObjectDirections *)[self.itemsDirections objectAtIndex:indexPath.row]).descricao;
     
         CGSize maximumLabelSize = CGSizeMake(largura, 9999);
@@ -556,8 +556,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
     
     if (indexPath.section == 0)
     {

@@ -14,6 +14,7 @@
 #import "Calendario.h"
 #import "ObjectIngrediente.h"
 #import "ObjectLista.h"
+#import "PesquisaVazio.h"
 
 
 @interface PesquisaReceitas ()
@@ -22,6 +23,9 @@
     NSMutableArray  * imagens;
     NSMutableArray  * pesquisaReceitas;
     NSString        * textoPesquisado;
+    
+    PesquisaVazio   * vazio;
+    
 }
 
 @end
@@ -41,6 +45,12 @@
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;
     
+    
+    vazio = [PesquisaVazio new];
+    [vazio.view setFrame:self.tabela.frame];
+    
+    [self.tabela addSubview:vazio.view];
+
     
     [self addCloseToTextView:self.searcBar];
 }
@@ -117,7 +127,16 @@
     }
     
     [self actualizarImagens];
-    //[self.tabela reloadData];
+    
+    
+    if (pesquisaReceitas.count == 0) {
+        [self.tabela addSubview:vazio.view];
+    }
+    else
+    {
+        [vazio.view removeFromSuperview];
+    }
+    
 }
 
 

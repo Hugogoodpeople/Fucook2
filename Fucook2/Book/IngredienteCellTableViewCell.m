@@ -36,7 +36,7 @@
     }
     else
     {
-        [self.imgAddRemove setImage:[UIImage imageNamed:@"btnless.png"]];
+        [self.imgAddRemove setImage:[UIImage imageNamed:@"icoremove.png"]];
         if (self.delegate) {
             [self.delegate performSelectorInBackground:@selector(saveIngrediente:) withObject:self.ingrediente];
         }

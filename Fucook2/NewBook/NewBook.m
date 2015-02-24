@@ -42,7 +42,7 @@
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
     [button addTarget:self action:@selector(Adicionarlivro) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsave"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     //self.navigationItem.rightBarButtonItem = anotherButton;
@@ -172,7 +172,7 @@
                         options: 0
                      animations: ^{
                          [self.viewPrimeiraVez setFrame:self.buttonFotoJaExiste.frame];
-                       
+                         [self.viewPrimeiraVez setAlpha:0.75f];
                      } completion:^(BOOL finished) {
                      }];
     

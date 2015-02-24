@@ -248,7 +248,7 @@
                         options: 0
                      animations: ^{
                          [self.viewPrimeiraVez setFrame:self.buttonFotoJaExiste.frame];
-                         
+                         [self.viewPrimeiraVez setAlpha:0.75f];
                      } completion:^(BOOL finished) {
                      }];
     
@@ -632,7 +632,7 @@
     //self.labelCat.text = [NSString stringWithFormat:@"Breakfast"];
     if ([self preencherCategoria:@"Breakfast "])
     {
-        self.imgCat1.image = [UIImage imageNamed:@"btnless"];
+        self.imgCat1.image = [UIImage imageNamed:@"icoremove"];
     }else
     {
         self.imgCat1.image = [UIImage imageNamed:@"btnmore"];
@@ -644,7 +644,7 @@
     //self.labelCat.text = [NSString stringWithFormat:@"Lunch"];
      if ([self preencherCategoria:@"Lunch "])
     {
-        self.imgCat2.image = [UIImage imageNamed:@"btnless"];
+        self.imgCat2.image = [UIImage imageNamed:@"icoremove"];
     }else
     {
         self.imgCat2.image = [UIImage imageNamed:@"btnmore"];
@@ -656,7 +656,7 @@
     //self.labelCat.text = [NSString stringWithFormat:@"Dinner"];
     if([self preencherCategoria:@"Dinner "])
     {
-        self.imgCat3.image = [UIImage imageNamed:@"btnless"];
+        self.imgCat3.image = [UIImage imageNamed:@"icoremove"];
     }else
     {
         self.imgCat3.image = [UIImage imageNamed:@"btnmore"];
@@ -668,7 +668,7 @@
     //self.labelCat.text = [NSString stringWithFormat:@"Dessert"];
     if([self preencherCategoria:@"Dessert "])
     {
-        self.imgCat4.image = [UIImage imageNamed:@"btnless"];
+        self.imgCat4.image = [UIImage imageNamed:@"icoremove"];
     }else
     {
         self.imgCat4.image = [UIImage imageNamed:@"btnmore"];
@@ -679,19 +679,19 @@
 {
     if ([self.labelCat.text rangeOfString:@"Breakfast"].length != 0)
     {
-         self.imgCat1.image = [UIImage imageNamed:@"btnless"];
+         self.imgCat1.image = [UIImage imageNamed:@"icoremove"];
     }
     if ([self.labelCat.text rangeOfString:@"Lunch"].length != 0)
     {
-        self.imgCat2.image = [UIImage imageNamed:@"btnless"];
+        self.imgCat2.image = [UIImage imageNamed:@"icoremove"];
     }
     if ([self.labelCat.text rangeOfString:@"Dinner"].length != 0)
     {
-        self.imgCat3.image = [UIImage imageNamed:@"btnless"];
+        self.imgCat3.image = [UIImage imageNamed:@"icoremove"];
     }
     if ([self.labelCat.text rangeOfString:@"Dessert"].length != 0)
     {
-        self.imgCat4.image = [UIImage imageNamed:@"btnless"];
+        self.imgCat4.image = [UIImage imageNamed:@"icoremove"];
     }
 }
 

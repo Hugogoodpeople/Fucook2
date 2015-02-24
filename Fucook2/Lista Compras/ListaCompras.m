@@ -26,8 +26,8 @@
 #define kJATableViewCellReuseIdentifier     @"JATableViewCellIdentifier"
 
 #define kFlagButtonColor        [UIColor colorWithRed:255.0/255.0 green:150.0/255.0 blue:0/255.0 alpha:1]
-#define kMoreButtonColor        [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1]
-#define kArchiveButtonColor     [UIColor colorWithRed:60.0/255.0 green:112.0/255.0 blue:168/255.0 alpha:1]
+#define kMoreButtonColor        [UIColor colorWithRed:235/255.0 green:95/255.0 blue:80/255.0 alpha:1]
+#define kArchiveButtonColor     [UIColor colorWithRed:149.0/255.0 green:150.0/255.0 blue:145/255.0 alpha:1]
 #define kUnreadButtonColor      [UIColor colorWithRed:0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1]
 
 #import "PesquisaReceitas.h"
@@ -123,7 +123,7 @@
     //refreshControl.backgroundColor = [UIColor colorWithRed:231.0/255.0 green:231.0/255.0 blue:231.0/255.0 alpha:1];
     refreshControl.backgroundColor = [UIColor whiteColor];
     refreshControl.tintColor = [UIColor blackColor];
-    NSString *title = [NSString stringWithFormat:@"Cean all shopping list"];
+    NSString *title = [NSString stringWithFormat:@"Clean all shopping list"];
     NSDictionary *attrsDictionary = [NSDictionary dictionaryWithObject:[UIColor blackColor]
                                                                 forKey:NSForegroundColorAttributeName];
     NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
@@ -216,7 +216,7 @@
 - (NSArray *)rightButtons
 {
     __typeof(self) __weak weakSelf = self;
-    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"Got it" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"Added" color:kMoreButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
         //[cell completePinToTopViewAnimation];
         [weakSelf rightMostButtonSwipeCompleted:cell];
         NSLog(@"Right Button: Archive Pressed");
@@ -229,7 +229,7 @@
         NSLog(@"Right Button: Flag Pressed");
     }];
      */
-    JAActionButton *button3 = [JAActionButton actionButtonWithTitle:@"View recipe" color:kMoreButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+    JAActionButton *button3 = [JAActionButton actionButtonWithTitle:@"View" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
         [weakSelf mostarReceita:cell];
     }];
     

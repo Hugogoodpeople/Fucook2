@@ -86,7 +86,7 @@
     
     
     [UIView animateWithDuration:0.2f animations:^{
-        [self.viewMovel setFrame:CGRectMake(-140, 0, width, height)];
+        [self.viewMovel setFrame:CGRectMake(-69, 0, width, height)];
     }];
     
     int altura = [[UIScreen mainScreen] bounds].size.height;

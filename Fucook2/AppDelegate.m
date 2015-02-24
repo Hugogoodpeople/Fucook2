@@ -49,6 +49,14 @@
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:cenas];
     [nav.view setFrame:[[UIScreen mainScreen] bounds] ];
     
+    [nav.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"HelveticaNeue-Medium" size:17],
+      NSFontAttributeName,
+      [UIColor colorWithRed:149.0/255.0 green:150.0/255.0 blue:145.0/255.0 alpha:1],
+      NSForegroundColorAttributeName,
+      nil]];
+    
     [self.window makeKeyAndVisible];
     
     // para os cantos arredondados

@@ -16,7 +16,7 @@
                 <subviews>
                     <view contentMode="scaleToFill" id="axR-po-h53">
                         <rect key="frame" x="180" y="0.5" width="140" height="140.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="kba-uV-sPO">
                                 <rect key="frame" x="71" y="0.0" width="69" height="69.5"/>
@@ -25,7 +25,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7ke-Kn-UMt">
                                         <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" image="btncall1.png">
+                                        <state key="normal" image="icocalendar2.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -39,14 +39,15 @@
                                 <rect key="frame" x="71" y="70" width="69" height="70.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yQM-iK-5O8">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="70"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="khC-SC-V6H">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="69.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" image="btnshop1.png">
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.37254901959999998" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="icodelete.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="clickCarrinho:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ntb-AM-vKv"/>
+                                            <action selector="clickDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OSa-5U-YfP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -56,14 +57,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="70" height="140.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="khC-SC-V6H">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="140"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yQM-iK-5O8">
+                                        <rect key="frame" x="0.0" y="-1" width="69" height="141.5"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" image="btndelet1.png">
+                                        <state key="normal" image="btnshop1.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="clickDelete:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OSa-5U-YfP"/>
+                                            <action selector="clickCarrinho:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ntb-AM-vKv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -143,9 +144,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btncall1.png" width="17" height="18"/>
-        <image name="btndelet1.png" width="15" height="18"/>
         <image name="btnshop1.png" width="19" height="15"/>
+        <image name="icocalendar2.png" width="19" height="20"/>
+        <image name="icodelete.png" width="16" height="20"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
