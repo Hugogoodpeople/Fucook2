@@ -7,18 +7,59 @@
 //
 
 #import "IngredienteCellTableViewCell.h"
+#import "UIImage+ImageEffects.h"
 
 @implementation IngredienteCellTableViewCell
 
+-(UIImage *)blurredSnapshot:(UIView *)view
+{
+    
+    // Now apply the blur effect using Apple's UIImageEffect category
+    //UIImage *blurredSnapshotImage = [snapshotImage applyLightEffect];
+    
+    // Or apply any other effects available in "UIImage+ImageEffects.h"
+    // UIImage *blurredSnapshotImage = [snapshotImage applyDarkEffect];
+    UIImage *blurredSnapshotImage = [[self imageWithView:self] applyBlurWithRadius:2 tintColor:[UIColor clearColor] saturationDeltaFactor:1 maskImage:nil];
+    
+    // Be nice and clean your mess up
+    UIGraphicsEndImageContext();
+    
+    return blurredSnapshotImage;
+}
 
+- (UIImage *) imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
 
 
 - (void)awakeFromNib {
     // Initialization code
+    
+  
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];    
+    [super setSelected:selected animated:animated];
+    
+    if (!self.blur && self.isFromInApps) {
+        // Configure the view for the selected state
+        UIImageView * imagem = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        imagem.image = [self blurredSnapshot:self.contentView];
+        
+        self.blur = imagem.image;
+        imagem.userInteractionEnabled = YES;
+        
+        [self.contentView addSubview:imagem];
+    }
+
 }
 
 
@@ -46,7 +87,6 @@
     self.onCart = selecionado;
     
     
-
 }
 
 

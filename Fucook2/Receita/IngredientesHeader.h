@@ -17,6 +17,7 @@
 @property NSString * passo;
 @property NSString * tempo;
 
-
+@property UIImage * blur;
+@property BOOL isFromInApps;
 
 @end

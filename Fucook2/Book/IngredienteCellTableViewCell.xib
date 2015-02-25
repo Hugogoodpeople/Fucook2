@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view alpha="0.0" contentMode="scaleToFill" id="94a-0u-EbT">
-                        <rect key="frame" x="0.0" y="-3" width="320" height="51"/>
+                        <rect key="frame" x="0.0" y="-3" width="320" height="51.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added to list" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7z1-bF-Yj9">
@@ -52,7 +52,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="LabelTitulo" destination="aUZ-NM-5fz" id="hFy-aL-Jfd"/>
                 <outlet property="imgAddRemove" destination="oey-Wx-jeI" id="hsn-Vh-oSg"/>

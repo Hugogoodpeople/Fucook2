@@ -25,4 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIView *viewAddRemove;
 @property (weak, nonatomic) IBOutlet UILabel *labelAddRemove;
 
+
+@property UIImage * blur;
+@property BOOL isFromInApps;
+
 @end

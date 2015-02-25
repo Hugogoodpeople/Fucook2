@@ -185,17 +185,18 @@
     
     ObjectReceita * receita = [self.items objectAtIndex:indexPath.row];
     
-    if (![receita.gratis isEqualToString:@"nao"])
+    //if (![receita.gratis isEqualToString:@"nao"])
     {
         ReceitaVisualizar * recietas = [ReceitaVisualizar new];
         recietas.receita = receita;
+        recietas.isFromInApps = YES;
         
         [self.navigationController pushViewController:recietas animated:YES];
     }
-    else
+    /*else
     {
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"This recipe is not free, to get access you need to buy the book" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
-    }
+    }*/
 
 }
 

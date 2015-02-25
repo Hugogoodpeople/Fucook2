@@ -119,7 +119,6 @@
 		BA043CA31A9CDDE100AF9DDE /* imgsemfoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA11A9CDDE100AF9DDE /* imgsemfoto@2x.png */; };
 		BA043CA61A9CE4C100AF9DDE /* imgaddrecipe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA41A9CE4C100AF9DDE /* imgaddrecipe@3x.png */; };
 		BA043CA71A9CE4C100AF9DDE /* imgaddrecipe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA043CA51A9CE4C100AF9DDE /* imgaddrecipe@2x.png */; };
-		BA043CAD1A9CF39800AF9DDE /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BA043CAC1A9CF39800AF9DDE /* UIImage+ImageEffects.m */; };
 		BA05B7451A39A3DD00476074 /* NotesViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA05B7431A39A3DD00476074 /* NotesViewer.m */; };
 		BA05B7461A39A3DD00476074 /* NotesViewer.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7441A39A3DD00476074 /* NotesViewer.xib */; };
 		BA05B7491A39C18500476074 /* imgssombralateral@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA05B7471A39C18500476074 /* imgssombralateral@2x.png */; };
@@ -152,6 +151,7 @@
 		BA616A181A9DCDD90077718E /* btnbuy2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA616A161A9DCDD90077718E /* btnbuy2@3x.png */; };
 		BA616A1B1A9DE1640077718E /* btnunlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA616A191A9DE1640077718E /* btnunlock@2x.png */; };
 		BA616A1C1A9DE1640077718E /* btnunlock@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA616A1A1A9DE1640077718E /* btnunlock@3x.png */; };
+		BA616A2A1A9E14E70077718E /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = BA616A291A9E14E70077718E /* UIImage+ImageEffects.m */; };
 		BAA9E04E1A9B440200940A0C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA9E04D1A9B440200940A0C /* Images.xcassets */; };
 		BAC1EE511A9B95970018DDE5 /* imgsample@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC1EE4F1A9B95970018DDE5 /* imgsample@2x.png */; };
 		BAC1EE521A9B95970018DDE5 /* imgsample@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC1EE501A9B95970018DDE5 /* imgsample@3x.png */; };
@@ -536,8 +536,6 @@
 		BA043CA11A9CDDE100AF9DDE /* imgsemfoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsemfoto@2x.png"; sourceTree = "<group>"; };
 		BA043CA41A9CE4C100AF9DDE /* imgaddrecipe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgaddrecipe@3x.png"; sourceTree = "<group>"; };
 		BA043CA51A9CE4C100AF9DDE /* imgaddrecipe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgaddrecipe@2x.png"; sourceTree = "<group>"; };
-		BA043CAB1A9CF39800AF9DDE /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Fucook2/Utils/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		BA043CAC1A9CF39800AF9DDE /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Fucook2/Utils/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		BA05B7421A39A3DD00476074 /* NotesViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotesViewer.h; path = Receita/NotesViewer/NotesViewer.h; sourceTree = "<group>"; };
 		BA05B7431A39A3DD00476074 /* NotesViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotesViewer.m; path = Receita/NotesViewer/NotesViewer.m; sourceTree = "<group>"; };
 		BA05B7441A39A3DD00476074 /* NotesViewer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotesViewer.xib; path = Receita/NotesViewer/NotesViewer.xib; sourceTree = "<group>"; };
@@ -573,6 +571,8 @@
 		BA616A161A9DCDD90077718E /* btnbuy2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnbuy2@3x.png"; sourceTree = "<group>"; };
 		BA616A191A9DE1640077718E /* btnunlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnunlock@2x.png"; sourceTree = "<group>"; };
 		BA616A1A1A9DE1640077718E /* btnunlock@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnunlock@3x.png"; sourceTree = "<group>"; };
+		BA616A281A9E14E70077718E /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		BA616A291A9E14E70077718E /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		BAA9E04D1A9B440200940A0C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BAC1EE4F1A9B95970018DDE5 /* imgsample@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsample@2x.png"; sourceTree = "<group>"; };
 		BAC1EE501A9B95970018DDE5 /* imgsample@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgsample@3x.png"; sourceTree = "<group>"; };
@@ -1311,8 +1311,8 @@
 		BAFBA1291A37054F002B2C21 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BA043CAB1A9CF39800AF9DDE /* UIImage+ImageEffects.h */,
-				BA043CAC1A9CF39800AF9DDE /* UIImage+ImageEffects.m */,
+				BA616A281A9E14E70077718E /* UIImage+ImageEffects.h */,
+				BA616A291A9E14E70077718E /* UIImage+ImageEffects.m */,
 				BAFEB15B1A4190E000DEE4ED /* NSData+Base64.h */,
 				BAFEB15C1A4190E000DEE4ED /* NSData+Base64.m */,
 				BAFBA1F61A370FCE002B2C21 /* Utils Dragable */,
@@ -2268,7 +2268,7 @@
 				BAFBA1C91A370D3B002B2C21 /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */,
 				BAFBA1611A3708B6002B2C21 /* JAActionButton.m in Sources */,
 				BAFBA1501A370745002B2C21 /* NewNotes.m in Sources */,
-				BA043CAD1A9CF39800AF9DDE /* UIImage+ImageEffects.m in Sources */,
+				BA616A2A1A9E14E70077718E /* UIImage+ImageEffects.m in Sources */,
 				BAFBA0E41A36FE2B002B2C21 /* ObjectLivro.m in Sources */,
 				BAFBA1261A3704C5002B2C21 /* UIColor+expanded.m in Sources */,
 				BAFBA1D71A370E11002B2C21 /* DirectionsCell.m in Sources */,
@@ -2418,6 +2418,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pinterest.embeddedframework",
+					"$(PROJECT_DIR)/Fucook2/Utils",
 				);
 				INFOPLIST_FILE = Fucook2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -2437,6 +2438,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pinterest.embeddedframework",
+					"$(PROJECT_DIR)/Fucook2/Utils",
 				);
 				INFOPLIST_FILE = Fucook2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;

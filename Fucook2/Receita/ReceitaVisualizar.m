@@ -27,9 +27,6 @@
     NSManagedObjectContext  * context ;
     float largura;
     
-    
-    UIImageView *blurredBgImage;
-    UIView *blurMask;
 }
 
 @property NSMutableArray * shopingCart;
@@ -39,6 +36,8 @@
 @end
 
 @implementation ReceitaVisualizar
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,30 +63,19 @@
     
     context = [AppDelegate sharedAppDelegate].managedObjectContext;
     ingHeadercell = [IngredientesHeader new];
+    ingHeadercell.isFromInApps = self.isFromInApps;
     ingHeadercell.passo = self.receita.servings;
     [ingHeadercell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 108)];
     
     dirHeaderCell = [DirectionsHeader new];
+    dirHeaderCell.isFromInApps = self.isFromInApps;
     [dirHeaderCell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 55)];
     
     [self initializeShoppingCart];
     [self setUpIngredientes];
     
     
-    /* bt search*/
-    /*
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
-    [button addTarget:self action:@selector(shareLivro) forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[UIImage imageNamed:@"btnsave2"] forState:UIControlStateNormal];
     
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    //self.navigationItem.rightBarButtonItem = anotherButton;
-    
-    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    [negativeSpacer setWidth:-4];
-    
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
-     */
 
     
 }
@@ -177,25 +165,10 @@
     
 
     
-  
+    
     
 }
 
-- (UIImage *)takeSnapshotOfView:(UIView *)view
-{
-    CGFloat reductionFactor = 1;
-    UIGraphicsBeginImageContext(CGSizeMake(view.frame.size.width/reductionFactor, view.frame.size.height/reductionFactor));
-    [view drawViewHierarchyInRect:CGRectMake(0, 0, view.frame.size.width/reductionFactor, view.frame.size.height/reductionFactor) afterScreenUpdates:YES];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
-- (UIImage *)blurWithImageEffects:(UIImage *)image
-{
-    return [image applyBlurWithRadius:30 tintColor:[UIColor colorWithWhite:1 alpha:0.2] saturationDeltaFactor:1.5 maskImage:nil];
-}
 
 -(void)setUpDirections
 {
@@ -235,6 +208,10 @@
     
     
     [self.tabela reloadData];
+
+    
+    
+    
 }
 
 
@@ -503,9 +480,8 @@
 
 #pragma tableview delegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)alturaCell:(NSIndexPath *)indexPath
 {
-    
     if (indexPath.row == 0 && indexPath.section == 1)
     {
         return 55;
@@ -524,7 +500,7 @@
         label.numberOfLines=0;
         label.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
         label.text = ((ObjectDirections *)[self.itemsDirections objectAtIndex:indexPath.row]).descricao;
-    
+        
         CGSize maximumLabelSize = CGSizeMake(largura, 9999);
         CGSize expectedSize = [label sizeThatFits:maximumLabelSize];
         return expectedSize.height + 35 + 20;
@@ -535,6 +511,12 @@
     }
     
     return 44;
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self alturaCell:indexPath];
 }
 
 
@@ -622,7 +604,6 @@
         val = [val stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
         
         val =[NSString stringWithFormat:@" %@", val];
-
     
         cell.LabelTitulo.text = val;
         cell.ingrediente = ing;
@@ -630,6 +611,7 @@
     
         //cell.labelQtd.text = [self calcularValor:indexPath];
         cell.delegate = self;
+        cell.isFromInApps = self.isFromInApps;
     
         [cell addRemove: !ing.selecionado];
     
@@ -646,6 +628,7 @@
             }
             
             [cell.contentView addSubview:dirHeaderCell.view];
+            
             
             return cell;
         }
@@ -674,9 +657,14 @@
         {
             cell.labelTempo.text        = [NSString stringWithFormat:@"%d min", direct.tempoMinutos];
         }
+        cell.isFromInApps = self.isFromInApps;
+        
         return cell;
         
     }
+    
+    
+    
     
     return nil;
 }
@@ -744,5 +732,36 @@
     }
 
 }
+
+/*
+-(UIImage *)blurredSnapshot:(UIView *)view
+{
+    
+    // Now apply the blur effect using Apple's UIImageEffect category
+    //UIImage *blurredSnapshotImage = [snapshotImage applyLightEffect];
+    
+    // Or apply any other effects available in "UIImage+ImageEffects.h"
+    // UIImage *blurredSnapshotImage = [snapshotImage applyDarkEffect];
+     UIImage *blurredSnapshotImage = [[self imageWithView:view] applyBlurWithRadius:2 tintColor:[UIColor clearColor] saturationDeltaFactor:1 maskImage:nil];
+    
+    // Be nice and clean your mess up
+    UIGraphicsEndImageContext();
+    
+    return blurredSnapshotImage;
+}
+
+- (UIImage *) imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
+ */
+
 
 @end

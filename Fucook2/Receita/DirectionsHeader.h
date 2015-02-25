@@ -10,4 +10,8 @@
 
 @interface DirectionsHeader : UIViewController
 
+@property UIImage * blur;
+
+@property BOOL isFromInApps;
+
 @end

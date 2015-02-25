@@ -20,6 +20,8 @@
 @property ObjectReceita * receita;
 @property (weak, nonatomic) IBOutlet UIView *containerHeader;
 
+@property BOOL isFromInApps;
+
 
 
 @end

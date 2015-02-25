@@ -8,11 +8,13 @@
 
 #import "CellIngrediente.h"
 
+
 @interface CellIngrediente ()
 @property (nonatomic) BOOL constraintsSetup;
 @end
 
 @implementation CellIngrediente
+
 
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -40,6 +42,7 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+    
 }
 
 - (IBAction)clickRemover:(id)sender {
