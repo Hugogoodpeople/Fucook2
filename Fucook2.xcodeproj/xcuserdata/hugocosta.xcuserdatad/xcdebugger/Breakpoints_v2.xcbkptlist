@@ -112,16 +112,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fucook2/InApps/InAppsTeste.m"
-            timestampString = "446402025.542543"
+            timestampString = "446556558.285228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "-sendCompleteWithResult:withError:"
+            startingLineNumber = "704"
+            endingLineNumber = "704"
+            landmarkName = "-productPurchased:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -131,13 +131,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fucook2/InApps/InAppsTeste.m"
-            timestampString = "446407044.438191"
+            filePath = "Fucook2/InApps/PreviewBook.m"
+            timestampString = "446556612.186816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "693"
-            endingLineNumber = "693"
-            landmarkName = "-productPurchased:"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
+            landmarkName = "-partilharFacebook:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

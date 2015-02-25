@@ -13,9 +13,13 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tabela;
 
+
+
 @property NSMutableArray * items;
 @property NSMutableArray * itemsDirections;
 @property ObjectReceita * receita;
 @property (weak, nonatomic) IBOutlet UIView *containerHeader;
+
+
 
 @end

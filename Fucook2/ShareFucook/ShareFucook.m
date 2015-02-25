@@ -34,11 +34,15 @@
     self.viewCancel.layer.cornerRadius = 5;
     self.viewCancel.clipsToBounds = YES;
     
+    NSData * data           = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.livro.urlImagem_partilha]];
+    self.livro.imagem = [UIImage imageWithData:data];
+    
     if (!self.isInInApps) {
         [self.viewBotoesSecundarios setAlpha:1];
         self.livro = [ObjectLivro new];
         self.livro.titulo = self.receita.nome;
         NSData * data           = [self.receita.managedImagem valueForKey:@"imagem"];
+        
         self.livro.imagem = [UIImage imageWithData:data];
         
         NSURL *instagramURL = [NSURL URLWithString:@"instagram://app"];

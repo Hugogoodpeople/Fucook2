@@ -75,6 +75,8 @@
     [self.loadingIndicator startAnimating];
 }
 
+
+
 -(void)sendCompleteWithResult:(NSDictionary*)result withError:(NSError*)error
 {
     
@@ -85,7 +87,7 @@
         {
             case 1:
             {
-                 // NSLog(@"resultado da lista de inApps  =>  %@", result.description);
+                  NSLog(@"resultado da lista de inApps  =>  %@", result.description);
                 
                 array_livros = [NSMutableArray new];
                 
@@ -100,7 +102,8 @@
                     livro.id_livro          = [dictLivro objectForKey:@"id_livro"];
                     livro.comprado          = NO;
    
-                    livro.urlImagem = [dictLivro objectForKey:@"foto_livro"];
+                    livro.urlImagem         = [dictLivro objectForKey:@"foto_livro"];
+                    livro.urlImagem_partilha=[dictLivro objectForKey:@"foto_livro_partilha"];
                     
                     
                     // agora tenho de ir buscar as receitas e colocalas dentro do livro
@@ -371,7 +374,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Webservice Books";
+    self.title = @"Buy Book's";
 
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
@@ -415,10 +418,13 @@
     [self.toobar setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.97f]];
     [self.toobar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
 
-    [FucookIAPHelper sharedInstance].delegate = self;
+    // [FucookIAPHelper sharedInstance].delegate = self;
     [self reload];
     
 }
+
+
+
 
 -(void)Findreceita
 {
@@ -589,6 +595,9 @@
     ObjectLivro * livro = [array_livros objectAtIndex:indexPath.row];
     PreviewBook * recietas = [PreviewBook new];
     recietas.livro = livro;
+    recietas.products = [_products copy] ;
+    recietas.delegate = self;
+    recietas.context = context;
     
     [self.navigationController pushViewController:recietas animated:YES];
     
@@ -668,6 +677,8 @@
     [self comprarLivro:self.livro];
 }
 
+
+// completamente inutil aqui agora... mas como está a funcionar deixo estar
 -(void)comprarItem:(ObjectLivro *)livro
 {
     // aqui tenho de encontrar o produto dentro de _products

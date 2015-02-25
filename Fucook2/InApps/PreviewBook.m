@@ -10,17 +10,33 @@
 #import "ReceitaCell.h"
 #import "UIImageView+WebCache.h"
 #import "ReceitaVisualizar.h"
+#import <StoreKit/StoreKit.h>
+#import "FucookIAPHelper.h"
+#import "WebServiceSender.h"
+#import "MBProgressHUD.h"
+#import "NSData+Base64.h"
+#import "ObjectIngrediente.h"
+#import "ObjectDirections.h"
+#import "ShareFucook.h"
+#import <Social/Social.h>
 
 @interface PreviewBook ()
+{
+
+   WebServiceSender * comparLivro;
+    
+    MBProgressHUD *HUD;
+    
+}
 
 @end
 
 @implementation PreviewBook
 
+@synthesize products, context;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     
     
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
@@ -33,14 +49,41 @@
     
     [self.tabela setContentInset:UIEdgeInsetsMake(70, 0, 4, 0)];
     
+    /* bt search */
+    
+    // tenho de verificar se este livro pode ser partilhado ou nao
+    // se der para ser partilhado entao tenho de fazer o cenas das partilhas aqui tbm
+    
+    
+    
+     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 60, 32)];
+    
+    if (self.livro.partilha == 0) {
+        [button addTarget:self action:@selector(comprarItem) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"btnbuy2"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [button addTarget:self action:@selector(partilharFacebook:) forControlEvents:UIControlEventTouchUpInside];
+        [button setImage:[UIImage imageNamed:@"btnunlock"] forState:UIControlStateNormal];
+    }
+    
+    
+     
+     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+     //self.navigationItem.rightBarButtonItem = anotherButton;
+     
+     UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+     [negativeSpacer setWidth:-4];
+     
+     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
+    
 }
 
 -(void)actualizarTudo
 {
     [self preencherTabela];
 }
-
-
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -52,16 +95,11 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 -(void)preencherTabela
 {
@@ -160,6 +198,268 @@
     }
 
 }
+
+-(void)comprarItem
+{
+    // aqui tenho de encontrar o produto dentro de _products
+    // se conseguir encontrar entao faço a compra, senao considero que nao preciso de adicionar as inApps
+    
+    
+    for (SKProduct * prod in products)
+    {
+        if ([prod.productIdentifier isEqualToString:self.livro.id_inapps])
+        {
+            NSLog(@"Buying %@...", prod.productIdentifier);
+            [FucookIAPHelper sharedInstance].delegate = self;
+            [[FucookIAPHelper sharedInstance] buyProduct:prod];
+            
+            
+        }
+        
+    }
+    
+}
+
+-(void)adicionarLivro
+{
+    /*
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(comprarLivro:) withObject:self.livro];
+    }
+    */
+    [self comprarLivro:self.livro];
+}
+
+-(void)comprarLivro:(ObjectLivro *)Livro
+{
+    
+    
+    // tenho de pegar no livro de adicionar ao core data do utilizador :!
+    
+    // antes de adicionar o livro tenho de ir ao coredata verificar se este livro já lá existe e se sim nao posso adicionar de novo
+    if ([self ExisteLivro:Livro])
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Ups" message:@"You alredy have this book" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }else
+    {
+        //[Livro AddToCoreData:context];
+        // apesar de dizer get all books no webservice na realidade ele so busca 1... lol
+        comparLivro = [[WebServiceSender alloc] initWithUrl:@"http://www.fucook.com/webservices/get_all_books.php" method:@"" tag:2];
+        comparLivro.delegate = self;
+        
+        NSMutableDictionary * dict = [NSMutableDictionary new];
+        [dict setObject:Livro.id_livro forKey:@"id_livro"];
+        
+        [comparLivro sendDict:dict];
+        
+        
+        
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        
+        HUD.delegate = self;
+        HUD.labelText = @"Loading";
+        
+        [HUD show:YES];
+        
+    }
+    
+}
+
+-(BOOL)ExisteLivro:(ObjectLivro *)livro
+{
+    BOOL existe = NO;
+    
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Livros"];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_livro = %@", livro.id_livro];
+    [fetch setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *results = [context executeFetchRequest:fetch error:&error];
+    if(results) {
+        NSLog(@"Entities with that name: %@", results);
+        for(NSManagedObject *p in results) {
+            existe = YES;
+        }
+    } else {
+        NSLog(@"Error: %@", error);
+    }
+    
+    return existe;
+}
+
+-(void)sendCompleteWithResult:(NSDictionary*)result withError:(NSError*)error
+{
+    
+    if (!error)
+    {
+        int tag=[WebServiceSender getTagFromWebServiceSenderDict:result];
+        switch (tag)
+        {
+            
+            case 2:
+            {
+                NSLog(@"resultado da lista de inApps  =>  %@", result.description);
+                
+                NSMutableArray *  array_livros = [NSMutableArray new];
+                
+                for (NSMutableDictionary * dictLivro in [result objectForKey:@"res"])
+                {
+                    ObjectLivro * livro = [ObjectLivro new];
+                    
+                    livro.titulo            = [dictLivro objectForKey:@"nome_livro"];
+                    livro.descricao         = [dictLivro objectForKey:@"descricao_livro"];
+                    livro.id_inapps         = [dictLivro objectForKey:@"id_inapp"];
+                    livro.partilha          = [[dictLivro objectForKey:@"partilha"] intValue];
+                    livro.id_livro          = [dictLivro objectForKey:@"id_livro"];
+                    livro.comprado          = NO;
+                    
+                    NSManagedObject *managedImagem = [NSEntityDescription
+                                                      insertNewObjectForEntityForName:@"Imagens"
+                                                      inManagedObjectContext:context];
+                    
+                    // tenho de transformar o bsse64 em imagem
+                    NSString * strData = [dictLivro objectForKey:@"foto_livro"];
+                    
+                    NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
+                    
+                    //Now data is decoded. You can convert them to UIImage
+                    //UIImage *image = [UIImage imageWithData:data];
+                    
+                    [managedImagem setValue:data forKey:@"imagem"];
+                    
+                    livro.managedImagem = managedImagem;
+                    
+                    
+                    // agora tenho de ir buscar as receitas e colocalas dentro do livro
+                    
+                    NSMutableArray * arrayReceitas = [NSMutableArray new];
+                    
+                    for (NSMutableDictionary * dictRec in [dictLivro objectForKey:@"receitas"])
+                    {
+                        ObjectReceita * receita     = [ObjectReceita new];
+                        receita.nome                = [dictRec objectForKey:@"nome_receita"];
+                        receita.categoria           = [dictRec objectForKey:@"categoria"];
+                        receita.dificuldade         = [dictRec objectForKey:@"dificuldade"];
+                        receita.notas               = [dictRec objectForKey:@"notas"];
+                        receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
+                        receita.tempo               = [dictRec objectForKey:@"tempo"];
+                        
+                        NSManagedObject *managedImagem = [NSEntityDescription
+                                                          insertNewObjectForEntityForName:@"Imagens"
+                                                          inManagedObjectContext:context];
+                        NSString * strData = [dictRec objectForKey:@"foto_receita"];
+                        NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
+                        [managedImagem setValue:data forKey:@"imagem"];
+                        
+                        receita.managedImagem = managedImagem;
+                        
+                        
+                        // agora tenho de ir buscar as etapas e os ingredientes
+                        NSMutableArray * arrayIngredientes = [NSMutableArray new];
+                        
+                        for (NSMutableDictionary * dictIngre in [dictRec objectForKey:@"ingredientes"])
+                        {
+                            ObjectIngrediente * ingrediente = [ObjectIngrediente new];
+                            ingrediente.nome                = [dictIngre objectForKey:@"nome_ingrediente"];
+                            ingrediente.quantidadeDecimal   = @"";
+                            ingrediente.quantidade          = [dictIngre objectForKey:@"quantidade"];
+                            ingrediente.unidade             = [dictIngre objectForKey:@"unidade"];
+                            
+                            [arrayIngredientes addObject:[ingrediente getManagedObject:context]];
+                        }
+                        
+                        
+                        // para a parte das direcções/etapas
+                        // agora tenho de ir buscar as etapas e os ingredientes
+                        NSMutableArray * arrayEtapas = [NSMutableArray new];
+                        
+                        for (NSMutableDictionary * dictEtap in [dictRec objectForKey:@"etapas"])
+                        {
+                            ObjectDirections * direction    = [ObjectDirections new];
+                            direction.descricao             = [dictEtap objectForKey:@"descricao"];
+                            direction.passo                 = [[dictEtap objectForKey:@"ordem"] intValue];
+                            direction.tempoMinutos          = [[dictEtap objectForKey:@"tempo_etapa"] intValue];
+                            
+                            [arrayEtapas addObject:[direction getManagedObject:context]];
+                        }
+                        
+                        
+                        
+                        [receita AddToCoreData:context];
+                        
+                        [receita.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayEtapas]] forKey:@"contem_etapas"];
+                        
+                        [receita.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayIngredientes]] forKey:@"contem_ingredientes"];
+                        
+                        [receita.managedObject setValue:receita.managedImagem forKey:@"contem_imagem"];
+                        
+                        receita.livro = livro;
+                        
+                        [arrayReceitas addObject:receita.managedObject];
+                    }
+                    
+                    [livro AddToCoreData:context];
+                    
+                    // este tem de ser o ultimo passo a concluir
+                    [livro.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayReceitas]]  forKey:@"contem_receitas"];
+                    
+                    [livro.managedObject setValue:livro.managedImagem forKey:@"contem_imagem"];
+                    
+                    NSError *error = nil;
+                    if (![context save:&error])
+                    {
+                        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+                        
+                        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Erro" message:@"Cannot buy this book now, try later" delegate:nil cancelButtonTitle:@"ok"   otherButtonTitles:nil, nil];
+                        [alert show];
+                        
+                        return;
+                    }
+                    else{
+                        
+                        //[LoadingaAlert dismissWithClickedButtonIndex:0 animated:YES];
+                        [HUD hide:YES ];
+                        
+                        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Now you own this book" delegate:nil cancelButtonTitle:@"ok"   otherButtonTitles:nil, nil];
+                        //[alert show];
+                    }
+                    
+                    //[self comprarItem:livro];
+                }
+                
+                
+                
+                break;
+            }
+                
+        }
+    }else
+    {
+        NSLog(@"webservice error %@", error.description);
+    }
+}
+
+// tenho de fazer #import <Social/Social.h> para funcionar
+- (IBAction)partilharFacebook:(id)sender {
+    
+    
+    ShareFucook * share = [ShareFucook new];
+    share.delegate = self.delegate;
+    share.livro = self.livro;
+    share.isInInApps = YES;
+    share.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:share animated:YES completion:^{
+        [UIView animateWithDuration:0.2 animations:^{
+            share.viewEscura.alpha = 0.6;
+        }];}];
+    
+}
+
+
+
 
 @end
 

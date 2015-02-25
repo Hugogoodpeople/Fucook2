@@ -19,9 +19,17 @@
 @property NSMutableArray * items;
 @property NSMutableArray * imagens;
 
+@property (nonatomic, assign) id delegate;
+
 
 - (IBAction)clickAddRecipe:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *viewVazia;
+
+// a compra dos livros pelas inApps agora vai ser feito por aqui
+// não foi pensado para ser assim por isso alterações vao ser feitas para acomodar tal ateração
+@property NSArray * products;
+
+@property NSManagedObjectContext * context;
 
 @end

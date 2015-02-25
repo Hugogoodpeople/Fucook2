@@ -17,6 +17,7 @@
 #import "Calendario.h"
 #import "NotesViewer.h"
 #import "ShareFucook.h"
+#import "UIImage+ImageEffects.h"
 
 @interface ReceitaVisualizar ()
 {
@@ -25,6 +26,10 @@
     DirectionsHeader        * dirHeaderCell;
     NSManagedObjectContext  * context ;
     float largura;
+    
+    
+    UIImageView *blurredBgImage;
+    UIView *blurMask;
 }
 
 @property NSMutableArray * shopingCart;
@@ -148,7 +153,9 @@
     if (data)
         header.imagem = [UIImage imageWithData:data];
     else
+    {
         header.imagem = [UIImage imageNamed:@"imgsample.png"];
+    }
     
     // afinal nao o posso colocar dentro da tabela :( e tbm tenho de alterar o contentinsent para ajustar a nova posição do cenas
     //self.tabela.tableHeaderView = header.view;
@@ -168,9 +175,27 @@
     [self setUpDirections];
     // para ter a certeza que todos já executaram tenho de fazer um de cada vez
     
+
+    
+  
+    
 }
 
+- (UIImage *)takeSnapshotOfView:(UIView *)view
+{
+    CGFloat reductionFactor = 1;
+    UIGraphicsBeginImageContext(CGSizeMake(view.frame.size.width/reductionFactor, view.frame.size.height/reductionFactor));
+    [view drawViewHierarchyInRect:CGRectMake(0, 0, view.frame.size.width/reductionFactor, view.frame.size.height/reductionFactor) afterScreenUpdates:YES];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
 
+- (UIImage *)blurWithImageEffects:(UIImage *)image
+{
+    return [image applyBlurWithRadius:30 tintColor:[UIColor colorWithWhite:1 alpha:0.2] saturationDeltaFactor:1.5 maskImage:nil];
+}
 
 -(void)setUpDirections
 {

@@ -87,7 +87,7 @@
 {
     NSLog(@"clicar %@", self.labelTempo.text);
     // tenho de verificar se está escrito Set timer
-    if ([self.labelTempo.text isEqualToString:@"Set timer"])
+    if ([self.tempo isEqualToString:@"Set timer"])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:@"This recipe has no time" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         
@@ -96,7 +96,7 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:[NSString stringWithFormat: @"You want to create an alarm to %@ from now?", self.labelTempo.text ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:[NSString stringWithFormat: @"You want to create an alarm to %@ from now?", self.tempo ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
         alert.tag = 1;
         
         [alert show];
@@ -149,7 +149,7 @@
 -(void)chamarNotificacao
 {
     
-    NSString *stringWithoutMin = [self.labelTempo.text stringByReplacingOccurrencesOfString:@"min" withString:@""];
+    NSString *stringWithoutMin = [self.tempo stringByReplacingOccurrencesOfString:@"min" withString:@""];
     
     int tempo = [stringWithoutMin intValue];
     
