@@ -79,14 +79,16 @@
     {
         // ok se vier das inApps nao preciso ir buscar nada
         // na verdade precisa de ir buscar ao objecto receito
-        [self initializeShoppingCart];
-        [self setUpIngredientes];
+        [self setUpIngredientesInApps];
+        
+        self.tabela.tableFooterView = nil;
     }
     else
     {
         // como vem do gravado no core data tenho de ler da bd
         [self initializeShoppingCart];
         [self setUpIngredientes];
+        
     }
     
     
@@ -115,6 +117,32 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setUpIngredientesInApps
+{
+    self.items = [NSMutableArray new];
+    // preciso desta cena porque as primeiras celulas deviam ser headers
+    [self.items addObject:[NSNull new]];
+    header = [HeaderIngrediente new];
+    header.dificuldade      = self.receita.dificuldade;
+    header.tempo            = self.receita.tempo;
+    header.nome             = self.receita.nome;
+    header.servings         = self.receita.servings;
+    header.categoria        = self.receita.categoria;
+    header.imagem           = self.receita.imagem;
+    
+    [header.view setFrame:CGRectMake(0, 64, self.view.frame.size.width, header.view.frame.size.height)];
+    [self.tabela addSubview:header.view];
+    
+    UIView * viewDesnecessaria = [[UIView alloc] init];
+    [viewDesnecessaria setFrame:CGRectMake(0, 0, self.view.frame.size.width, header.view.frame.size.height +64)];
+    self.tabela.tableHeaderView = viewDesnecessaria;
+    
+    [self.items addObjectsFromArray:self.receita.arrayIngredientes];
+
+    [self setUpDirectionsInApps];
+    
 }
 
 -(void)setUpIngredientes
@@ -183,6 +211,36 @@
     
 }
 
+-(void)setUpDirectionsInApps
+{
+    self.itemsDirections = [NSMutableArray new];
+    [self.itemsDirections addObject:[NSNull new]];
+    
+    
+    // tenho de trocar o que aqui está por cenas vidas de memoria e não de coredata
+    
+    NSMutableArray * receitas = self.receita.arrayEtapas;
+    
+    
+    NSArray *sortedArray;
+    sortedArray = [receitas sortedArrayUsingSelector:@selector(compare:)];
+    
+    [self.itemsDirections addObjectsFromArray: sortedArray];
+    
+    
+    [self.tabela reloadData];
+    
+    if(self.isFromInApps)
+    {
+        
+        AvisoComprar * aviso = [AvisoComprar new];
+        [aviso.view setFrame:CGRectMake(0, 470, self.tabela.frame.size.width -20, 200)];
+        
+        [self.tabela addSubview:aviso.view];
+    }
+    [self.tabela addSubview:header.view];
+    
+}
 
 -(void)setUpDirections
 {
@@ -395,8 +453,9 @@
         
         // tenho de mudar os valores da quantidade do ingrediente antes de gravar
         
-        if ([header.labelNumberServings.text floatValue] != [self.receita.servings floatValue]) {
-            float calculado = ([ingrediente.quantidade floatValue] + [ingrediente.quantidadeDecimal floatValue])  * ([header.labelNumberServings.text floatValue] / [self.receita.servings floatValue] );
+        if ([header.labelNumberServings.text floatValue] != [self.receita.servings floatValue])
+        {
+            float calculado = ([ingrediente.quantidade floatValue] /*+ [ingrediente.quantidadeDecimal floatValue])  * ([header.labelNumberServings.text floatValue] / [self.receita.servings floatValue] */);
             [listItem setValue:[NSString stringWithFormat:@"%.2f",calculado] forKey:@"quantidade"];
             [listItem setValue:@"" forKey:@"quantidade_decimal"];
             
@@ -633,6 +692,7 @@
         cell.delegate = self;
         cell.isFromInApps = self.isFromInApps;
     
+        if (!self.isFromInApps)
         [cell addRemove: !ing.selecionado];
     
         return cell;
@@ -682,9 +742,6 @@
         return cell;
         
     }
-    
-    
-    
     
     return nil;
 }

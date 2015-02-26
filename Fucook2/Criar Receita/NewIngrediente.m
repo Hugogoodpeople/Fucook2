@@ -149,7 +149,7 @@
     
     //NSInteger row0 = [self.pickerQuant selectedRowInComponent:0];
     //NSInteger row1 = [self.pickerQuant selectedRowInComponent:1];
-    NSInteger row2 = [self.pickerQuant selectedRowInComponent:0];
+    //NSInteger row2 = [self.pickerQuant selectedRowInComponent:0];
     
     //ingrid.quantidade = [arrayQuantidade objectAtIndex:row0];
     ingrid.quantidade = self.textQuant.text;

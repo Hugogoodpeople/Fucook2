@@ -18,7 +18,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 950)];
+    self.title = @"Settings";
+    
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 550)];
+    
+    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
+    [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
+    UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
+    self.navigationItem.leftBarButtonItem = anotherButtonback;
+}
+
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +41,7 @@
 
 /*
 #pragma mark - Navigation
-
+ 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].

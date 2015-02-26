@@ -145,6 +145,9 @@
 		BA1F6D481A9F1B6D004579F4 /* imgbadgetfree2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1F6D441A9F1B6D004579F4 /* imgbadgetfree2@3x.png */; };
 		BA1F6D491A9F1B6D004579F4 /* imgbadgetshare2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1F6D451A9F1B6D004579F4 /* imgbadgetshare2@2x.png */; };
 		BA1F6D4A1A9F1B6D004579F4 /* imgbadgetshare2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1F6D461A9F1B6D004579F4 /* imgbadgetshare2@3x.png */; };
+		BA1F6D501A9F3EB3004579F4 /* icon_app.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1F6D4F1A9F3EB3004579F4 /* icon_app.png */; };
+		BA1F6D531A9F6739004579F4 /* icoshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1F6D511A9F6739004579F4 /* icoshare@2x.png */; };
+		BA1F6D541A9F6739004579F4 /* icoshare@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1F6D521A9F6739004579F4 /* icoshare@3x.png */; };
 		BA24B3DD1A49B19E00D674C2 /* icoshareinsta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3D91A49B19E00D674C2 /* icoshareinsta@2x.png */; };
 		BA24B3DE1A49B19E00D674C2 /* icoshareinsta@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3DA1A49B19E00D674C2 /* icoshareinsta@3x.png */; };
 		BA24B3DF1A49B19E00D674C2 /* icosharepinterest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3DB1A49B19E00D674C2 /* icosharepinterest@2x.png */; };
@@ -573,6 +576,9 @@
 		BA1F6D441A9F1B6D004579F4 /* imgbadgetfree2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgbadgetfree2@3x.png"; sourceTree = "<group>"; };
 		BA1F6D451A9F1B6D004579F4 /* imgbadgetshare2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgbadgetshare2@2x.png"; sourceTree = "<group>"; };
 		BA1F6D461A9F1B6D004579F4 /* imgbadgetshare2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgbadgetshare2@3x.png"; sourceTree = "<group>"; };
+		BA1F6D4F1A9F3EB3004579F4 /* icon_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_app.png; sourceTree = "<group>"; };
+		BA1F6D511A9F6739004579F4 /* icoshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoshare@2x.png"; sourceTree = "<group>"; };
+		BA1F6D521A9F6739004579F4 /* icoshare@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icoshare@3x.png"; sourceTree = "<group>"; };
 		BA24B3D91A49B19E00D674C2 /* icoshareinsta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshareinsta@2x.png"; path = "Fucook2/Imagens/icoshareinsta@2x.png"; sourceTree = "<group>"; };
 		BA24B3DA1A49B19E00D674C2 /* icoshareinsta@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshareinsta@3x.png"; path = "Fucook2/Imagens/icoshareinsta@3x.png"; sourceTree = "<group>"; };
 		BA24B3DB1A49B19E00D674C2 /* icosharepinterest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharepinterest@2x.png"; path = "Fucook2/Imagens/icosharepinterest@2x.png"; sourceTree = "<group>"; };
@@ -1538,6 +1544,9 @@
 		BAFBA2141A3717DD002B2C21 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				BA1F6D511A9F6739004579F4 /* icoshare@2x.png */,
+				BA1F6D521A9F6739004579F4 /* icoshare@3x.png */,
+				BA1F6D4F1A9F3EB3004579F4 /* icon_app.png */,
 				BA1F6D431A9F1B6D004579F4 /* imgbadgetfree2@2x.png */,
 				BA1F6D441A9F1B6D004579F4 /* imgbadgetfree2@3x.png */,
 				BA1F6D451A9F1B6D004579F4 /* imgbadgetshare2@2x.png */,
@@ -1916,6 +1925,7 @@
 				BAFBA2811A371D88002B2C21 /* btnsave2@3x.png in Resources */,
 				BA0082141A374D1A00A7871D /* btntwitter@2x.png in Resources */,
 				BAFBA1561A370767002B2C21 /* NewDirections.xib in Resources */,
+				BA1F6D531A9F6739004579F4 /* icoshare@2x.png in Resources */,
 				BAFBA2741A371A35002B2C21 /* imgbckhome@3x.png in Resources */,
 				BAFBA1EC1A370F14002B2C21 /* IngreTwoOptionsController.xib in Resources */,
 				BAFBA1D81A370E11002B2C21 /* DirectionsCell.xib in Resources */,
@@ -2077,6 +2087,7 @@
 				BA616A1C1A9DE1640077718E /* btnunlock@3x.png in Resources */,
 				BAFECA131A4888B200D0431B /* etiqfree@3x.png in Resources */,
 				BA616A331A9E3D790077718E /* imgframealert@3x.png in Resources */,
+				BA1F6D541A9F6739004579F4 /* icoshare@3x.png in Resources */,
 				BA043C691A9C9E5D00AF9DDE /* imgorder@3x.png in Resources */,
 				BA043C611A9C9D0C00AF9DDE /* icotimercounter@3x.png in Resources */,
 				BA0081E01A371FFD00A7871D /* btnphoto1@3x.png in Resources */,
@@ -2103,6 +2114,7 @@
 				BA06C8C11A499A2B007AE029 /* icoshareface@2x.png in Resources */,
 				BAFBA2681A3717EC002B2C21 /* linedot3@3x.png in Resources */,
 				BA0081F31A371FFD00A7871D /* imglogofucook@2x.png in Resources */,
+				BA1F6D501A9F3EB3004579F4 /* icon_app.png in Resources */,
 				BA1B9D141A3EF35600E1BEA0 /* btleft3@2x.png in Resources */,
 				BA1F6D4A1A9F1B6D004579F4 /* imgbadgetshare2@3x.png in Resources */,
 				BA043CA61A9CE4C100AF9DDE /* imgaddrecipe@3x.png in Resources */,

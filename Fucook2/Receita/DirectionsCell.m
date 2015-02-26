@@ -56,12 +56,17 @@
     
     if (!self.blur && self.isFromInApps) {
         // Configure the view for the selected state
-        UIImageView * imagem = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        UIImageView * imagem = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
         imagem.image = [self blurredSnapshot:self.contentView];
         
-        self.blur = imagem.image;
-        
-        [self.contentView addSubview:imagem];
+        self.blur = imagem;
+        // para remover os toques nos botoes atras
+        self.blur.userInteractionEnabled = YES;
+        [self.contentView addSubview:self.blur];
+    }
+    else
+    {
+        [self.blur setFrame:self.contentView.bounds];
     }
     
 

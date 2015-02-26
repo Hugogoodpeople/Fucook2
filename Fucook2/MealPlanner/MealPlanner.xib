@@ -22,7 +22,7 @@
                 <view contentMode="scaleToFill" id="s0w-nz-zYa">
                     <rect key="frame" x="0.0" y="124" width="320" height="444"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="h7t-wp-NkV" customClass="iCarousel">
                     <rect key="frame" x="0.0" y="65" width="320" height="60"/>

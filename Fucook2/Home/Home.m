@@ -350,7 +350,13 @@
 
 - (IBAction)clickSettings:(id)sender
 {
-    [self presentViewController:[Settings new] animated:YES completion:^{}];
+    // mais uma alteraçã... antes tinha de vir de baixo para cima
+    // agora tem de vir de lado
+    //[self presentViewController:[Settings new] animated:YES completion:^{}];
+    
+    
+    [self.navigationController pushViewController:[Settings new] animated:YES];
+    
 }
 
 #pragma table

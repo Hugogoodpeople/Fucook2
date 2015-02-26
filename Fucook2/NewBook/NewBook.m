@@ -188,55 +188,63 @@
 {
     // é aqui que tenho de ir gravar as cenas que acabei de escrever
     
-    AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
-    NSManagedObjectContext* context = appDelegate.managedObjectContext;
-    
-    if(!self.managedObject)
-    {
-        
-        NSManagedObject *Livro = [NSEntityDescription
-                                  insertNewObjectForEntityForName:@"Livros"
-                                  inManagedObjectContext:context];
-        [Livro setValue:self.txt1.text forKey:@"titulo"];
-        [Livro setValue:self.txt2.text forKey:@"descricao"];
-    
-        NSManagedObject *Imagem = [NSEntityDescription
-                                   insertNewObjectForEntityForName:@"Imagens"
-                                   inManagedObjectContext:context];
-    
-        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.15);
-        [Imagem setValue:imageData forKey:@"imagem"];
-        [Livro setValue:Imagem forKey:@"contem_imagem"];
-        [Livro setValue:[NSNumber numberWithBool:YES] forKey:@"comprado"];
-    
-        [self listarTodosLivros];
-    
-    }else
-    {
-        
-        NSManagedObject *Livro = self.managedObject;
-        
-        [Livro setValue:self.txt1.text forKey:@"titulo"];
-        [Livro setValue:self.txt2.text forKey:@"descricao"];
-        
-        NSManagedObject *Imagem = [NSEntityDescription
-                                   insertNewObjectForEntityForName:@"Imagens"
-                                   inManagedObjectContext:context];
-        
-        
-        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.15);
-        [Imagem setValue:imageData forKey:@"imagem"];
-        [Livro setValue:Imagem forKey:@"contem_imagem"];
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-            NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
-            return;
-        }
-
+    // tenho de fazer uma validação para ver se tem titulo
+    if (self.txt1.text.length == 0) {
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"The book must have title" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
     }
+    else
+    {
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+        AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
+        NSManagedObjectContext* context = appDelegate.managedObjectContext;
+    
+        if(!self.managedObject)
+        {
+        
+            NSManagedObject *Livro = [NSEntityDescription
+                                      insertNewObjectForEntityForName:@"Livros"
+                                      inManagedObjectContext:context];
+            [Livro setValue:self.txt1.text forKey:@"titulo"];
+            [Livro setValue:self.txt2.text forKey:@"descricao"];
+    
+            NSManagedObject *Imagem = [NSEntityDescription
+                                       insertNewObjectForEntityForName:@"Imagens"
+                                       inManagedObjectContext:context];
+    
+            NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.15);
+            [Imagem setValue:imageData forKey:@"imagem"];
+            [Livro setValue:Imagem forKey:@"contem_imagem"];
+            [Livro setValue:[NSNumber numberWithBool:YES] forKey:@"comprado"];
+    
+            [self listarTodosLivros];
+    
+        }else
+        {
+        
+            NSManagedObject *Livro = self.managedObject;
+        
+            [Livro setValue:self.txt1.text forKey:@"titulo"];
+            [Livro setValue:self.txt2.text forKey:@"descricao"];
+        
+            NSManagedObject *Imagem = [NSEntityDescription
+                                       insertNewObjectForEntityForName:@"Imagens"
+                                       inManagedObjectContext:context];
+        
+        
+            NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.15);
+            [Imagem setValue:imageData forKey:@"imagem"];
+            [Livro setValue:Imagem forKey:@"contem_imagem"];
+        
+            NSError *error = nil;
+            if (![context save:&error]) {
+                NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
+                return;
+            }
+
+        }
+    
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 -(void)listarTodosLivros

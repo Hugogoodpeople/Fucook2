@@ -15,7 +15,7 @@
 //@property (weak, nonatomic) IBOutlet UILabel *labelTempo;
 @property (weak, nonatomic) IBOutlet UITextField *labelTempo;
 
-@property UIImage * blur;
+@property UIImageView * blur;
 @property BOOL isFromInApps;
 
 @end

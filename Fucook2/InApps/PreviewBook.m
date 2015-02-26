@@ -322,7 +322,7 @@
             {
                 NSLog(@"resultado da lista de inApps  =>  %@", result.description);
                 
-                NSMutableArray *  array_livros = [NSMutableArray new];
+                //NSMutableArray *  array_livros = [NSMutableArray new];
                 
                 for (NSMutableDictionary * dictLivro in [result objectForKey:@"res"])
                 {

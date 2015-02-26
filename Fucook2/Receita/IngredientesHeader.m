@@ -26,7 +26,7 @@
     
     if (!self.blur && self.isFromInApps){
         // Configure the view for the selected state
-        UIImageView * imagem = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        UIImageView * imagem = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.view.frame.size.height)];
         imagem.image = [self blurredSnapshot:self.view];
         
         self.blur = imagem.image;

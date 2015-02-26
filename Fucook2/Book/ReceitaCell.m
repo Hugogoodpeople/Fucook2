@@ -27,12 +27,8 @@
     [self.contentView addGestureRecognizer:swipeLeft];
     [self.contentView addGestureRecognizer:swipeRight];
     
-    
-    
-    
-    
    
-    
+    /*
     [self.buttonCalendario addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
     [self.buttonCalendario addTarget:self action:@selector(buttonNormal:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -45,10 +41,7 @@
     [self.buttonEdit addTarget:self action:@selector(buttonHighlight:) forControlEvents:UIControlEventTouchDown];
     [self.buttonEdit addTarget:self action:@selector(buttonNormal:) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    
-    
-    
+    */
     
     
 }

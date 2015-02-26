@@ -79,6 +79,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self actualizarTudo];
 }
 
@@ -273,10 +274,10 @@
 {
     NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
     
-    NSManagedObject * temp;
+    //NSManagedObject * temp;
     
     // tenho de ir buscar a receita correcta ao livro para ser apagada
-    NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
+    //NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
     
     
     // porque que eu faço isto aqui??? posso passar directamente o valor e apagar logo

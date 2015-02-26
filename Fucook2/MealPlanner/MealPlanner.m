@@ -545,7 +545,7 @@
     [comp setMonth:mesSeguinte.intValue -1 ];
     
     
-    NSCalendar *c = [NSCalendar currentCalendar];
+    //NSCalendar *c = [NSCalendar currentCalendar];
     NSRange days = [gregorian rangeOfUnit:NSCalendarUnitDay
                            inUnit:NSCalendarUnitMonth
                           forDate:[gregorian dateFromComponents:comp]];

@@ -156,6 +156,11 @@
     headerFinal.labelPre.text       = self.receita.tempo;
     headerFinal.img.image           = [UIImage imageWithData:[self.receita.managedImagem valueForKey:@"imagem"]];
     
+    if (!headerFinal.img.image)
+    {
+        headerFinal.img.image = [UIImage imageNamed:@"imgsample"];
+    }
+    
     [headerFinal.viewPrimeiraVez setFrame:headerFinal.buttonFotoJaExiste.frame];
 
     
