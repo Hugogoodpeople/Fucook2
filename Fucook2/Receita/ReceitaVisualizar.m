@@ -18,6 +18,7 @@
 #import "NotesViewer.h"
 #import "ShareFucook.h"
 #import "UIImage+ImageEffects.h"
+#import "AvisoComprar.h"
 
 @interface ReceitaVisualizar ()
 {
@@ -71,9 +72,22 @@
     dirHeaderCell.isFromInApps = self.isFromInApps;
     [dirHeaderCell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 55)];
     
-    [self initializeShoppingCart];
-    [self setUpIngredientes];
     
+    
+    
+    if(self.isFromInApps)
+    {
+        // ok se vier das inApps nao preciso ir buscar nada
+        // na verdade precisa de ir buscar ao objecto receito
+        [self initializeShoppingCart];
+        [self setUpIngredientes];
+    }
+    else
+    {
+        // como vem do gravado no core data tenho de ler da bd
+        [self initializeShoppingCart];
+        [self setUpIngredientes];
+    }
     
     
 
@@ -209,8 +223,14 @@
     
     [self.tabela reloadData];
 
+    if(self.isFromInApps)
+    {
     
+        AvisoComprar * aviso = [AvisoComprar new];
+        [aviso.view setFrame:CGRectMake(10, 420, self.tabela.frame.size.width- 20, 200)];
     
+        [self.tabela addSubview:aviso.view];
+    }
     
 }
 

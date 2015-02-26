@@ -42,4 +42,7 @@
 @property BOOL comprada;
 @property BOOL pode;
 
+@property (weak, nonatomic) IBOutlet UIView *viewFree;
+
+
 @end

@@ -139,6 +139,17 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" id="kmc-QF-eBZ">
+                                        <rect key="frame" x="260" y="0.0" width="60" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgbadgetfree2.png" id="hB4-UF-QE4">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -158,9 +169,10 @@
                 <outlet property="labelTitulo" destination="KdZ-rr-1jG" id="ND7-Qx-b3H"/>
                 <outlet property="viewAumentea" destination="7B1-SH-8ce" id="Zfq-kH-G8X"/>
                 <outlet property="viewBotoes" destination="P5w-j1-kfT" id="dQJ-kj-tS3"/>
+                <outlet property="viewFree" destination="kmc-QF-eBZ" id="eZN-0Q-t8f"/>
                 <outlet property="viewMovel" destination="bow-2k-waW" id="Iuq-jf-6F3"/>
             </connections>
-            <point key="canvasLocation" x="496" y="-274.5"/>
+            <point key="canvasLocation" x="305" y="-380.5"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -168,6 +180,7 @@
         <image name="icocarrinho.png" width="20" height="20"/>
         <image name="icodelete.png" width="16" height="20"/>
         <image name="icoedit.png" width="20" height="20"/>
+        <image name="imgbadgetfree2.png" width="64" height="50"/>
         <image name="imgssombralateral.png" width="8" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

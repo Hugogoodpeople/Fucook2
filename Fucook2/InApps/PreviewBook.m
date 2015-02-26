@@ -134,6 +134,15 @@
     
     ObjectReceita * rec = [self.items objectAtIndex:indexPath.row];
     
+    if (![rec.gratis isEqualToString:@"nao"])
+    {
+        cell.viewFree.alpha = 1;
+    }
+    else
+    {
+        cell.viewFree.alpha = 0;
+    }
+    
     cell.labelTitulo.text = rec.nome;
     cell.labelTempo.text = rec.tempo;
     cell.labelCategoria.text = rec.categoria;
@@ -185,18 +194,27 @@
     
     ObjectReceita * receita = [self.items objectAtIndex:indexPath.row];
     
-    //if (![receita.gratis isEqualToString:@"nao"])
+    if (![receita.gratis isEqualToString:@"nao"])
     {
+        ReceitaVisualizar * recietas = [ReceitaVisualizar new];
+        recietas.receita = receita;
+        recietas.isFromInApps = NO;
+        
+        [self.navigationController pushViewController:recietas animated:YES];
+    }
+    else
+    {
+        /*
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"This recipe is not free, to get access you need to buy the book" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+        */
+         
         ReceitaVisualizar * recietas = [ReceitaVisualizar new];
         recietas.receita = receita;
         recietas.isFromInApps = YES;
         
         [self.navigationController pushViewController:recietas animated:YES];
+
     }
-    /*else
-    {
-        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"This recipe is not free, to get access you need to buy the book" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
-    }*/
 
 }
 

@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fucook2/InApps/PreviewBook.m"
-            timestampString = "446575026.25609"
+            timestampString = "446635547.103564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
             landmarkName = "-partilharFacebook:"
             landmarkType = "5">
          </BreakpointContent>
