@@ -19,6 +19,7 @@
 @property NSString * quantidadeDecimal;
 @property NSString * quantidade;
 @property NSString * nutricao;
+@property int   ordem;
 @property BOOL selecionado;
 @property NSManagedObject * managedObject;
 @property NSManagedObject * managedObjectReceita;

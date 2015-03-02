@@ -12,8 +12,8 @@
 #import "JAActionButton.h"
 
 #define kFlagButtonColor        [UIColor colorWithRed:255.0/255.0 green:150.0/255.0 blue:0/255.0 alpha:1]
-#define kMoreButtonColor        [UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1]
-#define kArchiveButtonColor     [UIColor colorWithRed:60.0/255.0 green:112.0/255.0 blue:168/255.0 alpha:1]
+#define kMoreButtonColor        [UIColor colorWithRed:235/255.0 green:95/255.0 blue:80/255.0 alpha:1]
+#define kArchiveButtonColor     [UIColor colorWithRed:149.0/255.0 green:150.0/255.0 blue:145/255.0 alpha:1]
 #define kUnreadButtonColor      [UIColor colorWithRed:0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1]
 
 @interface Directions ()
@@ -64,13 +64,13 @@
 - (NSArray *)rightButtons
 {
     __typeof(self) __weak weakSelf = self;
-    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"Delete" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell)
+    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"  Delete" color:kFlagButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell)
                                {
                                    [cell completePinToTopViewAnimation];
                                    [self rightMostButtonSwipeCompleted:cell];
                                }];
     
-    JAActionButton *button2 = [JAActionButton actionButtonWithTitle:@"Edit" color:kFlagButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+    JAActionButton *button2 = [JAActionButton actionButtonWithTitle:@"Edit" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
         [self editEtapa:cell];
     }];
     

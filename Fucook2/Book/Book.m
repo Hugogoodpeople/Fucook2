@@ -51,7 +51,12 @@
     [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
-    self.navigationItem.leftBarButtonItem = anotherButtonback;
+    //self.navigationItem.leftBarButtonItem = anotherButtonback;
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [negativeSpacer setWidth:15];
+    
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects: anotherButtonback, negativeSpacer,nil];
     
     
     [self.tabela setContentInset:UIEdgeInsetsMake(70, 0, 4, 0)];
@@ -253,7 +258,7 @@
     
     self.receitaAApagar = object;
     
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Delete recipe?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Are you sure you want to delete this recipe?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     
     alert.tag = 1;
     [alert show];

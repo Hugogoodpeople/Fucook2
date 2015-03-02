@@ -84,7 +84,7 @@
     SLComposeViewController *composeController = [SLComposeViewController
                                                   composeViewControllerForServiceType:SLServiceTypeFacebook];
     
-    [composeController setInitialText:@"Just found this great book"];
+    [composeController setInitialText:@"Just found this great recipe's book at "];
     [composeController addImage:self.livro.imagem];
     [composeController addURL: [NSURL URLWithString:
                                 @"http://www.fucook.com"]];
@@ -124,7 +124,7 @@
     SLComposeViewController *composeController = [SLComposeViewController
                                                   composeViewControllerForServiceType:SLServiceTypeTwitter];
     
-    [composeController setInitialText:@"Just found this great book"];
+    [composeController setInitialText:@"Just found this great recipe's book at "];
     [composeController addImage:self.livro.imagem];
     [composeController addURL: [NSURL URLWithString:
                                 @"http://www.fucook.com"]];

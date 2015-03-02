@@ -37,14 +37,21 @@
     self.managedImagem          = imagem;
     self.managedObject   = managedObject;
     
+    NSMutableArray * arrayTempIngs = [NSMutableArray new];
     self.arrayIngredientes = [NSMutableArray new];
     NSSet * inggredientes = [managedObject valueForKey:@"contem_ingredientes"];
     for (NSManagedObject * managedIng in inggredientes)
     {
         ObjectIngrediente * ing = [ObjectIngrediente new];
         [ing setTheManagedObject:managedIng];
-        [self.arrayIngredientes addObject:ing];
+        [arrayTempIngs addObject:ing];
     }
+    
+    NSArray *sortedArrayIngs;
+    sortedArrayIngs = [arrayTempIngs sortedArrayUsingSelector:@selector(compare:)];
+    
+    self.arrayIngredientes = [NSMutableArray new];
+    [self.arrayIngredientes addObjectsFromArray:sortedArrayIngs];
     
     NSMutableArray * arrayTemp = [NSMutableArray new];
     NSSet * etapas = [managedObject valueForKey:@"contem_etapas"];
@@ -62,6 +69,8 @@
     [self.arrayEtapas addObjectsFromArray: sortedArray];
     
 }
+
+
 
 - (NSComparisonResult)compare:(ObjectReceita *)otherObject
 {

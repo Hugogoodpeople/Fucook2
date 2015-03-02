@@ -18,4 +18,6 @@
 @property UIImageView * blur;
 @property BOOL isFromInApps;
 
+@property NSString * tempo;
+
 @end

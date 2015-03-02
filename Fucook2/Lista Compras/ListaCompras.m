@@ -216,7 +216,7 @@
 - (NSArray *)rightButtons
 {
     __typeof(self) __weak weakSelf = self;
-    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"Added" color:kMoreButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"  Added" color:kMoreButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
         //[cell completePinToTopViewAnimation];
         [weakSelf rightMostButtonSwipeCompleted:cell];
         NSLog(@"Right Button: Archive Pressed");
@@ -689,9 +689,9 @@
 -(void)sendMail:(id)sender{
     mailComposer = [[MFMailComposeViewController alloc]init];
     mailComposer.mailComposeDelegate = self;
-    [mailComposer setSubject:@"Fuccok list"];
+    [mailComposer setSubject:@"Fucook list"];
     
-    NSString * stringEnviar = [NSString stringWithFormat:@"<h3>List of ingredientes to send</h3><br><h5>%@</h5>", [self listarIngredientes]];
+    NSString * stringEnviar = [NSString stringWithFormat:@"<h5>I´m wondering if you could pick up a few things</h5><br><h6>%@</h6>", [self listarIngredientes]];
     
     [mailComposer setMessageBody:stringEnviar isHTML:YES];
     

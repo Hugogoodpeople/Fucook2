@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Agenda" syncable="YES">
         <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="data" optional="YES" attributeType="Date" syncable="YES"/>
@@ -22,6 +22,7 @@
         <attribute name="id_receita" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nutricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ordem" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantidade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantidade_decimal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unidade" optional="YES" attributeType="String" syncable="YES"/>
@@ -86,7 +87,7 @@
         <element name="Agenda" positionX="-153" positionY="186" width="128" height="120"/>
         <element name="Etapas" positionX="-632" positionY="24" width="128" height="120"/>
         <element name="Imagens" positionX="-731" positionY="-141" width="128" height="60"/>
-        <element name="Ingredientes" positionX="-794" positionY="165" width="128" height="150"/>
+        <element name="Ingredientes" positionX="-794" positionY="165" width="128" height="163"/>
         <element name="Livros" positionX="-416" positionY="-171" width="128" height="163"/>
         <element name="Nota" positionX="-621" positionY="276" width="128" height="75"/>
         <element name="Nutricao" positionX="-74" positionY="-147" width="128" height="255"/>

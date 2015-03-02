@@ -635,7 +635,7 @@
         self.imgCat1.image = [UIImage imageNamed:@"icoremove"];
     }else
     {
-        self.imgCat1.image = [UIImage imageNamed:@"btnmore"];
+        self.imgCat1.image = [UIImage imageNamed:@"icoadd"];
     }
 }
 
@@ -647,7 +647,7 @@
         self.imgCat2.image = [UIImage imageNamed:@"icoremove"];
     }else
     {
-        self.imgCat2.image = [UIImage imageNamed:@"btnmore"];
+        self.imgCat2.image = [UIImage imageNamed:@"icoadd"];
     }
 }
 
@@ -659,7 +659,7 @@
         self.imgCat3.image = [UIImage imageNamed:@"icoremove"];
     }else
     {
-        self.imgCat3.image = [UIImage imageNamed:@"btnmore"];
+        self.imgCat3.image = [UIImage imageNamed:@"icoadd"];
     }
 }
 
@@ -671,7 +671,7 @@
         self.imgCat4.image = [UIImage imageNamed:@"icoremove"];
     }else
     {
-        self.imgCat4.image = [UIImage imageNamed:@"btnmore"];
+        self.imgCat4.image = [UIImage imageNamed:@"icoadd"];
     }
 }
 

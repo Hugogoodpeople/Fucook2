@@ -50,22 +50,28 @@
     
 }
 
-- (IBAction)clckServings:(id)sender {
+-(void)clickservings
+{
     
     if (self.servingdOpen)
         [UIView animateWithDuration:0.5 animations:^{
-            [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height - self.pickerServings.frame.size.height)];
+            //[self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - self.pickerServings.frame.size.height)];
+            [self.pickerServings setFrame:CGRectMake(0, 175, self.view.frame.size.width, 162)];
         }];
     else
         [UIView animateWithDuration:0.5 animations:^{
-            [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height + self.pickerServings.frame.size.height)];
+            //[self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height + self.pickerServings.frame.size.height)];
+            [self.pickerServings setFrame:CGRectMake(0, 300, self.view.frame.size.width, 162)];
+
         }];
     
+    /*
     if (self.delegate)
     {
         [self.delegate performSelector:@selector(callPikerServings) withObject:nil afterDelay:0.0];
     }
-    
+    */
+     
     self.servingdOpen = !self.servingdOpen;
 }
 
@@ -89,14 +95,14 @@
     // tenho de verificar se está escrito Set timer
     if ([self.tempo isEqualToString:@"Set timer"])
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:@"This recipe has no time" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:@"This recipe doesn't have a preparation time set" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         
         
         [alert show];
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:[NSString stringWithFormat: @"You want to create an alarm to %@ from now?", self.tempo ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:[NSString stringWithFormat: @"Do you want to set an alarm to %@ min. from now?", self.tempo ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
         alert.tag = 1;
         
         [alert show];
@@ -148,7 +154,6 @@
 
 -(void)chamarNotificacao
 {
-    
     NSString *stringWithoutMin = [self.tempo stringByReplacingOccurrencesOfString:@"min" withString:@""];
     
     int tempo = [stringWithoutMin intValue];

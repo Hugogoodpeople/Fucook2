@@ -30,7 +30,8 @@
 - (IBAction)btDoneTime:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *textDesc;
 
-@property (weak, nonatomic) IBOutlet UILabel *labelTime;
+//@property (weak, nonatomic) IBOutlet UILabel *labelTime;
+@property (weak, nonatomic) IBOutlet UITextField *labelTime;
 
 @property ObjectDirections * directions;
 

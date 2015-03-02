@@ -10,6 +10,10 @@
 #import "UIImage+ImageEffects.h"
 
 @interface IngredientesHeader ()
+{
+    NSString * servingsNumber;
+    BOOL servingsOpen;
+}
 
 @end
 
@@ -20,6 +24,7 @@
     // Do any additional setup after loading the view from its nib.
     self.lablelPasso.text = self.passo;
     self.labelTempo.text = self.tempo;
+    self.textServings.text = self.passo;
     
     [self adicionarToolBar];
     
@@ -32,6 +37,49 @@
         self.blur = imagem.image;
         
         [self.view addSubview:imagem];
+    }
+    
+    [self addCloseToTextView:self.textServings];
+    
+}
+
+-(void)addCloseToTextView:(UITextField *)textView
+{
+    UIView* numberToolbar = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+    
+    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width -15 -44, 15.5, 44, 44)];
+    [button addTarget:self action:@selector(doneWithTextArea) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"btntecladodown"] forState:UIControlStateNormal];
+    
+    [button setClipsToBounds:NO];
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    // finally do the magic
+    float topInset = 14.0f;
+    anotherButton.imageInsets = UIEdgeInsetsMake(topInset, 0.0f, -topInset, 0.0f);
+    
+    [numberToolbar setBackgroundColor:[UIColor clearColor]];
+    
+    [numberToolbar addSubview:button];
+    
+    //[numberToolbar sizeToFit];
+    textView.inputAccessoryView = numberToolbar;
+    
+}
+
+-(void)doneWithTextArea
+{
+    [self.textServings resignFirstResponder];
+    NSString * coiso = self.textServings.text;
+    
+    if (self.textServings.text.length == 0)
+        self.textServings.text = servingsNumber;
+
+    // tenho de chamar o webservice aqui para actualizar o cenas do outro lado
+    if(self.delegate)
+    {
+        [self.delegate performSelector:@selector(actualizarServings)];
     }
     
 }
@@ -52,7 +100,7 @@
     return blurredSnapshotImage;
 }
 
-- (UIImage *) imageWithView:(UIView *)view
+- (UIImage *)imageWithView:(UIView *)view
 {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -167,4 +215,28 @@
 }
 
 
+- (IBAction)clickServings:(id)sender
+{
+    servingsNumber = self.textServings.text;
+    if (!servingsOpen)
+    {
+        
+        [self.textServings becomeFirstResponder];
+        [self.textServings setText:@""];
+    }
+    else
+    {
+        if (![self.textServings.text isEqualToString:servingsNumber] || self.textServings.text.length == 0)
+            self.textServings.text = servingsNumber;
+        [self.textServings resignFirstResponder];
+        
+        // tenho de chamar o webservice aqui para actualizar o cenas do outro lado
+        if(self.delegate)
+        {
+            [self.delegate performSelector:@selector(actualizarServings)];
+        }
+
+    }
+    servingsOpen = !servingsOpen;
+}
 @end

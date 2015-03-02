@@ -32,11 +32,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.title = @"Calendar";
+    
     [self setUp];
     
     calendar = [[VRGCalendarView alloc] init];
     calendar.delegate=self;
     [self.container addSubview:calendar];
+    
+    
+    UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
+    [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
+    
+    UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
+    self.navigationItem.leftBarButtonItem = anotherButtonback;
+}
+
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -236,6 +251,10 @@
             NSLog(@"Gravado com sucesso");
         }
         
+        if (self.delegate) {
+            [self.delegate performSelector:@selector(recarregarTudo) ];
+        }
+        
         [self.navigationController popViewControllerAnimated:YES];
     }
     
@@ -270,6 +289,9 @@
             else
             {
                 NSLog(@"Gravado com sucesso");
+            }
+            if (self.delegate) {
+                [self.delegate performSelector:@selector(recarregarTudo) ];
             }
             
             [self.navigationController popViewControllerAnimated:YES];

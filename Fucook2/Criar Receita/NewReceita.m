@@ -79,7 +79,7 @@
     // tenho de perguntar ao utilizadro se quer gravar ou não quando as cenas foram alteradas
     if (foiAlterado)
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"changes were made, you want to save changes ?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Do you want to save changes you made?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         alert.tag = 2;
         [alert show];
     }else
@@ -110,14 +110,14 @@
     // para ir para o fundo
     [self scrollTotopPosition:ingre.view];
 
-    
     foiAlterado = YES;
+    ingr.ordem = (int)arrayIngredientes.count +1;
     [arrayIngredientes addObject:ingr];
     [self actualizarPosicoes];
     
-    }
+}
 
--(void)AdicionarDirections:(ObjectDirections *) direct
+-(void)AdicionarDirections:(ObjectDirections *)direct
 {
     // para ir para o fundo
     [self scrollTotopPosition:dir.view];

@@ -13,6 +13,7 @@
 
 
 
+
 -(UIImage *)blurredSnapshot:(UIView *)view
 {
     
@@ -101,6 +102,8 @@
 // para as notificações locais tenho de ir buscar a label do tempo
 - (IBAction)setNotification:(UIButton *)sender
 {
+   
+    self.tempo = self.labelTempo.text;
     
     NSLog(@"clicar %@", self.labelTempo.text);
     // tenho de verificar se está escrito Set timer
@@ -111,7 +114,7 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:[NSString stringWithFormat: @"You want to create an alarm to %@ from now?", self.labelTempo.text ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:[NSString stringWithFormat: @"Do you want to set an alarm to %@ min. from now?", self.labelTempo.text ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
         alert.tag = 1;
         
         [alert show];
@@ -129,7 +132,7 @@
         else
         {
             NSLog(@"User cancelou notificação");
-            self.labelTempo.text = @"Set timer";
+            self.labelTempo.text = self.tempo;
         }
     }
 }

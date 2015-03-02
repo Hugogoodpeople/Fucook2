@@ -27,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [FucookIAPHelper sharedInstance];
+    
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
@@ -49,6 +49,9 @@
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:cenas];
     [nav.view setFrame:[[UIScreen mainScreen] bounds] ];
     
+    
+    // os titulos agora são a preto
+    /*
     [nav.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIFont fontWithName:@"HelveticaNeue-Medium" size:17],
@@ -56,6 +59,9 @@
       [UIColor colorWithRed:149.0/255.0 green:150.0/255.0 blue:145.0/255.0 alpha:1],
       NSForegroundColorAttributeName,
       nil]];
+     */
+
+    
     
     [self.window makeKeyAndVisible];
     
@@ -89,13 +95,23 @@
     UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
     
-    
+    [self buscarIdsInApps];
     
     
     return YES;
 }
 
-
+-(void)buscarIdsInApps
+{
+    // http://fucook.com/webservices/get_inapps_ids.php
+    
+    listaIdsInApps = [[WebServiceSender alloc] initWithUrl:@"http://fucook.com/webservices/get_inapps_ids.php" method:@"" tag:1];
+    listaIdsInApps.delegate = self;
+    
+    NSMutableDictionary * dict = [NSMutableDictionary new];
+    
+    [listaIdsInApps sendDict:dict];
+}
 
 + (AppDelegate *)sharedAppDelegate
 {
@@ -227,5 +243,40 @@
     [application registerForRemoteNotifications];
 }
 #endif
+
+
+-(void)sendCompleteWithResult:(NSDictionary*)result withError:(NSError*)error
+{
+    
+    if (!error)
+    {
+        int tag=[WebServiceSender getTagFromWebServiceSenderDict:result];
+        switch (tag)
+        {
+            case 1:
+            {
+                NSLog(@"resultado da lista de ids das inApps  =>  %@", result.description);
+                
+                NSMutableArray * inapps = [NSMutableArray new];
+                for (NSMutableDictionary * idIn in [result objectForKey:@"res"])
+                {
+                    [inapps addObject:[idIn objectForKey:@"id_inapp"]];
+                }
+                
+                [Globals setArrayInApps:inapps];
+                
+                [FucookIAPHelper sharedInstance];
+                
+                break;
+            }
+           
+                
+        }
+    }else
+    {
+        NSLog(@"webservice error %@", error.description);
+    }
+}
+
 
 @end

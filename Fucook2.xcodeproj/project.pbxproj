@@ -133,6 +133,8 @@
 		BA06C8C41A499A2B007AE029 /* icosharetwitter@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA06C8C01A499A2B007AE029 /* icosharetwitter@3x.png */; };
 		BA07EAE71A3B654E0087B44E /* solid231.png in Resources */ = {isa = PBXBuildFile; fileRef = BA07EAE61A3B654E0087B44E /* solid231.png */; };
 		BA07EAE91A3B671B0087B44E /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA07EAE81A3B671B0087B44E /* Images-2.xcassets */; };
+		BA12A5BD1AA0DE03000D0EA3 /* UnidadeMedida.m in Sources */ = {isa = PBXBuildFile; fileRef = BA12A5BB1AA0DE03000D0EA3 /* UnidadeMedida.m */; };
+		BA12A5BE1AA0DE03000D0EA3 /* UnidadeMedida.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA12A5BC1AA0DE03000D0EA3 /* UnidadeMedida.xib */; };
 		BA1B9D041A3EF1A200E1BEA0 /* MealPlanerTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1B9D021A3EF1A200E1BEA0 /* MealPlanerTable.m */; };
 		BA1B9D051A3EF1A200E1BEA0 /* MealPlanerTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D031A3EF1A200E1BEA0 /* MealPlanerTable.xib */; };
 		BA1B9D101A3EF32300E1BEA0 /* btright3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1B9D0E1A3EF32300E1BEA0 /* btright3@2x.png */; };
@@ -154,6 +156,8 @@
 		BA24B3E01A49B19E00D674C2 /* icosharepinterest@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3DC1A49B19E00D674C2 /* icosharepinterest@3x.png */; };
 		BA24B3E91A49D50300D674C2 /* Pinterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA24B3E61A49D50300D674C2 /* Pinterest.framework */; };
 		BA24B3EA1A49D50300D674C2 /* PinterestSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */; };
+		BA6110FE1AA4C87700D3777E /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6110FC1AA4C87700D3777E /* WebView.m */; };
+		BA6110FF1AA4C87700D3777E /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6110FD1AA4C87700D3777E /* WebView.xib */; };
 		BA616A171A9DCDD90077718E /* btnbuy2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA616A151A9DCDD90077718E /* btnbuy2@2x.png */; };
 		BA616A181A9DCDD90077718E /* btnbuy2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA616A161A9DCDD90077718E /* btnbuy2@3x.png */; };
 		BA616A1B1A9DE1640077718E /* btnunlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA616A191A9DE1640077718E /* btnunlock@2x.png */; };
@@ -563,6 +567,9 @@
 		BA06C8C01A499A2B007AE029 /* icosharetwitter@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharetwitter@3x.png"; path = "Fucook2/Imagens/icosharetwitter@3x.png"; sourceTree = "<group>"; };
 		BA07EAE61A3B654E0087B44E /* solid231.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = solid231.png; path = Fucook2/Imagens/solid231.png; sourceTree = "<group>"; };
 		BA07EAE81A3B671B0087B44E /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		BA12A5BA1AA0DE03000D0EA3 /* UnidadeMedida.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnidadeMedida.h; path = "Settings/Unidade Medida/UnidadeMedida.h"; sourceTree = "<group>"; };
+		BA12A5BB1AA0DE03000D0EA3 /* UnidadeMedida.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnidadeMedida.m; path = "Settings/Unidade Medida/UnidadeMedida.m"; sourceTree = "<group>"; };
+		BA12A5BC1AA0DE03000D0EA3 /* UnidadeMedida.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UnidadeMedida.xib; path = "Settings/Unidade Medida/UnidadeMedida.xib"; sourceTree = "<group>"; };
 		BA1B9D011A3EF1A200E1BEA0 /* MealPlanerTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealPlanerTable.h; path = MealPlanner/MealPlanerTable.h; sourceTree = "<group>"; };
 		BA1B9D021A3EF1A200E1BEA0 /* MealPlanerTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealPlanerTable.m; path = MealPlanner/MealPlanerTable.m; sourceTree = "<group>"; };
 		BA1B9D031A3EF1A200E1BEA0 /* MealPlanerTable.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MealPlanerTable.xib; path = MealPlanner/MealPlanerTable.xib; sourceTree = "<group>"; };
@@ -585,6 +592,9 @@
 		BA24B3DC1A49B19E00D674C2 /* icosharepinterest@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharepinterest@3x.png"; path = "Fucook2/Imagens/icosharepinterest@3x.png"; sourceTree = "<group>"; };
 		BA24B3E61A49D50300D674C2 /* Pinterest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pinterest.framework; sourceTree = "<group>"; };
 		BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PinterestSDKResources.bundle; sourceTree = "<group>"; };
+		BA6110FB1AA4C87700D3777E /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebView.h; path = webView/WebView.h; sourceTree = "<group>"; };
+		BA6110FC1AA4C87700D3777E /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebView.m; path = webView/WebView.m; sourceTree = "<group>"; };
+		BA6110FD1AA4C87700D3777E /* WebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebView.xib; path = webView/WebView.xib; sourceTree = "<group>"; };
 		BA616A151A9DCDD90077718E /* btnbuy2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnbuy2@2x.png"; sourceTree = "<group>"; };
 		BA616A161A9DCDD90077718E /* btnbuy2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnbuy2@3x.png"; sourceTree = "<group>"; };
 		BA616A191A9DE1640077718E /* btnunlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnunlock@2x.png"; sourceTree = "<group>"; };
@@ -1007,6 +1017,16 @@
 			name = "Partilha Facebook Twitter";
 			sourceTree = "<group>";
 		};
+		BA12A5B91AA0DD82000D0EA3 /* Unidade medida */ = {
+			isa = PBXGroup;
+			children = (
+				BA12A5BA1AA0DE03000D0EA3 /* UnidadeMedida.h */,
+				BA12A5BB1AA0DE03000D0EA3 /* UnidadeMedida.m */,
+				BA12A5BC1AA0DE03000D0EA3 /* UnidadeMedida.xib */,
+			);
+			name = "Unidade medida";
+			sourceTree = "<group>";
+		};
 		BA24B3E51A49D50300D674C2 /* Pinterest.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
@@ -1022,6 +1042,16 @@
 				BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BA6110FA1AA4C85A00D3777E /* webView */ = {
+			isa = PBXGroup;
+			children = (
+				BA6110FB1AA4C87700D3777E /* WebView.h */,
+				BA6110FC1AA4C87700D3777E /* WebView.m */,
+				BA6110FD1AA4C87700D3777E /* WebView.xib */,
+			);
+			name = webView;
 			sourceTree = "<group>";
 		};
 		BA616A2B1A9E3C9C0077718E /* compra livro */ = {
@@ -1217,6 +1247,8 @@
 		BAFBA0EB1A36FED8002B2C21 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BA6110FA1AA4C85A00D3777E /* webView */,
+				BA12A5B91AA0DD82000D0EA3 /* Unidade medida */,
 				BAFBA0EC1A36FEEA002B2C21 /* Settings.h */,
 				BAFBA0ED1A36FEEA002B2C21 /* Settings.m */,
 				BAFBA0EE1A36FEEA002B2C21 /* Settings.xib */,
@@ -2017,6 +2049,7 @@
 				BAFBA19B1A370C42002B2C21 /* ListaComprasCell.xib in Resources */,
 				BAFBA2571A3717EC002B2C21 /* imglinedown@2x.png in Resources */,
 				BA0081ED1A371FFD00A7871D /* icorating@2x.png in Resources */,
+				BA6110FF1AA4C87700D3777E /* WebView.xib in Resources */,
 				BA043C5D1A9C9CED00AF9DDE /* icoviewnotes@3x.png in Resources */,
 				BAFBA2671A3717EC002B2C21 /* linedot3@2x.png in Resources */,
 				BAFBA2701A3719AB002B2C21 /* btnsetting2@3x.png in Resources */,
@@ -2170,6 +2203,7 @@
 				BA1B9D051A3EF1A200E1BEA0 /* MealPlanerTable.xib in Resources */,
 				BA043C8E1A9CCC6D00AF9DDE /* icoaddwhite@2x.png in Resources */,
 				BAFEB1681A41E35500DEE4ED /* PreviewBook.xib in Resources */,
+				BA12A5BE1AA0DE03000D0EA3 /* UnidadeMedida.xib in Resources */,
 				BAFCBA331A38C047001EFCE2 /* DirectionsHeader.xib in Resources */,
 				BA07EAE71A3B654E0087B44E /* solid231.png in Resources */,
 				BAFCB9FB1A384D31001EFCE2 /* btnclosenote@3x.png in Resources */,
@@ -2263,6 +2297,7 @@
 				BAFBA0EF1A36FEEA002B2C21 /* Settings.m in Sources */,
 				BAFBA1C81A370D3B002B2C21 /* RATreeView+Private.m in Sources */,
 				BADD4B131A444DF200A30F87 /* SDWebImagePrefetcher.m in Sources */,
+				BA12A5BD1AA0DE03000D0EA3 /* UnidadeMedida.m in Sources */,
 				BADD4B181A444DF200A30F87 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BAFBA1E61A370EDF002B2C21 /* JATableViewCell.m in Sources */,
 				BAFBA1C21A370D3B002B2C21 /* RATreeNode.m in Sources */,
@@ -2279,6 +2314,7 @@
 				BAFBA16D1A3708D5002B2C21 /* ALView+PureLayout.m in Sources */,
 				BAFBA1241A3704C5002B2C21 /* NSDate+convenience.m in Sources */,
 				BAFBA1621A3708B6002B2C21 /* JASwipeCell.m in Sources */,
+				BA6110FE1AA4C87700D3777E /* WebView.m in Sources */,
 				BAFBA1091A37036A002B2C21 /* ObjectReceita.m in Sources */,
 				BA616A2F1A9E3D4B0077718E /* AvisoComprar.m in Sources */,
 				BAFEB1671A41E35500DEE4ED /* PreviewBook.m in Sources */,

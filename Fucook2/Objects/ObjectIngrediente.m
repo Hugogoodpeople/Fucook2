@@ -31,6 +31,7 @@
     [mangIngrediente setValue:self.quantidade forKey:@"quantidade"];
     [mangIngrediente setValue:self.quantidadeDecimal forKey:@"quantidade_decimal"];
     [mangIngrediente setValue:self.unidade forKey:@"unidade"];
+    [mangIngrediente setValue:[NSString stringWithFormat:@"%d", self.ordem] forKey:@"ordem"];
     
     return mangIngrediente;
     
@@ -46,6 +47,7 @@
     [mangIngrediente setValue:self.quantidade forKey:@"quantidade"];
     [mangIngrediente setValue:self.quantidadeDecimal forKey:@"quantidade_decimal"];
     [mangIngrediente setValue:self.unidade forKey:@"unidade"];
+    [mangIngrediente setValue:[NSString stringWithFormat:@"%d", self.ordem] forKey:@"ordem"];
     [mangIngrediente setValue:receita.managedObject forKey:@"pertence_receita"];
     
     return mangIngrediente;
@@ -61,6 +63,16 @@
     self.quantidade             = [managedObject valueForKey:@"quantidade"];
     self.quantidadeDecimal      = [managedObject valueForKey:@"quantidade_decimal"];
     self.unidade                = [managedObject valueForKey:@"unidade"];
+    self.ordem                  = [[managedObject valueForKey:@"ordem"] intValue];
+}
+
+- (NSComparisonResult)compare:(ObjectIngrediente *)otherObject {
+    
+    
+    NSNumber * primeiro = [NSNumber numberWithInt: self.ordem];
+    NSNumber * segundo  = [NSNumber numberWithInt: otherObject.ordem];
+    
+    return [primeiro compare:segundo];
 }
 
 @end

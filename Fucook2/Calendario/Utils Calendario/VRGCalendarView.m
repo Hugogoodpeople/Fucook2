@@ -445,8 +445,9 @@
             // isCurrentMonth = YES;
             targetDate = (i-firstWeekDay)+1;
             NSString *hex = (isSelectedDatePreviousMonth || isSelectedDateNextMonth) ? @"0xaaaaaa" : @"0x383838";
-            CGContextSetFillColorWithColor(context, 
-                                           [UIColor colorWithHexString:hex].CGColor);
+            
+
+            CGContextSetFillColorWithColor(context,[UIColor colorWithHexString:hex].CGColor);
         }
         
         NSString *date = [NSString stringWithFormat:@"%i",targetDate];
@@ -456,7 +457,8 @@
         if (selectedDate && i==selectedDateBlock) {
             CGRect rectangleGrid = CGRectMake(targetX,targetY,(([UIScreen mainScreen].bounds.size.width -36 )/7)+2,kVRGCalendarViewDayHeight+2);
             CGContextAddRect(context, rectangleGrid);
-            CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0x973694"].CGColor);
+            #warning aqui é onde mudo a cor do selecionado
+            CGContextSetFillColorWithColor(context, [UIColor colorWithHexString:@"0xf5aa37"].CGColor);
             CGContextFillPath(context);
             
             CGContextSetFillColorWithColor(context, 

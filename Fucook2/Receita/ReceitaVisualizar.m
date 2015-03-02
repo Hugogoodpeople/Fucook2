@@ -25,7 +25,7 @@
     HeaderIngrediente       * header;
     IngredientesHeader      * ingHeadercell;
     DirectionsHeader        * dirHeaderCell;
-    NSManagedObjectContext  * context ;
+    NSManagedObjectContext  * context;
     float largura;
     
 }
@@ -52,7 +52,13 @@
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
-    self.navigationItem.leftBarButtonItem = anotherButtonback;
+    //self.navigationItem.leftBarButtonItem = anotherButtonback;
+
+    
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    [negativeSpacer setWidth:15];
+    
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects: anotherButtonback, negativeSpacer,nil];
 
     
     
@@ -64,6 +70,7 @@
     
     context = [AppDelegate sharedAppDelegate].managedObjectContext;
     ingHeadercell = [IngredientesHeader new];
+    ingHeadercell.delegate = self;
     ingHeadercell.isFromInApps = self.isFromInApps;
     ingHeadercell.passo = self.receita.servings;
     [ingHeadercell.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, 108)];
@@ -81,14 +88,14 @@
         // na verdade precisa de ir buscar ao objecto receito
         [self setUpIngredientesInApps];
         
-        self.tabela.tableFooterView = nil;
+        
     }
     else
     {
         // como vem do gravado no core data tenho de ler da bd
         [self initializeShoppingCart];
         [self setUpIngredientes];
-        
+        self.tabela.tableFooterView = nil;
     }
     
     
@@ -150,10 +157,11 @@
     // apenas para textes
     self.items = [NSMutableArray new];
     
-    [self.items addObject:[NSNull new]];
+    //[self.items addObject:[NSNull new]];
     
     // tenho de verificar aqui se os ingredientes já estão na shopinglist
     NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_ingredientes"];
+    NSMutableArray * arrayTemp = [NSMutableArray new];
     for (NSManagedObject *pedido in receitas)
     {
         ObjectIngrediente * ingred = [ObjectIngrediente new];
@@ -164,10 +172,17 @@
         ingred.quantidade           = [pedido valueForKey:@"quantidade"];
         ingred.quantidadeDecimal    = [pedido valueForKey:@"quantidade_decimal"];
         ingred.unidade              = [pedido valueForKey:@"unidade"];
+        ingred.ordem                = [[pedido valueForKey:@"ordem"] intValue];
         ingred.selecionado          = [self verificarShoppingList:ingred];
         
-        [self.items addObject:ingred];
+        [arrayTemp addObject:ingred];
     }
+    
+    NSArray *sortedArray;
+    sortedArray = [arrayTemp sortedArrayUsingSelector:@selector(compare:)];
+    self.items = [NSMutableArray arrayWithArray:sortedArray];
+    
+    [self.items insertObject:[NSNull new] atIndex:0];
     
     header = [HeaderIngrediente new];
     header.delegate = self;
@@ -234,7 +249,7 @@
     {
         
         AvisoComprar * aviso = [AvisoComprar new];
-        [aviso.view setFrame:CGRectMake(0, 470, self.tabela.frame.size.width -20, 200)];
+        [aviso.view setFrame:CGRectMake(0, 570, self.tabela.frame.size.width -20, 486)];
         
         [self.tabela addSubview:aviso.view];
     }
@@ -285,7 +300,7 @@
     {
     
         AvisoComprar * aviso = [AvisoComprar new];
-        [aviso.view setFrame:CGRectMake(10, 420, self.tabela.frame.size.width- 20, 200)];
+        [aviso.view setFrame:CGRectMake(10, 580, self.tabela.frame.size.width- 20, 486)];
     
         [self.tabela addSubview:aviso.view];
     }
@@ -410,6 +425,15 @@
     // quando for salvar os ingredientes tenho de ter em conta a quantidade de servings que tem de mudar os valores na tabela
     // como é que vou mudar os valores na tabela?
     
+    
+    float qtdActual     = [ingrediente.quantidade floatValue];
+    float servingsNovo  = [ingHeadercell.textServings.text floatValue];
+    float servingsAnti  = [self.receita.servings floatValue];
+    
+    
+    float calculado = (qtdActual * servingsNovo)/ servingsAnti ;
+    
+    
     BOOL  podeGravar = YES;
     if (self.shopingCart.count == 0) {
         podeGravar = YES;
@@ -439,30 +463,24 @@
                                      inManagedObjectContext:context];
         
         [listItem setValue:ingrediente.nome forKey:@"nome"];
-        [listItem setValue:ingrediente.quantidade forKey:@"quantidade"];
+        [listItem setValue:[NSString stringWithFormat:@"%g", calculado] forKey:@"quantidade"];
         [listItem setValue:ingrediente.quantidadeDecimal forKey:@"quantidade_decimal"];
         [listItem setValue:ingrediente.unidade forKey:@"unidade"];
         [listItem setValue:self.receita.managedObject forKey:@"pertence_receita"];
         
         ObjectLista * objLista          = [ObjectLista new];
         objLista.nome                   = ingrediente.nome;
-        objLista.quantidade             = ingrediente.quantidade;
+        objLista.quantidade             = [NSString stringWithFormat:@"%g", calculado];
         objLista.quantidade_decimal     = ingrediente.quantidadeDecimal;
         objLista.unidade                = ingrediente.unidade;
         objLista.managedObjectReceita   = self.receita.managedObject;
         
         // tenho de mudar os valores da quantidade do ingrediente antes de gravar
         
-        if ([header.labelNumberServings.text floatValue] != [self.receita.servings floatValue])
-        {
-            float calculado = ([ingrediente.quantidade floatValue] /*+ [ingrediente.quantidadeDecimal floatValue])  * ([header.labelNumberServings.text floatValue] / [self.receita.servings floatValue] */);
-            [listItem setValue:[NSString stringWithFormat:@"%.2f",calculado] forKey:@"quantidade"];
-            [listItem setValue:@"" forKey:@"quantidade_decimal"];
-            
-            objLista.quantidade         = [NSString stringWithFormat:@"%.2f",calculado];
-            objLista.quantidade_decimal = @"";
-            
-        }
+        
+       
+        objLista.quantidade             = [NSString stringWithFormat:@"%g", calculado];
+        
         [self.shopingCart addObject: objLista];
     }
     
@@ -569,6 +587,8 @@
     
     else if (indexPath.row == 0)
     {
+        
+        // quando está fechado tem 108 e aberto tem 270 :)
         return 108;
     }
     
@@ -656,10 +676,11 @@
             if (cell == nil) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier1"];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                
             }
         
             //cell.textLabel.text = @"teste cell";
-            
+            cell.contentView.clipsToBounds = YES;
             [cell.contentView addSubview:ingHeadercell.view];
         
             return cell;
@@ -679,10 +700,13 @@
     
         ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
         
-        NSString *val =[NSString stringWithFormat:@"%@%@%@ %@",ing.quantidade, ing.quantidadeDecimal ,ing.unidade , ing.nome];
+        NSString * quantidade = [self calcularValor:indexPath];
+        
+        
+        NSString *val =[NSString stringWithFormat:@"%@%@ %@",quantidade ,ing.unidade , ing.nome];
         val = [val stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
         
-        val =[NSString stringWithFormat:@" %@", val];
+        val = [NSString stringWithFormat:@" %@", val];
     
         cell.LabelTitulo.text = val;
         cell.ingrediente = ing;
@@ -713,7 +737,6 @@
             return cell;
         }
 
-        
         static NSString *simpleTableIdentifier = @"DirectionsCell";
         
         
@@ -725,10 +748,9 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        
         ObjectDirections * direct = [self.itemsDirections objectAtIndex:indexPath.row];
         
-        cell.labelPasso.text        = [NSString stringWithFormat:@"%dº", indexPath.row ];
+        cell.labelPasso.text        = [NSString stringWithFormat:@"%dº", indexPath.row];
         cell.labelDescricao.text    = direct.descricao;
         if (direct.tempoMinutos == 0)
         {
@@ -737,16 +759,18 @@
         {
             cell.labelTempo.text        = [NSString stringWithFormat:@"%d min", direct.tempoMinutos];
         }
+        
         cell.isFromInApps = self.isFromInApps;
         
         return cell;
-        
+
     }
     
     return nil;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
   
     float Y = scrollView.contentOffset.y;
 
@@ -757,20 +781,33 @@
     {
         [header.view setFrame:CGRectMake(0,  64 , self.view.frame.size.width, header.view.frame.size.height)];
     }
-    
-    
      
     // NSLog(@"Y = %f", Y);
 }
 
 -(NSString *)calcularValor:(NSIndexPath *)indexPath
 {
+    NSString * servings = ingHeadercell.textServings.text;
+    
+    if ( servings.length == 0 )
+    {
+        return @"0";
+    }
+    
     ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
     
-    float calculado = ([ing.quantidade floatValue] + [ing.quantidadeDecimal floatValue])  * ([header.labelNumberServings.text floatValue] / [self.receita.servings floatValue] );
+    float qtdActual     = [ing.quantidade floatValue];
+    float servingsNovo  = [ingHeadercell.textServings.text floatValue];
+    float servingsAnti  = [self.receita.servings floatValue];
+    
+    if (ing.quantidade.floatValue == 0) {
+        return @"";
+    }
+    
+    float calculado = (qtdActual * servingsNovo)/ servingsAnti;
     //ing.quantidade = [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
     
-    return [NSString stringWithFormat:@"%g %@", calculado, ing.unidade];
+    return [NSString stringWithFormat:@"%g", calculado];
 }
 
 
@@ -810,7 +847,7 @@
 
 }
 
-/*
+/* // aqui já não preciso desta parte
 -(UIImage *)blurredSnapshot:(UIView *)view
 {
     
@@ -839,6 +876,21 @@
     return img;
 }
  */
+
+
+-(void)actualizarServings
+{
+    [self.tabela reloadData];
+}
+
+-(void)openCloseServings
+{
+    // tenho de abrir de outra maneira para ficar porreiro pá
+    //[header clickservings];
+    
+    // vou mudar de estratégia, vou colocar o picker dentro da celula e aumentar o tamanho da celula
+    
+}
 
 
 @end

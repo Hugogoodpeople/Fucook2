@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewDirections">
             <connections>
-                <outlet property="labelTime" destination="dff-4c-EGu" id="ZNw-yA-iYt"/>
+                <outlet property="labelTime" destination="ypg-Ml-NOZ" id="ZF5-N1-uKZ"/>
                 <outlet property="pickerView" destination="OUa-co-GmU" id="mXn-vc-pGN"/>
                 <outlet property="scrollDir" destination="0Cs-t1-MgY" id="gHl-ww-84Z"/>
                 <outlet property="textDesc" destination="zIg-DY-V43" id="Zxa-n0-OOK"/>
@@ -75,16 +75,16 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" id="ZYz-Tk-Fk2">
-                            <rect key="frame" x="0.0" y="107" width="320" height="42.999999552965178"/>
+                            <rect key="frame" x="0.0" y="107" width="320" height="43"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dff-4c-EGu">
-                                    <rect key="frame" x="15" y="13" width="290" height="24"/>
-                                    <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Set timer" minimumFontSize="17" id="ypg-Ml-NOZ">
+                                    <rect key="frame" x="15" y="10" width="290" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fyh-GA-pfn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -96,7 +96,7 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" id="Ony-Rx-U58">
-                                    <rect key="frame" x="0.0" y="41.999999552965171" width="320" height="1"/>
+                                    <rect key="frame" x="0.0" y="42" width="320" height="1"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" red="0.7843137255" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
@@ -155,8 +155,15 @@
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="392" y="684"/>
+            <point key="canvasLocation" x="187" y="690"/>
         </view>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dff-4c-EGu">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="24"/>
+            <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="deviceRGB"/>
+            <nil key="highlightedColor"/>
+        </label>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

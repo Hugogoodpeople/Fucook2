@@ -262,16 +262,17 @@
 -(void)apagarLivro:(NSManagedObject*)mo
 {
     managedObject = mo;
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Are you sure you want to delete this recipe book?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Are you sure you want to delete this recipe's book?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     alert.tag = 1;
     [alert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (alertView.tag == 1) {
-        if (buttonIndex == 1) {
-            
+    if (alertView.tag == 1)
+    {
+        if (buttonIndex == 1)
+        {
             
             [context deleteObject:managedObject];
             

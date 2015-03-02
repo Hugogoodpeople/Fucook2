@@ -39,12 +39,17 @@
     [super viewDidLoad];
     
     
+    self.title = self.livro.titulo;
+    
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [buttonback setImage:[UIImage imageNamed:@"btleft1"] forState:UIControlStateNormal];
     
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
-    self.navigationItem.leftBarButtonItem = anotherButtonback;
+    //self.navigationItem.leftBarButtonItem = anotherButtonback;
+    
+    
+    
     
     
     [self.tabela setContentInset:UIEdgeInsetsMake(70, 0, 4, 0)];
@@ -74,9 +79,9 @@
      //self.navigationItem.rightBarButtonItem = anotherButton;
      
      UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-     [negativeSpacer setWidth:-4];
+     [negativeSpacer setWidth:15];
      
-     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer,anotherButton,nil];
+     self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:anotherButtonback,negativeSpacer,anotherButton,negativeSpacer,nil];
     
 }
 

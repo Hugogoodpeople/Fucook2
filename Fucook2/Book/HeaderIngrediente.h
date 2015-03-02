@@ -43,6 +43,6 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *labelAddRemoveAll;
-
+-(void)clickservings;
 
 @end

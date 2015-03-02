@@ -21,5 +21,7 @@
 
 @property NSManagedObject * calendario;
 
+@property (nonatomic , assign) id delegate;
+
 
 @end

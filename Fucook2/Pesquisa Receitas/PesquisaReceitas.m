@@ -50,6 +50,9 @@
     [vazio.view setFrame:self.tabela.frame];
     
     [self.tabela addSubview:vazio.view];
+    
+    [vazio.labelTitulo      setText:@"Start your search."];
+    [vazio.labelDescricao   setText:@"Enter some keywords for the recipe your are looking for."];
 
     
     [self addCloseToTextView:self.searcBar];
@@ -131,6 +134,8 @@
     
     if (pesquisaReceitas.count == 0) {
         [self.tabela addSubview:vazio.view];
+        [vazio.labelTitulo      setText:@"Upss! No results."];
+        [vazio.labelDescricao   setText:@"We didn't find any results for these search. Please try again."];
     }
     else
     {

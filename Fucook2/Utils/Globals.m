@@ -11,6 +11,28 @@
 @implementation Globals
 
 static NSMutableArray *imagensTemp = nil;
+static BOOL imperial;
+static NSMutableArray * arrayInApps = nil;
+
++(void)setArrayInApps:(NSMutableArray *)inApps
+{
+    arrayInApps = inApps;
+}
+
++(NSMutableArray *)getArrayInApps
+{
+    return arrayInApps;
+}
+
++(void)setImperial:(BOOL)verdade
+{
+    imperial = verdade;
+}
+
++(BOOL)getImperial
+{
+    return imperial;
+}
 
 +(void)setimagensTemp:(NSMutableArray *)array
 {

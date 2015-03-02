@@ -19,5 +19,9 @@
 
 @property UIImage * blur;
 @property BOOL isFromInApps;
+- (IBAction)clickServings:(id)sender;
+
+@property (nonatomic, assign) id delegate;
+@property (weak, nonatomic) IBOutlet UITextField *textServings;
 
 @end

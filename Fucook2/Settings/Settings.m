@@ -7,8 +7,15 @@
 //
 
 #import "Settings.h"
+#import "UnidadeMedida.h"
+#import "WebView.h"
+
 
 @interface Settings ()
+{
+    
+    MFMailComposeViewController *mailComposer;
+}
 
 @end
 
@@ -20,7 +27,7 @@
     
     self.title = @"Settings";
     
-    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 550)];
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, 540)];
     
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
@@ -52,4 +59,66 @@
 - (IBAction)clickFechar:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
+- (IBAction)clickSettings:(id)sender {
+    [self.navigationController pushViewController:[UnidadeMedida new] animated:YES];
+}
+
+- (IBAction)clickUserGuide:(id)sender
+{
+    WebView * web = [WebView new];
+    
+    web.titulo = @"User Guide";
+    web.url = @"http://fucook.com";
+    
+    [self.navigationController pushViewController:web animated:YES];
+}
+
+- (IBAction)clickAboutUs:(id)sender
+{
+    WebView * web = [WebView new];
+    
+    web.titulo = @"About us";
+    web.url = @"http://fucook.com/aboutus";
+    
+    [self.navigationController pushViewController:web animated:YES];
+}
+
+- (IBAction)clickRate:(id)sender {
+    // rate da apps
+     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id946087703"]];
+}
+
+- (IBAction)clickReportBug:(id)sender {
+    [self sendMail:nil];
+}
+
+
+-(void)sendMail:(id)sender{
+    mailComposer = [[MFMailComposeViewController alloc]init];
+    mailComposer.mailComposeDelegate = self;
+    [mailComposer setSubject:@"Report a Bug"];
+    
+    NSArray *usersTo = [NSArray arrayWithObject: @"support@fucook.com"];
+    [mailComposer setToRecipients:usersTo];
+    
+    NSString * stringEnviar = @"";
+    
+    [mailComposer setMessageBody:stringEnviar isHTML:YES];
+    
+    [self presentViewController:mailComposer animated:YES completion:nil];
+}
+
+#pragma mark - mail compose delegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    if (result) {
+        NSLog(@"Result : %d",result);
+    }
+    if (error) {
+        NSLog(@"Error : %@",error);
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
 @end

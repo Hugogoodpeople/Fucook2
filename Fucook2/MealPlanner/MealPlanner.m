@@ -26,6 +26,8 @@
     NSMutableArray * arrayDias;
     NSMutableArray * arrayDatas;
     PesquisaVazio  * vazio;
+    
+    int indexSelected;
 }
 
 @property (nonatomic, strong) NSMutableArray *items;
@@ -97,12 +99,22 @@
     
     [vazio.view setFrame:CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)];
     
-    [vazio.labelTitulo setText:@"Add recipes to your calendar!"];
-    [vazio.labelDescricao setText:@"You dont have any recipe added on your calendar."];
+    [vazio.labelTitulo setText:@"Add recipes to your calendar"];
+    [vazio.labelDescricao setText:@"You don't have added any recipes for today."];
     [vazio.img setImage:[UIImage imageNamed:@"imgaddrecipe.png"]];
     
     //[self.container addSubview:vazio.view];
+    
+    [self recarregarTudo];
 
+}
+
+-(void)recarregarTudo
+{
+    self.navigationController.navigationBarHidden = YES;
+    [self setUp];
+    [self setUpCoreData];
+    [self setUpCarrocel];
 }
 
 - (IBAction)clickHome:(id)sender
@@ -150,11 +162,13 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    /*
     self.navigationController.navigationBarHidden = YES;
     [super viewWillAppear:animated];
     [self setUp];
     [self setUpCoreData];
     [self setUpCarrocel];
+     */
 }
 
 -(void)setUp
@@ -182,7 +196,7 @@
     else
     {
         self.root = [MealPlanerTable new];
-        //[self.root.view setFrame:[[UIScreen mainScreen] bounds] ];
+        //[self.root.view setFrame:[[UIScreen mainScreen] bounds]];
         
         // tenho de verificar a data de hoje para meter as receitas
         
@@ -307,7 +321,10 @@
     NSDateFormatter *dateFormatterDia = [[NSDateFormatter alloc] init];
     [dateFormatterDia setDateFormat:@"dd"];
     
-    int diaHoje =[dateFormatterDia stringFromDate:self.dataActual].intValue;
+    int diaHoje ;
+    //if (!indexSelected)
+        diaHoje = [dateFormatterDia stringFromDate:self.dataActual].intValue;
+    indexSelected = diaHoje;
     
     [_carousel scrollToItemAtIndex:diaHoje animated:false];
     [_carousel scrollToItemAtIndex:diaHoje-1 animated:false];
@@ -389,6 +406,8 @@
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
    // NSLog(@"mudou indice %ld", (long)carousel.currentItemIndex);
+    
+    // tenho de actualizar a data aqui
     
     if (self.itemAnterior) {
         DiaCalendario * dia = [DiaCalendario new];
@@ -625,6 +644,7 @@
 
 -(void)reagendarReceita:(ObjectReceita *)receita
 {
+    self.navigationController.navigationBarHidden = NO;
     
     NSLog(@"Delegado Calendario");
     
@@ -632,6 +652,7 @@
     Calendario * calendarioEditar = [Calendario new];
     calendarioEditar.receita = receita.managedObject;
     calendarioEditar.calendario = receita.agendamento;
+    calendarioEditar.delegate = self;
     
     [self.navigationController pushViewController:calendarioEditar animated:YES];
     // nao sei pk mas o calendario esta aparecer vazio

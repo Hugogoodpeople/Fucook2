@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface Settings : UIViewController
+@interface Settings : UIViewController <MFMailComposeViewControllerDelegate>
 - (IBAction)clickFechar:(id)sender;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+- (IBAction)clickSettings:(id)sender;
+- (IBAction)clickUserGuide:(id)sender;
+- (IBAction)clickAboutUs:(id)sender;
+- (IBAction)clickRate:(id)sender;
+- (IBAction)clickReportBug:(id)sender;
 
 @end
