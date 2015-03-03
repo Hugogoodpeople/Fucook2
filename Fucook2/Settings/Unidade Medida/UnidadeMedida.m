@@ -93,6 +93,11 @@
     [self.tabela reloadData];
     
     [Globals setImperial:imperiais];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSNumber numberWithBool:imperiais] forKey:@"imperial"];
+    [defaults synchronize];
+    
 }
 
 

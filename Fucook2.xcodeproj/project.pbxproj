@@ -133,6 +133,7 @@
 		BA06C8C41A499A2B007AE029 /* icosharetwitter@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA06C8C01A499A2B007AE029 /* icosharetwitter@3x.png */; };
 		BA07EAE71A3B654E0087B44E /* solid231.png in Resources */ = {isa = PBXBuildFile; fileRef = BA07EAE61A3B654E0087B44E /* solid231.png */; };
 		BA07EAE91A3B671B0087B44E /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA07EAE81A3B671B0087B44E /* Images-2.xcassets */; };
+		BA111F761AA5B38000E09301 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BA111F751AA5B38000E09301 /* Utils.m */; };
 		BA12A5BD1AA0DE03000D0EA3 /* UnidadeMedida.m in Sources */ = {isa = PBXBuildFile; fileRef = BA12A5BB1AA0DE03000D0EA3 /* UnidadeMedida.m */; };
 		BA12A5BE1AA0DE03000D0EA3 /* UnidadeMedida.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA12A5BC1AA0DE03000D0EA3 /* UnidadeMedida.xib */; };
 		BA1B9D041A3EF1A200E1BEA0 /* MealPlanerTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1B9D021A3EF1A200E1BEA0 /* MealPlanerTable.m */; };
@@ -567,6 +568,8 @@
 		BA06C8C01A499A2B007AE029 /* icosharetwitter@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharetwitter@3x.png"; path = "Fucook2/Imagens/icosharetwitter@3x.png"; sourceTree = "<group>"; };
 		BA07EAE61A3B654E0087B44E /* solid231.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = solid231.png; path = Fucook2/Imagens/solid231.png; sourceTree = "<group>"; };
 		BA07EAE81A3B671B0087B44E /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		BA111F741AA5B38000E09301 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Fucook2/Utils/Utils.h; sourceTree = "<group>"; };
+		BA111F751AA5B38000E09301 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Fucook2/Utils/Utils.m; sourceTree = "<group>"; };
 		BA12A5BA1AA0DE03000D0EA3 /* UnidadeMedida.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnidadeMedida.h; path = "Settings/Unidade Medida/UnidadeMedida.h"; sourceTree = "<group>"; };
 		BA12A5BB1AA0DE03000D0EA3 /* UnidadeMedida.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnidadeMedida.m; path = "Settings/Unidade Medida/UnidadeMedida.m"; sourceTree = "<group>"; };
 		BA12A5BC1AA0DE03000D0EA3 /* UnidadeMedida.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UnidadeMedida.xib; path = "Settings/Unidade Medida/UnidadeMedida.xib"; sourceTree = "<group>"; };
@@ -1332,6 +1335,8 @@
 		BAFBA1031A37031A002B2C21 /* Utils Image */ = {
 			isa = PBXGroup;
 			children = (
+				BA111F741AA5B38000E09301 /* Utils.h */,
+				BA111F751AA5B38000E09301 /* Utils.m */,
 				BAFBA1311A370639002B2C21 /* UIImage+FX.h */,
 				BAFBA1321A370639002B2C21 /* UIImage+FX.m */,
 				BAFBA12E1A37060C002B2C21 /* FXImageView.h */,
@@ -2355,6 +2360,7 @@
 				BADD4B151A444DF200A30F87 /* UIImage+GIF.m in Sources */,
 				BAFBA1331A370639002B2C21 /* UIImage+FX.m in Sources */,
 				BADD4B191A444DF200A30F87 /* UIImageView+WebCache.m in Sources */,
+				BA111F761AA5B38000E09301 /* Utils.m in Sources */,
 				BAFBA1C91A370D3B002B2C21 /* RATreeView+RATreeNodeCollectionControllerDataSource.m in Sources */,
 				BAFBA1611A3708B6002B2C21 /* JAActionButton.m in Sources */,
 				BAFBA1501A370745002B2C21 /* NewNotes.m in Sources */,

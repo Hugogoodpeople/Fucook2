@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "ObjectReceita.h"
+#import "ObjectIngrediente.h"
 
 @interface ObjectLista : NSObject
 
@@ -22,5 +23,6 @@
 
 -(void)setTheManagedObject:(NSManagedObject *)managedObject forRecipe:(ObjectReceita * ) receita;
 -(NSManagedObject *)gettheManagedObject:(NSManagedObjectContext *)context;
+-(ObjectIngrediente *)getObjectIngrediente;
 
 @end

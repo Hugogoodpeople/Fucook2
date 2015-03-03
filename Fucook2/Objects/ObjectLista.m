@@ -37,5 +37,18 @@
     return mangIngrediente;
 }
 
+-(ObjectIngrediente *)getObjectIngrediente
+{
+    ObjectIngrediente * ingrediente = [ObjectIngrediente new];
+    ingrediente.nome                = self.nome;
+    ingrediente.quantidade          = self.quantidade;
+    ingrediente.quantidadeDecimal   = self.quantidade_decimal;
+    ingrediente.unidade             = self.unidade;
+    ingrediente.managedObjectReceita= self.managedObjectReceita;
+    
+    return ingrediente;
+    
+}
+
 
 @end

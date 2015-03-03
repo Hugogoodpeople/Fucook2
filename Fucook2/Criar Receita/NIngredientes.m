@@ -11,6 +11,8 @@
 #import "ObjectIngrediente.h"
 #import "CellIngrediente.h"
 #import "JAActionButton.h"
+#import "Globals.h"
+#import "Utils.h"
 
 
 #define kFlagButtonColor        [UIColor colorWithRed:255.0/255.0 green:150.0/255.0 blue:0/255.0 alpha:1]
@@ -121,10 +123,14 @@
     
     [cell addActionButtons:[self rightButtons] withButtonWidth:kJAButtonWidth withButtonPosition:JAButtonLocationRight];
     
-    cell.labelNome.text = [NSString stringWithFormat:@"%@%@%@ %@", ingrid.quantidade, ingrid.quantidadeDecimal , ingrid.unidade,ingrid.nome];;
+    NSString * calculado = [self calcularValor:indexPath];
+    
+    cell.titulo = [NSString stringWithFormat:@"%@ %@", calculado ,ingrid.nome];
+    
+    //cell.labelNome.text = [NSString stringWithFormat:@"%@ %@", calculado ,ingrid.nome];
     //cell.labelDesc.text = [NSString stringWithFormat:@"%@%@ %@", ingrid.quantidade, ingrid.quantidadeDecimal , ingrid.unidade];
 
-    //[cell configureCellWithTitle:[NSString stringWithFormat:@"%@ %@ %@",ingrid.quantidade, ingrid.unidade, ingrid.nome]];
+    // [cell configureCellWithTitle:[NSString stringWithFormat:@"%@ %@ %@",ingrid.quantidade, ingrid.unidade, ingrid.nome]];
     [cell setNeedsLayout];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
@@ -182,6 +188,27 @@
     }
 }
 
+-(NSString *)calcularValor:(NSIndexPath *)indexPath
+{
+    
+    
+    ObjectIngrediente * ing = [self.arrayOfItems objectAtIndex:indexPath.row];
+    
+    NSString * testeConversao = [Utils converter:ing paraMetrica:[Globals getImperial]];
+    
+    float qtdActual     = [testeConversao floatValue];
+    
+    if (ing.quantidade.floatValue == 0)
+    {
+        testeConversao = @"";
+    }
+    
+    
+    NSString * unidadeConvertida = [Utils converterUnidade:ing paraMetrica:[Globals getImperial]];
+    
+    
+    return [NSString stringWithFormat:@"%@%@", testeConversao, unidadeConvertida];
+}
 
 
 @end

@@ -36,6 +36,8 @@
 #import "ReceitaVisualizar.h"
 #import "Settings.h"
 #import "HeaderBotoesListaComras.h"
+#import "Globals.h"
+#import "Utils.h"
 
 
 @interface ListaCompras ()
@@ -378,9 +380,10 @@
     cell.delegate = self;
     
 
+    NSString * calculado = [self calcularValor:indexPath];
     
     
-    NSString *val =[NSString stringWithFormat:@" %@%@%@ %@",listas.quantidade, listas.quantidade_decimal, listas.unidade, listas.nome];
+    NSString *val =[NSString stringWithFormat:@" %@ %@",calculado, listas.nome];
     val = [val stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 
     val =[NSString stringWithFormat:@" %@", val];
@@ -720,6 +723,31 @@
     }
     
     return stringIngredientes;
+}
+
+-(NSString *)calcularValor:(NSIndexPath *)indexPath
+{
+
+    
+    ObjectLista * objLista = [arrayOfItems objectAtIndex:indexPath.row];
+    
+    ObjectIngrediente * ing = [objLista getObjectIngrediente];
+    
+    NSString * testeConversao = [Utils converter:ing paraMetrica:[Globals getImperial]];
+    
+    float qtdActual     = [testeConversao floatValue];
+    
+    if (ing.quantidade.floatValue == 0)
+    {
+        testeConversao = @"";
+    }
+
+    
+    
+    NSString * unidadeConvertida = [Utils converterUnidade:ing paraMetrica:[Globals getImperial]];
+    
+    
+    return [NSString stringWithFormat:@"%@%@", testeConversao, unidadeConvertida];
 }
 
 @end

@@ -40,6 +40,20 @@
     
     [Globals setimagensTemp:[NSMutableArray new]];
     
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSNumber * imperial = [defaults objectForKey:@"imperial"];
+    
+    if (imperial) {
+        [Globals setImperial:[imperial boolValue]];
+    }
+    else
+    {
+        [Globals setImperial:YES];
+    }
+    
+    
     Home * cenas = [Home new];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

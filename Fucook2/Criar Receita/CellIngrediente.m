@@ -62,9 +62,10 @@
         self.constraintsSetup = YES;
     }
     
-    ObjectIngrediente * ingre = (ObjectIngrediente *)self.ingrediente;
+    //ObjectIngrediente * ingre = (ObjectIngrediente *)self.ingrediente;
     
-    self.viewDados.labelNome.text = [NSString stringWithFormat:@"%@%@%@ %@", ingre.quantidade, ingre.quantidadeDecimal , ingre.unidade,ingre.nome];
+   // self.viewDados.labelNome.text = [NSString stringWithFormat:@"%@%@%@ %@", ingre.quantidade, ingre.quantidadeDecimal , ingre.unidade,ingre.nome];
+    self.viewDados.labelNome.text = self.titulo;
 }
 
 @end

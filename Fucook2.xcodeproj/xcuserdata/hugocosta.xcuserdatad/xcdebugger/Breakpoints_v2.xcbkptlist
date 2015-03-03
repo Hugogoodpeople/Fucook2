@@ -163,13 +163,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fucook2/Receita/ReceitaVisualizar.m"
-            timestampString = "446998177.252452"
+            filePath = "Fucook2/Criar Receita/CellIngrediente.m"
+            timestampString = "447072421.690549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
-            landmarkName = "-saveIngrediente:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-updateConstraints"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

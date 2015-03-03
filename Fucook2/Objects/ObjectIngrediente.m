@@ -47,7 +47,7 @@
     [mangIngrediente setValue:self.quantidade forKey:@"quantidade"];
     [mangIngrediente setValue:self.quantidadeDecimal forKey:@"quantidade_decimal"];
     [mangIngrediente setValue:self.unidade forKey:@"unidade"];
-    [mangIngrediente setValue:[NSString stringWithFormat:@"%d", self.ordem] forKey:@"ordem"];
+    //[mangIngrediente setValue:[NSString stringWithFormat:@"%d", self.ordem] forKey:@"ordem"];
     [mangIngrediente setValue:receita.managedObject forKey:@"pertence_receita"];
     
     return mangIngrediente;

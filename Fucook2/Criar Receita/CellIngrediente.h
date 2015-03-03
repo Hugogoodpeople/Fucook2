@@ -30,6 +30,6 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier ;
 - (void)updateConstraints;
 
-
+@property NSString * titulo;
 
 @end

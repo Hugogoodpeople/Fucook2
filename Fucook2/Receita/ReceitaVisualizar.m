@@ -19,6 +19,8 @@
 #import "ShareFucook.h"
 #import "UIImage+ImageEffects.h"
 #import "AvisoComprar.h"
+#import "Utils.h"
+#import "Globals.h"
 
 @interface ReceitaVisualizar ()
 {
@@ -97,7 +99,6 @@
         [self setUpIngredientes];
         self.tabela.tableFooterView = nil;
     }
-    
     
 
     
@@ -703,7 +704,7 @@
         NSString * quantidade = [self calcularValor:indexPath];
         
         
-        NSString *val =[NSString stringWithFormat:@"%@%@ %@",quantidade ,ing.unidade , ing.nome];
+        NSString *val =[NSString stringWithFormat:@"%@ %@",quantidade  , ing.nome];
         val = [val stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
         
         val = [NSString stringWithFormat:@" %@", val];
@@ -796,18 +797,24 @@
     
     ObjectIngrediente * ing = [self.items objectAtIndex:indexPath.row];
     
-    float qtdActual     = [ing.quantidade floatValue];
+    NSString * testeConversao = [Utils converter:ing paraMetrica:[Globals getImperial]];
+    
+    float qtdActual     = [testeConversao floatValue];
     float servingsNovo  = [ingHeadercell.textServings.text floatValue];
     float servingsAnti  = [self.receita.servings floatValue];
     
-    if (ing.quantidade.floatValue == 0) {
+    if (ing.quantidade.floatValue == 0)
+    {
         return @"";
     }
     
     float calculado = (qtdActual * servingsNovo)/ servingsAnti;
-    //ing.quantidade = [NSString stringWithFormat:@"%.2f %@", calculado, ing.unidade];
     
-    return [NSString stringWithFormat:@"%g", calculado];
+    
+    NSString * unidadeConvertida = [Utils converterUnidade:ing paraMetrica:[Globals getImperial]];
+    
+    
+    return [NSString stringWithFormat:@"%g%@", calculado, unidadeConvertida];
 }
 
 
