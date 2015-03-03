@@ -217,15 +217,16 @@
 
 - (IBAction)clickServings:(id)sender
 {
-    servingsNumber = self.textServings.text;
+    
     if (!servingsOpen)
     {
-        
+        servingsNumber = self.textServings.text;
         [self.textServings becomeFirstResponder];
         [self.textServings setText:@""];
     }
     else
     {
+        
         if (![self.textServings.text isEqualToString:servingsNumber] || self.textServings.text.length == 0)
             self.textServings.text = servingsNumber;
         [self.textServings resignFirstResponder];

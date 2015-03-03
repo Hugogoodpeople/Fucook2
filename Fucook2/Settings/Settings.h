@@ -18,5 +18,6 @@
 - (IBAction)clickAboutUs:(id)sender;
 - (IBAction)clickRate:(id)sender;
 - (IBAction)clickReportBug:(id)sender;
+- (IBAction)clickShare:(id)sender;
 
 @end

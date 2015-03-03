@@ -9,6 +9,7 @@
 #import "Settings.h"
 #import "UnidadeMedida.h"
 #import "WebView.h"
+#import "ShareFucook.h"
 
 
 @interface Settings ()
@@ -92,6 +93,19 @@
     [self sendMail:nil];
 }
 
+- (IBAction)clickShare:(id)sender {
+    
+     ShareFucook * share = [ShareFucook new];
+     share.delegate = nil;
+     share.isInInApps = NO;
+     share.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+     [self presentViewController:share animated:YES completion:^{
+     [UIView animateWithDuration:0.2 animations:^{
+     share.viewEscura.alpha = 0.6;
+     }];}];
+    
+}
+
 
 -(void)sendMail:(id)sender{
     mailComposer = [[MFMailComposeViewController alloc]init];
@@ -116,9 +130,12 @@
     if (error) {
         NSLog(@"Error : %@",error);
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
     
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+
 
 
 @end

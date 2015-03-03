@@ -20,4 +20,6 @@
 
 @property NSString * tempo;
 
+@property NSString * nomeReceita;
+
 @end

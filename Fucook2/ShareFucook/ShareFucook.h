@@ -33,5 +33,6 @@
 @property BOOL isInInApps;
 
 @property (weak, nonatomic) IBOutlet UIView *viewBotoesSecundarios;
+@property NSString * mensagem;
 
 @end

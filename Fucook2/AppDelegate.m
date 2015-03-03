@@ -74,7 +74,6 @@
       NSForegroundColorAttributeName,
       nil]];
      */
-
     
     
     [self.window makeKeyAndVisible];
@@ -283,8 +282,6 @@
                 
                 break;
             }
-           
-                
         }
     }else
     {

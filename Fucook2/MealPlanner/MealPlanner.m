@@ -117,6 +117,8 @@
     [self setUpCarrocel];
 }
 
+
+
 - (IBAction)clickHome:(id)sender
 {
     self.navigationController.navigationBarHidden = NO;
@@ -162,6 +164,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.navigationController.navigationBarHidden = YES;
     /*
     self.navigationController.navigationBarHidden = YES;
     [super viewWillAppear:animated];

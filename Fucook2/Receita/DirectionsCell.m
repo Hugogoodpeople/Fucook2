@@ -103,12 +103,13 @@
 - (IBAction)setNotification:(UIButton *)sender
 {
    
-    self.tempo = self.labelTempo.text;
+    
     
     NSLog(@"clicar %@", self.labelTempo.text);
     // tenho de verificar se está escrito Set timer
     if ([self.labelTempo.text isEqualToString:@"Set timer"])
     {
+        self.tempo = self.labelTempo.text;
         [self.labelTempo becomeFirstResponder];
         [self.labelTempo setText:@""];
     }
@@ -153,14 +154,14 @@
     NSLog(@"ás %@", addTime.description );
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = addTime;
-    localNotification.alertBody = [NSString stringWithFormat:@"Alert Fired at %@", addTime];
+    localNotification.alertBody = [NSString stringWithFormat:@"%@ %@",self.labelPasso.text, self.nomeReceita];
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     // para adicionar o cenas do numero na aplicação
     // localNotification.applicationIconBadgeNumber = 5;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
  
     
-    self.labelTempo.text = @"Set timer";
+    //self.labelTempo.text = @"Set timer";
 }
 
 @end

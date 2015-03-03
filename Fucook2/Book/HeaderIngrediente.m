@@ -166,7 +166,7 @@
     NSLog(@"ás %@", addTime.description );
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = addTime;
-    localNotification.alertBody = [NSString stringWithFormat:@"Alert Fired at %@", addTime];
+    localNotification.alertBody = [NSString stringWithFormat:@"%@", self.nome];
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     // para adicionar o cenas do numero na aplicação
     // localNotification.applicationIconBadgeNumber = 5;
