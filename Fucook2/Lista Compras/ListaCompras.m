@@ -231,7 +231,7 @@
         NSLog(@"Right Button: Flag Pressed");
     }];
      */
-    JAActionButton *button3 = [JAActionButton actionButtonWithTitle:@"View" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
+    JAActionButton *button3 = [JAActionButton actionButtonWithTitle:@"View recipe" color:kArchiveButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell) {
         [weakSelf mostarReceita:cell];
     }];
     

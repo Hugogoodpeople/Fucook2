@@ -189,5 +189,159 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fucook2/Lista Compras/ListaCompras.m"
+            timestampString = "447077901.334283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "-rightMostButtonSwipeCompleted:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+            timestampString = "447079815.521016"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
+            landmarkName = "-panHandler:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JASwipeCell panHandler:]"
+                  moduleName = "Fucook2"
+                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+                  timestampString = "447079817.147249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "454"
+                  endingLineNumber = "454"
+                  offsetFromSymbolStart = "5209">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[JASwipeCell panHandler:]_block_invoke183"
+                  moduleName = "Fucook2"
+                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+                  timestampString = "447079817.147433"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "454"
+                  endingLineNumber = "454"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+            timestampString = "447079826.839761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "464"
+            endingLineNumber = "464"
+            landmarkName = "-panHandler:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JASwipeCell panHandler:]"
+                  moduleName = "Fucook2"
+                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+                  timestampString = "447079826.843051"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "464"
+                  endingLineNumber = "464"
+                  offsetFromSymbolStart = "5851">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[JASwipeCell panHandler:]_block_invoke195"
+                  moduleName = "Fucook2"
+                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+                  timestampString = "447079826.843231"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "464"
+                  endingLineNumber = "464"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+            timestampString = "447079827.991623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
+            landmarkName = "-panHandler:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[JASwipeCell panHandler:]"
+                  moduleName = "Fucook2"
+                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+                  timestampString = "447079827.99465"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "472"
+                  endingLineNumber = "472"
+                  offsetFromSymbolStart = "6195">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__26-[JASwipeCell panHandler:]_block_invoke199"
+                  moduleName = "Fucook2"
+                  urlString = "file:///Users/hugocosta/Documents/cenas%20xcode/Fucook2/Fucook2/ListaCompras/JASwipeCell/JASwipeCell.m"
+                  timestampString = "447079827.994834"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "472"
+                  endingLineNumber = "472"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

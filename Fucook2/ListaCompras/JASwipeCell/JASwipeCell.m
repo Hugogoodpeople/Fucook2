@@ -416,7 +416,7 @@ typedef NS_ENUM(NSUInteger, JASwipeDirection) {
                     return;
                 }
                 // Complete the swipe to the left
-                if (fabs(currentX) > [self rightButtonsTotalWidth]) {
+                if (fabs(currentX) > [self rightButtonsTotalWidth] + 100) {
                     newXOffset = -self.topContentView.frame.size.width;
                     [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                         [self pinButtonToTopViewWithOffset:newXOffset swipeDirection:JASwipeDirectionLeft];

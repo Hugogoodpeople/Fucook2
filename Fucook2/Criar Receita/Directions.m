@@ -64,7 +64,7 @@
 - (NSArray *)rightButtons
 {
     __typeof(self) __weak weakSelf = self;
-    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"  Delete" color:kFlagButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell)
+    JAActionButton *button1 = [JAActionButton actionButtonWithTitle:@"  Delete" color:kMoreButtonColor handler:^(UIButton *actionButton, JASwipeCell*cell)
                                {
                                    [cell completePinToTopViewAnimation];
                                    [self rightMostButtonSwipeCompleted:cell];
