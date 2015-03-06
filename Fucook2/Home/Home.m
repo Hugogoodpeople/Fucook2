@@ -345,7 +345,6 @@
 {
     InAppsTeste * apps = [InAppsTeste new];
     apps.delegate = self;
-    
     [self.navigationController pushViewController:apps animated:NO];
 }
 

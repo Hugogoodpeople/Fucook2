@@ -35,8 +35,6 @@
 		BA0081EE1A371FFD00A7871D /* icorating@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0081CE1A371FFD00A7871D /* icorating@3x.png */; };
 		BA0081EF1A371FFD00A7871D /* icosettings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0081CF1A371FFD00A7871D /* icosettings@2x.png */; };
 		BA0081F01A371FFD00A7871D /* icosettings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0081D01A371FFD00A7871D /* icosettings@3x.png */; };
-		BA0081F11A371FFD00A7871D /* icoshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0081D11A371FFD00A7871D /* icoshare@2x.png */; };
-		BA0081F21A371FFD00A7871D /* icoshare@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0081D21A371FFD00A7871D /* icoshare@3x.png */; };
 		BA0081F31A371FFD00A7871D /* imglogofucook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0081D31A371FFD00A7871D /* imglogofucook@2x.png */; };
 		BA0081F41A371FFD00A7871D /* imglogofucook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0081D41A371FFD00A7871D /* imglogofucook@3x.png */; };
 		BA0081F71A37203D00A7871D /* btnopen1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA0081F51A37203D00A7871D /* btnopen1@2x.png */; };
@@ -157,6 +155,11 @@
 		BA24B3E01A49B19E00D674C2 /* icosharepinterest@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3DC1A49B19E00D674C2 /* icosharepinterest@3x.png */; };
 		BA24B3E91A49D50300D674C2 /* Pinterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA24B3E61A49D50300D674C2 /* Pinterest.framework */; };
 		BA24B3EA1A49D50300D674C2 /* PinterestSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */; };
+		BA2BEFBA1AA875BC002FD591 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2BEFB81AA875BC002FD591 /* Appirater.m */; };
+		BA2BEFBC1AA875D7002FD591 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2BEFBB1AA875D7002FD591 /* CFNetwork.framework */; };
+		BA2BEFBE1AA875E4002FD591 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2BEFBD1AA875E4002FD591 /* SystemConfiguration.framework */; };
+		BA2BEFC11AA8BAA0002FD591 /* clock_alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA2BEFC01AA8BAA0002FD591 /* clock_alarm.mp3 */; };
+		BA2BEFC31AA8BCF0002FD591 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2BEFC21AA8BCF0002FD591 /* AVFoundation.framework */; };
 		BA6110FE1AA4C87700D3777E /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6110FC1AA4C87700D3777E /* WebView.m */; };
 		BA6110FF1AA4C87700D3777E /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6110FD1AA4C87700D3777E /* WebView.xib */; };
 		BA616A171A9DCDD90077718E /* btnbuy2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA616A151A9DCDD90077718E /* btnbuy2@2x.png */; };
@@ -466,8 +469,6 @@
 		BA0081CE1A371FFD00A7871D /* icorating@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icorating@3x.png"; path = "Fucook2/Imagens/icorating@3x.png"; sourceTree = "<group>"; };
 		BA0081CF1A371FFD00A7871D /* icosettings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosettings@2x.png"; path = "Fucook2/Imagens/icosettings@2x.png"; sourceTree = "<group>"; };
 		BA0081D01A371FFD00A7871D /* icosettings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosettings@3x.png"; path = "Fucook2/Imagens/icosettings@3x.png"; sourceTree = "<group>"; };
-		BA0081D11A371FFD00A7871D /* icoshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshare@2x.png"; path = "Fucook2/Imagens/icoshare@2x.png"; sourceTree = "<group>"; };
-		BA0081D21A371FFD00A7871D /* icoshare@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icoshare@3x.png"; path = "Fucook2/Imagens/icoshare@3x.png"; sourceTree = "<group>"; };
 		BA0081D31A371FFD00A7871D /* imglogofucook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imglogofucook@2x.png"; path = "Fucook2/Imagens/imglogofucook@2x.png"; sourceTree = "<group>"; };
 		BA0081D41A371FFD00A7871D /* imglogofucook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "imglogofucook@3x.png"; path = "Fucook2/Imagens/imglogofucook@3x.png"; sourceTree = "<group>"; };
 		BA0081F51A37203D00A7871D /* btnopen1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnopen1@2x.png"; path = "Fucook2/Imagens/btnopen1@2x.png"; sourceTree = "<group>"; };
@@ -595,6 +596,13 @@
 		BA24B3DC1A49B19E00D674C2 /* icosharepinterest@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icosharepinterest@3x.png"; path = "Fucook2/Imagens/icosharepinterest@3x.png"; sourceTree = "<group>"; };
 		BA24B3E61A49D50300D674C2 /* Pinterest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pinterest.framework; sourceTree = "<group>"; };
 		BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PinterestSDKResources.bundle; sourceTree = "<group>"; };
+		BA2BEFB71AA875BC002FD591 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appirater.h; path = Fucook2/Aspirator/Appirater.h; sourceTree = "<group>"; };
+		BA2BEFB81AA875BC002FD591 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appirater.m; path = Fucook2/Aspirator/Appirater.m; sourceTree = "<group>"; };
+		BA2BEFB91AA875BC002FD591 /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppiraterDelegate.h; path = Fucook2/Aspirator/AppiraterDelegate.h; sourceTree = "<group>"; };
+		BA2BEFBB1AA875D7002FD591 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BA2BEFBD1AA875E4002FD591 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BA2BEFC01AA8BAA0002FD591 /* clock_alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clock_alarm.mp3; sourceTree = "<group>"; };
+		BA2BEFC21AA8BCF0002FD591 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BA6110FB1AA4C87700D3777E /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebView.h; path = webView/WebView.h; sourceTree = "<group>"; };
 		BA6110FC1AA4C87700D3777E /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebView.m; path = webView/WebView.m; sourceTree = "<group>"; };
 		BA6110FD1AA4C87700D3777E /* WebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WebView.xib; path = webView/WebView.xib; sourceTree = "<group>"; };
@@ -649,7 +657,7 @@
 		BADD4B5D1A446F8B00A30F87 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		BAE0F3D01A376C9E00B89316 /* linedotbig3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linedotbig3@2x.png"; path = "Fucook2/Imagens/linedotbig3@2x.png"; sourceTree = "<group>"; };
 		BAE0F3D11A376C9E00B89316 /* linedotbig3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linedotbig3@3x.png"; path = "Fucook2/Imagens/linedotbig3@3x.png"; sourceTree = "<group>"; };
-		BAFBA0AB1A36FAA6002B2C21 /* Fucook2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAFBA0AB1A36FAA6002B2C21 /* Fucook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fucook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFBA0AF1A36FAA6002B2C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAFBA0B01A36FAA6002B2C21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAFBA0B21A36FAA6002B2C21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -983,10 +991,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2BEFC31AA8BCF0002FD591 /* AVFoundation.framework in Frameworks */,
+				BAFBA1FE1A371246002B2C21 /* StoreKit.framework in Frameworks */,
+				BA2BEFBE1AA875E4002FD591 /* SystemConfiguration.framework in Frameworks */,
+				BA2BEFBC1AA875D7002FD591 /* CFNetwork.framework in Frameworks */,
 				BAFCBA191A387D69001EFCE2 /* Accounts.framework in Frameworks */,
 				BA24B3E91A49D50300D674C2 /* Pinterest.framework in Frameworks */,
 				BAFBA2001A37124D002B2C21 /* CoreData.framework in Frameworks */,
-				BAFBA1FE1A371246002B2C21 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1045,6 +1056,24 @@
 				BA24B3E81A49D50300D674C2 /* PinterestSDKResources.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BA2BEFB61AA8759B002FD591 /* Aspirator */ = {
+			isa = PBXGroup;
+			children = (
+				BA2BEFB71AA875BC002FD591 /* Appirater.h */,
+				BA2BEFB81AA875BC002FD591 /* Appirater.m */,
+				BA2BEFB91AA875BC002FD591 /* AppiraterDelegate.h */,
+			);
+			name = Aspirator;
+			sourceTree = "<group>";
+		};
+		BA2BEFBF1AA8BA91002FD591 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				BA2BEFC01AA8BAA0002FD591 /* clock_alarm.mp3 */,
+			);
+			name = Sound;
 			sourceTree = "<group>";
 		};
 		BA6110FA1AA4C85A00D3777E /* webView */ = {
@@ -1119,6 +1148,8 @@
 		BAFBA0A21A36FAA5002B2C21 = {
 			isa = PBXGroup;
 			children = (
+				BA2BEFBF1AA8BA91002FD591 /* Sound */,
+				BA2BEFB61AA8759B002FD591 /* Aspirator */,
 				BA06C8B71A498E4B007AE029 /* Partilha Facebook Twitter */,
 				BADD4B5B1A446F7A00A30F87 /* AlertsCuston */,
 				BADD4AE91A444DE200A30F87 /* ImageDownloader */,
@@ -1137,7 +1168,7 @@
 		BAFBA0AC1A36FAA6002B2C21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAFBA0AB1A36FAA6002B2C21 /* Fucook2.app */,
+				BAFBA0AB1A36FAA6002B2C21 /* Fucook.app */,
 				BAFBA0C71A36FAA6002B2C21 /* Fucook2Tests.xctest */,
 			);
 			name = Products;
@@ -1777,8 +1808,6 @@
 				BA0081CE1A371FFD00A7871D /* icorating@3x.png */,
 				BA0081CF1A371FFD00A7871D /* icosettings@2x.png */,
 				BA0081D01A371FFD00A7871D /* icosettings@3x.png */,
-				BA0081D11A371FFD00A7871D /* icoshare@2x.png */,
-				BA0081D21A371FFD00A7871D /* icoshare@3x.png */,
 				BA0081D31A371FFD00A7871D /* imglogofucook@2x.png */,
 				BA0081D41A371FFD00A7871D /* imglogofucook@3x.png */,
 				BAFBA2821A371DB0002B2C21 /* btleft2@2x.png */,
@@ -1844,6 +1873,9 @@
 		BAFBA2751A371C07002B2C21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA2BEFC21AA8BCF0002FD591 /* AVFoundation.framework */,
+				BA2BEFBD1AA875E4002FD591 /* SystemConfiguration.framework */,
+				BA2BEFBB1AA875D7002FD591 /* CFNetwork.framework */,
 				BA24B3E51A49D50300D674C2 /* Pinterest.embeddedframework */,
 				BAFCBA181A387D69001EFCE2 /* Accounts.framework */,
 				BAFBA1FF1A37124D002B2C21 /* CoreData.framework */,
@@ -1875,9 +1907,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BAFBA0AA1A36FAA6002B2C21 /* Fucook2 */ = {
+		BAFBA0AA1A36FAA6002B2C21 /* Fucook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BAFBA0D11A36FAA6002B2C21 /* Build configuration list for PBXNativeTarget "Fucook2" */;
+			buildConfigurationList = BAFBA0D11A36FAA6002B2C21 /* Build configuration list for PBXNativeTarget "Fucook" */;
 			buildPhases = (
 				BAFBA0A71A36FAA6002B2C21 /* Sources */,
 				BAFBA0A81A36FAA6002B2C21 /* Frameworks */,
@@ -1887,9 +1919,9 @@
 			);
 			dependencies = (
 			);
-			name = Fucook2;
+			name = Fucook;
 			productName = Fucook2;
-			productReference = BAFBA0AB1A36FAA6002B2C21 /* Fucook2.app */;
+			productReference = BAFBA0AB1A36FAA6002B2C21 /* Fucook.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BAFBA0C61A36FAA6002B2C21 /* Fucook2Tests */ = {
@@ -1942,7 +1974,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BAFBA0AA1A36FAA6002B2C21 /* Fucook2 */,
+				BAFBA0AA1A36FAA6002B2C21 /* Fucook */,
 				BAFBA0C61A36FAA6002B2C21 /* Fucook2Tests */,
 			);
 		};
@@ -1972,7 +2004,6 @@
 				BAFCBA0E1A386AD9001EFCE2 /* imgframetop@2x.png in Resources */,
 				BA0081E11A371FFD00A7871D /* icoabout@2x.png in Resources */,
 				BAFBA2521A3717EC002B2C21 /* icoluvas@3x.png in Resources */,
-				BA0081F21A371FFD00A7871D /* icoshare@3x.png in Resources */,
 				BA06C8BC1A498E76007AE029 /* ShareFucook.xib in Resources */,
 				BA24B3E01A49B19E00D674C2 /* icosharepinterest@3x.png in Resources */,
 				BA043C2D1A9C8E6100AF9DDE /* imgshoplist@3x.png in Resources */,
@@ -2186,7 +2217,6 @@
 				BA043C361A9C8F7000AF9DDE /* imgcomiten@3x.png in Resources */,
 				BAFEB1631A41D0FA00DEE4ED /* InAppsTeste.xib in Resources */,
 				BA0081DC1A371FFD00A7871D /* btnless@3x.png in Resources */,
-				BA0081F11A371FFD00A7871D /* icoshare@2x.png in Resources */,
 				BAFEC9FF1A4831DF00D0431B /* HeaderBotoesListaComras.xib in Resources */,
 				BA043CA21A9CDDE100AF9DDE /* imgsemfoto@3x.png in Resources */,
 				BA00821D1A374D1A00A7871D /* linedottitle1@3x.png in Resources */,
@@ -2256,6 +2286,7 @@
 				BA0081FD1A37211200A7871D /* HomeCell.xib in Resources */,
 				BA043C591A9C9C8100AF9DDE /* icoaddcalendar@3x.png in Resources */,
 				BAFBA2641A3717EC002B2C21 /* linedot1@3x.png in Resources */,
+				BA2BEFC11AA8BAA0002FD591 /* clock_alarm.mp3 in Resources */,
 				BAFCBA0A1A3850FC001EFCE2 /* btnshop1@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2330,6 +2361,7 @@
 				BAFBA0DF1A36FCDE002B2C21 /* Home.m in Sources */,
 				BAFCBA1D1A389292001EFCE2 /* ReceitaVisualizar.m in Sources */,
 				BAFBA1F01A370F57002B2C21 /* DiaCalendario.m in Sources */,
+				BA2BEFBA1AA875BC002FD591 /* Appirater.m in Sources */,
 				BAFBA1C71A370D3B002B2C21 /* RATreeView+Enums.m in Sources */,
 				BAFBA10F1A3703BF002B2C21 /* ObjectDirections.m in Sources */,
 				BAFBA1801A370B1B002B2C21 /* EtapaTwoOptionsController.m in Sources */,
@@ -2399,7 +2431,7 @@
 /* Begin PBXTargetDependency section */
 		BAFBA0C91A36FAA6002B2C21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BAFBA0AA1A36FAA6002B2C21 /* Fucook2 */;
+			target = BAFBA0AA1A36FAA6002B2C21 /* Fucook */;
 			targetProxy = BAFBA0C81A36FAA6002B2C21 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2441,8 +2473,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Paula Almeida (8VVX3TJ6FK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paula Almeida (8VVX3TJ6FK)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2462,7 +2494,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "df4d9013-aa83-4316-b41d-6f5e651de5f2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2484,8 +2516,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Paula Almeida (8VVX3TJ6FK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paula Almeida (8VVX3TJ6FK)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2498,7 +2530,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "df4d9013-aa83-4316-b41d-6f5e651de5f2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2509,8 +2541,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Paula Almeida (8VVX3TJ6FK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paula Almeida (8VVX3TJ6FK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pinterest.embeddedframework",
@@ -2520,7 +2552,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "df4d9013-aa83-4316-b41d-6f5e651de5f2";
 			};
 			name = Debug;
 		};
@@ -2529,8 +2561,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Paula Almeida (8VVX3TJ6FK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paula Almeida (8VVX3TJ6FK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pinterest.embeddedframework",
@@ -2540,7 +2572,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "df4d9013-aa83-4316-b41d-6f5e651de5f2";
 			};
 			name = Release;
 		};
@@ -2590,7 +2622,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BAFBA0D11A36FAA6002B2C21 /* Build configuration list for PBXNativeTarget "Fucook2" */ = {
+		BAFBA0D11A36FAA6002B2C21 /* Build configuration list for PBXNativeTarget "Fucook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BAFBA0D21A36FAA6002B2C21 /* Debug */,

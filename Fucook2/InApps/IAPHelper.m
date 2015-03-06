@@ -80,6 +80,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     
     _completionHandler(YES, skProducts);
     _completionHandler = nil;
+ 
     
 }
 
@@ -148,6 +149,10 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
 }
 
 - (void)failedTransaction:(SKPaymentTransaction *)transaction {
+    
+    if (self.delegate) {
+        [self.delegate performSelector:@selector(fecharHUD)];
+    }
     
     NSLog(@"failedTransaction...");
     if (transaction.error.code != SKErrorPaymentCancelled)

@@ -13,6 +13,8 @@
      BOOL PickerAberto;
     NSArray * tempos;
     
+    BOOL foiAlterado;
+    
 }
 
 @property (nonatomic, weak) IBOutlet UIToolbar *toolBar;
@@ -124,6 +126,8 @@
 -(void)doneWithTextArea
 {
     [self.textDesc resignFirstResponder];
+    foiAlterado = YES;
+    
 }
 
 -(void)AdicionarDirections
@@ -158,9 +162,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)back:(id)sender {
+- (IBAction)back:(id)sender
+{
+    if (foiAlterado) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upss!" message:@"Do you want to exit before saving changes?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        
+        alert.tag = 10;
+        [alert show];
+    }
+    else
+    {
+        [self sair];
+    }
+}
+
+-(void)sair
+{
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 10)
+    {
+        if (buttonIndex == 0)
+        {
+            [self AdicionarDirections];
+        }
+        else
+        {
+            [self sair];
+        }
+    }
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView{
@@ -171,6 +205,8 @@
         CGPoint scrollPoint = CGPointMake(0, 300);
         [self.scrollDir setContentOffset:scrollPoint animated:YES];
      */
+    
+    foiAlterado = YES;
 }
 
 
@@ -295,7 +331,7 @@ numberOfRowsInComponent:(NSInteger)component
         [self.scrollDir setContentSize:CGSizeMake(self.view.frame.size.width, 1000)];
         PickerAberto=1;
     }
-    
+
 }
 - (IBAction)btDoneTime:(id)sender {
     //long d = [self.pickerView selectedRowInComponent:0];
@@ -310,5 +346,6 @@ numberOfRowsInComponent:(NSInteger)component
     }
         
     [self btAbrir:self];
+    foiAlterado = YES;
 }
 @end

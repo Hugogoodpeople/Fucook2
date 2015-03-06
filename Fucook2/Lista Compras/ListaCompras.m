@@ -246,8 +246,6 @@
     ObjectLista * objeLista = [arrayOfItems objectAtIndex:indexPath.row];
 
     
-    
-    
     [self OpenReceita:objeLista];
 }
 
@@ -322,11 +320,11 @@
         // para mais tarde poder apagar
         list.managedObject = pedido;        
         
-        list.nome =[pedido valueForKey:@"nome"];
-        list.quantidade =[pedido valueForKey:@"quantidade"];
-        list.quantidade_decimal =[pedido valueForKey:@"quantidade_decimal"];
-        list.unidade =[pedido valueForKey:@"unidade"];
-        list.managedObjectReceita = [pedido valueForKey:@"pertence_receita"];
+        list.nome                   =[pedido valueForKey:@"nome"];
+        list.quantidade             =[pedido valueForKey:@"quantidade"];
+        list.quantidade_decimal     =[pedido valueForKey:@"quantidade_decimal"];
+        list.unidade                =[pedido valueForKey:@"unidade"];
+        list.managedObjectReceita   =[pedido valueForKey:@"pertence_receita"];
         
         [items addObject:list];
     }
@@ -407,13 +405,13 @@
 {
     //NSString *str = @"Ingredient";
     NSString *str = ((ObjectIngrediente *)[arrayOfItems objectAtIndex:indexPath.row]).nome;
-    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:15] constrainedToSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width -50, 999) lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize size = [str sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:17] constrainedToSize:CGSizeMake([[UIScreen mainScreen] bounds].size.width -55, 999) lineBreakMode:NSLineBreakByWordWrapping];
     
     //NSLog(@"%f",size.height);
     if(size.height == 0)
         return 51;
     
-    return size.height +30;
+    return size.height + 25;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -472,7 +470,6 @@
     AppDelegate* appDelegate = [AppDelegate sharedAppDelegate];
     NSManagedObjectContext* context = appDelegate.managedObjectContext;
     
-    
         NSManagedObject *Livro = [NSEntityDescription
                                   insertNewObjectForEntityForName:@"ShoppingList"
                                   inManagedObjectContext:context];
@@ -482,16 +479,12 @@
         [Livro setValue:@".4" forKey:@"quantidade_decimal"];
         [Livro setValue:@"g" forKey:@"unidade"];
 
-
-        
         NSError *error = nil;
         if (![context save:&error]) {
             NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
             return;
         }
-        
- 
-
+    
 }
 
 // The number of columns of data
@@ -612,6 +605,7 @@
     //[self preencherTabela];
 }
 
+
 -(void)OpenReceita: (ObjectLista *) objLista{
     
     if (objLista.managedObjectReceita)
@@ -620,19 +614,37 @@
         ObjectReceita * objR = [ObjectReceita new];
 
         // tenho de ir buscar a receita ao qual este ingrediente pertence
+        // mas tem um problema... e se a receita foi apagada?
+        
         [objR setTheManagedObject:objLista.managedObjectReceita];
     
-        ReceitaVisualizar * visua = [ReceitaVisualizar new];
-        visua.receita = objR;
+        if (objR.managedObject) {
+            ReceitaVisualizar * visua = [ReceitaVisualizar new];
+            
+            visua.receita = objR;
+            
+            [self.navigationController pushViewController:visua animated:YES];
+        }
+        else
+        {
+            [self mostrarAlert];
+        }
         
-        [self.navigationController pushViewController:visua animated:YES];
+        
     }else
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"this ingredient dont belong to any recipe" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alert show];
+        [self mostrarAlert];
     }
 
 }
+
+-(void)mostrarAlert
+{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"this ingredient dont belong to any recipe" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+
 - (IBAction)clickHome:(id)sender
 {
     [self.navigationController popViewControllerAnimated:NO];
@@ -692,9 +704,9 @@
 -(void)sendMail:(id)sender{
     mailComposer = [[MFMailComposeViewController alloc]init];
     mailComposer.mailComposeDelegate = self;
-    [mailComposer setSubject:@"Fucook list"];
+    [mailComposer setSubject:@"My shopping list from Fucook"];
     
-    NSString * stringEnviar = [NSString stringWithFormat:@"<h5>I´m wondering if you could pick up a few things</h5><br><h6>%@</h6>", [self listarIngredientes]];
+    NSString * stringEnviar = [NSString stringWithFormat:@"<h5>Hi <br> I'm cooking from Fucook Recipe Manager iPhone App and was wondering if you could pick up a few things...<br>--- %@</h5>", [self listarIngredientes]];
     
     [mailComposer setMessageBody:stringEnviar isHTML:YES];
     
@@ -719,7 +731,20 @@
     
     for (ObjectLista * ing in arrayOfItems)
     {
-        stringIngredientes = [NSString stringWithFormat:@"%@ <br>%@%@ %@ ", stringIngredientes, ing.quantidade, ing.unidade, ing.nome ];
+        NSString * testeConversao = [Utils converter:ing paraMetrica:[Globals getImperial]];
+        
+        float qtdActual     = [testeConversao floatValue];
+        
+        if (ing.quantidade.floatValue == 0)
+        {
+            testeConversao = @"";
+        }
+        
+        
+        
+        NSString * unidadeConvertida = [Utils converterUnidade:ing paraMetrica:[Globals getImperial]];
+        
+        stringIngredientes = [NSString stringWithFormat:@"%@ <br>%@%@ %@ ", stringIngredientes, testeConversao, unidadeConvertida, ing.nome ];
     }
     
     return stringIngredientes;

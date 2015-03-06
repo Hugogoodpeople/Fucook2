@@ -18,6 +18,9 @@
 {
     // tenho de saber qual o livro a qual pertence esta receita
     self.livro = [ObjectLivro new];
+    
+    @try {
+    
     NSManagedObject * managedLivro = [managedObject valueForKey:@"pertence_livro"];
     
     self.livro.titulo    = [managedLivro valueForKey:@"titulo"];
@@ -67,6 +70,13 @@
     
     self.arrayEtapas = [NSMutableArray new];
     [self.arrayEtapas addObjectsFromArray: sortedArray];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception:%@",exception);
+    }
+    @finally {
+        //Display Alternative
+    }
     
 }
 

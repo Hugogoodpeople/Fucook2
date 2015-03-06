@@ -114,6 +114,18 @@
                         receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
                         receita.tempo               = [dictRec objectForKey:@"tempo"];
                         
+                        NSString * dataCriado       = [dictRec objectForKey:@"data_criado"];
+                        
+                        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                        // this is imporant - we set our input date format to match our input string
+                        // if format doesn't match you'll get nil from your string, so be careful
+                        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                        NSDate *megaData = [NSDate new];
+                        // voila!
+                        megaData = [dateFormatter dateFromString:dataCriado];
+                        
+                        receita.data_criado = megaData;
+                        
                         NSManagedObject *managedImagem = [NSEntityDescription
                                                           insertNewObjectForEntityForName:@"Imagens"
                                                           inManagedObjectContext:context];

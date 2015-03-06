@@ -8,6 +8,7 @@
 
 #import "NewIngredienteShoppingList.h"
 #import "ObjectIngrediente.h"
+#import "Globals.h"
 
 @interface NewIngredienteShoppingList (){
     BOOL pickerQuantA;
@@ -50,7 +51,7 @@
     
     self.navigationItem.title = @"Ingredient";
     
-    _pickerDataUnit = @[@"g", @"Kg", @"ml", @"dl", @"cl", @"L", @"un", @"tbsp"];
+ 
     
     self.textName.delegate=self;
     self.textQuant.delegate=self;
@@ -58,9 +59,27 @@
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
     [self.view addGestureRecognizer:singleTap];
     
-    arrayUnidade = @[@"Units",@"Tbs", @"g", @"kg", @"mL", @"dL", @"L", @"Btl.", @"Bags", @"Pkgs.", @"Boxes", @"Jars"];
-    arrayQuantidade = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12", @"13", @"14", @"15", @"16", @"17", @"18", @"19", @"20", @"25", @"30", @"35", @"40", @"45", @"50", @"55", @"60", @"70", @"80", @"90", @"100", @"125", @"150", @"175", @"200", @"250", @"300", @"350", @"400", @"450", @"500", @"600", @"700", @"750", @"800", @"900"];
-    arrayDecimal = @[@" ",@".2", @".25", @".3", @".4", @".5", @".6", @".7", @".75", @".8", @".9"];
+    
+    // para métrico
+    NSArray * metrico    = @[@"Kilograms",@"Grams",@"Liters",@"Mililiter",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoon",@"Unit"];
+    NSArray * metricoMin = @[@"Kg"       ,@"g"    ,@"L"     ,@"ml"       ,@"cup",@"tbsp"      ,@"dsp"         ,@"tsp"      ,@"Unit"];
+    
+    // para imperial
+    NSArray * imperial   = @[@"Pound",@"Ounce",@"Pint",@"Fluid Ounce",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoon",@"Unit"];
+    NSArray * imperialMin= @[@"lbs",@"oz",@"pt",@"fl",@"cup",@"tbsp",@"dsp",@"tsp",@"Unit"];
+    
+    
+    if ([Globals getImperial])
+    {
+        arrayUnidade = metrico;
+        _pickerDataUnit = metricoMin;
+    }
+    else
+    {
+        arrayUnidade = imperial;
+        _pickerDataUnit = imperialMin;
+    }
+    
 
     [self addCloseToTextView:self.textName];
     [self adicionarToolBar];
@@ -301,8 +320,7 @@
     
     //ingrid.quantidadeDecimal = [arrayDecimal objectAtIndex:row1];
     ingrid.quantidadeDecimal = @"";
-    
-    ingrid.unidade = [arrayUnidade objectAtIndex:row2];
+    ingrid.unidade = [_pickerDataUnit objectAtIndex:row2];
     ingrid.nome = self.textName.text;
     
     

@@ -21,6 +21,8 @@
     NSArray * arrayUnidade;
     NSArray * arrayUnidadeTO;
     
+    BOOL foiAlterado;
+    
 }
 @end
 
@@ -67,11 +69,11 @@
     // 2 para abreviaturas e outro para nao abreviaturas ;P
     
     // para métrico
-    NSArray * metrico    = @[@"Kilograms",@"Grams",@"Liters",@"Mililiter",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoonn",@"Unit"];
+    NSArray * metrico    = @[@"Kilograms",@"Grams",@"Liters",@"Mililiter",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoon",@"Unit"];
     NSArray * metricoMin = @[@"Kg"       ,@"g"    ,@"L"     ,@"ml"       ,@"cup",@"tbsp"      ,@"dsp"         ,@"tsp"      ,@"Unit"];
     
     // para imperial
-    NSArray * imperial   = @[@"Pound",@"Ounce",@"Pint",@"Fluid Ounce",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoonn",@"Unit"];
+    NSArray * imperial   = @[@"Pound",@"Ounce",@"Pint",@"Fluid Ounce",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoon",@"Unit"];
     NSArray * imperialMin= @[@"lbs",@"oz",@"pt",@"fl",@"cup",@"tbsp",@"dsp",@"tsp",@"Unit"];
     
     
@@ -172,7 +174,7 @@
     NSString *str = self.textQuant.text;
     str = [str stringByReplacingOccurrencesOfString:@"," withString:@"."];
     self.textQuant.text = str;
-    
+    foiAlterado = YES;
 }
 
 -(void)addIngrediente
@@ -223,20 +225,48 @@
 }
 
 - (IBAction)back:(id)sender {
+    
+    if (foiAlterado) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upss!" message:@"Do you want to exit before saving changes?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        
+        alert.tag = 10;
+        [alert show];
+    }
+    else
+    {
+        [self sair];
+    }
+}
+
+-(void)sair
+{
     [self.navigationController popViewControllerAnimated:YES];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 10)
+    {
+        if (buttonIndex == 0)
+        {
+            [self addIngrediente];
+        }
+        else
+        {
+            [self sair];
+        }
+    }
 }
 
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    
+    foiAlterado = YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    //CGPoint scrollPoint = CGPointMake(0.0, -50);
-    
-    //[self.scrollView setContentOffset:scrollPoint animated:YES];
+    foiAlterado = YES;
 }
 
 -(void)handleSingleTap

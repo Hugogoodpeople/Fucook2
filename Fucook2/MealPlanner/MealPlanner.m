@@ -117,6 +117,15 @@
     [self setUpCarrocel];
 }
 
+-(void)recarregarTudo:(NSDate *)date
+{
+    self.dataActual = date;
+    self.navigationController.navigationBarHidden = YES;
+    [self setUp];
+    [self setUpCoreData];
+    [self setUpCarrocel];
+}
+
 
 
 - (IBAction)clickHome:(id)sender
@@ -738,7 +747,7 @@
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }else
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%d ingredients added to your cart", arrayIngredientes.count - count] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%d ingredients added to your shopping list", arrayIngredientes.count - count] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         
         [alert show];
     }

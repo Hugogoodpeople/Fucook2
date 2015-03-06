@@ -98,6 +98,7 @@
      ShareFucook * share = [ShareFucook new];
      share.delegate = nil;
      share.isInInApps = NO;
+     share.mensagem = @"Just discover this great recipe's manager App at ";
      share.modalPresentationStyle = UIModalPresentationOverCurrentContext;
      [self presentViewController:share animated:YES completion:^{
      [UIView animateWithDuration:0.2 animations:^{

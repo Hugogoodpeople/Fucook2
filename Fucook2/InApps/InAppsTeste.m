@@ -120,14 +120,6 @@
                         receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
                         receita.tempo               = [dictRec objectForKey:@"tempo"];
                         receita.gratis              = [dictRec objectForKey:@"gratis"];
-                        
-                        /*
-                        NSString * strData = [dictRec objectForKey:@"foto_receita"];
-                        NSData *data = [[NSData alloc] initWithData:[NSData dataFromBase64String:strData]];
-                        
-                        receita.imagem = [UIImage imageWithData:data];
-                        */
-                        
                         receita.urlImagem           = [dictRec objectForKey:@"foto_receita"];
                         
                         
@@ -142,9 +134,7 @@
                             ingrediente.quantidade          = [dictIngre objectForKey:@"quantidade"];
                             ingrediente.unidade             = [dictIngre objectForKey:@"unidade"];
                             
-                            
                             [arrayIngredientes addObject:ingrediente];
-                            
                         }
                         
                         
@@ -270,6 +260,18 @@
                         receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
                         receita.tempo               = [dictRec objectForKey:@"tempo"];
                         
+                        NSString * dataCriado       = [dictRec objectForKey:@"data_criado"];
+                        
+                        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                        // this is imporant - we set our input date format to match our input string
+                        // if format doesn't match you'll get nil from your string, so be careful
+                        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                        NSDate *megaData = [NSDate new];
+                        // voila!
+                        megaData = [dateFormatter dateFromString:dataCriado];
+                        
+                        receita.data_criado = megaData;
+                        
                         NSManagedObject *managedImagem = [NSEntityDescription
                                                           insertNewObjectForEntityForName:@"Imagens"
                                                           inManagedObjectContext:context];
@@ -326,6 +328,7 @@
                     
                     [livro AddToCoreData:context];
                     
+                    
                     // este tem de ser o ultimo passo a concluir
                     [livro.managedObject setValue:[NSSet setWithArray:[[NSArray alloc] initWithArray:arrayReceitas]]  forKey:@"contem_receitas"];
                 
@@ -355,8 +358,7 @@
                      //[self comprarItem:livro];
                 }
                 
-               
-                
+
                 break;
             }
 
@@ -374,7 +376,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Buy Book's";
+    self.title = @"Featured Collections";
 
     /* bt search*/
     UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 40, 40)];
@@ -445,24 +447,43 @@
 
 - (IBAction)clickHome:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:NO];
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        //code to be executed on the main queue after delay
+        [self.navigationController popViewControllerAnimated:NO];
+    });
+
 }
 
 - (IBAction)clickcarrinho:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:NO];
-    if (self.delegate)
-    {
-        [self.delegate performSelector:@selector(clickCarrinho:) withObject:nil];
-    }
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        //code to be executed on the main queue after delay
+        [self.navigationController popToRootViewControllerAnimated:NO];
+        if (self.delegate)
+        {
+            [self.delegate performSelector:@selector(clickCarrinho:) withObject:nil];
+        }
+    });
+    
+    
 }
 
 
 - (IBAction)clickCalendario:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:NO];
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(clickAgends:) withObject:nil];
-    }
+    
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+
+        [self.navigationController popToRootViewControllerAnimated:NO];
+        if (self.delegate) {
+            [self.delegate performSelector:@selector(clickAgends:) withObject:nil];
+        }
+    });
 }
 // 4
 
@@ -579,7 +600,6 @@
     // [cell.buttonAdd2 addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     // cell.accessoryType = UITableViewCellAccessoryNone;
     // cell.accessoryView = buyButton;
-     
     
  
     return cell;
@@ -593,20 +613,28 @@
     // tenho de ir buscar os valores a tabela para poder abrir o objecto correcto
     
     ObjectLivro * livro = [array_livros objectAtIndex:indexPath.row];
-    PreviewBook * recietas = [PreviewBook new];
-    recietas.livro = livro;
-    recietas.products = [_products copy] ;
-    recietas.delegate = self;
-    recietas.context = context;
     
-    [self.navigationController pushViewController:recietas animated:YES];
+    if ([self ExisteLivro:livro])
+    {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You already have this recipe´s book" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else
+    {
+    
+        PreviewBook * recietas = [PreviewBook new];
+        recietas.livro = livro;
+        recietas.products = [_products copy] ;
+        recietas.delegate = self;
+        recietas.context = context;
+    
+        [self.navigationController pushViewController:recietas animated:YES];
+    }
     
 }
 
 -(void)comprarLivro:(ObjectLivro *)Livro
 {
-    
-    
     // tenho de pegar no livro de adicionar ao core data do utilizador :!
     
     // antes de adicionar o livro tenho de ir ao coredata verificar se este livro já lá existe e se sim nao posso adicionar de novo
@@ -715,11 +743,14 @@
     _products = nil;
     [self.tableView reloadData];
     [[FucookIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
-        if (success) {
-            _products = products;
-            [self.tableView reloadData];
+        if (self) {
+        
+            if (success) {
+                _products = products;
+                [self.tableView reloadData];
+            }
+            [self.refreshControl endRefreshing];
         }
-        [self.refreshControl endRefreshing];
     }];
 }
 

@@ -517,9 +517,11 @@
             color = [UIColor whiteColor];
         }  else if (todayBlock==targetBlock) {
             color = [UIColor whiteColor];
-        } else {
+        } else
+        {
             //color  = (UIColor *)[markedColors objectAtIndex:i];
-            color = [UIColor colorWithHexString:@"0x973694"];
+            #warning para mudar a cor das bolas
+            color = [UIColor colorWithHexString:@"0xeb5f50"];
         }
         
         /*

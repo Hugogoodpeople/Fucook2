@@ -10,4 +10,8 @@
 
 @interface AvisoComprar : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *labelTitulo;
+@property (weak, nonatomic) IBOutlet UITextView *labelDescricao;
+
+
 @end

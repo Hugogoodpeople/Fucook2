@@ -207,7 +207,7 @@
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = addTime;
     localNotification.alertBody = [NSString stringWithFormat:@"Alert Fired at %@", addTime];
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.soundName = @"clock_alarm.mp3";
     // para adicionar o cenas do numero na aplicação
     // localNotification.applicationIconBadgeNumber = 5;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];

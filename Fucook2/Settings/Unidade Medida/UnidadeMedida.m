@@ -36,10 +36,10 @@
     self.navigationItem.leftBarButtonItem = anotherButtonback;
     
     // para métrico
-    metrico    = @[@"Kilograms",@"Grams",@"Liters",@"Mililiter",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoonn",@"Unit"];
+    metrico    = @[@"Kilograms",@"Grams",@"Liters",@"Mililiter",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoon",@"Unit"];
     
     // para imperial
-    imperial   = @[@"Pound",@"Ounce",@"Pint",@"Fluid Ounce",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoonn",@"Unit"];
+    imperial   = @[@"Pound",@"Ounce",@"Pint",@"Fluid Ounce",@"Cup",@"Tablespoon",@"Dessertspoon",@"Teaspoon",@"Unit"];
 
     
     [self.segmentComtrol setSelectedSegmentIndex: [Globals getImperial] ? 0:1];
@@ -53,7 +53,7 @@
     }
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    self.title = @"Measure";
+    self.title = @"Measurements";
     
 }
 

@@ -11,10 +11,13 @@
 #import "Globals.h"
 #import "FucookIAPHelper.h"
 #import "WebServiceSender.h"
+#import "Appirater.h"
+#import <AVFoundation/AVAudioPlayer.h>
 
 @interface AppDelegate ()
 {
     WebServiceSender * listaIdsInApps;
+    AVAudioPlayer * audioPlayer;
 }
 
 @end
@@ -104,11 +107,33 @@
     
     [self.window setRootViewController:nav];
     
-    
+#warning se fosse apenas para ios 8
+    /*
     UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    */
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    } else {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    }
+    
     
     [self buscarIdsInApps];
+    
+    //.. do other setup
+    [Appirater setAppId:@"946087703"];
+    [Appirater setDaysUntilPrompt:0];
+    [Appirater setUsesUntilPrompt:3];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:3];
+    [Appirater setDebug:NO];
+    
+    
+    [Appirater appLaunched];
+
     
     
     return YES;
@@ -143,6 +168,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -153,6 +179,26 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
+    [[[UIAlertView alloc] initWithTitle:@"Warning" message:notification.alertBody delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+    
+    // Construct URL to sound file
+    NSString *path = [NSString stringWithFormat:@"%@/clock_alarm.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    audioPlayer.numberOfLoops = 1;
+    [audioPlayer play];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==0) {
+        [audioPlayer stop];
+    }
 }
 
 #pragma mark - Core Data stack

@@ -15,7 +15,6 @@
     NSManagedObject * tempAgenda;
 }
 
-
 @property NSMutableArray * items;
 @property NSMutableArray * datas;
 @property VRGCalendarView *calendar;
@@ -32,14 +31,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"Calendar";
+    if (self.delegate) {
+        self.title = @"Rescheduled";
+    }
+    else
+    {
+        self.title = @"Daily Menu";
+    }
     
-    [self setUp];
+    
     
     calendar = [[VRGCalendarView alloc] init];
     calendar.delegate=self;
     [self.container addSubview:calendar];
-    
     
     UIButton * buttonback = [[UIButton alloc] initWithFrame:CGRectMake(5, 5, 10, 40)];
     [buttonback addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
@@ -47,6 +51,8 @@
     
     UIBarButtonItem *anotherButtonback = [[UIBarButtonItem alloc] initWithCustomView:buttonback];
     self.navigationItem.leftBarButtonItem = anotherButtonback;
+    
+    [self setUp];
 }
 
 -(void)back
@@ -92,11 +98,24 @@
             [_datas addObject:dia.data];
         }
     }
+    
+    // resumindo muito eu tenho de verificar se o mes
+    NSMutableArray * dias = [NSMutableArray new];
+    for (NSDate * data in _datas) {
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitMonth | NSCalendarUnitDay fromDate:data];
+        //if([components month] == month)
+        {
+            [dias addObject:[NSNumber numberWithInteger:[components day]]];
+        }
+    }
+    
+    [calendar markDates:dias];
+
 }
 
 -(void)calendarView:(VRGCalendarView *)calendarView switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated
 {
-    
+    /*
     // resumindo muito eu tenho de verificar se o mes
     NSMutableArray * dias = [NSMutableArray new];
     for (NSDate * data in _datas) {
@@ -108,6 +127,7 @@
     }
     
     [calendarView markDates:dias];
+     */
 }
 
 
@@ -217,7 +237,7 @@
     
     // tenho de colocar uma alertview para avisar que estou a alterar alguma coisa
     if (jaTinhaAgendada) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"The marking already exists! Want to replace with the old one?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"There is already a recipe scheduled for this meal for this date.\nDo you want to replace it?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
         alert.tag = 1;
         [alert show];
         
@@ -251,8 +271,9 @@
             NSLog(@"Gravado com sucesso");
         }
         
-        if (self.delegate) {
-            [self.delegate performSelector:@selector(recarregarTudo) ];
+        if (self.delegate)
+        {
+            [self.delegate performSelector:@selector(recarregarTudo:) withObject:self.tempDate];
         }
         
         [self.navigationController popViewControllerAnimated:YES];

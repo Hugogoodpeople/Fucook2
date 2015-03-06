@@ -30,6 +30,8 @@
     NSManagedObjectContext  * context;
     float largura;
     
+    BOOL todasNaList;
+    
 }
 
 @property NSMutableArray * shopingCart;
@@ -100,8 +102,6 @@
         self.tabela.tableFooterView = nil;
     }
     
-
-    
 }
 
 -(void)shareLivro
@@ -139,6 +139,7 @@
     header.servings         = self.receita.servings;
     header.categoria        = self.receita.categoria;
     header.imagem           = self.receita.imagem;
+    header.partilha         = self.receita.livro.partilha;
     
     [header.view setFrame:CGRectMake(0, 64, self.view.frame.size.width, header.view.frame.size.height)];
     [self.tabela addSubview:header.view];
@@ -163,6 +164,9 @@
     // tenho de verificar aqui se os ingredientes já estão na shopinglist
     NSSet * receitas = [self.receita.managedObject valueForKey:@"contem_ingredientes"];
     NSMutableArray * arrayTemp = [NSMutableArray new];
+    
+    todasNaList = YES;
+    
     for (NSManagedObject *pedido in receitas)
     {
         ObjectIngrediente * ingred = [ObjectIngrediente new];
@@ -176,8 +180,16 @@
         ingred.ordem                = [[pedido valueForKey:@"ordem"] intValue];
         ingred.selecionado          = [self verificarShoppingList:ingred];
         
+        if (ingred.selecionado)
+        {
+            todasNaList = NO;
+        }
+        
         [arrayTemp addObject:ingred];
     }
+    
+    // aqui se todos os ingredientes estiverem na shoping list tenho de mudar o testo para remove from list
+    
     
     NSArray *sortedArray;
     sortedArray = [arrayTemp sortedArrayUsingSelector:@selector(compare:)];
@@ -188,6 +200,8 @@
     header = [HeaderIngrediente new];
     header.delegate = self;
     
+    // para alterar o botao de adicionar e remover
+    [self mostrarAlteracoesAddRemove:!todasNaList];
     
     header.dificuldade      = self.receita.dificuldade;
     header.tempo            = self.receita.tempo;
@@ -221,9 +235,6 @@
     [self setUpDirections];
     // para ter a certeza que todos já executaram tenho de fazer um de cada vez
     
-
-    
-    
     
 }
 
@@ -234,28 +245,36 @@
     
     
     // tenho de trocar o que aqui está por cenas vidas de memoria e não de coredata
-    
     NSMutableArray * receitas = self.receita.arrayEtapas;
-    
     
     NSArray *sortedArray;
     sortedArray = [receitas sortedArrayUsingSelector:@selector(compare:)];
     
     [self.itemsDirections addObjectsFromArray: sortedArray];
     
-    
     [self.tabela reloadData];
     
     if(self.isFromInApps)
     {
-        
         AvisoComprar * aviso = [AvisoComprar new];
-        [aviso.view setFrame:CGRectMake(0, 570, self.tabela.frame.size.width -20, 486)];
+        
+        
+        
+        
+        [aviso.view setFrame:CGRectMake(0, 570, self.tabela.frame.size.width -20, 385)];
         
         [self.tabela addSubview:aviso.view];
+        
+        aviso.labelDescricao.text = @"At Fucook we are passionate about phenomenal food. Some of the brightest men and women of all countries and generations have devoted their time and powers to this theme. Like them, we also believe cooking is as art. We also believe that when you cook together and share good food with your friends and family good things happen.\n\nHere, you will find some incredible recipes and we want people like you to be inspired by them.\n\nOur recipes give you the inspiration you need to build on the traditions and discoveries of others, and to begin to break the rules to create your own recipes.\n\nWe are always searching for new recipes that will complement us and inspire you.\n\nClick the buy button above to access this recipe and more recipes from this book.";
+        
+        if (self.receita.livro.partilha == 1) {
+            aviso.labelTitulo.text = @"SHARE REQUIRED";
+            aviso.labelDescricao.text = @"At Fucook we are passionate about phenomenal food. Some of the brightest men and women of all countries and generations have devoted their time and powers to this theme. Like them, we also believe cooking is as art. We also believe that when you cook together and share good food with your friends and family good things happen.\n\nHere, you will find some incredible recipes and we want people like you to be inspired by them.\n\nOur recipes give you the inspiration you need to build on the traditions and discoveries of others, and to begin to break the rules to create your own recipes.\n\nWe are always searching for new recipes that will complement us and inspire you.\n\nClick the unlock button above to access this recipe and more recipes from this book.";
+        }
+        
     }
-    [self.tabela addSubview:header.view];
     
+    [self.tabela addSubview:header.view];
 }
 
 -(void)setUpDirections
@@ -301,18 +320,23 @@
     {
     
         AvisoComprar * aviso = [AvisoComprar new];
-        [aviso.view setFrame:CGRectMake(10, 580, self.tabela.frame.size.width- 20, 486)];
-    
+        [aviso.view setFrame:CGRectMake(10, 580, self.tabela.frame.size.width- 20, 385)];
+        
         [self.tabela addSubview:aviso.view];
+        
+        aviso.labelDescricao.text = @"At Fucook we are passionate about phenomenal food. Some of the brightest men and women of all countries and generations have devoted their time and powers to this theme. Like them, we also believe cooking is as art. We also believe that when you cook together and share good food with your friends and family good things happen.\n\nHere, you will find some incredible recipes and we want people like you to be inspired by them.\n\nOur recipes give you the inspiration you need to build on the traditions and discoveries of others, and to begin to break the rules to create your own recipes.\n\nWe are always searching for new recipes that will complement us and inspire you.\n\nClick the buy button above to access this recipe and more recipes from this book.";
+        
+        if (self.receita.livro.partilha == 1)
+        {
+            aviso.labelTitulo.text = @"SHARE REQUIRED";
+            aviso.labelDescricao.text = @"At Fucook we are passionate about phenomenal food. Some of the brightest men and women of all countries and generations have devoted their time and powers to this theme. Like them, we also believe cooking is as art. We also believe that when you cook together and share good food with your friends and family good things happen.\n\nHere, you will find some incredible recipes and we want people like you to be inspired by them.\n\nOur recipes give you the inspiration you need to build on the traditions and discoveries of others, and to begin to break the rules to create your own recipes.\n\nWe are always searching for new recipes that will complement us and inspire you.\n\nClick the unlock button above to access this recipe and more recipes from this book.";
+        }
     }
-    
 }
-
 
 -(BOOL)verificarShoppingList:(ObjectIngrediente *) ingrediente
 {
     BOOL tem = NO;
-    
     
     for (ObjectLista * list in self.shopingCart) {
         if ([list.nome isEqualToString:ingrediente.nome] &&
@@ -388,6 +412,7 @@
     [fetchRequest setEntity:entity];
     
     
+    
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     for (NSManagedObject *pedido in fetchedObjects)
     {
@@ -415,9 +440,34 @@
                                                                 [list.quantidade_decimal isEqualToString:ingrediente.quantidadeDecimal]*/)
         {
             [context deleteObject:list.managedObject];
+            
+            // este remover objecto nao funciona por isso tive de fazer um iterador
+            
+            NSMutableArray * temp = [NSMutableArray arrayWithArray:self.shopingCart];
+            
+            for (ObjectLista * objL in temp)
+            {
+                if ([objL.nome isEqualToString:list.nome]
+                    && [objL.unidade isEqualToString:list.unidade])
+                {
+                    [self.shopingCart removeObject:objL];
+                }
+            }
+            
             [self.shopingCart removeObject: list];
+            
         }
+        
     }
+    
+    if (self.shopingCart.count == 0 )
+    {
+        header.labelAllitensAddedRemoved.text = @"All itens removed from shopping list";
+        header.labelAddRemoveAll.text = @"ADD TO LIST";
+        self.cartAllSelected = NO;
+    }
+    
+    
 }
 
 -(void)saveIngrediente:(ObjectIngrediente *) ingrediente
@@ -436,7 +486,8 @@
     
     
     BOOL  podeGravar = YES;
-    if (self.shopingCart.count == 0) {
+    if (self.shopingCart.count == 0)
+    {
         podeGravar = YES;
     }
     else
@@ -483,7 +534,13 @@
         objLista.quantidade             = [NSString stringWithFormat:@"%g", calculado];
         
         [self.shopingCart addObject: objLista];
+       
+
     }
+ 
+    header.labelAllitensAddedRemoved.text   = @"All itens added to shopping list";
+    header.labelAddRemoveAll.text = @"REMOVE FROM LIST";
+    self.cartAllSelected = NO;
     
 }
 
@@ -718,9 +775,10 @@
         cell.isFromInApps = self.isFromInApps;
     
         if (!self.isFromInApps)
-        [cell addRemove: !ing.selecionado];
+            [cell addRemove: !ing.selecionado];
     
         return cell;
+        
     }
     else if(indexPath.section == 1)
     {

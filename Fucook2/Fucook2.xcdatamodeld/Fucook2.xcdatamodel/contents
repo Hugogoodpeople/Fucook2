@@ -81,7 +81,7 @@
         <attribute name="quantidade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantidade_decimal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unidade" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="pertence_receita" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Receitas" syncable="YES"/>
+        <relationship name="pertence_receita" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receitas" syncable="YES"/>
     </entity>
     <elements>
         <element name="Agenda" positionX="-153" positionY="186" width="128" height="120"/>
@@ -92,6 +92,6 @@
         <element name="Nota" positionX="-621" positionY="276" width="128" height="75"/>
         <element name="Nutricao" positionX="-74" positionY="-147" width="128" height="255"/>
         <element name="Receitas" positionX="-434" positionY="60" width="128" height="255"/>
-        <element name="ShoppingList" positionX="-225" positionY="-192" width="128" height="165"/>
+        <element name="ShoppingList" positionX="-225" positionY="-192" width="128" height="163"/>
     </elements>
 </model>

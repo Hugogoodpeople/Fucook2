@@ -42,11 +42,33 @@
 }
 */
 
-- (IBAction)clickCart:(id)sender {
-    if (self.delegate) {
-        [self.delegate performSelector:@selector(callCart) withObject:nil];
+-(void)mostrarAlerta
+{
+    // aqui tenho de verificar se é desbloqueavel por partilha ou por inApp
+    
+    NSString * texto;
+    
+    if (self.partilha == 1)
+    {
+        texto = @"This feature is only available once recipe's book has been shared.";
+    }
+    else
+    {
+        texto = @"This feature is only available once recipe's book has been bought.";
     }
     
+    [[[UIAlertView alloc] initWithTitle:@"" message:texto delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
+}
+
+- (IBAction)clickCart:(id)sender {
+    if (self.delegate)
+    {
+        [self.delegate performSelector:@selector(callCart) withObject:nil];
+    }
+    else
+    {
+        [self mostrarAlerta];
+    }
     
 }
 
@@ -80,6 +102,10 @@
     if (self.delegate) {
         [self.delegate performSelector:@selector(calendarioReceita) withObject:nil];
     }
+    else
+    {
+        [self mostrarAlerta];
+    }
 }
 
 - (IBAction)clickNotas:(id)sender
@@ -87,25 +113,35 @@
     if (self.delegate) {
         [self.delegate performSelector:@selector(abrirNotes)];
     }
+    else
+    {
+        [self mostrarAlerta];
+    }
 }
 
 - (IBAction)clickTimer:(id)sender
 {
-    NSLog(@"clicar %@", self.labelTempo.text);
-    // tenho de verificar se está escrito Set timer
-    if ([self.tempo isEqualToString:@"Set timer"])
+    if (self.delegate)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:@"This recipe doesn't have a preparation time set" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        NSLog(@"clicar %@", self.labelTempo.text);
+        // tenho de verificar se está escrito Set timer
+        if ([self.tempo isEqualToString:@"Set timer"])
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:@"This recipe doesn't have a preparation time set." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         
+            [alert show];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:[NSString stringWithFormat:@"Do you want to set an alarm to %@. from now?", self.tempo ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+            alert.tag = 1;
         
-        [alert show];
+            [alert show];
+        }
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:[NSString stringWithFormat: @"Do you want to set an alarm to %@ min. from now?", self.tempo ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
-        alert.tag = 1;
-        
-        [alert show];
+        [self mostrarAlerta];
     }
 }
 
@@ -166,8 +202,8 @@
     NSLog(@"ás %@", addTime.description );
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = addTime;
-    localNotification.alertBody = [NSString stringWithFormat:@"%@", self.nome];
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.alertBody = [NSString stringWithFormat:@"Times up for %@", self.nome];
+    localNotification.soundName = @"clock_alarm.mp3";
     // para adicionar o cenas do numero na aplicação
     // localNotification.applicationIconBadgeNumber = 5;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];

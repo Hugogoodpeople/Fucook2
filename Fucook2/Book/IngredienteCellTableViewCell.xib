@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view alpha="0.0" contentMode="scaleToFill" id="94a-0u-EbT">
-                        <rect key="frame" x="0.0" y="-3" width="320" height="53"/>
+                        <rect key="frame" x="0.0" y="-3" width="320" height="53.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added to list" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7z1-bF-Yj9">

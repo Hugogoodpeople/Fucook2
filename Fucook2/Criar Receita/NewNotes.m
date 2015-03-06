@@ -9,6 +9,9 @@
 #import "NewNotes.h"
 
 @interface NewNotes ()
+{
+    BOOL foiAlterado;
+}
 
 @end
 
@@ -82,6 +85,10 @@
     [self.textNote resignFirstResponder];
 }
 
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    foiAlterado = YES;
+}
 
 -(void)scrollTextViewToBottom:(UITextView *)textView {
     if(textView.text.length > 0 ) {
@@ -96,8 +103,39 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)back:(id)sender {
+- (IBAction)back:(id)sender
+{
+    if (foiAlterado) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Upss!" message:@"Do you want to exit before saving changes?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        
+        alert.tag = 10;
+        [alert show];
+    }
+    else
+    {
+        [self sair];
+    }
+}
+
+-(void)sair
+{
     [self.navigationController popViewControllerAnimated:YES];
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 10)
+    {
+        if (buttonIndex == 0)
+        {
+            [self AddNota];
+        }
+        else
+        {
+            [self sair];
+        }
+    }
 }
 
 -(void)AddNota

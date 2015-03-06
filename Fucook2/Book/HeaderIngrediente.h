@@ -45,4 +45,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelAddRemoveAll;
 -(void)clickservings;
 
+@property int partilha;
+
 @end

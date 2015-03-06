@@ -7,13 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvisoComprar">
             <connections>
+                <outlet property="labelDescricao" destination="Q8N-eY-YLI" id="43F-fl-8m7"/>
+                <outlet property="labelTitulo" destination="j4q-Qc-tUG" id="7ag-J5-cdQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="300" height="486"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgframealert.png" id="HMe-qJ-Fh5">
                     <rect key="frame" x="-4" y="0.0" width="304" height="486"/>
@@ -26,14 +28,22 @@
                     <color key="textColor" red="0.58431372549019611" green="0.58823529411764708" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="Q8N-eY-YLI">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" id="Q8N-eY-YLI">
                     <rect key="frame" x="8" y="47" width="272" height="439"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <mutableString key="text">At Fucook we are passionate about phenomenal food. Some of the brightest men and women of all countries and generations have devoted their time and powers to this theme. Like them, we also believe cooking is as art. We also believe that when you cook together and share good food with your friends and family good things happen.Here, you will find some incredible recipes and we want people like you to be inspired by them. Our recipes give you the inspiration you need to build on the traditions and discoveries of others, and to begin to break the rules to create your own recipes. We are always searching for new recipes that will complement us and inspire you. Click the buy button above to access this recipe and more recipes from this book. </mutableString>
+                    <string key="text">At Fucook we are passionate about phenomenal food. Some of the brightest men and women of all countries and generations have devoted their time and powers to this theme. Like them, we also believe cooking is as art. We also believe that when you cook together and share good food with your friends and family good things happen.
+
+Here, you will find some incredible recipes and we want people like you to be inspired by them. 
+Our recipes give you the inspiration you need to build on the traditions and discoveries of others, and to begin to break the rules to create your own recipes. 
+
+We are always searching for new recipes that will complement us and inspire you. 
+
+Click the buy button above to access this recipe and more recipes from this book. 
+</string>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
                 </textView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imglinedown.png" id="nB7-GJ-aPn">
                     <rect key="frame" x="13" y="46" width="240" height="2"/>
@@ -42,7 +52,7 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="289" y="446"/>
+            <point key="canvasLocation" x="65" y="304"/>
         </view>
     </objects>
     <resources>

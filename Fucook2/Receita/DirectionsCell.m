@@ -102,9 +102,6 @@
 // para as notificações locais tenho de ir buscar a label do tempo
 - (IBAction)setNotification:(UIButton *)sender
 {
-   
-    
-    
     NSLog(@"clicar %@", self.labelTempo.text);
     // tenho de verificar se está escrito Set timer
     if ([self.labelTempo.text isEqualToString:@"Set timer"])
@@ -115,7 +112,8 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:[NSString stringWithFormat: @"Do you want to set an alarm to %@ min. from now?", self.labelTempo.text ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
+        self.tempo = self.labelTempo.text;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Set timer" message:[NSString stringWithFormat: @"Do you want to set an alarm to %@. from now?", self.labelTempo.text ] delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES", nil];
         alert.tag = 1;
         
         [alert show];
@@ -154,8 +152,8 @@
     NSLog(@"ás %@", addTime.description );
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = addTime;
-    localNotification.alertBody = [NSString stringWithFormat:@"%@ %@",self.labelPasso.text, self.nomeReceita];
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.alertBody = [NSString stringWithFormat:@"Times up for %@ %@ direction",self.nomeReceita, self.labelPasso.text];
+    localNotification.soundName = @"clock_alarm.mp3";
     // para adicionar o cenas do numero na aplicação
     // localNotification.applicationIconBadgeNumber = 5;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];

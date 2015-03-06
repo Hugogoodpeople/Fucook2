@@ -84,7 +84,15 @@
     SLComposeViewController *composeController = [SLComposeViewController
                                                   composeViewControllerForServiceType:SLServiceTypeFacebook];
     
-    [composeController setInitialText:@"Just found this great recipe's book at "];
+    if (self.mensagem) {
+        [composeController setInitialText:self.mensagem];
+    }
+    else
+    {
+        [composeController setInitialText:[NSString stringWithFormat: @"Just found this great recipe's book %@ at ", self.livro.titulo]];
+    }
+    
+    
     [composeController addImage:self.livro.imagem];
     [composeController addURL: [NSURL URLWithString:
                                 @"http://www.fucook.com"]];
@@ -124,10 +132,17 @@
     SLComposeViewController *composeController = [SLComposeViewController
                                                   composeViewControllerForServiceType:SLServiceTypeTwitter];
     
-    [composeController setInitialText:@"Just found this great recipe's book at "];
+    if (self.mensagem)
+    {
+        [composeController setInitialText:self.mensagem];
+    }
+    else
+    {
+        [composeController setInitialText:[NSString stringWithFormat: @"Just found this great recipe's book %@ at ", self.livro.titulo]];
+    }
+    
     [composeController addImage:self.livro.imagem];
-    [composeController addURL: [NSURL URLWithString:
-                                @"http://www.fucook.com"]];
+    [composeController addURL: [NSURL URLWithString:@"http://www.fucook.com"]];
     
     
     
@@ -140,11 +155,11 @@
             NSLog(@"cancele");
             [self dismissViewControllerAnimated:YES completion:nil];
         } else
-            
         {
             NSLog(@"post to twitter done");
             // tenho de adicionar o livro a lista de livros do utilizador
-            if (self.delegate) {
+            if (self.delegate)
+            {
                 [self.delegate performSelector:@selector(comprarLivro:) withObject:self.livro];
             }
             [self close];

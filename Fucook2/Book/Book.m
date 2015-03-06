@@ -130,10 +130,10 @@
 
     
     
-   // NSArray* reversed = [[sortedArray reverseObjectEnumerator] allObjects];
+    NSArray* reversed = [[sortedArray reverseObjectEnumerator] allObjects];
     
     
-    self.items = [NSMutableArray arrayWithArray:sortedArray];
+    self.items = [NSMutableArray arrayWithArray:reversed];
     
     [self.tabela reloadData];
     
@@ -246,7 +246,7 @@
         NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
     }else
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%lu ingredients added to your cart", arrayIngredientes.count - count] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"%lu ingredients added to your shopping list", arrayIngredientes.count - count] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     
         [alert show];
     }
@@ -275,18 +275,13 @@
     }
 }
 
+
+
 -(void)apagarReceita
 {
     NSManagedObjectContext * context = [AppDelegate sharedAppDelegate].managedObjectContext;
+
     
-    //NSManagedObject * temp;
-    
-    // tenho de ir buscar a receita correcta ao livro para ser apagada
-    //NSSet * receitas = [self.livro.managedObject valueForKey:@"contem_receitas"];
-    
-    
-    // porque que eu faço isto aqui??? posso passar directamente o valor e apagar logo
-    // tipo [context deleteObject:self.receitaAApagar]; // e fica feito
     [context deleteObject:self.receitaAApagar];
   
     
@@ -332,7 +327,7 @@
     
     cell.labelTitulo.text = rec.nome;//[rec.nome uppercaseString];
     cell.labelTempo.text = rec.tempo;
-    cell.labelCategoria.text = [NSString stringWithFormat:@"%@ · %@ · %@",rec.tempo, rec.dificuldade , rec.categoria];
+    cell.labelCategoria.text = [NSString stringWithFormat:@"%@ · %@ · %@",rec.tempo, rec.dificuldade , [rec.categoria stringByReplacingOccurrencesOfString:@" " withString:@" · "]];
     cell.labelDificuldade.text = rec.dificuldade;
     cell.receita = rec;
     // tenho de calcular com base no que esta no header
@@ -422,4 +417,6 @@
 - (IBAction)clickAddRecipe:(id)sender {
     [self addreceita:nil];
 }
+
+
 @end

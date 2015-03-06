@@ -95,12 +95,10 @@
     
     static NSString *simpleTableIdentifier = @"CellEtapa";
     
-    
     ObjectDirections * ingrid = [self.arrayOfItems objectAtIndex:indexPath.row];
     
     
     /*
-    
     CellEtapa *cell = (CellEtapa *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if(cell == nil){
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CellEtapa" owner:self options:nil];
@@ -120,10 +118,8 @@
     
     return cell;
     
-    
     */
     
-
     
     CellEtapa *cell = (CellEtapa *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     

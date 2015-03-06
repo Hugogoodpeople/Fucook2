@@ -79,7 +79,7 @@
     // tenho de perguntar ao utilizadro se quer gravar ou não quando as cenas foram alteradas
     if (foiAlterado)
     {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Do you want to save changes you made?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Do you want to save changes you have made?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         alert.tag = 2;
         [alert show];
     }else

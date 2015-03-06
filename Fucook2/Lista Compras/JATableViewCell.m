@@ -59,6 +59,7 @@
         [self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
         [self.titleLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:10];
         [self.titleLabel autoMatchDimension:ALDimensionWidth toDimension:ALDimensionWidth ofView:self.topContentView withMultiplier:0.9];
+        //[self.titleLabel setBackgroundColor:[UIColor redColor]];
         
         self.constraintsSetup = YES;
     }

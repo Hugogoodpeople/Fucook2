@@ -49,9 +49,6 @@
     //self.navigationItem.leftBarButtonItem = anotherButtonback;
     
     
-    
-    
-    
     [self.tabela setContentInset:UIEdgeInsetsMake(70, 0, 4, 0)];
     
     /* bt search */
@@ -82,6 +79,13 @@
      [negativeSpacer setWidth:15];
      
      self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:anotherButtonback,negativeSpacer,anotherButton,negativeSpacer,nil];
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    
+    HUD.delegate = self;
+    HUD.labelText = @"Loading";
+
     
 }
 
@@ -150,7 +154,8 @@
     
     cell.labelTitulo.text = rec.nome;
     cell.labelTempo.text = rec.tempo;
-    cell.labelCategoria.text = rec.categoria;
+    //cell.labelCategoria.text = rec.categoria;
+    cell.labelCategoria.text = [NSString stringWithFormat:@"%@ · %@ · %@",rec.tempo, rec.dificuldade , [rec.categoria stringByReplacingOccurrencesOfString:@" " withString:@" · "]];
     cell.labelDificuldade.text = rec.dificuldade;
     cell.pode = YES;
     cell.receita = rec;
@@ -228,6 +233,8 @@
     // aqui tenho de encontrar o produto dentro de _products
     // se conseguir encontrar entao faço a compra, senao considero que nao preciso de adicionar as inApps
     
+    [HUD show:YES];
+    
     
     for (SKProduct * prod in products)
     {
@@ -242,6 +249,11 @@
         
     }
     
+}
+
+-(void)fecharHUD
+{
+    [HUD hide:YES ];
 }
 
 -(void)adicionarLivro
@@ -279,11 +291,6 @@
         
         
         
-        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-        [self.navigationController.view addSubview:HUD];
-        
-        HUD.delegate = self;
-        HUD.labelText = @"Loading";
         
         [HUD show:YES];
         
@@ -371,6 +378,18 @@
                         receita.servings            = [dictRec objectForKey:@"nr_pessoas"];
                         receita.tempo               = [dictRec objectForKey:@"tempo"];
                         
+                        NSString * dataCriado       = [dictRec objectForKey:@"data_criado"];
+                        
+                        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                        // this is imporant - we set our input date format to match our input string
+                        // if format doesn't match you'll get nil from your string, so be careful
+                        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                        NSDate *megaData = [NSDate new];
+                        // voila!
+                        megaData = [dateFormatter dateFromString:dataCriado];
+                        
+                        receita.data_criado = megaData;
+                        
                         NSManagedObject *managedImagem = [NSEntityDescription
                                                           insertNewObjectForEntityForName:@"Imagens"
                                                           inManagedObjectContext:context];
@@ -454,6 +473,7 @@
                     //[self comprarItem:livro];
                 }
                 
+                [self.navigationController popToRootViewControllerAnimated:YES];
                 
                 
                 break;
