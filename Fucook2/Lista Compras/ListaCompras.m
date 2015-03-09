@@ -562,7 +562,6 @@
     NewIngredienteShoppingList * ingrediente = [NewIngredienteShoppingList new];
     ingrediente.delegate = self;
     
-    
     [self.navigationController pushViewController:ingrediente animated:YES];
 }
 

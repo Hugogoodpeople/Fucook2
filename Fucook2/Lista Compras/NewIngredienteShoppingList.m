@@ -157,7 +157,14 @@
     //ingrid.quantidadeDecimal = [arrayDecimal objectAtIndex:row1];
     ingrid.quantidadeDecimal = @"";
     
-    ingrid.unidade = [arrayUnidade objectAtIndex:row2];
+    ingrid.unidade = [_pickerDataUnit objectAtIndex:row2];
+    
+    
+    if ([ingrid.unidade isEqualToString:@"Unit"])
+    {
+        ingrid.unidade = @"";
+    }
+    
     ingrid.nome = self.textName.text;
     
     
